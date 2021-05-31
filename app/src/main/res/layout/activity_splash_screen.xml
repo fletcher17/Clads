@@ -9,24 +9,24 @@
     tools:context=".SplashScreenActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/splash_screen_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="202dp"
-        android:layout_marginEnd="202dp"
+        android:layout_marginStart="@dimen/splash_screen_image_margin_start"
+        android:layout_marginTop="@dimen/splash_screen_image_margin_top"
+        android:layout_marginEnd="@dimen/splash_screen_image_margin_end"
         android:src="@drawable/sewing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/splash_screen_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="163dp"
-        android:layout_marginTop="208dp"
-        android:layout_marginEnd="109dp"
+        android:layout_marginStart="@dimen/splash_screen_text_margin_start"
+        android:layout_marginTop="@dimen/splash_screen_text_margin_top"
+        android:layout_marginEnd="@dimen/splash_screen_text_margin_end"
         android:fontFamily="@font/monoton"
         android:text="@string/clads"
         android:textAppearance="@style/clads"
@@ -36,21 +36,21 @@
 
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/splash_screen_progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="492dp"
+        android:layout_marginTop="@dimen/splash_screen_progress_bar_margin_top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/loading_"
+        android:id="@+id/splash_screen_loading_"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="113dp"
+        android:layout_marginTop="@dimen/splash_screen_loading_text_margin_top"
+        android:layout_marginBottom="@dimen/splash_screen_loading_text_margin_bottom"
         android:fontFamily="@font/poppins_bold"
         android:gravity="top"
         android:text="@string/loading_"
@@ -58,7 +58,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+        app:layout_constraintTop_toBottomOf="@+id/splash_screen_progressBar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

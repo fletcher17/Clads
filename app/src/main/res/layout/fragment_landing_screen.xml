@@ -7,14 +7,13 @@
     android:background="@color/blue"
     tools:context=".LandingScreenFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/landing_screen_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="202dp"
-        android:layout_marginEnd="202dp"
+        android:layout_marginStart="@dimen/landing_screen_image_margin_start"
+        android:layout_marginTop="@dimen/landing_screen_image_margin_top"
+        android:layout_marginEnd="@dimen/landing_screen_image_margin_end"
         android:src="@drawable/sewing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,12 +21,12 @@
         android:contentDescription="@string/clads_logo" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/landing_screen_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="163dp"
-        android:layout_marginTop="208dp"
-        android:layout_marginEnd="109dp"
+        android:layout_marginStart="@dimen/landing_screen_text_margin_start"
+        android:layout_marginTop="@dimen/landing_screen_text_margin_top"
+        android:layout_marginEnd="@dimen/landing_screen_text_margin_end"
         android:fontFamily="@font/monoton"
         android:text="@string/clads"
         android:textAppearance="@style/clads"
@@ -37,11 +36,10 @@
 
 
     <TextView
-        android:id="@+id/lorem_ipsum"
+        android:id="@+id/landing_screen_lorem_ipsum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="255dp"
-        android:fontFamily="@font/poppins"
+        android:layout_marginTop="@dimen/landing_screen_lorem_ipsum_margin_top"
         android:text="@string/lorem_ipsum"
         android:textAppearance="@style/lorem"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,40 +48,34 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
+        android:id="@+id/landing_screen_sign_up"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="15dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/landing_screen_sign_up_margin_start"
+        android:layout_marginTop="@dimen/landing_screen_sign_up_margin_top"
+        android:layout_marginEnd="@dimen/landing_screen_sign_up_margin_end"
         android:text="@string/sign_up"
-        android:textColor="@color/blue"
-        android:textSize="16sp"
-        app:backgroundTint="@color/white"
-        app:cornerRadius="10dp"
+        style="@style/landing_screen_sign_up_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lorem_ipsum" />
+        app:layout_constraintTop_toBottomOf="@+id/landing_screen_lorem_ipsum" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/landing_screen_login"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/landing_screen_login_margin_start"
+        android:layout_marginEnd="@dimen/landing_screen_login_margin_end"
+        android:layout_marginBottom="@dimen/landing_screen_login_margin_bottom"
         android:text="@string/login"
-        android:textColor="@color/white"
-        android:textSize="16sp"
+        style="@style/landing_screen_login_btton"
         app:backgroundTint="@color/blue"
-        app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton"
-        app:strokeColor="@color/white"
-        app:strokeWidth="2dp" />
+        app:layout_constraintTop_toBottomOf="@+id/landing_screen_sign_up"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

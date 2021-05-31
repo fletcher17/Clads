@@ -1,2 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    //Dimension for splash screen
+    <dimen name="splash_screen_image_margin_top">202dp</dimen>
+    <dimen name="splash_screen_image_margin_start">112dp</dimen>
+    <dimen name="splash_screen_image_margin_end">202dp</dimen>
+    <dimen name="splash_screen_text_margin_top">208dp</dimen>
+    <dimen name="splash_screen_text_margin_start">163dp</dimen>
+    <dimen name="splash_screen_text_margin_end">109dp</dimen>
+    <dimen name="splash_screen_progress_bar_margin_top">492dp</dimen>
+    <dimen name="splash_screen_loading_text_margin_top">10dp</dimen>
+    <dimen name="splash_screen_loading_text_margin_bottom">113dp</dimen>
+
+    //Dimension for landing screen
+    <dimen name="landing_screen_image_margin_top">202dp</dimen>
+    <dimen name="landing_screen_image_margin_start">112dp</dimen>
+    <dimen name="landing_screen_image_margin_end">202dp</dimen>
+    <dimen name="landing_screen_text_margin_top">208dp</dimen>
+    <dimen name="landing_screen_text_margin_start">163dp</dimen>
+    <dimen name="landing_screen_text_margin_end">109dp</dimen>
+    <dimen name="landing_screen_lorem_ipsum_margin_top">255dp</dimen>
+    <dimen name="landing_screen_sign_up_margin_top">120dp</dimen>
+    <dimen name="landing_screen_sign_up_margin_end">15dp</dimen>
+    <dimen name="landing_screen_sign_up_margin_start">15dp</dimen>
+    <dimen name="landing_screen_login_margin_bottom">200dp</dimen>
+    <dimen name="landing_screen_login_margin_end">15dp</dimen>
+    <dimen name="landing_screen_login_margin_start">15dp</dimen>
+
+
+
+</resources>

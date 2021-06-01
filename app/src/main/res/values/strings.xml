@@ -1,4 +1,25 @@
 <resources>
     <string name="app_name">Clads</string>
-    <string name="hello_blank_fragment">hello_blank_fragment</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="login">Login</string>
+    <string name="have_an_account">Have an account?</string>
+    <string name="signup">Signup</string>
+    <string name="password">Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="lets_get_to_know_you">Lets get to know you</string>
+    <string name="choose_account_category">Choose account category</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="other_name">Other Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+
+    <string-array name="category_list">
+        <item>Tailor</item>
+        <item>Weaver</item>
+        <item>Client</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="account_category">Account category</string>
 </resources>

@@ -15,7 +15,6 @@ class EmailAndPasswordValidatorTest {
         assertThat(result, `is`(false))
     }
 
-
     @Test
     fun isEmailValid_returnTrue() {
         val email = "oshiole@gmail.com"
@@ -25,7 +24,6 @@ class EmailAndPasswordValidatorTest {
         assertThat(result, `is`(true))
     }
 
-
     @Test
     fun `Enter email that is not valid return false`() {
         val input = "patty.com"
@@ -34,7 +32,6 @@ class EmailAndPasswordValidatorTest {
         assertThat(output, `is`(false))
     }
 
-
     @Test
     fun isPasswordEmpty_returnFalse() {
         val password = ""
@@ -42,7 +39,6 @@ class EmailAndPasswordValidatorTest {
 
         assertThat(result, `is`(false))
     }
-
 
     @Test
     fun isPasswordNotValid_returnFalse() {

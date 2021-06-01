@@ -19,8 +19,8 @@
     <string name="reset_password_confirmation_fragment_email_sent_detail">email sent by Obioma</string>
     <string name="reset_password_confirmation_fragment_company_logo">Company Logo</string>
     <string name="reset_password_confirmation_fragment_gmail_icon">Gmail</string>
-    <string name="reset_password_confirmation_fragment_instagram_icon">instagram logo</string>
-    <string name="reset_password_confirmation_fragment_twitter_icon">twitter icon</string>
-    <string name="reset_password_confirmation_fragment_facebook_icon">facebook icon</string>
+    <string name="reset_password_confirmation_fragment_instagram_icon">instagram</string>
+    <string name="reset_password_confirmation_fragment_twitter_icon">twitter</string>
+    <string name="reset_password_confirmation_fragment_facebook_icon">facebook</string>
     <string name="reset_new_password_fragment_new_password">New Password</string>
 </resources>

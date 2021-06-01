@@ -43,7 +43,6 @@ android {
 }
 
 dependencies {
-
     //Default Dependencies
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin_version"
     implementation 'androidx.core:core-ktx:1.5.0'
@@ -92,5 +91,8 @@ dependencies {
 
 
     implementation "com.jakewharton.timber:timber:$versions.timber_version"
+    implementation "com.agrawalsuneet.androidlibs:dotsloader:$versions.progress_bar_version"
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
+
 
 }

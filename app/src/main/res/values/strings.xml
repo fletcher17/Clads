@@ -8,18 +8,19 @@
     <string name="send_request_password_link_fragment_reset_password">Send Request Password Link</string>
     <string name="remember_my_password_fragment_reset_password">I can remember my password,</string>
     <string name="login_fragment_reset_password">Login</string>
-    <string name="reset_password_fragment_reset_password_button">Reset Password</string>
+    <string name="reset_password_confirmation_fragment_reset_password_button">Reset Password</string>
     <string name="label">Confirm New Password</string>
     <string name="email_confirmation_view_in_browser">view in broswer</string>
     <string name="email_confirmation_stay_in_touch">Stay in touch</string>
-    <string name="reset_password__fragment_reset_detail">Hi,
+    <string name="reset_password_confirmation_fragment_reset_detail">Hi,
     <br/>You’re almost there. To finish resetting your password, please click on the  reset button below</string>
-    <string name="email_confirmation_copyright">copyright 2020. All Rights Reserved</string>
+    <string name="reset_password_confirmation_fragment_copyright">copyright 2020. All Rights Reserved</string>
     <string name="confirmation_fragment_logo">Logo</string>
-    <string name="user_confirmation_email_sent_detail">email sent by Obioma</string>
+    <string name="reset_password_confirmation_fragment_email_sent_detail">email sent by Obioma</string>
     <string name="reset_password_confirmation_company_logo">Company Logo</string>
     <string name="reset_password_gmail_icon">Gmail</string>
     <string name="reset_password_instagram_icon">instagram logo</string>
     <string name="reset_password_twitter_icon">twitter icon</string>
     <string name="reset_password_facebook_icon">facebook icon</string>
+    <string name="new_password_fragment_new_password">New Password</string>
 </resources>

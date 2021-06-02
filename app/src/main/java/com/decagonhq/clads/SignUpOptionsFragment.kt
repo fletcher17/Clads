@@ -1,32 +1,50 @@
 package com.decagonhq.clads
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.decagonhq.clads.databinding.FragmentSignUpOptionsBinding
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SignUpOptionsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SignUpOptionsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
+    /*
+    * @param cladsFirebaseAuth -> reference to firebase auth services
+    * @param cladsGoogleSignInClient -> reference to Google Sign In Client
+    * */
+    private lateinit var cladsFirebaseAuth : FirebaseAuth
+    private lateinit var cladsGoogleSignInClient : GoogleSignInClient
+    var _binding = FragmentSignUpOptionsBinding
+    val binding get() = _binding
+    const val GOOGLE_SIGN_IN_REQUEST_CODE = 200
+
+
+
+
+    override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = cladsFirebaseAuth.currentUser
+      //  updateUI(currentUser)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        cladsFirebaseAuth = FirebaseAuth.getInstance()
     }
 
     override fun onCreateView(
@@ -38,23 +56,84 @@ class SignUpOptionsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_sign_up_options, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SignUpOptionsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SignUpOptionsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+        cladsGoogleSignInClient = GoogleSignIn.getClient(requireContext(), gso);
+
+
+        val signInButton = view.findViewById<Button>(R.id.button)
+        signInButton.setOnClickListener{
+            signIn()
+        }
+    }
+
+    private fun signIn() {
+        val signInIntent: Intent = cladsGoogleSignInClient.signInIntent
+        startActivityForResult(signInIntent, GOOGLE_SIGN_IN_REQUEST_CODE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+        if (requestCode == 200) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
+            handleSignInResult(task)
+        }
+    }
+
+    private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
+        try {
+            val account = completedTask.getResult(ApiException::class.java)
+
+          //  account?.idToken?.let { firebaseAuthWithGoogle(it) }
+
+            // Signed in successfully, show authenticated UI.
+            updateUI(account)
+        } catch (e: ApiException) {
+            // The ApiException status code indicates the detailed failure reason.
+            // Please refer to the GoogleSignInStatusCodes class reference for more information.
+          //  Log.w(TAG, "signInResult:failed code=" + e.statusCode)
+            updateUI(null)
+        }
+    }
+
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+        cladsFirebaseAuth.signInWithCredential(credential).addOnCompleteListener(requireActivity(),
+                OnCompleteListener<AuthResult?> { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        val user = cladsFirebaseAuth.currentUser
+                        Toast.makeText(requireContext(), "SignIn Successful", Toast.LENGTH_SHORT).show()
+                     //   updateUI(user)
+                    } else {
+                        Toast.makeText(requireContext(), "Error Occurred", Toast.LENGTH_SHORT).show()
+                        // If sign in fails, display a message to the user.
+//                        Snackbar.make(
+//                            mBinding.mainLayout,
+//                            "Authentication Failed.",
+//                            Snackbar.LENGTH_SHORT
+//                        ).show()
+//                        updateUI(null)
+                    }
+
+                })
+    }
+
+    private fun updateUI(account: GoogleSignInAccount?) {
+        findNavController().navigate()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

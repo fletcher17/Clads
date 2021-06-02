@@ -1,6 +1,7 @@
 package com.decagonhq.clads.validator
 
-import org.hamcrest.Matchers.`is`
+
+import org.hamcrest.CoreMatchers.`is`
 import org.junit.Test
 import org.junit.Assert.*
 
@@ -10,16 +11,16 @@ class EmailAndPasswordValidatorTest {
     @Test
     fun isEmailEmpty_returnFalse() {
         val email = ""
-        val result = EmailAndPasswordValidator().isEmailValid(email)
+        val result = EmailAndPasswordValidator.isEmailValid(email)
 
-        assertThat(result, `is`(false))
+        assertEquals(result, false)
     }
 
     @Test
     fun isEmailValid_returnTrue() {
         val email = "oshiole@gmail.com"
 
-        val result = EmailAndPasswordValidator().isEmailValid(email)
+        val result = EmailAndPasswordValidator.isEmailValid(email)
 
         assertThat(result, `is`(true))
     }
@@ -27,7 +28,7 @@ class EmailAndPasswordValidatorTest {
     @Test
     fun `Enter email that is not valid return false`() {
         val input = "patty.com"
-        val output = EmailAndPasswordValidator().isEmailValid(input)
+        val output = EmailAndPasswordValidator.isEmailValid(input)
 
         assertThat(output, `is`(false))
     }
@@ -35,7 +36,7 @@ class EmailAndPasswordValidatorTest {
     @Test
     fun isPasswordEmpty_returnFalse() {
         val password = ""
-        val result = EmailAndPasswordValidator().isPasswordValid(password)
+        val result = EmailAndPasswordValidator.isPasswordValid(password)
 
         assertThat(result, `is`(false))
     }
@@ -43,7 +44,7 @@ class EmailAndPasswordValidatorTest {
     @Test
     fun isPasswordNotValid_returnFalse() {
         val password = "john"
-        val result = EmailAndPasswordValidator().isPasswordValid(password)
+        val result = EmailAndPasswordValidator.isPasswordValid(password)
 
         assertThat(result, `is`(false))
     }
@@ -52,7 +53,7 @@ class EmailAndPasswordValidatorTest {
     @Test
     fun isPasswordValid_returnTrue() {
         val password = "abubakar@49"
-        val result = EmailAndPasswordValidator().isPasswordValid(password)
+        val result = EmailAndPasswordValidator.isPasswordValid(password)
 
         assertThat(result, `is`(true))
     }
@@ -63,7 +64,7 @@ class EmailAndPasswordValidatorTest {
         val password = "abubakar@49"
         val confirmPassword = "abubakar@49"
 
-        val output = EmailAndPasswordValidator().isPasswordTheSame(password, confirmPassword)
+        val output = EmailAndPasswordValidator.isPasswordTheSame(password, confirmPassword)
 
         assertThat(output, `is`(true))
     }
@@ -74,7 +75,7 @@ class EmailAndPasswordValidatorTest {
         val password = "john_peter@50"
         val confirmPassword = "john"
 
-        val output = EmailAndPasswordValidator().isPasswordTheSame(password, confirmPassword)
+        val output = EmailAndPasswordValidator.isPasswordTheSame(password, confirmPassword)
 
         assertThat(output, `is`(false))
     }

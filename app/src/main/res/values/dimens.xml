@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <dimen name="stroke_width_signup_options_fragment_2dp">2dp</dimen>
+    <dimen name="text_size_signup_options_fragment_12sp">12sp</dimen>
+    <dimen name="text_size_signup_options_fragment_14sp">14sp</dimen>
+</resources>

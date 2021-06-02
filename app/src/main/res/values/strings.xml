@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Clads</string>
     <string name="hello_blank_fragment">hello_blank_fragment</string>
+    <string name="view_in_browser">view in browser</string>
+    <string name="email_confirmation">Email Confirmation</string>
+    <string name="email_confirmation_message">Hey Ijeoma, you are almost ready to start enjoying Clads. Simply click the big blue button below to verify your email</string>
+    <string name="verify_email_address">Verify Email Address</string>
+    <string name="stay_in_touch">Stay in touch</string>
+    <string name="email_sent_by_clads">email sent by Clads</string>
+    <string name="copyright">copyright 2020, All Rights Reserved</string>
 </resources>

@@ -93,4 +93,14 @@ dependencies {
 
     implementation "com.jakewharton.timber:timber:$versions.timber_version"
 
+    //Fragment Test
+    debugImplementation "androidx.fragment:fragment-testing:$versions.fragment_version"
+
+    //test Fragment Navigation
+    androidTestImplementation "androidx.navigation:navigation-testing:$versions.nav_version"
+
+    //mockito
+    testImplementation "org.mockito:mockito-core:$versions.mockito_version"
+    androidTestImplementation "org.mockito:mockito-android:$versions.mockito_version"
+
 }

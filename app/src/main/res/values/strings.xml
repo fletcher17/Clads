@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">Clads</string>
     <string name="hello_blank_fragment">hello_blank_fragment</string>
-    <string name="loading_">Loading...</string>
-    <string name="clads">CLADS</string>
-    <string name="clads_logo">Clads_logo</string>
-    <string name="lorem_ipsum">Lorem ipsum, ipsum sum</string>
-    <string name="sign_up">SIGN UP</string>
-    <string name="login">LOGIN</string>
+    <string name="activity_splash_screen_loading_">Loading…</string>
+    <string name="fragment_landing_screen_title">CLADS</string>
+    <string name="generic_lorem_ipsum_string">Lorem ipsum, ipsum sum</string>
+    <string name="all_sign_up">SIGN UP</string>
+    <string name="all_login">LOGIN</string>
 </resources>

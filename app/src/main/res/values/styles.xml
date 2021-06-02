@@ -1,101 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="clads">
-        <item name="android:textSize">
-            22sp
-        </item>
-        <item name="android:textColor">
-            @color/grey
-        </item>
-        <item name="android:textStyle">
-            bold
-        </item>
-        <item name="android:text">
-            CLADS
-        </item>
-        <item name="fontFamily">
-            @font/monoton
-        </item>
+        <item name="android:textSize">@dimen/text_size_22sp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:text">CLADS</item>
+        <item name="fontFamily">@font/monoton</item>
     </style>
 
-    <style name="loading_">
-        <item name="android:textSize">
-            16sp
-        </item>
-        <item name="android:textColor">
-            #BAFFFFFF
-        </item>
-        <item name="android:textStyle">
-            bold
-        </item>
+    <style name="CladsPrimaryIcon" >
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+        <item name="android:gravity">top</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="lorem">
-        <item name="android:textSize">
-            14sp
-        </item>
-        <item name="fontFamily">
-            @font/poppins
-        </item>
-        <item name="android:textColor">
-            @color/white
-        </item>
-        <item name="android:textStyle">
-            bold
-        </item>
-
+    <style name="CladsLoremIpsumTextView">
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="landing_screen_sign_up_button">
-        <item name="android:textSize">
-            16sp
-        </item>
-        <item name="android:padding">
-            10dp
-        </item>
-        <item name="backgroundTint">
-            @color/white
-        </item>
-        <item name="android:textColor">
-            @color/blue
-        </item>
-        <item name="cornerRadius">
-            10dp
-        </item>
-        <item name="android:textStyle">
-            bold
-        </item>
-        <item name="fontFamily">
-            @font/poppins
-        </item>
+    <style name="CladsSignUpButton">
+        <item name="cornerRadius">@dimen/corner_radius_10dp</item>
+        <item name="android:text">@string/all_sign_up</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+        <item name="android:padding">@dimen/padding_10dp</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="fontFamily">@font/poppins_bold</item>
     </style>
 
-    <style name="landing_screen_login_button">
-        <item name="android:textSize">
-            16sp
-        </item>
-        <item name="android:padding">
-            10dp
-        </item>
-        <item name="android:textColor">
-            @color/white
-        </item>
-        <item name="cornerRadius">
-            10dp
-        </item>
-        <item name="strokeWidth">
-            2dp
-        </item>
-        <item name="strokeColor">
-            @color/white
-        </item>
-        <item name="android:textStyle">
-            bold
-        </item>
-        <item name="fontFamily">
-            @font/poppins
-        </item>
+    <style name="CladsLoginButton">
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+        <item name="android:text">@string/all_login</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:backgroundTint">@color/blue</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">@dimen/corner_radius_10dp</item>
+        <item name="strokeWidth">@dimen/stroke_width_2dp</item>
+        <item name="strokeColor">@color/white</item>
+        <item name="fontFamily">@font/poppins_bold</item>
     </style>
-
-
 </resources>

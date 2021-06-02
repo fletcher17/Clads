@@ -1,60 +1,93 @@
 package com.decagonhq.clads
 
 import android.os.Bundle
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.decagonhq.clads.databinding.FragmentLoginBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [LoginFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class LoginFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentLoginBinding // view binding for this current fragment (Login fragment)
+
+    // Creating variables to store views references
+    private lateinit var showPasswordIcon: ImageView
+    private lateinit var hidePasswordIcon: ImageView
+    private lateinit var password: EditText
+    private lateinit var email: EditText
+    private lateinit var signInWithGoogleBtn: Button
+    private lateinit var loginBtn: Button
+    private lateinit var signUpForFreeLink: TextView
+    private lateinit var forgotPasswordLink: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
-    }
+        // Initializing the view binding variable
+        binding = FragmentLoginBinding.inflate(
+            inflater,
+            container,
+            false
+        )
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment LoginFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            LoginFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        // Storing reference to views into variables
+        showPasswordIcon = binding.loginScreenFragmentShowPasswordIcon
+        hidePasswordIcon = binding.loginScreenFragmentHidePasswordIcon
+        password = binding.loginScreenFragmentPasswordTextView
+        // Button
+        signInWithGoogleBtn = binding.loginScreenFragmentLoginButtonTextView
+        loginBtn = binding.loginScreenFragmentLoginButtonTextView
+        signUpForFreeLink = binding.loginScreenFragmentSignUpForFreeLinkTextView
+        forgotPasswordLink = binding.loginScreenFragmentForgotPasswordTextView
+
+        // Controlling the visibility of the password at the click of the visibility icons
+        showPasswordIcon.setOnClickListener() {
+            password.inputType = 1
+            showPasswordIcon.visibility = View.GONE
+            hidePasswordIcon.visibility = View.VISIBLE
+        }
+
+        hidePasswordIcon.setOnClickListener() {
+            password.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            hidePasswordIcon.visibility = View.GONE
+            showPasswordIcon.visibility = View.VISIBLE
+        }
+
+        // Navigate to other screens at the buttons
+        signInWithGoogleBtn.setOnClickListener() {
+            when {
+                !LoginFragmentValidation.emailValidator(email.text.toString()) -> {
+                    email.error = "Invalid Email"
+                }
+                !LoginFragmentValidation.passwordValidator(password.text.toString()) -> {
+                    password.error = "6 or more characters required"
+                }
+                else -> {
+                    findNavController().navigate(R.id.action_login_fragment_to_dashboard_fragment)
                 }
             }
+        }
+
+        // Move to forgot password page at the click to the forgot password text
+        forgotPasswordLink.setOnClickListener() {
+//            findNavController().navigate(R.id.action_login_fragment_to_forgot_Password_fragment)
+        }
+
+        // Move to Sign up for free at the click of th Sign up for free text
+        signUpForFreeLink.setOnClickListener() {
+//            findNavController().navigate()
+        }
+
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_login, container, false)
     }
 }

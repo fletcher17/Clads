@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">Clads</string>
     <string name="hello_blank_fragment">hello_blank_fragment</string>
+
+    <string name="login_page_password">Password</string>
+    <string name="login_screen_welcome_back_tv">Welcome back</string>
+    <string name="login_screen_login_to_continue_tv">Login to continue</string>
+    <string name="login_screen_password_hint_tv">Password</string>
+    <string name="login_screen_email_hint_tv">Email Address</string>
+    <string name="login_screen_password_tv_hint">Password</string>
+    <string name="login_screen_fragment_asking_if_new_user">New user?</string>
+    <string name="login_screen_fragment_signup_for_free">Signup for free</string>
+    <string name="login_screen_fragment_forgot_password">Forgot Password?</string>
+    <string name="login_screen_fragment_login_button_text_view">Login</string>
+    <string name="login_screen_fragment_login_using_phone_text_view">Use Phone</string>
+    <string name="login_screen_fragment_sign_up_with_google">Signin with Google</string>
 </resources>

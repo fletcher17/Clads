@@ -1,13 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingHorizontal="@dimen/login_screen_root_element_padding_horizontal"
+    android:background="@color/login_screen_back_ground_color"
     tools:context=".LoginFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-</FrameLayout>
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/login_screen_fragment_welcome_back_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/login_fragment_welcome_back_text_view_margin_top"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/login_screen_welcome_back_tv"
+                android:textColor="@color/white"
+                android:textSize="@dimen/login_screen_welcome_back_tv_txt_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lineHeight="@dimen/login_screen_welcome_back_tv_line_height" />
+
+            <TextView
+                android:id="@+id/login_screen_fragment_login_to_continue_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/login_fragment_login_to_continue_text_view_margin_top"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/login_screen_login_to_continue_tv"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_screen_fragment_welcome_back_text_view" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/LoginFragmentButtonStyle"
+                android:id="@+id/linearLayout3"
+                android:text="@string/login_screen_fragment_sign_up_with_google"
+                app:cornerRadius="@dimen/dimen_4_dp"
+                android:layout_marginTop="@dimen/dimen_29_dp"
+                app:icon="@drawable/all_google_logo_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_screen_fragment_login_to_continue_text_view"
+                android:backgroundTint="@color/white"
+                app:iconGravity="textStart"
+                app:iconSize="@dimen/dimen_23_dp"
+                app:iconTintMode="multiply" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/login_screen_fragment_email_address_and_divider_container_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_fragment_email_address_container_linear_layout_height"
+                android:layout_marginTop="@dimen/dimen_44_dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+                <EditText
+                    style="@style/LoginFragmentEditTextStyle"
+                    android:id="@+id/login_screen_fragment_email_address_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="@string/login_screen_email_hint_tv"
+                    android:inputType="textEmailAddress"/>
+
+                <View
+                    style="@style/LoginFragmentDividerViewStyle"
+                    android:id="@+id/login_screen_fragment_email_address_bottom_divider_view"
+                    android:layout_marginTop="@dimen/login_fragment_horizontal_divider_view_margin_top" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <LinearLayout
+                android:id="@+id/login_screen_fragment_password_and_divider_top_level_container_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_fragment_password_container_linear_layout_height"
+                android:layout_marginTop="@dimen/login_fragment_password_container_linear_layout_top_margin"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_screen_fragment_email_address_and_divider_container_linear_layout">
+
+                <LinearLayout
+                    android:id="@+id/login_screen_fragment_password_and_divider_sub_level_container_linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="681dp">
+
+                    <EditText
+                        style="@style/LoginFragmentEditTextStyle"
+                        android:id="@+id/login_screen_fragment_password_text_view"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:hint="@string/login_screen_password_hint_tv"
+                        android:inputType="textPassword" />
+
+                    <!--
+                        Here, i am manipulating the visibility of these visibility_icons in order to get the required design
+                        This same functionality would have been achieved using TextInputLayout of Material Design,
+                        but the hint will be moved up instead of disappearing totally, hence the reason to get this done using text view and two icons
+                    -->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/login_screen_fragment_show_password_icon"
+                        android:layout_width="@dimen/visibility_icon_size"
+                        android:layout_height="@dimen/visibility_icon_size"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_marginHorizontal="@dimen/login_fragment_password_visibility_icon_horizontal_margin"
+                        android:src="@drawable/show_password_icon" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/login_screen_fragment_hide_password_icon"
+                        android:layout_width="@dimen/visibility_icon_size"
+                        android:layout_height="@dimen/visibility_icon_size"
+                        android:layout_gravity="center_horizontal|bottom"
+                        android:layout_marginHorizontal="@dimen/login_fragment_password_visibility_icon_horizontal_margin"
+                        android:src="@drawable/hide_password_icon"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+
+                <View
+                    style="@style/LoginFragmentDividerViewStyle"
+                    android:id="@+id/login_screen_fragment_password_bottom_divider_view"
+                    android:layout_marginVertical="@dimen/login_fragment_horizontal_divider_view_margin_top" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/LoginFragmentButtonStyle"
+                android:id="@+id/login_screen_fragment_login_button_text_view"
+                android:text="@string/login_screen_fragment_login_button_text_view"
+                app:cornerRadius="@dimen/dimen_4_dp"
+                android:layout_marginTop="@dimen/dimen_25_dp"
+                android:textColor="@color/login_screen_back_ground_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_screen_fragment_password_and_divider_top_level_container_linear_layout"
+                android:backgroundTint="@color/white"
+                app:iconGravity="textStart"
+                app:iconSize="@dimen/dimen_24_dp"
+                app:iconTintMode="multiply" />
+
+            <LinearLayout
+                android:id="@+id/login_screen_fragment_sign_up_for_free_container_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/login_fragment_signup_for_free_vertical_margin"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_screen_fragment_login_button_text_view">
+
+                <TextView
+                    android:id="@+id/login_screen_fragment_asking_if_new_user_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/login_fragment_askin_if_new_user_text_view_margin_end"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="right"
+                    android:text="@string/login_screen_fragment_asking_if_new_user"
+                    android:textColor="@color/login_screen_grey_color" />
+
+                <TextView
+                    android:id="@+id/login_screen_fragment_sign_up_for_free_link_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/login_screen_fragment_signup_for_free"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/login_screen_fragment_forgot_password_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/login_fragment_forgot_password_text_view_margin_top"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center_horizontal"
+                android:text="@string/login_screen_fragment_forgot_password"
+                android:textColor="@color/login_screen_grey_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_screen_fragment_sign_up_for_free_container_linear_layout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</androidx.core.widget.NestedScrollView>

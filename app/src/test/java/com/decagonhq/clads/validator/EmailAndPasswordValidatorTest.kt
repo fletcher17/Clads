@@ -1,15 +1,13 @@
 package com.decagonhq.clads.validator
 
-
 import org.hamcrest.CoreMatchers.`is`
+import org.junit.Assert.assertEquals
 import org.junit.Test
-import org.junit.Assert.*
-
 
 class EmailAndPasswordValidatorTest {
 
     @Test
-    fun isEmailEmpty_returnFalse() {
+    fun `Enter empty email address field returns false`() {
         val email = ""
         val result = EmailAndPasswordValidator.isEmailValid(email)
 
@@ -17,7 +15,7 @@ class EmailAndPasswordValidatorTest {
     }
 
     @Test
-    fun isEmailValid_returnTrue() {
+    fun `Enter valid email address returns true`() {
         val email = "oshiole@gmail.com"
 
         val result = EmailAndPasswordValidator.isEmailValid(email)
@@ -26,7 +24,7 @@ class EmailAndPasswordValidatorTest {
     }
 
     @Test
-    fun `Enter email that is not valid return false`() {
+    fun `Enter email that is not valid returns false`() {
         val input = "patty.com"
         val output = EmailAndPasswordValidator.isEmailValid(input)
 
@@ -34,7 +32,7 @@ class EmailAndPasswordValidatorTest {
     }
 
     @Test
-    fun isPasswordEmpty_returnFalse() {
+    fun `Enter password that is empty returns false`() {
         val password = ""
         val result = EmailAndPasswordValidator.isPasswordValid(password)
 
@@ -42,25 +40,23 @@ class EmailAndPasswordValidatorTest {
     }
 
     @Test
-    fun isPasswordNotValid_returnFalse() {
+    fun `Enter password that is not valid returns false`() {
         val password = "john"
         val result = EmailAndPasswordValidator.isPasswordValid(password)
 
         assertThat(result, `is`(false))
     }
 
-
     @Test
-    fun isPasswordValid_returnTrue() {
+    fun `Enter valid password returns true`() {
         val password = "abubakar@49"
         val result = EmailAndPasswordValidator.isPasswordValid(password)
 
         assertThat(result, `is`(true))
     }
 
-
     @Test
-    fun isPasswordSame_returnTrue() {
+    fun `Enter password that matches returns true`() {
         val password = "abubakar@49"
         val confirmPassword = "abubakar@49"
 
@@ -69,9 +65,8 @@ class EmailAndPasswordValidatorTest {
         assertThat(output, `is`(true))
     }
 
-
     @Test
-    fun isPasswordNotTheSame_returnFalse() {
+    fun `Enter password that is not the same returns false`() {
         val password = "john_peter@50"
         val confirmPassword = "john"
 

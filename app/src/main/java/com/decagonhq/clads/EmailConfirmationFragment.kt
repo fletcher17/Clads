@@ -8,10 +8,8 @@ import androidx.fragment.app.Fragment
 
 class EmailConfirmationFragment : Fragment() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(

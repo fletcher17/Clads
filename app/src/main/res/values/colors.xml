@@ -12,4 +12,6 @@
     <color name="grey">#ADBACD</color>
     <color name="navy_blue">#0A2E65</color>
     <color name="light_grey">"#C4C4C4"</color>
+    <color name="space_grey">#828282</color>
+    <color name="card_text_color">#506992</color>
 </resources>

@@ -15,12 +15,13 @@
     <string name="reset_password_confirmation_fragment_reset_detail">Hi,
     <br/>You’re almost there. To finish resetting your password, please click on the  reset button below</string>
     <string name="reset_password_confirmation_fragment_copyright">copyright 2020. All Rights Reserved</string>
-    <string name="reset_password_confirmation_fragment_logo">Logo</string>
     <string name="reset_password_confirmation_fragment_email_sent_detail">email sent by Obioma</string>
     <string name="reset_password_confirmation_fragment_company_logo">Company Logo</string>
-    <string name="reset_password_confirmation_fragment_gmail_icon">Gmail</string>
-    <string name="reset_password_confirmation_fragment_instagram_icon">instagram</string>
-    <string name="reset_password_confirmation_fragment_twitter_icon">twitter</string>
-    <string name="reset_password_confirmation_fragment_facebook_icon">facebook</string>
+    <string name="reset_password_verification_fragment_gmail_icon">Gmail</string>
+    <string name="reset_password_verification_fragment_instagram_icon">instagram</string>
+    <string name="reset_password_verification_fragment_twitter_icon">twitter</string>
+    <string name="reset_password_verification_fragment_facebook_icon">facebook</string>
     <string name="reset_new_password_fragment_new_password">New Password</string>
+    <string name="all_clads_logo">clads logo</string>
+    <string name="all_message_logo">Message Logo</string>
 </resources>

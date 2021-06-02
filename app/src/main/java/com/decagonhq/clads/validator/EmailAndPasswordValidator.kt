@@ -31,10 +31,8 @@ class EmailAndPasswordValidator {
          * @return true if both password are the same
          * @return false if otherwise
          * */
-        fun isPasswordTheSame(password: String, confirmPassword: String) : Boolean {
+        fun isPasswordTheSame(password: String, confirmPassword: String): Boolean {
             return password == confirmPassword
         }
-
     }
-
 }

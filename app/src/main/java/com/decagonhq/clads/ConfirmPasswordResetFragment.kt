@@ -6,9 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-
 class ConfirmPasswordResetFragment : Fragment() {
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -18,6 +16,4 @@ class ConfirmPasswordResetFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_confirm_password_reset, container, false)
     }
-
-
 }

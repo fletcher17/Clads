@@ -6,9 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-
 class LoginFragment : Fragment() {
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -18,5 +16,4 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
-
 }

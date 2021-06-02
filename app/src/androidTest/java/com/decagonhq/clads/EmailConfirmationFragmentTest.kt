@@ -22,13 +22,11 @@ class EmailConfirmationFragmentTest {
 
     private lateinit var scenario: FragmentScenario<EmailConfirmationFragment>
 
-
     @Before
     fun setUp() {
         scenario = launchFragmentInContainer(themeResId = R.style.Theme_Clads)
         scenario.moveToState(Lifecycle.State.STARTED)
     }
-
 
     @Test
     fun is_clad_logo_visible() {
@@ -125,7 +123,6 @@ class EmailConfirmationFragmentTest {
 
         emailConfirmationScenario.onFragment {
             Navigation.setViewNavController(it.requireView(), mockNavController)
-
         }
 
         onView(withId(R.id.fragment_email_confirmation_email_verification_button)).perform(click())

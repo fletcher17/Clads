@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-
 class ForgotPasswordFragment : Fragment() {
 
     override fun onCreateView(
@@ -17,6 +16,4 @@ class ForgotPasswordFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_forgot_password, container, false)
     }
-
-
 }

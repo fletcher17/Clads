@@ -20,5 +20,4 @@ class ConfirmPasswordResetFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_confirm_password_reset, container, false)
     }
-
 }

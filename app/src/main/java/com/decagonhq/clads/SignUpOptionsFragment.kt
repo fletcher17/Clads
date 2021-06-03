@@ -25,11 +25,12 @@ class SignUpOptionsFragment : Fragment() {
     * @param cladsFirebaseAuth -> reference to firebase auth services
     * @param cladsGoogleSignInClient -> reference to Google Sign In Client
     * */
+
     private lateinit var cladsFirebaseAuth: FirebaseAuth
     private lateinit var cladsGoogleSignInClient: GoogleSignInClient
-    var _binding: FragmentSignUpOptionsBinding? = null
-    val binding get() = _binding
-    val GOOGLE_SIGN_IN_REQUEST_CODE = 200
+    private var _binding: FragmentSignUpOptionsBinding? = null
+    private val binding get() = _binding!!
+    private val GOOGLE_SIGN_IN_REQUEST_CODE = 200
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,10 +38,16 @@ class SignUpOptionsFragment : Fragment() {
         cladsFirebaseAuth = FirebaseAuth.getInstance()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up_options, container, false)
+
+        _binding = FragmentSignUpOptionsBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,10 +62,10 @@ class SignUpOptionsFragment : Fragment() {
         // display the sign in email options
         cladsGoogleSignInClient = GoogleSignIn.getClient(requireContext(), cladGoogleSignInOptions)
 
-        //  button to initiate google sign in. (greyed out because id to sign in button has not been gotten)
-        //        binding.signInButton.setOnClickListener{
-        //            signIn()
-        //        }
+//        binding.signInButton.setOnClickListener{
+//            Toast.makeText(requireContext(), "clicked", Toast.LENGTH_SHORT).show()
+//            signIn()
+//        }
     }
 
     private fun signIn() {

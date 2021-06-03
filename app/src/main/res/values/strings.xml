@@ -6,8 +6,7 @@
     <string name="reset_password_fragment_email_address">Email Address</string>
     <string name="reset_password_fragment_use_phone">Use Phone</string>
     <string name="reset_password_fragment_send_request_password_link">Send Request Password Link</string>
-    <string name="reset_password_fragment_remember_my_password">I can remember my password,</string>
-    <string name="reset_password_fragment_login">Login</string>
+    <string name="reset_password_fragment_remember_my_password">I can remember my password, <font color="#0066F5">Login</font></string>
     <string name="reset_password_confirmation_fragment_reset_password_button">Reset Password</string>
     <string name="reset_new_password_fragment_confirm_password">Confirm New Password</string>
     <string name="reset_password_confirmation_fragment_view_in_browser">view in broswer</string>

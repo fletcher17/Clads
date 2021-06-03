@@ -4,7 +4,6 @@
     <string name="signup_options_fragment_signup_with_email_button_text">Sign up with email</string>
     <string name="signup_options_fragment_have_an_account_text">Have an account?</string>
     <string name="signup_options_fragment_login_text">Login</string>
-    <string name="hello_blank_fragment">hello blank fragment</string>
     <string name="hello_blank_fragment">hello_blank_fragment</string>
     <string name="activity_splash_screen_loading_">Loading…</string>
     <string name="fragment_landing_screen_title">CLADS</string>

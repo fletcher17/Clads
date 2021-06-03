@@ -32,7 +32,7 @@
     </style>
 
     <style name="email_confirmation_container">
-        <item name="android:elevation">20dp</item>
+        <item name="android:elevation">30dp</item>
     </style>
 
     <style name="email_confirmation_title">

@@ -9,6 +9,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#4DFFFFFF</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="space_grey">#828282</color>
+    <color name="card_text_color">#506992</color>
+    <color name="lighter_shade_sky_blue">#4D0066F5</color>
     <color name="login_screen_back_ground_color">#0066F5</color>
     <color name="login_screen_grey_color">#ADBACD</color>
     <color name="sky_blue">#0066F5</color>

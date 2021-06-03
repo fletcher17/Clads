@@ -1,7 +1,28 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Clads</string>
     <string name="hello_blank_fragment">hello_blank_fragment</string>
-
+    <string name="reset_fragment_hint_email_address">Email Address</string>
+    <string name="all_forgot_password">Forgot Password</string>
+    <string name="reset_password_fragment_email_address">Email Address</string>
+    <string name="reset_password_fragment_use_phone">Use Phone</string>
+    <string name="reset_password_fragment_send_request_password_link">Send Request Password Link</string>
+    <string name="reset_password_fragment_remember_my_password">I can remember my password, <font color="#0066F5">Login</font></string>
+    <string name="reset_password_confirmation_fragment_reset_password_button">Reset Password</string>
+    <string name="reset_new_password_fragment_confirm_password">Confirm New Password</string>
+    <string name="reset_password_confirmation_fragment_view_in_browser">view in broswer</string>
+    <string name="reset_password_confirmation_fragment_stay_in_touch">Stay in touch</string>
+    <string name="reset_password_confirmation_fragment_reset_detail">Hi,
+    <br/>You’re almost there. To finish resetting your password, please click on the  reset button below</string>
+    <string name="reset_password_confirmation_fragment_copyright">copyright 2020. All Rights Reserved</string>
+    <string name="reset_password_confirmation_fragment_email_sent_detail">email sent by Obioma</string>
+    <string name="reset_password_confirmation_fragment_company_logo">Company Logo</string>
+    <string name="reset_password_verification_fragment_gmail_icon">Gmail</string>
+    <string name="reset_password_verification_fragment_instagram_icon">instagram</string>
+    <string name="reset_password_verification_fragment_twitter_icon">twitter</string>
+    <string name="reset_password_verification_fragment_facebook_icon">facebook</string>
+    <string name="reset_new_password_fragment_new_password">New Password</string>
+    <string name="all_clads_logo">clads logo</string>
+    <string name="all_message_logo">Message Logo</string>
     <string name="login_page_password">Password</string>
     <string name="login_screen_welcome_back_tv">Welcome back</string>
     <string name="login_screen_login_to_continue_tv">Login to continue</string>
@@ -14,7 +35,6 @@
     <string name="login_screen_fragment_login_button_text_view">Login</string>
     <string name="login_screen_fragment_login_using_phone_text_view">Use Phone</string>
     <string name="login_screen_fragment_sign_up_with_google">Signin with Google</string>
-
     <string name="view_in_browser">view in browser</string>
     <string name="email_confirmation">Email Confirmation</string>
     <string name="email_confirmation_message">Hey Ijeoma, you are almost ready to start enjoying Clads. Simply click the big blue button below to verify your email</string>

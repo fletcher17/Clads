@@ -26,7 +26,6 @@ class EmailConfirmationFragment : Fragment() {
         binding.fragmentEmailConfirmationEmailVerificationButton.setOnClickListener {
             findNavController().navigate(R.id.login_fragment)
         }
-
         return view
     }
 

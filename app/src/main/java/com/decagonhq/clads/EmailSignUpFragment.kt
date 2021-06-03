@@ -10,12 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads.databinding.FragmentEmailSignUpBinding
 
 class EmailSignUpFragment : Fragment() {
+
     private var _binding: FragmentEmailSignUpBinding? = null
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -6,10 +6,7 @@ import androidx.navigation.Navigation
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.isClickable
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -57,16 +54,6 @@ class SignUpOptionsFragmentUITest {
 
         signUpWithEmailButton.check(matches(isDisplayed()))
         signUpWithEmailButton.check(matches(isClickable()))
-    }
-
-    @Test
-    fun launch_Signup_Options_Fragment_And_Verify_SignUp_With_Phone_Number_Button_Is_Displayed_And_Clickable() {
-
-        launchFragmentInContainer<SignUpOptionsFragment>(themeResId = R.style.Theme_Clads)
-        val signUpWithPhoneNumberButton = onView(withId(R.id.fragment_signup_options_signup_with_phone_number_button))
-
-        signUpWithPhoneNumberButton.check(matches(isDisplayed()))
-        signUpWithPhoneNumberButton.check(matches(isClickable()))
     }
 
     @Test

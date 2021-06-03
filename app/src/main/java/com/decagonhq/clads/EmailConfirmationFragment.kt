@@ -11,7 +11,6 @@ import com.decagonhq.clads.databinding.FragmentEmailConfirmationBinding
 class EmailConfirmationFragment : Fragment() {
 
     private var _binding: FragmentEmailConfirmationBinding? = null
-
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -23,10 +22,17 @@ class EmailConfirmationFragment : Fragment() {
         _binding = FragmentEmailConfirmationBinding.inflate(layoutInflater, container, false)
         val view = binding.root
 
+        //the verification button which navigates to the login fragment when clicked
         binding.fragmentEmailConfirmationEmailVerificationButton.setOnClickListener {
             findNavController().navigate(R.id.login_fragment)
         }
 
         return view
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

@@ -8,4 +8,9 @@
     <string name="stay_in_touch">Stay in touch</string>
     <string name="email_sent_by_clads">email sent by Clads</string>
     <string name="copyright">copyright 2020, All Rights Reserved</string>
+    <string name="activity_splash_screen_loading_">Loading…</string>
+    <string name="fragment_landing_screen_title">CLADS</string>
+    <string name="generic_lorem_ipsum_string">Lorem ipsum, ipsum sum</string>
+    <string name="all_sign_up">SIGN UP</string>
+    <string name="all_login">LOGIN</string>
 </resources>

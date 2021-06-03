@@ -28,14 +28,14 @@
         android:layout_marginBottom="@dimen/margin_bottom_16dp">
 
         <ImageView
-            android:id="@+id/fragment_email_confirmation_clads_logo"
+            android:id="@+id/fragment_email_confirmation_clads_logo_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/fragment_email_confirmation_clads_icon_logo" />
 
 
         <TextView
-            android:id="@+id/fragment_email_confirmation_view_in_browser_link"
+            android:id="@+id/fragment_email_confirmation_view_in_browser_link_text_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/view_in_browser_link"
@@ -51,7 +51,7 @@
 
 
         <ImageView
-            android:id="@+id/fragment_email_confirmation_email_confirmation_logo"
+            android:id="@+id/fragment_email_confirmation_email_confirmation_logo_image_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -60,7 +60,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/fragment_email_confirmation_email_confirmation_message_container"
+        android:id="@+id/fragment_email_confirmation_email_confirmation_message_container_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -73,7 +73,7 @@
 
 
         <TextView
-            android:id="@+id/fragment_email_confirmation_email_confirmation_title"
+            android:id="@+id/fragment_email_confirmation_email_confirmation_title_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top_15dp"
@@ -82,7 +82,7 @@
             />
 
         <TextView
-            android:id="@+id/fragment_email_confirmation_email_confirmation_message"
+            android:id="@+id/fragment_email_confirmation_email_confirmation_message_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/email_confirmation_message"
@@ -101,7 +101,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/fragment_email_confirmation_stay_in_touch_motto"
+        android:id="@+id/fragment_email_confirmation_stay_in_touch_motto_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_top_15dp"
@@ -109,7 +109,7 @@
         style="@style/stay_in_touch"/>
 
     <LinearLayout
-        android:id="@+id/fragment_email_confirmation_social_media_logos"
+        android:id="@+id/fragment_email_confirmation_social_media_logos_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -117,28 +117,28 @@
         android:layout_marginTop="@dimen/margin_top_15dp">
 
         <ImageView
-            android:id="@+id/fragment_email_confirmation_facebook_link_logo"
+            android:id="@+id/fragment_email_confirmation_facebook_link_logo_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/fragment_email_confirmation_facebook_icon"
             android:layout_marginEnd="@dimen/margin_end_11.8dp"/>
 
         <ImageView
-            android:id="@+id/fragment_email_confirmation_twitter_link_logo"
+            android:id="@+id/fragment_email_confirmation_twitter_link_logo_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/fragment_email_confirmation_twitter_icon"
             android:layout_marginEnd="@dimen/margin_end_11.8dp"/>
 
         <ImageView
-            android:id="@+id/fragment_email_confirmation_instagram_link_logo"
+            android:id="@+id/fragment_email_confirmation_instagram_link_logo_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/fragment_email_confirmation_instagram_icon"
             android:layout_marginEnd="@dimen/margin_end_11.8dp"/>
 
         <ImageView
-            android:id="@+id/fragment_email_confirmation_email_link_logo"
+            android:id="@+id/fragment_email_confirmation_email_link_logo_image_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/fragment_email_confirmation_message_icon"/>
@@ -146,7 +146,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/fragment_email_confirmation_email_sent_by_clads"
+        android:id="@+id/fragment_email_confirmation_email_sent_by_clads_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/email_sent_by_clads"
@@ -154,7 +154,7 @@
         style="@style/email_sent_by_clads"/>
 
     <TextView
-        android:id="@+id/fragment_email_confirmation_copyright"
+        android:id="@+id/fragment_email_confirmation_copyright_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/copyright"

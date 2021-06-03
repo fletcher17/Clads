@@ -31,22 +31,13 @@ class SignUpOptionsFragment : Fragment() {
     val binding get() = _binding
     val GOOGLE_SIGN_IN_REQUEST_CODE = 200
 
-//    override fun onStart() {
-//        super.onStart()
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        val currentUser = cladsFirebaseAuth.currentUser
-//      //  updateUI(currentUser)
-//    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // get an instance of firebase authenticator
         cladsFirebaseAuth = FirebaseAuth.getInstance()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_sign_up_options, container, false)
@@ -64,14 +55,14 @@ class SignUpOptionsFragment : Fragment() {
         // display the sign in email options
         cladsGoogleSignInClient = GoogleSignIn.getClient(requireContext(), cladGoogleSignInOptions)
 
-        //  button to initiate google sign in
-//        binding.signInButton.setOnClickListener{
-//            signIn()
-//        }
+        //  button to initiate google sign in. (greyed out because id to sign in button has not been gotten)
+        //        binding.signInButton.setOnClickListener{
+        //            signIn()
+        //        }
     }
 
     private fun signIn() {
-        // sends the selected account to the server
+        // displays the select email options
         val signInIntent: Intent = cladsGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, GOOGLE_SIGN_IN_REQUEST_CODE)
     }
@@ -82,7 +73,7 @@ class SignUpOptionsFragment : Fragment() {
         // Result returned from launching the Intent from GoogleSignInClient.signInIntent(...);
         if (requestCode == GOOGLE_SIGN_IN_REQUEST_CODE) {
 
-            // task to get selected user
+            // task to get selected email
             val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
         }
@@ -126,6 +117,7 @@ class SignUpOptionsFragment : Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
+        // reset binding to null
         _binding = null
     }
 }

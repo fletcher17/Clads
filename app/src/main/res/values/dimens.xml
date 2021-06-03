@@ -3,4 +3,11 @@
     <dimen name="stroke_width_signup_options_fragment_2dp">2dp</dimen>
     <dimen name="text_size_signup_options_fragment_12sp">12sp</dimen>
     <dimen name="text_size_signup_options_fragment_14sp">14sp</dimen>
+    <dimen name="image_width_signup_options_fragment_146dp">146dp</dimen>
+    <dimen name="image_height_signup_options_fragment_41.5dp">41.5dp</dimen>
+    <dimen name="margin_bottom_signup_options_fragment_25dp">25dp</dimen>
+    <dimen name="margin_top_signup_options_fragment_27dp">27dp</dimen>
+    <dimen name="margin_top_signup_options_fragment_66dp">66dp</dimen>
+    <dimen name="margin_top_signup_options_fragment_60dp">60dp</dimen>
+    <dimen name="margin_start_signup_options_fragment_8dp">8dp</dimen>
 </resources>

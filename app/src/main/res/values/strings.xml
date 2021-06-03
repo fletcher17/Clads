@@ -2,7 +2,6 @@
     <string name="app_name">Clads</string>
     <string name="signup_options_fragment_signup_with_google_button_text">Sign up with Google</string>
     <string name="signup_options_fragment_signup_with_email_button_text">Sign up with email</string>
-    <string name="signup_options_fragment_signup_with_phone_number_button_text">Sign up with phone number</string>
     <string name="signup_options_fragment_have_an_account_text">Have an account?</string>
     <string name="signup_options_fragment_login_text">Login</string>
     <string name="hello_blank_fragment">hello blank fragment</string>

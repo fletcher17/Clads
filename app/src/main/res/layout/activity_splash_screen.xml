@@ -1,10 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activity_splash_screen"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
     tools:context=".SplashScreenActivity">
+
+
+    <ImageView
+        android:id="@+id/activity_splash_screen_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/activity_splash_screen_progressBar_gif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_bottom_9dp"
+        android:src="@drawable/progress_bar_placeholder"
+        app:layout_constraintBottom_toTopOf="@+id/activity_splash_screen_loading_text_view"
+        app:layout_constraintEnd_toEndOf="@+id/activity_splash_screen_image_view"
+        app:layout_constraintHorizontal_bias="0.404"
+        app:layout_constraintStart_toStartOf="@+id/activity_splash_screen_image_view" />
+
+    <TextView
+        android:id="@+id/activity_splash_screen_loading_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_bottom_65dp"
+        android:text="@string/activity_splash_screen_loading_"
+        android:textAppearance="@style/CladsPrimaryIcon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/activity_splash_screen_progressBar_gif"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/activity_splash_screen_progressBar_gif" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

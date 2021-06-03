@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <dimen name="stroke_width_signup_options_fragment_2dp">2dp</dimen>
     <dimen name="text_size_signup_options_fragment_12sp">12sp</dimen>
     <dimen name="text_size_signup_options_fragment_14sp">14sp</dimen>
@@ -10,4 +11,17 @@
     <dimen name="margin_top_signup_options_fragment_66dp">66dp</dimen>
     <dimen name="margin_top_signup_options_fragment_60dp">60dp</dimen>
     <dimen name="margin_start_signup_options_fragment_8dp">8dp</dimen>
+    <!-- Dimensions for Splash and Landing screens -->
+    <dimen name="corner_radius_10dp">10dp</dimen>
+    <dimen name="text_size_22sp">22sp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="margin_15dp">15dp</dimen>
+    <dimen name="margin_top_20dp">20dp</dimen>
+    <dimen name="margin_top_8dp">8dp</dimen>
+    <dimen name="margin_bottom_9dp">9dp</dimen>
+    <dimen name="margin_bottom_65dp">65dp</dimen>
+    <dimen name="margin_80dp">80dp</dimen>
+    <dimen name="padding_10dp">10dp</dimen>
+    <dimen name="stroke_width_2dp">2dp</dimen>
 </resources>

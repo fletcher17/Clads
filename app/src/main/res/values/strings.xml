@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Clads</string>
     <string name="hello_blank_fragment">hello_blank_fragment</string>
     <string name="reset_fragment_hint_email_address">Email Address</string>
@@ -23,4 +23,52 @@
     <string name="reset_new_password_fragment_new_password">New Password</string>
     <string name="all_clads_logo">clads logo</string>
     <string name="all_message_logo">Message Logo</string>
+    <string name="login_page_password">Password</string>
+    <string name="login_screen_welcome_back_tv">Welcome back</string>
+    <string name="login_screen_login_to_continue_tv">Login to continue</string>
+    <string name="login_screen_password_hint_tv">Password</string>
+    <string name="login_screen_email_hint_tv">Email Address</string>
+    <string name="login_screen_password_tv_hint">Password</string>
+    <string name="login_screen_fragment_asking_if_new_user">New user?</string>
+    <string name="login_screen_fragment_signup_for_free">Signup for free</string>
+    <string name="login_screen_fragment_forgot_password">Forgot Password?</string>
+    <string name="login_screen_fragment_login_button_text_view">Login</string>
+    <string name="login_screen_fragment_login_using_phone_text_view">Use Phone</string>
+    <string name="login_screen_fragment_sign_up_with_google">Signin with Google</string>
+    <string name="view_in_browser">view in browser</string>
+    <string name="email_confirmation">Email Confirmation</string>
+    <string name="email_confirmation_message">Hey Ijeoma, you are almost ready to start enjoying Clads. Simply click the big blue button below to verify your email</string>
+    <string name="verify_email_address">Verify Email Address</string>
+    <string name="stay_in_touch">Stay in touch</string>
+    <string name="email_sent_by_clads">email sent by Clads</string>
+    <string name="copyright">copyright 2020, All Rights Reserved</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="login">Login</string>
+    <string name="have_an_account">Have an account?</string>
+    <string name="signup">Signup</string>
+    <string name="password">Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="lets_get_to_know_you">Lets get to know you</string>
+    <string name="choose_account_category">Choose account category</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="other_name">Other Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string-array name="category_list">
+        <item>Tailor</item>
+        <item>Weaver</item>
+        <item>Client</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="account_category">Account category</string>
+    <string name="signup_options_fragment_signup_with_google_button_text">Sign up with Google</string>
+    <string name="signup_options_fragment_signup_with_email_button_text">Sign up with email</string>
+    <string name="signup_options_fragment_have_an_account_text">Have an account?</string>
+    <string name="signup_options_fragment_login_text">Login</string>
+    <string name="activity_splash_screen_loading_">Loading…</string>
+    <string name="fragment_landing_screen_title">CLADS</string>
+    <string name="generic_lorem_ipsum_string">Lorem ipsum, ipsum sum</string>
+    <string name="all_sign_up">SIGN UP</string>
+    <string name="all_login">LOGIN</string>
 </resources>

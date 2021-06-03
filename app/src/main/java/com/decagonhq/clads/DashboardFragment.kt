@@ -8,10 +8,6 @@ import androidx.fragment.app.Fragment
 
 class DashboardFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -19,9 +15,5 @@ class DashboardFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_dashboard, container, false)
-    }
-
-    companion object {
-        fun newInstance() = DashboardFragment()
     }
 }

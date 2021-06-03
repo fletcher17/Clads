@@ -1,0 +1,11 @@
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16sp"
+    android:text="@string/account_category"
+    android:fontFamily="@font/poppins"
+    android:textColor="@color/navy_blue"
+    android:ellipsize="end"
+    android:maxLines="1"
+    android:background="@drawable/category_dropdown_background"/>

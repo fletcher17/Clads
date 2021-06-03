@@ -20,9 +20,8 @@ class LandingScreenFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_landing_screen, container, false)
         _binding = FragmentLandingScreenBinding.inflate(inflater, container, false)
         return binding.root
     }

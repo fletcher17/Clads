@@ -1,7 +1,7 @@
 package com.decagonhq.clads.validator
 
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.assertEquals
+import org.junit.Assert.assertThat
 import org.junit.Test
 
 class EmailAndPasswordValidatorTest {
@@ -11,7 +11,7 @@ class EmailAndPasswordValidatorTest {
         val email = ""
         val result = EmailAndPasswordValidator.isEmailValid(email)
 
-        assertEquals(result, false)
+        assertThat(result, `is`(false))
     }
 
     @Test

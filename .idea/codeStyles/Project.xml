@@ -8,7 +8,6 @@
           <package name="io.ktor" withSubpackages="true" static="false" />
         </value>
       </option>
-      <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
     </JetCodeStyleSettings>
     <codeStyleSettings language="XML">
       <option name="FORCE_REARRANGE_MODE" value="1" />

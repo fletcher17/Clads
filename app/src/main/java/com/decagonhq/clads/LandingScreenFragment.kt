@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.decagonhq.clads.databinding.FragmentLandingScreenBinding
 
 class LandingScreenFragment : Fragment() {
+
     private var _binding: FragmentLandingScreenBinding? = null
     private val binding get() = _binding!!
 
@@ -19,7 +20,7 @@ class LandingScreenFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentLandingScreenBinding.inflate(inflater, container, false)
         return binding.root

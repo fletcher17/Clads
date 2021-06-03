@@ -32,6 +32,7 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Initializing the view binding variable
         binding = FragmentLoginBinding.inflate(
             inflater,

@@ -42,10 +42,12 @@ class LoginFragment : Fragment() {
         // Storing reference to views into variables
         showPasswordIcon = binding.loginScreenFragmentShowPasswordIcon
         hidePasswordIcon = binding.loginScreenFragmentHidePasswordIcon
+        email = binding.loginScreenFragmentEmailAddressTextView
         password = binding.loginScreenFragmentPasswordTextView
-        // Button
-        signInWithGoogleBtn = binding.loginScreenFragmentLoginButtonTextView
+        // Buttons
+        signInWithGoogleBtn = binding.linearLayout3
         loginBtn = binding.loginScreenFragmentLoginButtonTextView
+        // Text Links
         signUpForFreeLink = binding.loginScreenFragmentSignUpForFreeLinkTextView
         forgotPasswordLink = binding.loginScreenFragmentForgotPasswordTextView
 
@@ -63,15 +65,21 @@ class LoginFragment : Fragment() {
         }
 
         // Navigate to other screens at the buttons
-        signInWithGoogleBtn.setOnClickListener() {
+        loginBtn.setOnClickListener() {
             when {
                 !LoginFragmentValidation.emailValidator(email.text.toString()) -> {
                     email.error = "Invalid Email"
                 }
                 !LoginFragmentValidation.passwordValidator(password.text.toString()) -> {
-                    password.error = "6 or more characters required"
+                    password.error = "requires 6 characters or more"
                 }
                 else -> {
+                    /*
+                    Please take not that the navigation below will only work if the validation is passed
+                    however, i am only validating if the email is valid and if the password is 6 characters or more
+                    NOTE: This validation, LoginFragment.kt Class, should be updated later to include checking if the user
+                    is a registered user or not
+                     */
                     findNavController().navigate(R.id.action_login_fragment_to_dashboard_fragment)
                 }
             }
@@ -79,15 +87,15 @@ class LoginFragment : Fragment() {
 
         // Move to forgot password page at the click to the forgot password text
         forgotPasswordLink.setOnClickListener() {
-//            findNavController().navigate(R.id.action_login_fragment_to_forgot_Password_fragment)
+            findNavController().navigate(R.id.action_login_fragment_to_forgot_Password_fragment)
         }
 
         // Move to Sign up for free at the click of th Sign up for free text
         signUpForFreeLink.setOnClickListener() {
-//            findNavController().navigate()
+            findNavController().navigate(R.id.action_login_fragment_to_sign_up_options_fragment2)
         }
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        return binding.root
     }
 }

@@ -14,4 +14,10 @@
     <string name="login_screen_fragment_login_button_text_view">Login</string>
     <string name="login_screen_fragment_login_using_phone_text_view">Use Phone</string>
     <string name="login_screen_fragment_sign_up_with_google">Signin with Google</string>
+
+    <string name="activity_splash_screen_loading_">Loading…</string>
+    <string name="fragment_landing_screen_title">CLADS</string>
+    <string name="generic_lorem_ipsum_string">Lorem ipsum, ipsum sum</string>
+    <string name="all_sign_up">SIGN UP</string>
+    <string name="all_login">LOGIN</string>
 </resources>

@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LandingScreenFragment">
+    android:background="@color/blue"
+    tools:context=".ui.view.LandingScreenFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/fragment_landing_screen_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.213" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/fragment_landing_screen_lorem_ipsum_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_20dp"
+        android:text="@string/generic_lorem_ipsum_string"
+        android:textAppearance="@style/CladsLoremIpsumTextView"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_landing_screen_image_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/fragment_landing_screen_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_landing_screen_image_view" />
 
-</FrameLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_landing_screen_sign_up_button"
+        style="@style/CladsSignUpButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_15dp"
+        android:layout_marginTop="@dimen/margin_80dp"
+        android:layout_marginEnd="@dimen/margin_15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_landing_screen_lorem_ipsum_text_view" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_landing_screen_login_button"
+        style="@style/CladsLoginButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_landing_screen_sign_up_button"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/fragment_landing_screen_sign_up_button"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_landing_screen_sign_up_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,58 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_signup_options_root_layout_nested_scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    android:background="@color/deep_sky_blue"
+    android:fillViewport="true"
     tools:context=".ui.view.LandingScreenFragment">
 
-    <ImageView
-        android:id="@+id/fragment_landing_screen_image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.213" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/deep_sky_blue">
 
-    <TextView
-        android:id="@+id/fragment_landing_screen_lorem_ipsum_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top_20dp"
-        android:text="@string/generic_lorem_ipsum_string"
-        android:textAppearance="@style/CladsLoremIpsumTextView"
-        app:layout_constraintEnd_toEndOf="@+id/fragment_landing_screen_image_view"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/fragment_landing_screen_image_view"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_landing_screen_image_view" />
+        <ImageView
+            android:id="@+id/fragment_landing_screen_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.499"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.213" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/fragment_landing_screen_sign_up_button"
-        style="@style/CladsSignUpButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_15dp"
-        android:layout_marginTop="@dimen/margin_80dp"
-        android:layout_marginEnd="@dimen/margin_15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_landing_screen_lorem_ipsum_text_view" />
+        <TextView
+            android:id="@+id/fragment_landing_screen_lorem_ipsum_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_20dp"
+            android:text="@string/generic_lorem_ipsum_string"
+            android:textAppearance="@style/CladsLoremIpsumTextView"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_landing_screen_image_view"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/fragment_landing_screen_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_landing_screen_image_view" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/fragment_landing_screen_login_button"
-        style="@style/CladsLoginButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/fragment_landing_screen_sign_up_button"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/fragment_landing_screen_sign_up_button"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_landing_screen_sign_up_button" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_landing_screen_sign_up_button"
+            style="@style/CladsSignUpButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_15dp"
+            android:layout_marginTop="@dimen/margin_80dp"
+            android:layout_marginEnd="@dimen/margin_15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_landing_screen_lorem_ipsum_text_view" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_landing_screen_login_button"
+            style="@style/CladsLoginButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:layout_marginBottom="@dimen/margin_20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_landing_screen_sign_up_button"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/fragment_landing_screen_sign_up_button"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_landing_screen_sign_up_button"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
 

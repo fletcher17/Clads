@@ -1,3 +1,3 @@
 package com.decagonhq.clads.data.api
 
-interface ApiService
+interface ApiService{}

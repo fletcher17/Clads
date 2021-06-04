@@ -7,8 +7,4 @@
         android:gravity="center"
         android:drawable="@drawable/logo_icon"
         android:filter="true"/>
-    <item android:bottom="100dp">
-        <bitmap android:gravity="bottom"
-            android:src="@drawable/progress_bar_placeholder"/>
-    </item>
-</layer-list>
+ </layer-list>

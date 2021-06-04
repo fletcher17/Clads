@@ -51,11 +51,19 @@ class SignUpOptionsFragment : Fragment() {
         cladsGoogleSignInClient = GoogleSignIn.getClient(requireContext(), cladGoogleSignInOptions)
 
         binding.fragmentSignupOptionsSignupWithGoogleButton.setOnClickListener {
-            signIn()
+            googleSignIn()
+        }
+
+        binding.fragmentSignupOptionsSignupWithEmailButton.setOnClickListener {
+            findNavController().navigate(R.id.action_sign_up_options_fragment_to_email_sign_up_fragment)
+        }
+
+        binding.fragmentSignupOptionsLoginTextTextView.setOnClickListener {
+            findNavController().navigate(R.id.action_sign_up_options_fragment_to_login_fragment)
         }
     }
 
-    private fun signIn() {
+    private fun googleSignIn() {
         // displays the select email options
         val signInIntent: Intent = cladsGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, GOOGLE_SIGN_IN_REQUEST_CODE)

@@ -28,8 +28,6 @@
         <item name="strokeColor">@color/gray</item>
         <item name="android:textCursorDrawable">@drawable/cursor_appearance</item>
         <item name="android:textSize">@dimen/text_size_16sp</item>
-        <item name="boxBackgroundColor">none</item>
-
     </style>
 
     <style name="SignUpScreenSignUpButton">

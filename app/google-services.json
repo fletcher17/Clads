@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "750647454030",
+    "project_id": "cladteama-16df2",
+    "storage_bucket": "cladteama-16df2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750647454030:android:794823b208f6b3fba2961f",
+        "android_client_info": {
+          "package_name": "com.decagonhq.clads"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "750647454030-s4mc3s3sl98102or2spbhe8d4hkeu8is.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.decagonhq.clads",
+            "certificate_hash": "feca2cf1091ab9b25a2323a03bd3a3421d39e2ff"
+          }
+        },
+        {
+          "client_id": "750647454030-73pf81ug00pft25kugqmg6a76dhk1e3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBb8g6bk4b4V9ufXnKr-wBy4ncibnXxK0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "750647454030-73pf81ug00pft25kugqmg6a76dhk1e3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

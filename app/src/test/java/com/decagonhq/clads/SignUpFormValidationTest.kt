@@ -1,5 +1,6 @@
 package com.decagonhq.clads
 
+import com.decagonhq.clads.ui.view.SignUpFormValidation
 import junit.framework.Assert.assertFalse
 import junit.framework.Assert.assertTrue
 import org.junit.Test

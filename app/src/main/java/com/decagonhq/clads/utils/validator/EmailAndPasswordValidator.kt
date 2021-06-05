@@ -1,4 +1,4 @@
-package com.decagonhq.clads.validator
+package com.decagonhq.clads.utils.validator
 
 class EmailAndPasswordValidator {
     /**
@@ -20,6 +20,7 @@ class EmailAndPasswordValidator {
          * @return true if password is valid and not empty
          * @return false if otherwise
          * */
+
         fun isPasswordValid(password: String): Boolean {
             return password.isNotEmpty() && password.length > 6
         }

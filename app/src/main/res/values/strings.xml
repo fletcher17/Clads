@@ -34,7 +34,7 @@
     <string name="login_screen_fragment_forgot_password">Forgot Password?</string>
     <string name="login_screen_fragment_login_button_text_view">Login</string>
     <string name="login_screen_fragment_login_using_phone_text_view">Use Phone</string>
-    <string name="login_screen_fragment_sign_up_with_google">Signin with Google</string>
+    <string name="login_screen_fragment_sign_in_with_google">Sign in with Google</string>
     <string name="view_in_browser">view in browser</string>
     <string name="email_confirmation">Email Confirmation</string>
     <string name="email_confirmation_message">Hey Ijeoma, you are almost ready to start enjoying Clads. Simply click the big blue button below to verify your email</string>
@@ -44,7 +44,7 @@
     <string name="copyright">copyright 2020, All Rights Reserved</string>
     <string name="create_an_account">Create an account</string>
     <string name="login">Login</string>
-    <string name="have_an_account">Have an account?</string>
+    <string name="have_an_account">Have an account?<b> Login</b></string>
     <string name="signup">Signup</string>
     <string name="password">Password</string>
     <string name="email_address">Email Address</string>

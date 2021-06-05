@@ -5,15 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/sky_blue"
+    android:fillViewport="true"
+    android:layout_gravity="center"
     android:id="@+id/fragment_email_sign_up_nested_scroll_view"
-    tools:context=".EmailSignUpFragment">
+    tools:context=".ui.view.EmailSignUpFragment">
 
     <LinearLayout
         android:id="@+id/fragment_email_sign_up_screen_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
 
         <TextView
             android:id="@+id/fragment_email_sign_up_create_an_account_text_view"
@@ -32,7 +33,8 @@
             android:id="@+id/fragment_email_sign_up_first_name_layout"
             style="@style/CladsEditTextLayoutStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_40dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fragment_email_sign_up_screen_first_name_edit_text"
@@ -88,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_18dp"
-            android:layout_marginTop="@dimen/margin_40dp"
+            android:layout_marginTop="@dimen/margin_25dp"
             >
 
             <AutoCompleteTextView
@@ -126,7 +128,8 @@
             style="@style/CladsEditTextLayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true">
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/off_white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fragment_email_sign_up_screen_password_edit_text"
@@ -146,7 +149,8 @@
             style="@style/CladsEditTextLayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true">
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/off_white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fragment_email_sign_up_screen_confirm_password_edit_text"
@@ -160,10 +164,8 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+
+
         <Button
             android:id="@+id/fragment_email_sign_up_screen_sign_up_button"
             style="@style/SignUpScreenSignUpButton"
@@ -171,32 +173,19 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_18dp" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="@dimen/margin_15dp"
-            android:layout_marginBottom="@dimen/margin_100"
-            android:orientation="horizontal">
+
 
             <TextView
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:layout_marginBottom="@dimen/margin_24dp"
                 android:id="@+id/fragment_email_sign_up_have_an_account_text_view"
                 style="@style/CladSignUpScreenHaveAccountText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/fragment_email_sign_up_screen_login_text_view"
-                style="@style/CladsSignUpLoginText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
         </LinearLayout>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
 
 
 </ScrollView>

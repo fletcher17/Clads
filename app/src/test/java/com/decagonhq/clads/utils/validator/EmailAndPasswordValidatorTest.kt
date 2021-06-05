@@ -1,4 +1,4 @@
-package com.decagonhq.clads.validator
+package com.decagonhq.clads.utils.validator
 
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.assertThat

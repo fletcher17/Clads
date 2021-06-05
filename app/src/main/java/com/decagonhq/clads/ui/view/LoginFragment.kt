@@ -1,4 +1,4 @@
-package com.decagonhq.clads
+package com.decagonhq.clads.ui.view
 
 import android.os.Bundle
 import android.text.InputType
@@ -11,12 +11,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentLoginBinding
+import com.decagonhq.clads.utils.validator.LoginFragmentValidation
 
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding // view binding for this current fragment (Login fragment)
-
     // Creating variables to store views references
     private lateinit var showPasswordIcon: ImageView
     private lateinit var hidePasswordIcon: ImageView
@@ -31,7 +32,7 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         // Initializing the view binding variable
         binding = FragmentLoginBinding.inflate(
@@ -75,12 +76,6 @@ class LoginFragment : Fragment() {
                     password.error = "requires 6 characters or more"
                 }
                 else -> {
-                    /*
-                    Please take not that the navigation below will only work if the validation is passed
-                    however, i am only validating if the email is valid and if the password is 6 characters or more
-                    NOTE: This validation, LoginFragment.kt Class, should be updated later to include checking if the user
-                    is a registered user or not
-                     */
                     findNavController().navigate(R.id.action_login_fragment_to_dashboard_fragment)
                 }
             }
@@ -88,7 +83,7 @@ class LoginFragment : Fragment() {
 
         // Move to forgot password page at the click to the forgot password text
         forgotPasswordLink.setOnClickListener() {
-            findNavController().navigate(R.id.action_login_fragment_to_forgot_Password_fragment)
+            findNavController().navigate(R.id.reset_password_fragment)
         }
 
         // Move to Sign up for free at the click of th Sign up for free text

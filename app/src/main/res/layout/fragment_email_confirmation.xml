@@ -9,7 +9,7 @@
     android:fillViewport="true"
     style="@style/nested_layout"
     android:id="@+id/fragment_email_confirmation_nested_scroll_view_layout"
-    tools:context=".ui.view.EmailConfirmationFragment">
+    tools:context=".ui.view.authenticationfragments.EmailConfirmationFragment">
 
     <LinearLayout
         android:id="@+id/fragment_email_confirmation_layout"

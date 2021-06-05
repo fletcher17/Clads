@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/landing_screen_fragment"
-        android:name="com.decagonhq.clads.ui.view.LandingScreenFragment"
+        android:name="com.decagonhq.clads.ui.view.authenticationfragments.LandingScreenFragment"
         android:label="fragment_landing_screen"
         tools:layout="@layout/fragment_landing_screen" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/sign_up_options_fragment"
-        android:name="com.decagonhq.clads.ui.view.SignUpOptionsFragment"
+        android:name="com.decagonhq.clads.ui.view.authenticationfragments.SignUpOptionsFragment"
         android:label="fragment_sign_up_options"
         tools:layout="@layout/fragment_sign_up_options" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/email_sign_up_fragment"
-        android:name="com.decagonhq.clads.ui.view.EmailSignUpFragment"
+        android:name="com.decagonhq.clads.ui.view.authenticationfragments.EmailSignUpFragment"
         android:label="fragment_email_sign_up"
         tools:layout="@layout/fragment_email_sign_up" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/email_confirmation_fragment"
-        android:name="com.decagonhq.clads.ui.view.EmailConfirmationFragment"
+        android:name="com.decagonhq.clads.ui.view.authenticationfragments.EmailConfirmationFragment"
         android:label="fragment_email_confirmation"
         tools:layout="@layout/fragment_email_confirmation" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/login_fragment"
-        android:name="com.decagonhq.clads.ui.view.LoginFragment"
+        android:name="com.decagonhq.clads.ui.view.authenticationfragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login"
         app:startDestination="@id/action_login_fragment_to_sign_up_options_fragment2">
@@ -60,15 +60,12 @@
             android:id="@+id/action_login_fragment_to_forgot_Password_fragment"
             app:destination="@id/forgot_password_fragment" />
         <action
-            android:id="@+id/action_login_fragment_to_dashboard_fragment"
-            app:destination="@id/dashboard_fragment" />
-        <action
             android:id="@+id/action_login_fragment_to_sign_up_options_fragment2"
             app:destination="@id/sign_up_options_fragment" />
     </fragment>
     <fragment
         android:id="@+id/reset_password_fragment"
-        android:name="com.decagonhq.clads.ui.view.ResetPasswordFragment"
+        android:name="com.decagonhq.clads.ui.view.authenticationfragments.ResetPasswordFragment"
         android:label="fragment_reset_password"
         tools:layout="@layout/fragment_reset_password" >
         <action
@@ -77,7 +74,7 @@
     </fragment>
     <fragment
         android:id="@+id/confirm_password_reset_fragment"
-        android:name="com.decagonhq.clads.ui.view.ConfirmPasswordResetFragment"
+        android:name="com.decagonhq.clads.ui.view.authenticationfragments.ConfirmPasswordResetFragment"
         android:label="fragment_confirm_password_reset"
         tools:layout="@layout/fragment_confirm_password_reset" >
         <action
@@ -86,7 +83,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgot_password_fragment"
-        android:name="com.decagonhq.clads.ui.view.ForgotPasswordFragment"
+        android:name="com.decagonhq.clads.ui.view.authenticationfragments.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" >
         <action
@@ -96,9 +93,4 @@
             android:id="@+id/action_forgot_password_fragment_to_login_fragment"
             app:destination="@id/login_fragment" />
     </fragment>
-    <fragment
-        android:id="@+id/dashboard_fragment"
-        android:name="com.decagonhq.clads.ui.view.DashboardFragment"
-        android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
 </navigation>

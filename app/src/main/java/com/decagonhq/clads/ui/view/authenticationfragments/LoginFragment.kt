@@ -1,5 +1,6 @@
-package com.decagonhq.clads.ui.view
+package com.decagonhq.clads.ui.view.authenticationfragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentLoginBinding
+import com.decagonhq.clads.ui.view.activity.ProfileDashboardActivity
 import com.decagonhq.clads.utils.validator.LoginFragmentValidation
 
 class LoginFragment : Fragment() {
@@ -76,7 +78,7 @@ class LoginFragment : Fragment() {
                     password.error = "requires 6 characters or more"
                 }
                 else -> {
-                    findNavController().navigate(R.id.action_login_fragment_to_dashboard_fragment)
+                    startActivity(Intent(requireContext(), ProfileDashboardActivity::class.java))
                 }
             }
         }

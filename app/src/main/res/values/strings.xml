@@ -12,7 +12,7 @@
     <string name="reset_password_confirmation_fragment_view_in_browser">view in broswer</string>
     <string name="reset_password_confirmation_fragment_stay_in_touch">Stay in touch</string>
     <string name="reset_password_confirmation_fragment_reset_detail">Hi,
-    <br/>You’re almost there. To finish resetting your password, please click on the  reset button below</string>
+    <br />You’re almost there. To finish resetting your password, please click on the  reset button below</string>
     <string name="reset_password_confirmation_fragment_copyright">copyright 2020. All Rights Reserved</string>
     <string name="reset_password_confirmation_fragment_email_sent_detail">email sent by Obioma</string>
     <string name="reset_password_confirmation_fragment_company_logo">Company Logo</string>

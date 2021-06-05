@@ -1,4 +1,4 @@
-package com.decagonhq.clads.ui.view
+package com.decagonhq.clads.ui.view.authenticationfragments
 
 import java.util.regex.Pattern
 

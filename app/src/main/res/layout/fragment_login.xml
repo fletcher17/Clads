@@ -7,8 +7,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingHorizontal="@dimen/login_screen_root_element_padding_horizontal"
     android:paddingBottom="@dimen/login_screen_root_element_padding_horizontal"
-    android:background="@color/login_screen_back_ground_color"
-    tools:context=".ui.view.LoginFragment">
+    android:background="@color/deep_sky_blue"
+    tools:context=".ui.view.authenticationfragments.LoginFragment">
 
     <FrameLayout
         android:layout_width="match_parent"

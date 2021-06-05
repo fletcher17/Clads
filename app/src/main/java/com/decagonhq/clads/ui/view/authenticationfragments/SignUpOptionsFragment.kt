@@ -1,4 +1,4 @@
-package com.decagonhq.clads.ui.view
+package com.decagonhq.clads.ui.view.authenticationfragments
 
 import android.content.Intent
 import android.os.Bundle

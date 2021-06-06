@@ -1,6 +1,6 @@
 package com.decagonhq.clads
 
-import com.decagonhq.clads.ui.view.authenticationfragments.SignUpFormValidation
+import com.decagonhq.clads.utils.validator.SignUpFormValidation
 import junit.framework.Assert.assertFalse
 import junit.framework.Assert.assertTrue
 import org.junit.Test

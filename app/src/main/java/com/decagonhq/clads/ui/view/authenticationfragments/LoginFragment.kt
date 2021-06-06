@@ -38,11 +38,7 @@ class LoginFragment : Fragment() {
     private lateinit var forgotPasswordLink: TextView
     private lateinit var cladsGoogleSignInClient: GoogleSignInClient
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         // Initializing the view binding variable
         binding = FragmentLoginBinding.inflate(

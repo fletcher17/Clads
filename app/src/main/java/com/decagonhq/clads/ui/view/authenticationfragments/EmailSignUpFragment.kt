@@ -11,17 +11,14 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentEmailSignUpBinding
+import com.decagonhq.clads.utils.validator.SignUpFormValidation
 
 class EmailSignUpFragment : Fragment() {
 
     private var _binding: FragmentEmailSignUpBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         _binding = FragmentEmailSignUpBinding.inflate(inflater, container, false)
 

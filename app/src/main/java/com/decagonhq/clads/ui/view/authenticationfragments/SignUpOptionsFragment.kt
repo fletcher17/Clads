@@ -28,11 +28,7 @@ class SignUpOptionsFragment : Fragment() {
     private var _binding: FragmentSignUpOptionsBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         _binding = FragmentSignUpOptionsBinding.inflate(inflater, container, false)
         return binding.root

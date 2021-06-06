@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentSignUpOptionsBinding
+import com.decagonhq.clads.utils.GOOGLE_SIGN_IN_REQUEST_CODE
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -26,7 +27,7 @@ class SignUpOptionsFragment : Fragment() {
     private lateinit var cladsGoogleSignInClient: GoogleSignInClient
     private var _binding: FragmentSignUpOptionsBinding? = null
     private val binding get() = _binding!!
-    private val GOOGLE_SIGN_IN_REQUEST_CODE = 200
+
 
     override fun onCreateView(
         inflater: LayoutInflater,

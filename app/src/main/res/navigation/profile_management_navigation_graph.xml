@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="com.decagonhq.clads.DashboardFragment"
+        android:name="com.decagonhq.clads.ui.view.profilemanagementfragments.DashboardFragment"
         android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/messageFragment"
-        android:name="com.decagonhq.clads.MessageFragment"
+        android:name="com.decagonhq.clads.ui.view.profilemanagementfragments.MessageFragment"
         android:label="fragment_message"
         tools:layout="@layout/fragment_message" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/mediaFragment"
-        android:name="com.decagonhq.clads.MediaFragment"
+        android:name="com.decagonhq.clads.ui.view.profilemanagementfragments.MediaFragment"
         android:label="fragment_media"
         tools:layout="@layout/fragment_media" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
-        android:name="com.decagonhq.clads.EditProfileFragment"
+        android:name="com.decagonhq.clads.ui.view.profilemanagementfragments.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" >
         <action
@@ -58,12 +58,12 @@
     </fragment>
     <fragment
         android:id="@+id/addClientFragment"
-        android:name="com.decagonhq.clads.AddClientFragment"
+        android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.AddClientFragment"
         android:label="fragment_add_client"
         tools:layout="@layout/fragment_add_client" />
     <fragment
         android:id="@+id/addMeasurementFragment"
-        android:name="com.decagonhq.clads.AddMeasurementFragment"
+        android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.AddMeasurementFragment"
         android:label="fragment_add_measurement"
         tools:layout="@layout/fragment_add_measurement" >
         <action
@@ -72,7 +72,7 @@
     </fragment>
     <fragment
         android:id="@+id/addDeliveryAddressFragment"
-        android:name="com.decagonhq.clads.AddDeliveryAddressFragment"
+        android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.AddDeliveryAddressFragment"
         android:label="fragment_add_delivery_address"
         tools:layout="@layout/fragment_add_delivery_address" >
         <action
@@ -81,7 +81,7 @@
     </fragment>
     <fragment
         android:id="@+id/clientHomeFragment"
-        android:name="com.decagonhq.clads.ClientHomeFragment"
+        android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.ClientHomeFragment"
         android:label="fragment_client_home"
         tools:layout="@layout/fragment_client_home" >
         <action
@@ -90,7 +90,7 @@
     </fragment>
     <fragment
         android:id="@+id/clientDeliveryAdderssTabFragment"
-        android:name="com.decagonhq.clads.ClientDeliveryAdderssTabFragment"
+        android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.ClientDeliveryAddressTabFragment"
         android:label="fragment_client_delivery_adderss_tab"
         tools:layout="@layout/fragment_client_delivery_adderss_tab" >
         <action
@@ -99,7 +99,7 @@
     </fragment>
     <fragment
         android:id="@+id/clientMeasurementTabFragment"
-        android:name="com.decagonhq.clads.ClientMeasurementTabFragment"
+        android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.ClientMeasurementTabFragment"
         android:label="fragment_client_measurement_tab"
         tools:layout="@layout/fragment_client_measurement_tab" >
         <action

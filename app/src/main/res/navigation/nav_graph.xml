@@ -55,12 +55,12 @@
         android:name="com.decagonhq.clads.ui.view.authenticationfragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login"
-        app:startDestination="@id/action_login_fragment_to_sign_up_options_fragment2">
+        app:startDestination="@id/action_login_fragment_to_sign_up_options_fragment">
         <action
             android:id="@+id/action_login_fragment_to_forgot_Password_fragment"
             app:destination="@id/forgot_password_fragment" />
         <action
-            android:id="@+id/action_login_fragment_to_sign_up_options_fragment2"
+            android:id="@+id/action_login_fragment_to_sign_up_options_fragment"
             app:destination="@id/sign_up_options_fragment" />
     </fragment>
     <fragment

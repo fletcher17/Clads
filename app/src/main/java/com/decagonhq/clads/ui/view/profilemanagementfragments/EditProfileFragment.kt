@@ -1,10 +1,11 @@
-package com.decagonhq.clads
+package com.decagonhq.clads.ui.view.profilemanagementfragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.decagonhq.clads.R
 
 class EditProfileFragment : Fragment() {
 

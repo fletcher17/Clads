@@ -15,7 +15,14 @@ import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentLoginBinding
 import com.decagonhq.clads.ui.view.activity.ProfileDashboardActivity
+import com.decagonhq.clads.utils.GOOGLE_SIGN_IN_REQUEST_CODE
 import com.decagonhq.clads.utils.validator.LoginFragmentValidation
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 
 class LoginFragment : Fragment() {
 
@@ -29,6 +36,7 @@ class LoginFragment : Fragment() {
     private lateinit var loginBtn: Button
     private lateinit var signUpForFreeLink: TextView
     private lateinit var forgotPasswordLink: TextView
+    private lateinit var cladsGoogleSignInClient: GoogleSignInClient
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -68,6 +76,14 @@ class LoginFragment : Fragment() {
             showPasswordIcon.visibility = View.VISIBLE
         }
 
+        val cladGoogleSignInOptions =
+            GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build()
+
+        // display the sign in email options
+        cladsGoogleSignInClient = GoogleSignIn.getClient(requireContext(), cladGoogleSignInOptions)
+
         // Navigate to other screens at the buttons
         loginBtn.setOnClickListener() {
             when {
@@ -91,10 +107,52 @@ class LoginFragment : Fragment() {
 
         // Move to Sign up for free at the click of th Sign up for free text
         signUpForFreeLink.setOnClickListener() {
-            findNavController().navigate(R.id.action_login_fragment_to_sign_up_options_fragment2)
+            findNavController().navigate(R.id.action_login_fragment_to_sign_up_options_fragment)
+        }
+
+        signInWithGoogleBtn.setOnClickListener {
+           googleSignIn()
         }
 
         // Inflate the layout for this fragment
         return binding.root
     }
+
+    private fun googleSignIn() {
+        // displays the select email options
+        val signInIntent: Intent = cladsGoogleSignInClient.signInIntent
+        startActivityForResult(signInIntent, GOOGLE_SIGN_IN_REQUEST_CODE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        // Result returned from launching the Intent from GoogleSignInClient.signInIntent(...);
+        if (requestCode == GOOGLE_SIGN_IN_REQUEST_CODE) {
+
+            // task to get selected email
+            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
+            handleSignInResult(task)
+        }
+    }
+
+    private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
+        try {
+            val account = completedTask.getResult(ApiException::class.java)
+
+            if (account != null){
+                updateUI(account)
+            } else {
+                findNavController().navigate(R.id.action_login_fragment_to_sign_up_options_fragment)
+            }
+        } catch (e: ApiException) {
+            // The ApiException status code indicates the detailed failure reason.
+        }
+    }
+
+    private fun updateUI(account: GoogleSignInAccount?) {
+        // pass data to dashboard with parcelable
+        startActivity(Intent(requireContext(), ProfileDashboardActivity::class.java))
+    }
+
 }

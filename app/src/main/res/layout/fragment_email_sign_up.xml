@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/sky_blue"
+    android:background="@color/deep_sky_blue"
     android:fillViewport="true"
     android:layout_gravity="center"
     android:id="@+id/fragment_email_sign_up_nested_scroll_view"
-    tools:context=".ui.view.EmailSignUpFragment">
+    tools:context=".ui.view.authenticationfragments.EmailSignUpFragment">
 
     <LinearLayout
         android:id="@+id/fragment_email_sign_up_screen_layout"

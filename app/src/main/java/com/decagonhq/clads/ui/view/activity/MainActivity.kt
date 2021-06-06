@@ -1,4 +1,4 @@
-package com.decagonhq.clads.ui.view
+package com.decagonhq.clads.ui.view.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

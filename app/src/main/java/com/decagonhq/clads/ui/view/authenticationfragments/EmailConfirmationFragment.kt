@@ -1,4 +1,4 @@
-package com.decagonhq.clads.ui.view
+package com.decagonhq.clads.ui.view.authenticationfragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,11 +14,7 @@ class EmailConfirmationFragment : Fragment() {
     private var _binding: FragmentEmailConfirmationBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
         _binding = FragmentEmailConfirmationBinding.inflate(layoutInflater, container, false)
         val view = binding.root

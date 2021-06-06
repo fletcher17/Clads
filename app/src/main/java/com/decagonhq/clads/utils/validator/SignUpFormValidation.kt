@@ -1,4 +1,4 @@
-package com.decagonhq.clads.ui.view
+package com.decagonhq.clads.utils.validator
 
 import java.util.regex.Pattern
 

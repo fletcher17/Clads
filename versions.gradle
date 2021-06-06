@@ -16,5 +16,6 @@ ext.versions = [
         ktlint_version         : "10.0.0",
         auth_version           : "19.0.0",
         mockito_version        : "2.24.5",
-        progress_bar_version   : "1.2.17"
+        progress_bar_version   : "1.2.17",
+        viewpager_version      : "1.0.0"
 ]

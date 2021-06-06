@@ -83,6 +83,7 @@ class LoginFragment : Fragment() {
             }
         }
 
+
         // Move to forgot password page at the click to the forgot password text
         forgotPasswordLink.setOnClickListener() {
             findNavController().navigate(R.id.reset_password_fragment)

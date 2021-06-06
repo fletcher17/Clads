@@ -132,4 +132,7 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation "com.google.android.gms:play-services-auth:$versions.auth_version"
+
+    // Viewpager2
+    implementation "androidx.viewpager2:viewpager2:$versions.viewpager_version"
 }

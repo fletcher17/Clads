@@ -11,7 +11,7 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.decagonhq.clads.ui.view.ResetPasswordFragment
+import com.decagonhq.clads.ui.view.authenticationfragments.ResetPasswordFragment
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

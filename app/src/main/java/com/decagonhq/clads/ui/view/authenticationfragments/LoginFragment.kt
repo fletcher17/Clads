@@ -99,7 +99,6 @@ class LoginFragment : Fragment() {
             }
         }
 
-
         // Move to forgot password page at the click to the forgot password text
         forgotPasswordLink.setOnClickListener() {
             findNavController().navigate(R.id.reset_password_fragment)
@@ -111,7 +110,7 @@ class LoginFragment : Fragment() {
         }
 
         signInWithGoogleBtn.setOnClickListener {
-           googleSignIn()
+            googleSignIn()
         }
 
         // Inflate the layout for this fragment
@@ -140,7 +139,7 @@ class LoginFragment : Fragment() {
         try {
             val account = completedTask.getResult(ApiException::class.java)
 
-            if (account != null){
+            if (account != null) {
                 updateUI(account)
             } else {
                 findNavController().navigate(R.id.action_login_fragment_to_sign_up_options_fragment)
@@ -154,5 +153,4 @@ class LoginFragment : Fragment() {
         // pass data to dashboard with parcelable
         startActivity(Intent(requireContext(), ProfileDashboardActivity::class.java))
     }
-
 }

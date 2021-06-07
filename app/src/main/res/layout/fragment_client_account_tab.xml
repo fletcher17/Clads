@@ -21,7 +21,7 @@
                 android:layout_marginStart="@dimen/margin_10dp"
                 android:layout_marginEnd="@dimen/margin_10dp"
                 app:layout_constraintTop_toTopOf="parent"
-                app:prefixText="Name"
+                app:prefixText="First Name"
                 app:prefixTextColor="#0A2E65"
                 app:prefixTextAppearance="@style/add_client_fragment_name">
 
@@ -29,9 +29,33 @@
                     style="@style/add_client_fragment_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/bawo_nelson"
+                    android:text="@string/An"
                     android:textAlignment="textEnd" />
             </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/client_account_fragment_client_last_name_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundMode="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/margin_10dp"
+                android:layout_marginEnd="@dimen/margin_10dp"
+                app:layout_constraintTop_toBottomOf="@id/client_account_fragment_client_name_input_layout"
+                app:prefixText="Last Name"
+                app:prefixTextColor="#0A2E65"
+                app:prefixTextAppearance="@style/add_client_fragment_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/add_client_fragment_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Droid"
+                    android:textAlignment="textEnd" />
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/client_account_fragment_phone_number_input_layout"
@@ -42,7 +66,7 @@
                 app:boxBackgroundMode="none"
                 app:layout_constraintEnd_toEndOf="@+id/client_account_fragment_client_name_input_layout"
                 app:layout_constraintStart_toStartOf="@+id/client_account_fragment_client_name_input_layout"
-                app:layout_constraintTop_toBottomOf="@+id/client_account_fragment_client_name_input_layout"
+                app:layout_constraintTop_toBottomOf="@+id/client_account_fragment_client_last_name_input_layout"
                 app:prefixText="@string/phone_number"
                 app:prefixTextAppearance="@style/add_client_fragment_name"
                 app:prefixTextColor="#0A2E65">
@@ -79,7 +103,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <RadioGroup
-                android:id="@+id/radioGroup"
+                android:id="@+id/client_fragment_account_tab_radioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
@@ -87,7 +111,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintStart_toEndOf="@+id/add_client_account_tab_gender_text_view"
                 app:layout_constraintTop_toBottomOf="@+id/client_account_fragment_email_address_input_layout">
 
                 <RadioButton
@@ -112,46 +136,16 @@
             </RadioGroup>
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/add_client_account_tab_gender_text_view"
                 style="@style/add_client_fragment_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_15dp"
                 android:layout_marginBottom="@dimen/margin_16dp"
                 android:text="@string/gender"
-                app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
+                app:layout_constraintBottom_toBottomOf="@+id/client_fragment_account_tab_radioGroup"
                 app:layout_constraintStart_toStartOf="@+id/client_account_fragment_email_address_input_layout"/>
 
-            <TextView
-                android:id="@+id/deliveryAddress"
-                style="@style/add_client_fragment_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="42dp"
-                android:text="@string/delivery_address"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/address_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_24_dp"
-                android:layout_marginStart="@dimen/margin_10dp"
-                android:layout_marginEnd="@dimen/margin_10dp"
-                app:boxBackgroundMode="none"
-                app:hintEnabled="false"
-                app:layout_constraintTop_toBottomOf="@+id/deliveryAddress">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    app:prefixTextAppearance="@style/add_client_fragment_name"
-                    style="@style/add_client_fragment_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:layout_width="match_parent"
@@ -160,9 +154,8 @@
                 android:text="@string/next"
                 style="@style/add_client_fragment_next_button"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/address_layout"
-                app:layout_constraintStart_toStartOf="@+id/deliveryAddress"
-                app:layout_constraintTop_toBottomOf="@id/address_layout" />
+                app:layout_constraintStart_toStartOf="@+id/add_client_account_tab_gender_text_view"
+                app:layout_constraintTop_toBottomOf="@id/add_client_account_tab_gender_text_view" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

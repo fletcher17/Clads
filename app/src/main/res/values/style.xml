@@ -107,6 +107,20 @@
         <item name="hintEnabled">false</item>
     </style>
 
+    <style name="add_client_fragment_add_client_text_View">
+        <item name="android:layout_marginTop">@dimen/dimen_44_dp</item>
+        <item name="android:layout_marginLeft">@dimen/margin_27dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_24_dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_25_sp</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textColor">#0A2E65</item>
+    </style>
+    <style name="add_client_fragment_name">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textColor">#506992</item>
+    </style>
 </resources>
 
 

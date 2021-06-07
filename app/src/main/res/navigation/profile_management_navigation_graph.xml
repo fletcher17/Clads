@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/profile_management_navigation_graph"
-    app:startDestination="@id/dashboardFragment">
+    app:startDestination="@id/addClientFragment">
 
     <fragment
         android:id="@+id/dashboardFragment"
@@ -60,7 +60,11 @@
         android:id="@+id/addClientFragment"
         android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.AddClientFragment"
         android:label="fragment_add_client"
-        tools:layout="@layout/fragment_add_client" />
+        tools:layout="@layout/fragment_add_client" >
+        <action
+            android:id="@+id/action_addClientFragment_to_clientHomeFragment"
+            app:destination="@id/clientHomeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addMeasurementFragment"
         android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.AddMeasurementFragment"

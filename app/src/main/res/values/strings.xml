@@ -71,4 +71,8 @@
     <string name="generic_lorem_ipsum_string">Lorem ipsum, ipsum sum</string>
     <string name="all_sign_up">SIGN UP</string>
     <string name="all_login">LOGIN</string>
+    <string name="add_client">Add Client</string>
+    <string name="client_account">Client Account</string>
+    <string name="measurements">Measurements</string>
+    <string name="delivery_addresses">Delivery Addresses</string>
 </resources>

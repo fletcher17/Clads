@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/dimen_24_dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.profilemanagementfragments.ProfileAccountFragment">
+
+    <ImageView
+        android:id="@+id/fragment_profile_account_profile_image_view"
+        android:layout_width="@dimen/margin_100"
+        android:layout_height="@dimen/margin_100"
+        android:src="@drawable/fragment_profile_account_profile_photo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.096" />
+
+    <TextView
+        android:id="@+id/fragment_profile_account_tap_to_change_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins"
+        android:letterSpacing="0.05"
+        android:text="@string/edit_profile_fragment_tap_to_change_picture_text"
+        android:textSize="@dimen/text_size_12sp"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_profile_account_profile_image_view"
+        app:layout_constraintStart_toStartOf="@+id/fragment_profile_account_profile_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_profile_image_view" />
+
+    <View
+        android:id="@+id/fragment_profile_account_horizontal_divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="18dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_tap_to_change_text_view" />
+
+    <TextView
+        android:id="@+id/fragment_profile_account_first_name_text_view"
+        style="@style/ProfileAccountTextView"
+        android:text="@string/edit_profile_fragment_first_name_text"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_account_first_name_edit_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fragment_profile_account_first_name_edit_text" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/fragment_profile_account_first_name_edit_text"
+        style="@style/ProfileAccountEditText"
+        android:hint="@string/edit_profile_fragment_first_name_popup_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/fragment_profile_account_first_name_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_horizontal_divider" />
+
+    <TextView
+        android:id="@+id/fragment_profile_account_last_name_text_view"
+        style="@style/ProfileAccountTextView"
+        android:text="@string/edit_profile_fragment_last_name_text"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_account_last_name_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/fragment_profile_account_first_name_text_view"
+        app:layout_constraintTop_toTopOf="@+id/fragment_profile_account_last_name_edit_text" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/fragment_profile_account_last_name_edit_text"
+        style="@style/ProfileAccountEditText"
+        android:hint="@string/edit_profile_fragment_last_name_popup_hint"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_profile_account_first_name_edit_text"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/fragment_profile_account_last_name_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_first_name_edit_text" />
+
+    <TextView
+        android:id="@+id/fragment_profile_account_other_name_text_view"
+        style="@style/ProfileAccountTextView"
+        android:text="@string/edit_profile_fragment_other_name_text"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_account_other_name_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/fragment_profile_account_last_name_text_view"
+        app:layout_constraintTop_toTopOf="@+id/fragment_profile_account_other_name_edit_text" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/fragment_profile_account_other_name_edit_text"
+        style="@style/ProfileAccountEditText"
+        android:hint="@string/edit_profile_fragment_other_name_popup_hint"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_profile_account_last_name_edit_text"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/fragment_profile_account_other_name_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_last_name_edit_text" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

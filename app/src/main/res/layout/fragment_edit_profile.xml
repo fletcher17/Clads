@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".ui.view.profilemanagementfragments.EditProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+
+        <TextView
+            android:id="@+id/edit_profile_fragment_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_27dp"
+            android:layout_marginTop="@dimen/margin_top_20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:letterSpacing="@dimen/letter_spacing_0.05"
+            android:text="@string/edit_profile_fragment_title"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/text_size_20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/edit_profile_fragment_tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_profile_fragment_title"
+            app:tabIndicatorColor="@color/deep_sky_blue"
+            app:tabSelectedTextColor="@color/deep_sky_blue"
+            app:tabTextAppearance="@style/EditProfileTabLayoutTabText"
+            app:tabTextColor="@color/login_screen_grey_color" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/edit_profile_fragment_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_0_dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_profile_fragment_tabLayout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+

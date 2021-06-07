@@ -10,14 +10,14 @@ import com.decagonhq.clads.ui.view.cliientmanagementfragments.ClientMeasurementT
 
 private const val ADD_CLIENTS_VIEW_PAGER_FRAGMENTS_COUNT = 3
 
-class AddClientFragmentViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle): FragmentStateAdapter(fragmentManager, lifecycle) {
+class AddClientFragmentViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fragmentManager, lifecycle) {
 
     override fun getItemCount(): Int {
         return ADD_CLIENTS_VIEW_PAGER_FRAGMENTS_COUNT
     }
 
     override fun createFragment(position: Int): Fragment {
-        return when (position){
+        return when (position) {
             0 -> ClientAccountTabFragment()
             1 -> ClientMeasurementTabFragment()
             2 -> ClientDeliveryAddressTabFragment()

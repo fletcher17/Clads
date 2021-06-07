@@ -7,13 +7,12 @@
         android:layout_height="match_parent"
     tools:context=".ui.view.cliientmanagementfragments.ClientAccountTabFragment">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout"
+                android:id="@+id/client_account_fragment_client_name_input_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxBackgroundMode="none"
@@ -30,21 +29,21 @@
                     style="@style/add_client_fragment_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bawo Nelson"
+                    android:text="@string/bawo_nelson"
                     android:textAlignment="textEnd" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout2"
+                android:id="@+id/client_account_fragment_phone_number_input_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_10dp"
                 android:layout_marginEnd="@dimen/margin_10dp"
                 app:boxBackgroundMode="none"
-                app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-                app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-                app:prefixText="Phone Number"
+                app:layout_constraintEnd_toEndOf="@+id/client_account_fragment_client_name_input_layout"
+                app:layout_constraintStart_toStartOf="@+id/client_account_fragment_client_name_input_layout"
+                app:layout_constraintTop_toBottomOf="@+id/client_account_fragment_client_name_input_layout"
+                app:prefixText="@string/phone_number"
                 app:prefixTextAppearance="@style/add_client_fragment_name"
                 app:prefixTextColor="#0A2E65">
 
@@ -52,29 +51,29 @@
                     style="@style/add_client_fragment_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="07052215845"
+                    android:text="@string/_07052215845"
                     android:textAlignment="textEnd" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout3"
+                android:id="@+id/client_account_fragment_email_address_input_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:boxBackgroundMode="none"
-                app:layout_constraintEnd_toEndOf="@id/textInputLayout2"
-                app:layout_constraintStart_toStartOf="@id/textInputLayout2"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+                app:layout_constraintEnd_toEndOf="@id/client_account_fragment_phone_number_input_layout"
+                app:layout_constraintStart_toStartOf="@id/client_account_fragment_phone_number_input_layout"
+                app:layout_constraintTop_toBottomOf="@+id/client_account_fragment_phone_number_input_layout"
                 android:layout_marginStart="@dimen/margin_10dp"
                 android:layout_marginEnd="@dimen/margin_10dp"
                 app:prefixTextColor="#0A2E65"
-                app:prefixText="Email Address"
+                app:prefixText="@string/email_address"
                 app:prefixTextAppearance="@style/add_client_fragment_name">
 
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/add_client_fragment_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="bawonelson@gmail.com"
+                    android:text="@string/bawonelson_gmail_com"
                     android:fontFamily="@font/poppins"
                     android:textAlignment="textEnd" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -89,27 +88,27 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+                app:layout_constraintTop_toBottomOf="@+id/client_account_fragment_email_address_input_layout">
 
                 <RadioButton
                     android:id="@+id/radio_button_1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
+                    android:layout_gravity="start"
                     android:gravity="center"
                     style="@style/add_client_fragment_name"
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp"
-                    android:text="Male" />
+                    android:text="@string/male" />
 
                 <RadioButton
                     android:id="@+id/radio_button_2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingStart="15dp"
+                    android:paddingStart="@dimen/margin_15dp"
                     style="@style/add_client_fragment_name"
                     android:fontFamily="@font/poppins"
-                    android:text="Female" />
+                    android:text="@string/female" />
             </RadioGroup>
 
             <TextView
@@ -119,9 +118,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_15dp"
                 android:layout_marginBottom="@dimen/margin_16dp"
-                android:text="Gender"
+                android:text="@string/gender"
                 app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
-                app:layout_constraintStart_toStartOf="@+id/textInputLayout3"/>
+                app:layout_constraintStart_toStartOf="@+id/client_account_fragment_email_address_input_layout"/>
 
             <TextView
                 android:id="@+id/deliveryAddress"
@@ -129,7 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="42dp"
-                android:text="Delivery Address"
+                android:text="@string/delivery_address"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/textView"
@@ -151,23 +150,15 @@
                     app:prefixTextAppearance="@style/add_client_fragment_name"
                     style="@style/add_client_fragment_name"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:boxStrokeColor="#80C4C4C4"
-                    />
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/dimen_24_dp"
-                android:layout_marginTop="@dimen/margin_10dp"
-                android:layout_marginEnd="@dimen/dimen_24_dp"
-                android:layout_marginBottom="@dimen/margin_10dp"
-                android:backgroundTint="#0066F5"
-                android:fontFamily="@font/poppins_bold"
                 android:paddingHorizontal="16dp"
-                android:text="Next"
-                android:textAllCaps="false"
+                android:text="@string/next"
+                style="@style/add_client_fragment_next_button"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/address_layout"
                 app:layout_constraintStart_toStartOf="@+id/deliveryAddress"

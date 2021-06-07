@@ -75,4 +75,13 @@
     <string name="client_account">Client Account</string>
     <string name="measurements">Measurements</string>
     <string name="delivery_addresses">Delivery Addresses</string>
+    <string name="gender">Gender</string>
+    <string name="delivery_address">Delivery Address</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="next">Next</string>
+    <string name="bawonelson_gmail_com">bawonelson@gmail.com</string>
+    <string name="bawo_nelson">Bawo Nelson</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="_07052215845">07052215845</string>
 </resources>

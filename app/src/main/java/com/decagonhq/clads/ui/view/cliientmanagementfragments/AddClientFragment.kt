@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentAddClientBinding
@@ -44,7 +43,7 @@ class AddClientFragment : Fragment() {
 
         tabLayout = binding.addClientFragmentTabLayout
 
-        TabLayoutMediator(tabLayout, viewPager2) {tab, position ->
+        TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
             when (position) {
                 0 -> tab.text = getString(R.string.client_account)
                 1 -> tab.text = getString(R.string.measurements)

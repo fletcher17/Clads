@@ -18,7 +18,6 @@ class AddClientFragment : Fragment() {
      * The pager widget, which handles animation and allows swiping horizontally to access previous
      * and next wizard steps.
      */
-
     private lateinit var viewPager2: ViewPager2
     private lateinit var tabLayout: TabLayout
 
@@ -41,8 +40,10 @@ class AddClientFragment : Fragment() {
         // The pager adapter, which provides the pages to the view pager widget.
         viewPager2.adapter = AddClientFragmentViewPagerAdapter(requireActivity().supportFragmentManager, lifecycle)
 
+        // instantiate tab layout
         tabLayout = binding.addClientFragmentTabLayout
 
+        // link up tab layout with viewpager2
         TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
             when (position) {
                 0 -> tab.text = getString(R.string.client_account)

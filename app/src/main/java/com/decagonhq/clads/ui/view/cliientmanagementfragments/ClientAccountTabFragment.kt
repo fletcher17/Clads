@@ -5,6 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.decagonhq.clads.R
+import com.decagonhq.clads.data.model.ClientDetails
 import com.decagonhq.clads.databinding.FragmentClientAccountTabBinding
 
 class ClientAccountTabFragment : Fragment() {
@@ -13,9 +16,42 @@ class ClientAccountTabFragment : Fragment() {
     private var _binding: FragmentClientAccountTabBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
         _binding = FragmentClientAccountTabBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // get reference to radio group
+        val radioGroup = binding.clientFragmentAccountTabRadioGroup
+
+        // client gender variable
+        var clientGender = ""
+
+        radioGroup.setOnCheckedChangeListener { radioGroup, checkedId ->
+            // Responds to child RadioButton checked/unchecked
+
+            when (checkedId) {
+                binding.radioButtonMale.id -> clientGender = "Male"
+                binding.radioButtonFemale.id -> clientGender = "Female"
+            }
+        }
+
+        // get client details for saving
+        binding.addClientAccountTabNextButton.setOnClickListener {
+            val clientFirstName = binding.clientAccountFragmentClientFirstNameInput.text.toString().trim()
+            val clientLastName = binding.clientAccountFragmentClientLastNameInput.text.toString().trim()
+            val clientPhone = binding.clientAccountFragmentClientPhoneNumberInput.text.toString().trim()
+            val clientEmail = binding.clientAccountFragmentClientEmailInput.text.toString().trim()
+
+            // create a new client object from the data
+            var client = ClientDetails(clientFirstName, clientLastName, clientPhone, clientEmail, clientGender)
+
+            // navigate to next tab
+            findNavController().navigate(R.id.clientMeasurementTabFragment)
+        }
     }
 }

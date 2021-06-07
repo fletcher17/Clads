@@ -64,6 +64,9 @@
         <action
             android:id="@+id/action_addClientFragment_to_clientHomeFragment"
             app:destination="@id/clientHomeFragment" />
+        <action
+            android:id="@+id/action_addClientFragment_to_addMeasurementFragment"
+            app:destination="@id/addMeasurementFragment" />
     </fragment>
     <fragment
         android:id="@+id/addMeasurementFragment"
@@ -73,6 +76,9 @@
         <action
             android:id="@+id/action_addMeasurementFragment_to_clientMeasurementTabFragment"
             app:destination="@id/clientMeasurementTabFragment" />
+        <action
+            android:id="@+id/action_addMeasurementFragment_to_addClientFragment"
+            app:destination="@id/addClientFragment" />
     </fragment>
     <fragment
         android:id="@+id/addDeliveryAddressFragment"

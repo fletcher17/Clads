@@ -86,4 +86,8 @@
     <string name="_07052215845">07052215845</string>
     <string name="An">An</string>
     <string name="Droid">Droid</string>
+    <string name="enter_first_name">enter first name</string>
+    <string name="enter_last_name">enter last name</string>
+    <string name="enter_phone_number">enter  phone number</string>
+    <string name="enter_email_adderss">enter email adderss</string>
 </resources>

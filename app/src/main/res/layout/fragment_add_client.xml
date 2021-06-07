@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/add_client_fragment_nested_scroll_view_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.view.cliientmanagementfragments.AddClientFragment">
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <TextView
-        android:id="@+id/add_client_fragment_add_contact_text"
+        android:id="@+id/add_client_fragment_add_client_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -26,7 +32,7 @@
         app:layout_constraintBottom_toTopOf="@id/add_client_fragment_view_pager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_client_fragment_add_contact_text"
+        app:layout_constraintTop_toBottomOf="@+id/add_client_fragment_add_client_text"
         app:tabTextAppearance="@style/TextAppearance.AppCompat.Body2">
 
         <com.google.android.material.tabs.TabItem
@@ -58,3 +64,4 @@
     </androidx.viewpager2.widget.ViewPager2>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -153,4 +153,5 @@
 
     <dimen name="add_client_fragment_horizontal_divider_view_height">1dp</dimen>
     <dimen name="add_client_fragment_horizontal_divider_view_margin_top">10dp</dimen>
+    <dimen name="padding_20_dp">20dp</dimen>
 </resources>

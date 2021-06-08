@@ -9,7 +9,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/client_account_fragment_client_first_name_input_layout"
@@ -143,21 +143,18 @@
 
             <TextView
                 android:id="@+id/add_client_account_tab_gender_text_view"
-                style="@style/input_text_style"
+                style="@style/add_client_account_gender_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_15dp"
-                android:layout_marginBottom="@dimen/margin_16dp"
                 android:text="@string/gender"
                 app:layout_constraintBottom_toBottomOf="@+id/client_fragment_account_tab_radioGroup"
                 app:layout_constraintStart_toStartOf="@+id/client_account_fragment_email_address_input_layout"/>
-
 
             <Button
                 android:id="@+id/add_client_account_tab_next_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingHorizontal="@dimen/padding_16_dp"
+                android:paddingHorizontal="@dimen/padding_20_dp"
                 android:text="@string/next"
                 style="@style/add_client_fragment_next_button"
                 app:layout_constraintBottom_toBottomOf="parent"

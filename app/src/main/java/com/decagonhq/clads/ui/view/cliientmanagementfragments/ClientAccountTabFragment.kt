@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.decagonhq.clads.data.model.ClientDetails
 import com.decagonhq.clads.databinding.FragmentClientAccountTabBinding
 import com.decagonhq.clads.utils.IButtonClick
 
@@ -49,7 +48,7 @@ class ClientAccountTabFragment : Fragment() {
             val clientEmail = binding.clientAccountFragmentClientEmailInput.text.toString().trim()
 
             // create a new client object from the data
-            var client = ClientDetails(clientFirstName, clientLastName, clientPhone, clientEmail, clientGender)
+            // var client = ClientDetails(clientFirstName, clientLastName, clientPhone, clientEmail, clientGender)
 
             // navigate to next tab
             (parentFragment as IButtonClickInterface).buttonClick()

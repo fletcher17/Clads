@@ -107,12 +107,16 @@
     <style name="add_client_fragment_add_client_text_View">
         <item name="android:layout_marginTop">@dimen/dimen_44_dp</item>
         <item name="android:layout_marginLeft">@dimen/margin_27dp</item>
-        <item name="android:layout_marginBottom">@dimen/dimen_15_dp</item>
+        <item name="android:layout_marginBottom">@dimen/margin_16dp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">top</item>
         <item name="android:textSize">@dimen/text_size_20_sp</item>
         <item name="android:letterSpacing">0.1</item>
         <item name="android:textColor">@color/navy_blue</item>
+    </style>
+    <style name="add_client_account_gender_style" parent="input_text_style">
+        <item name="android:layout_marginStart">@dimen/margin_15dp</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_16_dp</item>
     </style>
     <style name="input_text_style">
         <item name="android:textAlignment">textEnd</item>
@@ -157,14 +161,11 @@
         <item name="prefixTextAppearance">@style/prefix_text_style</item>
     </style>
     <style name="tab_layout_style">
-        <item name="tabMode">scrollable</item>
         <item name="android:gravity">fill</item>
         <item name="paddingEnd">@dimen/padding_15_dp</item>
         <item name="tabPaddingStart">@dimen/padding_15_dp</item>
         <item name="tabTextAppearance">@style/TextAppearance.AppCompat.Medium</item>
     </style>
-
-    <dimen name="dimen_15_dp">15dp</dimen>
 </resources>
 
 

@@ -22,13 +22,14 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/add_client_fragment_tab_layout"
+        style="@style/tab_layout_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/tab_layout_style"
         app:layout_constraintBottom_toTopOf="@id/add_client_fragment_view_pager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_client_fragment_add_client_text">
+        app:layout_constraintTop_toBottomOf="@+id/add_client_fragment_add_client_text"
+        app:tabMode="scrollable">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"

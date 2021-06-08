@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/margin_8dp"
-    android:layout_marginBottom="@dimen/margin_8dp">
+    android:layout_marginBottom="@dimen/margin_3dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_18dp"
         android:layout_marginEnd="@dimen/margin_18dp"
-        android:layout_marginBottom="@dimen/margin_4dp"
+        android:layout_marginBottom="@dimen/margin_2dp"
         android:background="@drawable/fragment_client_list_screen_recycler_drawable_border"
         android:orientation="horizontal"
         android:paddingVertical="@dimen/padding_10dp"

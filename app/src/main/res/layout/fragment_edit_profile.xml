@@ -35,6 +35,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_profile_fragment_title"
             app:tabIndicatorColor="@color/deep_sky_blue"
+            app:tabRippleColor="@color/white"
             app:tabSelectedTextColor="@color/deep_sky_blue"
             app:tabTextAppearance="@style/EditProfileTabLayoutTabText"
             app:tabTextColor="@color/login_screen_grey_color" />

@@ -109,4 +109,12 @@
     <string name="edit_profile_fragment_gender_hint">Gender</string>
     <string name="female">Female</string>
     <string name="male">Male</string>
+    <string name="profile_account_fragment_other_name_dialog_fragment_tag">otherNameDialog</string>
+    <string name="profile_account_fragment_last_name_dialog_fragment_tag">lastNameDialog</string>
+    <string name="profile_account_fragment_first_name_dialog_fragment_tag">firstNameDialog</string>
+    <string name="profile_account_fragment_showroom_address_dialog_fragment_tag">showroomDialog</string>
+    <string name="profile_account_fragment_workshop_address_dialog_fragment_tag">workshopDialog</string>
+    <string name="profile_account_fragment_number_of_employees_dialog_fragment_tag">numberOfEmployeesDialog</string>
+    <string name="profile_account_fragment_legal_status_dialog_fragment_tag">legalStatusDialog</string>
+    <string name="profile_account_fragment_gender_dialog_fragment_tag">genderDialog</string>
 </resources>

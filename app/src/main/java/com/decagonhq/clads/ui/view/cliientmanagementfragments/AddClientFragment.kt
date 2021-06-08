@@ -12,12 +12,13 @@ import com.decagonhq.clads.ui.adapters.viewpagersadapters.AddClientFragmentViewP
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class AddClientFragment : Fragment() {
+class AddClientFragment : Fragment(), ClientAccountTabFragment.IButtonClickInterface {
 
     /**
      * The pager widget, which handles animation and allows swiping horizontally to access previous
      * and next wizard steps.
      */
+
     private lateinit var viewPager2: ViewPager2
     private lateinit var tabLayout: TabLayout
 
@@ -37,11 +38,11 @@ class AddClientFragment : Fragment() {
         // Instantiate a ViewPager2 and a PagerAdapter.
         viewPager2 = binding.addClientFragmentViewPager
 
-        // The pager adapter, which provides the pages to the view pager widget.
-        viewPager2.adapter = AddClientFragmentViewPagerAdapter(requireActivity().supportFragmentManager, lifecycle)
-
         // instantiate tab layout
         tabLayout = binding.addClientFragmentTabLayout
+
+        // The pager adapter, which provides the pages to the view pager widget.
+        viewPager2.adapter = AddClientFragmentViewPagerAdapter(childFragmentManager, lifecycle)
 
         // link up tab layout with viewpager2
         TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
@@ -51,5 +52,9 @@ class AddClientFragment : Fragment() {
                 2 -> tab.text = getString(R.string.delivery_addresses)
             }
         }.attach()
+    }
+
+    override fun buttonClick() {
+        viewPager2.currentItem = 1
     }
 }

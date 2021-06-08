@@ -5,16 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.decagonhq.clads.R
 import com.decagonhq.clads.data.model.ClientDetails
 import com.decagonhq.clads.databinding.FragmentClientAccountTabBinding
+import com.decagonhq.clads.utils.IButtonClick
 
 class ClientAccountTabFragment : Fragment() {
 
     // view binding
     private var _binding: FragmentClientAccountTabBinding? = null
     private val binding get() = _binding!!
+
+    interface IButtonClickInterface : IButtonClick
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
@@ -51,7 +52,7 @@ class ClientAccountTabFragment : Fragment() {
             var client = ClientDetails(clientFirstName, clientLastName, clientPhone, clientEmail, clientGender)
 
             // navigate to next tab
-            findNavController().navigate(R.id.clientMeasurementTabFragment)
+            (parentFragment as IButtonClickInterface).buttonClick()
         }
     }
 }

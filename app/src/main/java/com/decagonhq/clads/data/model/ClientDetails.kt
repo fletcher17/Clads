@@ -1,9 +1,11 @@
 package com.decagonhq.clads.data.model
 
 data class ClientDetails(
-    var firstName: String,
-    var lastName: String,
-    var phoneNumber: String,
-    var email: String,
-    var gender: String
+    var firstName: String? = null,
+    var lastName: String? = null,
+    var phoneNumber: String? = null,
+    var email: String? = null,
+    var gender: String? = null,
+    var address: String? = null,
+    var measurement: MutableList<MutableMap<String, String>>
 )

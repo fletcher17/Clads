@@ -149,4 +149,8 @@
     <dimen name="padding_10dp">10dp</dimen>
     <dimen name="stroke_width_2dp">2dp</dimen>
     <dimen name="padding_16_dp">16dp</dimen>
+    <dimen name="padding_15_dp">15dp</dimen>
+
+    <dimen name="add_client_fragment_horizontal_divider_view_height">1dp</dimen>
+    <dimen name="add_client_fragment_horizontal_divider_view_margin_top">10dp</dimen>
 </resources>

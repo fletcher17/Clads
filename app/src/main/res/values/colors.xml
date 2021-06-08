@@ -21,5 +21,12 @@
     <color name="off_white">#F2F2F2</color>
     <color name="navy_blue">#0A2E65</color>
     <color name="grey">#99FFFFFF</color>
+    <color name="dark_gray">#4A4A4A</color>
+    <color name="client_home_background_color_1">#DF3F3E</color>
+    <color name="client_home_background_color_2">#E9AB43</color>
+    <color name="client_home_background_color_3">#F8F81F</color>
+    <color name="client_home_background_color_4">#60CF83</color>
+    <color name="client_home_background_color_5">#2A6A73</color>
+    <color name="client_home_background_color_6">#E5BD85</color>
     <color name="mtrl_textinput_default_box_stroke_color">#F2F2F2</color>
 </resources>

@@ -71,4 +71,15 @@
     <string name="generic_lorem_ipsum_string">Lorem ipsum, ipsum sum</string>
     <string name="all_sign_up">SIGN UP</string>
     <string name="all_login">LOGIN</string>
+    <string name="you_have_not_clients_yet">You have no clients yet</string>
+    <string name="client_list_image_description">Float button to add new client</string>
+    <string name="clients">Clients</string>
+    <string name="lagos">Lagos</string>
+    <string name="nelson">Nelson</string>
+    <string name="bawo">Bawo</string>
+    <string name="b">B</string>
+    <string name="n">N</string>
+    <string name="client_home_location_pointer_icon">client home location pointer icon</string>
+    <string name="client_home_screen_female_emoji_placeholder">client home screen female emoji placeholder</string>
+    <string name="client_home_screen_male_emoji_placeholder">client home screen male emoji placeholder</string>
 </resources>

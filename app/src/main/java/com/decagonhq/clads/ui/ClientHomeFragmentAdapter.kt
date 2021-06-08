@@ -1,0 +1,89 @@
+package com.decagonhq.clads.ui
+
+import android.content.Context
+import android.graphics.drawable.Drawable
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.RecyclerView
+import com.decagonhq.clads.R
+import com.decagonhq.clads.databinding.FragmentClientListRecyclerViewLayoutLookBinding
+import com.decagonhq.clads.models.ClientListAddClientModel
+import kotlin.collections.ArrayList
+import kotlin.math.roundToInt
+
+class ClientHomeFragmentAdapter(private var clientDetailsList: ArrayList<ClientListAddClientModel>) :
+    RecyclerView.Adapter<ClientHomeFragmentAdapter.ClientHomeFragmentViewHolder>() {
+    private var context: Context? = null
+
+    fun setClientHomeAdapterList(clientDetailsList: ArrayList<ClientListAddClientModel>) {
+        this.clientDetailsList = clientDetailsList
+    }
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ClientHomeFragmentViewHolder {
+
+        if (context == null)
+            context = parent.context
+
+        // INFLATING THE LAYOUT FOR THIS FRAGMENT
+        val binding = FragmentClientListRecyclerViewLayoutLookBinding.inflate(
+            LayoutInflater.from(context),
+            parent,
+            false
+        )
+        return ClientHomeFragmentViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: ClientHomeFragmentViewHolder, position: Int) {
+
+        // BIND ALL VIEWS TO THEIR VARIOUS POSITION
+        holder.bindAllViews(position)
+    }
+
+    override fun getItemCount(): Int {
+        return clientDetailsList.size
+    }
+
+    private fun getClientNamesInitials(Name: String): String {
+        return Name[0].toUpperCase().toString()
+    }
+// SETTING DIFFERENT BACKGROUNDS COLORS FOR THE BACKGROUND PROFILE IMAGE
+    private fun changeClientProfileBackgroundColor(): Drawable? {
+        val colorDrawables = arrayOf(
+            R.drawable.client_list_background_color_drawable_1,
+            R.drawable.client_list_background_color_drawable_2,
+            R.drawable.client_list_background_color_drawable_3,
+            R.drawable.client_list_background_color_drawable_4,
+            R.drawable.client_list_background_color_drawable_5,
+            R.drawable.client_list_background_color_drawable_6
+        )
+        return ContextCompat.getDrawable(
+            context!!,
+            colorDrawables[(Math.random() * 5).roundToInt()]
+        )
+    }
+    // VIEW HOLDER FOR THE RECYCLER VIEW
+    inner class ClientHomeFragmentViewHolder(private var binding: FragmentClientListRecyclerViewLayoutLookBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bindAllViews(position: Int) {
+            val currentClientListItem = clientDetailsList[position]
+
+            // BINDING ALL VIEWS
+            binding.clientHomeListRecyclerLookClientFirstNameInitial.text =
+                getClientNamesInitials(currentClientListItem.clientFirstName)
+            binding.clientHomeListRecyclerLookClientLastNameInitials.text =
+                getClientNamesInitials(currentClientListItem.clientLastName)
+            binding.clientHomeListFirstName.text = currentClientListItem.clientFirstName
+            binding.clientHomeListLastName.text = currentClientListItem.clientLastName
+            binding.clientHomeListRecyclerLookClientLocation.text =
+                currentClientListItem.clientLocation
+
+            // ROUNDED PROFILE IMAGE DRAWABLE
+            binding.clientHomeImageProfileColorBackground.background =
+                changeClientProfileBackgroundColor()
+        }
+    }
+}

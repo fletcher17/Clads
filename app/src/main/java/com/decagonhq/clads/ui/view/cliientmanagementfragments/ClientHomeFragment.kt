@@ -41,8 +41,6 @@ class ClientHomeFragment : Fragment() {
         }
     }
 
-
-
     // REPLACE PLACEHOLDER / RECYCLER VIEW AND SET RECYCLER VIEW
     private fun swapPlaceHolderWithRecyclerView() {
 

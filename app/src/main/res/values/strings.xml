@@ -83,8 +83,9 @@
     <string name="edit_profile_fragment_last_name_popup_hint">Last name</string>
     <string name="edit_profile_fragment_other_name_text">Other Name</string>
     <string name="edit_profile_fragment_other_name_popup_hint">Other name</string>
-    <string name="edit_profile_fragment_number_of_employees_text">Number of Employees/Apprentices</string>
+    <string name="edit_profile_fragment_number_of_employees_text">Number of Employees /<br> </br>Apprentices</string>
     <string name="edit_profile_fragment_number_of_employees_popup_hint">Number of employees/apprentices</string>
+    <string name="edit_profile_fragment_number_of_employees_hint_value">0</string>
     <string name="edit_profile_fragment_gender_text">Gender</string>
     <string name="edit_profile_fragment_workshop_address_text">Workshop Address</string>
     <string name="edit_profile_fragment_workshop_address_popup_hint">Workshop address</string>
@@ -105,8 +106,7 @@
     <string name="edit_profile_fragment_save_changes_text">SAVE CHANGES</string>
     <string name="edit_profile_fragment_popup_cancel_text">Cancel</string>
     <string name="edit_profile_fragment_popup_ok_text">Ok</string>
-    <string-array name="gender_popup_list">
-        <item>Female</item>
-        <item>Male</item>
-    </string-array>
+    <string name="edit_profile_fragment_gender_hint">Gender</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
 </resources>

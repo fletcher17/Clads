@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dimen_16_dp">
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/ProfileAccountTextView"
+        android:text="@string/edit_profile_fragment_gender_text"
+        android:textSize="@dimen/text_size_16_sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/gender_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <RadioButton
+            android:id="@+id/female_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/navy_blue"
+            android:fontFamily="@font/poppins"
+            android:padding="@dimen/margin_10dp"
+            android:text="@string/female"
+            android:textColor="@color/navy_blue" />
+
+        <RadioButton
+            android:id="@+id/male_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/navy_blue"
+            android:fontFamily="@font/poppins"
+            android:padding="@dimen/margin_10dp"
+            android:text="@string/male"
+            android:textColor="@color/navy_blue" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

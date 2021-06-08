@@ -26,7 +26,7 @@ class ClientHomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentClientHomeBinding.inflate(inflater, container, false)
-        displayFakeData()
+
         swapPlaceHolderWithRecyclerView()
 
         return binding.root
@@ -41,23 +41,7 @@ class ClientHomeFragment : Fragment() {
         }
     }
 
-    private fun displayFakeData() {
-        clientHomeArrayList.add(ClientListAddClientModel("Bawo", "Amewieye", "Delta"))
-        clientHomeArrayList.add(ClientListAddClientModel("Emmanuel", "Akozie", "Abuja"))
-        clientHomeArrayList.add(ClientListAddClientModel("Olalekan", "Fagbemi", "Benin"))
-        clientHomeArrayList.add(ClientListAddClientModel("Adriel", "Nelson", "Benin"))
-        clientHomeArrayList.add(ClientListAddClientModel("Rita", "Prex", "Lagos"))
-        clientHomeArrayList.add(ClientListAddClientModel("Alvin", "Nelson", "Lagos"))
-        clientHomeArrayList.add(ClientListAddClientModel("Rollins", "Mitchell", "Abuja"))
-        clientHomeArrayList.add(ClientListAddClientModel("Daniel", "Tuoyo", "Lagos"))
-        clientHomeArrayList.add(ClientListAddClientModel("Blessing", "Gbubemi", "Calabar"))
-        clientHomeArrayList.add(ClientListAddClientModel("Micheal", "Ogbemi", "Imo"))
-        clientHomeArrayList.add(ClientListAddClientModel("Omamofe", "Rose", "Bauchi"))
-        clientHomeArrayList.add(ClientListAddClientModel("Toju", "Godwin", "Sokoto"))
-        clientHomeArrayList.add(ClientListAddClientModel("Pavel", "Mogha", "Delta"))
-        clientHomeArrayList.add(ClientListAddClientModel("Parker", "Ethan", "Rivers"))
-        clientHomeArrayList.add(ClientListAddClientModel("Avi", "Specta", "Anambra"))
-    }
+
 
     // REPLACE PLACEHOLDER / RECYCLER VIEW AND SET RECYCLER VIEW
     private fun swapPlaceHolderWithRecyclerView() {

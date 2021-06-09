@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentClientAccountTabBinding
 import com.decagonhq.clads.utils.IButtonClick
 
@@ -35,8 +36,8 @@ class ClientAccountTabFragment : Fragment() {
             // Responds to child RadioButton checked/unchecked
 
             when (checkedId) {
-                binding.radioButtonMale.id -> clientGender = "Male"
-                binding.radioButtonFemale.id -> clientGender = "Female"
+                binding.radioButtonMale.id -> clientGender = getString(R.string.male)
+                binding.radioButtonFemale.id -> clientGender = getString(R.string.female)
             }
         }
 

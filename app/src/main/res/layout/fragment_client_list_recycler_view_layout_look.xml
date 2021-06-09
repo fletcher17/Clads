@@ -91,7 +91,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.513"
             app:srcCompat="@drawable/client_screen_location_pin" />
-
         <TextView
             android:id="@+id/client_home_list_recycler_look_client_location"
             style="@style/client_list_names"

@@ -90,6 +90,4 @@
     <string name="enter_last_name">enter last name</string>
     <string name="enter_phone_number">enter  phone number</string>
     <string name="enter_email_adderss">enter email adderss</string>
-    <string name="add_contact_first_name">First Name</string>
-    <string name="add_contact_last_name">Last Name</string>
 </resources>

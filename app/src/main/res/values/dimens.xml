@@ -149,5 +149,9 @@
     <dimen name="margin_80dp">80dp</dimen>
     <dimen name="margin_98dp">98dp</dimen>
     <dimen name="padding_10dp">10dp</dimen>
+    <dimen name="width">0.6dp</dimen>
     <dimen name="stroke_width_2dp">2dp</dimen>
+    <dimen name="radius">10dp</dimen>
+    <dimen name="height_52dp">52dp</dimen>
+    <dimen name="width_325dp">325dp</dimen>
 </resources>

@@ -22,4 +22,6 @@
     <color name="navy_blue">#0A2E65</color>
     <color name="grey">#99FFFFFF</color>
     <color name="mtrl_textinput_default_box_stroke_color">#F2F2F2</color>
+    <color name="light_gray">#FAFAFA</color>
+    <color name="dashboard_client_text_color">#4A4A4A</color>
 </resources>

@@ -127,7 +127,7 @@
                     style="@style/radio_input_text_style"
                     android:paddingStart="@dimen/margin_15dp"
                     android:paddingEnd="@dimen/margin_15dp"
-                    android:text="@string/male" />
+                    android:text="@string/gender_male" />
 
                 <RadioButton
                     android:id="@+id/radio_button_female"
@@ -138,7 +138,7 @@
                     style="@style/radio_input_text_style"
                     android:buttonTint="@color/deep_sky_blue"
                     android:fontFamily="@font/poppins"
-                    android:text="@string/female" />
+                    android:text="@string/gender_female" />
             </RadioGroup>
 
             <TextView

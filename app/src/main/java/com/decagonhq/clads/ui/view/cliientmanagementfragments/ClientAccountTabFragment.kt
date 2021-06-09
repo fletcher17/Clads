@@ -36,8 +36,8 @@ class ClientAccountTabFragment : Fragment() {
             // Responds to child RadioButton checked/unchecked
 
             when (checkedId) {
-                binding.radioButtonMale.id -> clientGender = getString(R.string.male)
-                binding.radioButtonFemale.id -> clientGender = getString(R.string.female)
+                binding.radioButtonMale.id -> clientGender = getString(R.string.gender_male)
+                binding.radioButtonFemale.id -> clientGender = getString(R.string.gender_female)
             }
         }
 

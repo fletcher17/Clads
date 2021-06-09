@@ -77,8 +77,8 @@
     <string name="delivery_addresses">Delivery Addresses</string>
     <string name="gender">Gender</string>
     <string name="delivery_address">Delivery Address</string>
-    <string name="male">Male</string>
-    <string name="female">Female</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
     <string name="next">Next</string>
     <string name="bawonelson_gmail_com">bawonelson@gmail.com</string>
     <string name="bawo_nelson">Bawo Nelson</string>

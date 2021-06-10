@@ -24,7 +24,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_gender_custom_dialog_textView">
@@ -33,19 +32,21 @@
                 android:id="@+id/female_radio_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:button="@drawable/fragment_gender_custom_dialog_radiobutton_selector"
                 android:buttonTint="@color/navy_blue"
                 android:fontFamily="@font/poppins"
-                android:padding="@dimen/margin_10dp"
+                android:padding="@dimen/margin_8dp"
                 android:text="@string/female"
                 android:textColor="@color/navy_blue" />
 
             <RadioButton
                 android:id="@+id/male_radio_button"
+                android:button="@drawable/fragment_gender_custom_dialog_radiobutton_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/navy_blue"
                 android:fontFamily="@font/poppins"
-                android:padding="@dimen/margin_10dp"
+                android:padding="@dimen/margin_8dp"
                 android:text="@string/male"
                 android:textColor="@color/navy_blue" />
         </RadioGroup>

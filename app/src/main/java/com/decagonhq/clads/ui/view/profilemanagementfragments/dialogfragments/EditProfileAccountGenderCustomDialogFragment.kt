@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
+import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentProfileAccountFirstNameCustomDialogBinding
 import com.decagonhq.clads.databinding.FragmentProfileAccountGenderCustomDialogBinding
 import com.decagonhq.clads.databinding.FragmentProfileAccountLastNameCustomDialogBinding
@@ -25,6 +26,7 @@ class EditProfileAccountGenderCustomDialogFragment : DialogFragment() {
             FragmentProfileAccountGenderCustomDialogBinding.inflate(inflater, container, false)
 
         binding.femaleRadioButton.setOnClickListener {
+
             val selectedGender = binding.femaleRadioButton.text.toString()
             Toast.makeText(context, "Wow! You are a $selectedGender?", Toast.LENGTH_LONG).show()
             dismiss()

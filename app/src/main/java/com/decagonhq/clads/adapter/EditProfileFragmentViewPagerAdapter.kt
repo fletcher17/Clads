@@ -11,6 +11,8 @@ import com.decagonhq.clads.ui.view.profilemanagementfragments.ProfileSpecialtyTa
 
 class EditProfileFragmentViewPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
+
+
     override fun getItemCount(): Int = NUM_PAGES
 
     override fun createFragment(position: Int): Fragment {
@@ -25,4 +27,6 @@ class EditProfileFragmentViewPagerAdapter(fragmentManager: FragmentManager, life
     companion object {
         private const val NUM_PAGES = 4
     }
+
+
 }

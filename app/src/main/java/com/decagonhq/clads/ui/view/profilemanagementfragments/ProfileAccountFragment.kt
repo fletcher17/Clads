@@ -5,27 +5,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.decagonhq.clads.Interface.IButtonClick
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentProfileAccountTabBinding
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.*
+
 
 class ProfileAccountFragment : Fragment() {
 
     private var _binding: FragmentProfileAccountTabBinding? = null
     private val binding get() = _binding!!
 
+    interface ButtonClick : IButtonClick
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         _binding = FragmentProfileAccountTabBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.fragmentProfileAccountSaveButton.setOnClickListener {
+            (parentFragment as ButtonClick).buttonClicked()
+        }
+
 
         binding.fragmentProfileAccountFirstNameEditText.setOnClickListener {
             val dialog = EditProfileAccountFirstNameCustomDialogFragment()

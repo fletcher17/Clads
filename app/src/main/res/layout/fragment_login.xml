@@ -116,7 +116,7 @@
                     <!--
                         Here, i am manipulating the visibility of these visibility_icons in order to get the required design
                         This same functionality would have been achieved using TextInputLayout of Material Design,
-                        but the hint will be moved up instead of disappearing totally, hence the reason to get this done using text view and two icons
+                        but the hint will be moved up instead of disappearing totally, hence the reason to get this done using text app_bar_view and two icons
                     -->
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/login_screen_fragment_show_password_icon"

@@ -107,7 +107,7 @@
         <item name="hintEnabled">false</item>
     </style>
     
-    <style name="edit_profile_page_dialog_headings">
+    <style name="fragment_profile_page_payment_terms_headings">
         <item name="android:fontFamily">@font/poppins_bold</item>
         <item name="android:textColor">@color/navy_blue</item>
         <item name="android:textSize">@dimen/text_size_18sp</item>
@@ -125,7 +125,7 @@
         <item name="android:textColor">@color/deep_sky_blue</item>
     </style>
 
-    <style name="edit_profile_page_payment_options_check_boxes">
+    <style name="fragment_profile_edit_profile_page_payment_options_check_boxes">
         <item name="buttonTint">@color/deep_sky_blue</item>
         <item name="android:textColor">@color/menu_text_color</item>
         <item name="android:paddingStart">@dimen/margin_16dp</item>

@@ -76,7 +76,7 @@
     <string name="generic_lorem_ipsum_string">Lorem ipsum, ipsum sum</string>
     <string name="all_sign_up">SIGN UP</string>
     <string name="all_login">LOGIN</string>
-    <string name="payment_method_tab_screen_payment_terms_text_view">Payment Terms</string>
+    <string name="fragment_profile_page_payment_method_tab_screen_payment_terms_text_view">Payment Terms</string>
     <string name="payment_terms_items_place_holder">100% Deposit</string>
     <string name="payment_terms_dialog_add_new_payment_term_text_view">Add payment terms</string>
     <string name="payment_method_tab_screen_profile_security_user_phone_number_text_view">07012345678</string>

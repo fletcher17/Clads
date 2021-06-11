@@ -8,7 +8,7 @@
     android:paddingHorizontal="@dimen/margin_20dp">
 
     <TextView
-        style="@style/edit_profile_page_dialog_headings"
+        style="@style/fragment_profile_page_payment_terms_headings"
         android:id="@+id/payment_method_add_new_payment_terms_dialog_heading_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

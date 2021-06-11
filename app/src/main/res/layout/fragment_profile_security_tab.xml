@@ -19,13 +19,13 @@ tools:context=".ui.view.profilemanagementfragments.ProfileSecurityTabFragment">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/edit_profile_security_tab_fragment_verified_information_text_view"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_profile_payment_payment_terms_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="@dimen/margin_16dp"/>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/fragment_profile_payment_payment_terms_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_13dp"
@@ -34,12 +34,12 @@ tools:context=".ui.view.profilemanagementfragments.ProfileSecurityTabFragment">
 
 
         <TextView
-            style="@style/edit_profile_page_dialog_headings"
+            style="@style/fragment_profile_page_payment_terms_headings"
             android:id="@+id/profile_security_tab_screen_phone_number_text_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/payment_method_tab_screen_payment_terms_text_view"
+            android:text="@string/fragment_profile_page_payment_method_tab_screen_payment_terms_text_view"
             android:textSize="@dimen/text_size_16sp" />
 
         <TextView
@@ -64,7 +64,7 @@ tools:context=".ui.view.profilemanagementfragments.ProfileSecurityTabFragment">
         android:layout_marginTop="@dimen/dimen_29_dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/fragment_profile_payment_payment_terms_layout" />
 
     <TextView
         style="@style/edit_profile_page_dialog_sub_headings"
@@ -78,7 +78,7 @@ tools:context=".ui.view.profilemanagementfragments.ProfileSecurityTabFragment">
         app:layout_constraintTop_toBottomOf="@+id/profile_security_screen_horizontal_divider" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/fragment_profile_payment_options_containing_linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_28dp"
@@ -87,7 +87,7 @@ tools:context=".ui.view.profilemanagementfragments.ProfileSecurityTabFragment">
 
 
         <TextView
-            style="@style/edit_profile_page_dialog_headings"
+            style="@style/fragment_profile_page_payment_terms_headings"
             android:id="@+id/profile_security_tab_screen_change_password_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -148,9 +148,9 @@ tools:context=".ui.view.profilemanagementfragments.ProfileSecurityTabFragment">
         android:fontFamily="@font/poppins_semibold"
         android:layout_marginTop="@dimen/dimen_70_dp"
         android:text="@string/save_changes"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintEnd_toEndOf="@+id/fragment_profile_payment_options_containing_linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/fragment_profile_payment_options_containing_linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_profile_payment_options_containing_linearLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

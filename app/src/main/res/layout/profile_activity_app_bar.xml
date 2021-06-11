@@ -26,8 +26,8 @@
 
                     <ImageView
                         android:id="@+id/app_bar_image_view"
-                        android:layout_width="35dp"
-                        android:layout_height="25dp"
+                        android:layout_width="@dimen/margin_25dp"
+                        android:layout_height="@dimen/margin_25dp"
                         android:src="@drawable/navigation_drawer_header_icon"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -47,8 +47,8 @@
 
                     <ImageView
                         android:id="@+id/app_bar_notification_icon"
-                        android:layout_width="30dp"
-                        android:layout_height="23dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/margin_22dp"
                         android:src="@drawable/bottom_navigation_message_icon"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,8 +63,8 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/dimen_0_dp"
+        android:layout_height="@dimen/dimen_0_dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,7 +74,7 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/activity_profile_dashboard_bottom_navigation_view"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dimen_0_dp"
         android:layout_height="wrap_content"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

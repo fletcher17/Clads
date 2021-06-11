@@ -1,6 +1,5 @@
 package com.decagonhq.clads.ui.view.authenticationfragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,9 +29,7 @@ class LandingScreenFragment : Fragment() {
         }
 
         binding.fragmentLandingScreenLoginButton.setOnClickListener {
-            // findNavController().navigate(R.id.action_landing_screen_fragment_to_login_fragment)
-            val intent = Intent(requireActivity(), ProfileDashboardActivity::class.java)
-            startActivity(intent)
+             findNavController().navigate(R.id.action_landing_screen_fragment_to_login_fragment)
         }
     }
 }

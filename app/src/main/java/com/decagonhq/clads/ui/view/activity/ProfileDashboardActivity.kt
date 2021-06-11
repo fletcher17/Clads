@@ -27,6 +27,7 @@ class ProfileDashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityProfileDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbarLayout.toolbar)
 
         setUpBottomNavigationView()
 
@@ -45,7 +46,6 @@ class ProfileDashboardActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navigationView.setupWithNavController(navController)
         binding.toolbarLayout.activityProfileDashboardBottomNavigationView.setupWithNavController(navController)
-        setSupportActionBar(binding.toolbarLayout.toolbar)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when {

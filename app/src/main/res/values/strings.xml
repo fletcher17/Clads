@@ -71,4 +71,16 @@
     <string name="generic_lorem_ipsum_string">Lorem ipsum, ipsum sum</string>
     <string name="all_sign_up">SIGN UP</string>
     <string name="all_login">LOGIN</string>
+    <string name="navigation_drawer_close"> close</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="app_version">Version 1.0</string>
+    <string name="profile_dashboard_client_name">Hi, Ijeoma</string>
+    <string name="header_client_name">Ijeoma Ibukun Babangida</string>
+    <string name="header_edit_profile_button">Edit Profile</string>
+    <string name="fragment_message">Messages Fragment</string>
+    <string name="fragment_media">Media Fragment</string>
+    <string name="fragment_dashboard">Dashboard Fragment</string>
+    <string name="drawer_menu_clients_item">Clients</string>
+    <string name="drawer_menu_resources_item">Resources</string>
+    <string name="drawer_menu_subscription_item">Subscription</string>
 </resources>

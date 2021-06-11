@@ -108,7 +108,7 @@
     <dimen name="margin_17dp">17dp</dimen>
     <dimen name="margin_18dp">18dp</dimen>
     <dimen name="margin_19dp">19dp</dimen>
-    <dimen name="margin_20dp">10dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
     <dimen name="margin_21dp">21dp</dimen>
     <dimen name="margin_22dp">22dp</dimen>
     <dimen name="margin_23dp">23dp</dimen>
@@ -140,6 +140,7 @@
     <dimen name="text_size_22sp">22sp</dimen>
     <dimen name="text_size_16sp">16sp</dimen>
     <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="text_size_11sp">11sp</dimen>
     <dimen name="margin_15dp">15dp</dimen>
     <dimen name="margin_top_20dp">20dp</dimen>
     <dimen name="margin_top_8dp">8dp</dimen>
@@ -150,4 +151,8 @@
     <dimen name="stroke_width_2dp">2dp</dimen>
 
     <dimen name="letter_spacing_0.05">0.05</dimen>
+    <dimen name="text_size_10sp">10sp</dimen>
+    <dimen name="margin_125dp">125dp</dimen>
+    <dimen name="margin_120dp">120dp</dimen>
+    <dimen name="margin_200dp">200dp</dimen>
 </resources>

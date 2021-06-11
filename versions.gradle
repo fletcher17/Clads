@@ -18,5 +18,7 @@ ext.versions = [
         mockito_version        : "2.24.5",
         progress_bar_version   : "1.2.17",
         viewpager_version      : "1.0.0",
-        recycler_version       : "1.2.1"
+        recycler_version       : "1.2.1",
+        chart_library_version  : "2.2.2",
+        circle_image_view      : "1.0.1"
 ]

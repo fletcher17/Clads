@@ -71,6 +71,36 @@
     <string name="generic_lorem_ipsum_string">Lorem ipsum, ipsum sum</string>
     <string name="all_sign_up">SIGN UP</string>
     <string name="all_login">LOGIN</string>
+    <string name="fragment_dashboard_home">Home</string>
+    <string name="fragment_dashboard_media">Media</string>
+    <string name="fragment_dashboard_messages">Messages</string>
+    <string name="fragment_dashboard_user_name">Ijeoma Ibukun Babangida</string>
+    <string name="fragment_dashboard_wallet">Wallet</string>
+    <string name="fragment_dashboard_dollar">$</string>
+    <string name="fragment_dashboard_wallet_amount">23, 481,000.00</string>
+    <string name="fragment_message_message_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</string>
+    <string name="fragment_dashboard_client_name">Mubarak Yang</string>
+    <string name="fragment_dashboard_client_location">Yola</string>
+    <string name="notification_icon">Notification Icon</string>
+    <string name="fragment_dashboard_view_details">View All Details</string>
+    <string name="fragment_dashboard_clients">Clients</string>
+    <string name="fragment_message_user_name">Ola Machiavelli</string>
+    <string name="fragment_message_read_more">Read more</string>
+    <string name="fragment_message_arrow_icon_description">Arrow facing the right</string>
+    <string name="fragment_message_day_of_post">Today</string>
+    <string name="fragment_message_indicator">An indicator</string>
+    <string name="fragment_message_user_icon">User icon</string>
+
+    <string-array name="fragment_dashboard_dates_array">
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+        <item>2025</item>
+        <item>2026</item>
+        <item>2027</item>
+    </string-array>
     <string name="navigation_drawer_close"> close</string>
     <string name="navigation_drawer_open">open</string>
     <string name="app_version">Version 1.0</string>

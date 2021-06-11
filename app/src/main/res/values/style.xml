@@ -106,6 +106,32 @@
         <item name="errorTextColor">@color/red</item>
         <item name="hintEnabled">false</item>
     </style>
+    
+    <style name="edit_profile_page_dialog_headings">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/navy_blue</item>
+        <item name="android:textSize">@dimen/text_size_18sp</item>
+    </style>
+
+    <style name="edit_profile_page_dialog_sub_headings">
+        <item name="android:fontFamily">@font/poppins_light</item>
+        <item name="android:textColor">@color/deep_sky_blue</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+    </style>
+
+    <style name="edit_profile_page_dialog_submit_buttons">
+        <item name="android:textSize">@dimen/text_size_13sp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/deep_sky_blue</item>
+    </style>
+
+    <style name="edit_profile_page_payment_options_check_boxes">
+        <item name="buttonTint">@color/deep_sky_blue</item>
+        <item name="android:textColor">@color/menu_text_color</item>
+        <item name="android:paddingStart">@dimen/margin_16dp</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
 
 </resources>
 

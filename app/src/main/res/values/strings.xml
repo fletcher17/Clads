@@ -47,6 +47,9 @@
     <string name="have_an_account">Have an account?<b> Login</b></string>
     <string name="signup">Signup</string>
     <string name="password">Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="change_password">Change Password</string>
     <string name="email_address">Email Address</string>
     <string name="lets_get_to_know_you">Lets get to know you</string>
     <string name="choose_account_category">Choose account category</string>
@@ -55,6 +58,8 @@
     <string name="other_name">Other Name</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="sign_up">Sign Up</string>
+    <string name="all_ok">OK</string>
+    <string name="all_cancel">CANCEL</string>
     <string-array name="category_list">
         <item>Tailor</item>
         <item>Weaver</item>
@@ -71,4 +76,17 @@
     <string name="generic_lorem_ipsum_string">Lorem ipsum, ipsum sum</string>
     <string name="all_sign_up">SIGN UP</string>
     <string name="all_login">LOGIN</string>
+    <string name="payment_method_tab_screen_payment_terms_text_view">Payment Terms</string>
+    <string name="payment_terms_items_place_holder">100% Deposit</string>
+    <string name="payment_terms_dialog_add_new_payment_term_text_view">Add payment terms</string>
+    <string name="payment_method_tab_screen_profile_security_user_phone_number_text_view">07012345678</string>
+    <string name="payment_method_tab_screen_payment_options_text_view">Payment Options</string>
+    <string name="add_new">Add</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="edit_profile_security_tab_fragment_verified_information_text_view">Verified Information</string>
+    <string name="payment_option_bank_deposit_naira">Bank deposit (Naira)</string>
+    <string name="payment_option_bank_deposit_foreign_currencies">Bank deposit (USD, GPB, EUR)</string>
+    <string name="payment_option_cash">Cash</string>
+    <string name="payment_option_payoneer">Payoneer</string>
+    <string name="payment_option_vcash">VCash</string>
 </resources>

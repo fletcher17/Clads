@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fragment_dashboard_client_list_layout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,10 +23,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_10dp"
+            android:contentDescription="@string/fragment_message_user_icon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/fragment_dashboard_user_icon"
-            android:contentDescription="@string/fragment_message_user_icon" />
+            app:srcCompat="@drawable/fragment_dashboard_user_icon" />
 
         <TextView
             android:id="@+id/fragment_dashboard_client_name_text_view"
@@ -47,11 +47,13 @@
             android:layout_height="@dimen/margin_20dp"
             android:layout_marginStart="@dimen/margin_112dp"
             android:layout_marginTop="@dimen/margin_18dp"
+            android:layout_marginEnd="@dimen/margin_10dp"
             android:layout_marginBottom="@dimen/margin_8dp"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_dashboard_client_name_text_view"
+            app:layout_constraintEnd_toStartOf="@+id/fragment_dashboard_client_location_text_view"
             app:layout_constraintStart_toEndOf="@+id/fragment_dashboard_client_name_text_view"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.19"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/fragment_dashboard_location_icon" />
 
         <TextView
@@ -65,8 +67,10 @@
             android:textColor="@color/dashboard_client_text_color"
             android:textSize="@dimen/text_size_14sp"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_dashboard_client_location_image_view"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/fragment_dashboard_client_location_image_view"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

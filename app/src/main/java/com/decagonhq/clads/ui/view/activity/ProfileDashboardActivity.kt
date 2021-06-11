@@ -31,6 +31,7 @@ class ProfileDashboardActivity : AppCompatActivity() {
 
         setUpBottomNavigationView()
 
+        //setting up drawer layout
         val drawerLayout = binding.drawerLayout
         val navView = binding.navigationView.getHeaderView(0)
         navView.findViewById<ImageView>(R.id.activity_profile_dashboard_close_header_icon).setOnClickListener {

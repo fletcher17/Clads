@@ -47,10 +47,10 @@ class ProfilePaymentMethodTabFragment : Fragment() {
         addNewPaymentDialogBinding = EditProfilePaymentMethodAddPaymentDialogBinding.inflate(layoutInflater)
 
         // creating reference to views
-        paymentTerms = binding.paymentMethodTabScreenPaymentTermsUserChoiceModalTextView
-        paymentOptions = binding.paymentMethodTabScreenPaymentOptionsUserChoiceModalTextView
-        addPaymentTerms = binding.floatingActionButton6
-        saveChanges = binding.editProfilePaymentMethodTabScreenSaveChangesBtn
+        paymentTerms = binding.fragmentProfilePagePaymentMethodTabScreenPaymentTermsUserChoiceModalTextView
+        paymentOptions = binding.fragmentProfilePaymentMethodTabScreenPaymentOptionsUserChoiceModalTextView
+        addPaymentTerms = binding.fragmentProfileAddNewPaymentTermsFloatingActionButton
+        saveChanges = binding.fragmentProfilePaymentMethodTabScreenSaveChangesBtn
 
         // Initializing the variable for storing payment options
         selectedPaymentOptions = mutableSetOf()
@@ -96,11 +96,11 @@ class ProfilePaymentMethodTabFragment : Fragment() {
             paymentOptionsDialogBinding = EditProfilePaymentOptionsDialogBinding.inflate(layoutInflater)
 
             // initailizing the check boxes
-            nairaCheckBox = paymentOptionsDialogBinding.paymentOptionsBankDepositNaira
-            usdCheckBox = paymentOptionsDialogBinding.paymentOptionsBankDepositForeignCurrencies
-            cashCheckBox = paymentOptionsDialogBinding.paymentOptionsCash
-            vCashCheckBox = paymentOptionsDialogBinding.paymentOptionsVCash
-            payoneerCheckBox = paymentOptionsDialogBinding.paymentOptionsPayoneer
+            nairaCheckBox = paymentOptionsDialogBinding.fragmentProfilePaymentOptionsBankDepositNaira
+            usdCheckBox = paymentOptionsDialogBinding.fragmentProfilePaymentOptionsBankDepositForeignCurrencies
+            cashCheckBox = paymentOptionsDialogBinding.fragmentProfilePaymentOptionsCash
+            vCashCheckBox = paymentOptionsDialogBinding.fragmentProfilePaymentOptionsVCash
+            payoneerCheckBox = paymentOptionsDialogBinding.fragmentProfilePaymentOptionsPayoneer
 
             // Building the Dialog
             val paymentOptionsDialog = createDialog(paymentOptionsDialogBinding.root)
@@ -143,7 +143,7 @@ class ProfilePaymentMethodTabFragment : Fragment() {
             paymentTermsDialogBinding = EditProfilePaymentTermsDialogBinding.inflate(layoutInflater)
 
             // Getting reference to the RecyclerView RadioGroup
-            val paymentTermsRadioGroup = paymentTermsDialogBinding.paymentMethodRecyclerViewRadioGroup
+            val paymentTermsRadioGroup = paymentTermsDialogBinding.fragmentProfilePaymentMethodRadioGroup
 
             // populating the RadioGroup dynamically
             for (i in allPaymentTermsInDataBase) {

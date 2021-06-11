@@ -14,7 +14,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/fragment_dashboard_chart_layout"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/dimen_0_dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_36dp"
             android:padding="@dimen/margin_8dp"

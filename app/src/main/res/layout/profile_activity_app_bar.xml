@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white"
-            app:contentInsetStartWithNavigation="0dp">
+            app:contentInsetStartWithNavigation="@dimen/dimen_0_dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

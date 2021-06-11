@@ -82,7 +82,7 @@
             android:contentDescription="@string/fragment_message_arrow_icon_description" />
 
         <TextView
-            android:id="@+id/fragment_message_today_text_view"
+            android:id="@+id/fragment_message_message_date_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_21dp"

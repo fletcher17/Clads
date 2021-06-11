@@ -1,133 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="@dimen/margin_32dp"
+    android:fillViewport="true"
     tools:context=".ui.view.profilemanagementfragments.DashboardFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_24dp"
-        android:background="@drawable/fragment_dashboard_card_detail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/margin_32dp"
+        >
 
-        <TextView
-            android:id="@+id/fragment_dashboard_user_name_text_view"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fragment_dashboard_chart_layout"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_16dp"
-            android:layout_marginTop="@dimen/margin_25dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/fragment_dashboard_user_name"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_16sp"
+            android:layout_marginTop="@dimen/margin_36dp"
+            android:padding="@dimen/margin_8dp"
+            android:background="@drawable/fragment_dashboard_chart_background"
+            android:elevation="@dimen/margin_10dp"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_dashboard_card_layout"
+            app:layout_constraintStart_toStartOf="@+id/fragment_dashboard_card_layout"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_dashboard_card_layout">
+
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_200dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fragment_dashboard_card_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_24dp"
+            android:background="@drawable/fragment_dashboard_card_detail"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/fragment_dashboard_wallet_text_view"
+            <TextView
+                android:id="@+id/fragment_dashboard_user_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_25dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/fragment_dashboard_user_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fragment_dashboard_wallet_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="@string/fragment_dashboard_wallet"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_10sp"
+                app:layout_constraintEnd_toEndOf="@+id/fragment_dashboard_user_name_text_view"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/fragment_dashboard_user_name_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_dashboard_user_name_text_view" />
+
+            <TextView
+                android:id="@+id/fragment_dashboard_dollar_sign_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_11dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/fragment_dashboard_dollar"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_14sp"
+                app:layout_constraintStart_toStartOf="@+id/fragment_dashboard_user_name_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_dashboard_wallet_text_view" />
+
+            <TextView
+                android:id="@+id/fragment_dashboard_user_amount_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_5dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/fragment_dashboard_wallet_amount"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/fragment_dashboard_dollar_sign_text_view"
+                app:layout_constraintStart_toEndOf="@+id/fragment_dashboard_dollar_sign_text_view" />
+
+            <ImageView
+                android:id="@+id/fragment_dashboard_arrow_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_16dp"
+                android:layout_marginBottom="@dimen/margin_12dp"
+                android:src="@drawable/fragment_message_arrow_right_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/fragment_dashboard_view_details_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_marginEnd="@dimen/margin_8dp"
+                android:layout_marginBottom="@dimen/margin_16dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/fragment_dashboard_view_details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/fragment_dashboard_arrow_icon"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_dashboard_user_amount_text_view"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/fragment_dashboard_wallets_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_22dp"
+                android:layout_marginEnd="@dimen/margin_20dp"
+                android:contentDescription="@string/fragment_dashboard_wallet"
+                android:src="@drawable/fragment_dashboard_card_wallet_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_dashboard_client_list_recycler_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="@string/fragment_dashboard_wallet"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_10sp"
-            app:layout_constraintEnd_toEndOf="@+id/fragment_dashboard_user_name_text_view"
+            android:layout_marginEnd="@dimen/margin_30dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/fragment_dashboard_user_name_text_view"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_dashboard_user_name_text_view" />
+            app:layout_constraintStart_toStartOf="@+id/fragment_dashboard_clients_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_dashboard_clients_text_view"
+            tools:itemCount="4"
+            tools:listitem="@layout/fragment_dashboard_client_list" />
 
         <TextView
-            android:id="@+id/fragment_dashboard_dollar_sign_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_11dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="@string/fragment_dashboard_dollar"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_14sp"
-            app:layout_constraintStart_toStartOf="@+id/fragment_dashboard_user_name_text_view"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_dashboard_wallet_text_view" />
-
-        <TextView
-            android:id="@+id/fragment_dashboard_user_amount_text_view"
+            android:id="@+id/fragment_dashboard_clients_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_5dp"
+            android:layout_marginTop="@dimen/margin_36dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="@string/fragment_dashboard_wallet_amount"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/fragment_dashboard_dollar_sign_text_view"
-            app:layout_constraintStart_toEndOf="@+id/fragment_dashboard_dollar_sign_text_view" />
-
-        <ImageView
-            android:id="@+id/fragment_dashboard_arrow_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_16dp"
-            android:layout_marginBottom="@dimen/margin_12dp"
-            android:src="@drawable/fragment_message_arrow_right_icon"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:tint="@color/white" />
-
-        <TextView
-            android:id="@+id/fragment_dashboard_view_details_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_10dp"
-            android:layout_marginEnd="@dimen/margin_8dp"
-            android:layout_marginBottom="@dimen/margin_16dp"
-            android:fontFamily="@font/poppins"
-            android:text="@string/fragment_dashboard_view_details"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/fragment_dashboard_arrow_icon"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_dashboard_user_amount_text_view"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <ImageView
-            android:id="@+id/fragment_dashboard_wallets_image_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_22dp"
-            android:layout_marginEnd="@dimen/margin_20dp"
-            android:contentDescription="@string/fragment_dashboard_wallet"
-            android:src="@drawable/fragment_dashboard_card_wallet_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="@string/fragment_dashboard_clients"
+            android:textSize="@dimen/text_size_18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_dashboard_chart_layout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_20dp"
-        android:layout_marginEnd="@dimen/margin_30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/fragment_dashboard_clients_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_dashboard_clients_text_view"
-        tools:itemCount="4"
-        tools:listitem="@layout/fragment_dashboard_client_list" />
-
-    <TextView
-        android:id="@+id/fragment_dashboard_clients_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_5dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="@string/fragment_dashboard_clients"
-        android:textSize="@dimen/text_size_18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="410dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

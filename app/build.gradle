@@ -138,4 +138,10 @@ dependencies {
 
     // recycler view
     implementation "androidx.recyclerview:recyclerview:$versions.recycler_version"
+
+    // Chart Library
+    implementation "com.github.PhilJay:MPAndroidChart:$versions.chart_library_version"
+
+    // Circle ImageView
+    implementation "com.amulyakhare:com.amulyakhare.textdrawable:$versions.circle_image_view"
 }

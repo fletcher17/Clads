@@ -24,4 +24,5 @@
     <color name="mtrl_textinput_default_box_stroke_color">#F2F2F2</color>
     <color name="light_gray">#FAFAFA</color>
     <color name="dashboard_client_text_color">#4A4A4A</color>
+    <color name="chart_blue">#054AB4</color>
 </resources>

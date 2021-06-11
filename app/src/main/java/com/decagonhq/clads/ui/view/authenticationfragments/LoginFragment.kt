@@ -26,7 +26,7 @@ import com.google.android.gms.tasks.Task
 
 class LoginFragment : Fragment() {
 
-    private lateinit var binding: FragmentLoginBinding // app_bar_view binding for this current fragment (Login fragment)
+    private lateinit var binding: FragmentLoginBinding // profile_activity_header_view binding for this current fragment (Login fragment)
     // Creating variables to store views references
     private lateinit var showPasswordIcon: ImageView
     private lateinit var hidePasswordIcon: ImageView
@@ -40,7 +40,7 @@ class LoginFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
-        // Initializing the app_bar_view binding variable
+        // Initializing the profile_activity_header_view binding variable
         binding = FragmentLoginBinding.inflate(
             inflater,
             container,

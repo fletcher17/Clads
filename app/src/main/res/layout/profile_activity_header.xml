@@ -37,7 +37,7 @@
     <TextView
         android:id="@+id/profile_activity_header_client_name_text_view"
         android:layout_width="wrap_content"
-        android:layout_height="19dp"
+        android:layout_height="@dimen/margin_19dp"
         android:layout_marginTop="@dimen/margin_20dp"
         android:textSize="@dimen/text_size_13sp"
         android:textStyle="bold"
@@ -59,15 +59,15 @@
         android:fontFamily="@font/poppins_bold"
         android:text="@string/header_edit_profile_button"
         app:cornerRadius="@dimen/margin_20dp"
-        app:layout_constraintBottom_toTopOf="@+id/app_bar_view"
+        app:layout_constraintBottom_toTopOf="@+id/profile_activity_header_view"
         app:layout_constraintEnd_toEndOf="@+id/profile_activity_header_client_name_text_view"
         app:layout_constraintStart_toStartOf="@+id/profile_activity_header_client_name_text_view"
         app:layout_constraintTop_toBottomOf="@+id/profile_activity_header_client_name_text_view" />
 
     <View
-        android:id="@+id/app_bar_view"
+        android:id="@+id/profile_activity_header_view"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/margin_1dp"
         android:layout_marginStart="@dimen/margin_13dp"
         android:layout_marginEnd="@dimen/margin_25dp"
         android:background="@drawable/navigation_drawer_header_line"

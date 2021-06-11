@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginEnd= "32dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -33,44 +33,43 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_8dp"
-            android:layout_marginBottom="@dimen/margin_8dp"
             android:fontFamily="@font/poppins"
             android:text="@string/fragment_dashboard_client_name"
             android:textColor="@color/dashboard_client_text_color"
             android:textSize="@dimen/text_size_16sp"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_dashboard_user_profile_image_view"
-            app:layout_constraintStart_toEndOf="@+id/fragment_dashboard_user_profile_image_view" />
-
-        <ImageView
-            android:id="@+id/fragment_dashboard_client_location_image_view"
-            android:layout_width="@dimen/margin_20dp"
-            android:layout_height="@dimen/margin_20dp"
-            android:layout_marginStart="@dimen/margin_112dp"
-            android:layout_marginTop="@dimen/margin_18dp"
-            android:layout_marginEnd="@dimen/margin_10dp"
-            android:layout_marginBottom="@dimen/margin_8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/fragment_dashboard_client_name_text_view"
-            app:layout_constraintEnd_toStartOf="@+id/fragment_dashboard_client_location_text_view"
-            app:layout_constraintStart_toEndOf="@+id/fragment_dashboard_client_name_text_view"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/fragment_dashboard_location_icon" />
+            app:layout_constraintStart_toEndOf="@+id/fragment_dashboard_user_profile_image_view"
+            app:layout_constraintTop_toTopOf="@+id/fragment_dashboard_user_profile_image_view" />
 
         <TextView
             android:id="@+id/fragment_dashboard_client_location_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_8dp"
-            android:layout_marginTop="@dimen/margin_18dp"
+            android:layout_marginStart="@dimen/margin_10dp"
             android:fontFamily="@font/poppins"
             android:text="@string/fragment_dashboard_client_location"
             android:textColor="@color/dashboard_client_text_color"
             android:textSize="@dimen/text_size_14sp"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_dashboard_client_location_image_view"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/fragment_dashboard_client_location_image_view"
+            app:layout_constraintTop_toTopOf="@+id/fragment_dashboard_client_location_image_view" />
+
+        <ImageView
+            android:id="@+id/fragment_dashboard_client_location_image_view"
+            android:layout_width="@dimen/margin_20dp"
+            android:layout_height="@dimen/margin_20dp"
+            android:layout_marginStart="@dimen/margin_8dp"
+            android:layout_marginTop="@dimen/margin_10dp"
+            app:layout_constraintStart_toStartOf="@id/fragment_dashboard_guideline"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:srcCompat="@drawable/fragment_dashboard_location_icon" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragment_dashboard_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="73dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

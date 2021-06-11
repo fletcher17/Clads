@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/activity_profile_dashboard_close_header_icon"
+        android:id="@+id/profile_activity_header_dashboard_close_header_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_10dp"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.209" />
 
     <ImageView
-        android:id="@+id/app_bar_image_view"
+        android:id="@+id/profile_activity_header_app_bar_image_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_50dp"
@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.264" />
 
     <TextView
-        android:id="@+id/header_client_name_text_view"
+        android:id="@+id/profile_activity_header_client_name_text_view"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginTop="@dimen/margin_20dp"
@@ -44,9 +44,9 @@
         android:fontFamily="@font/roboto"
         android:text="@string/header_client_name"
         android:textColor="@color/navy_blue"
-        app:layout_constraintEnd_toEndOf="@+id/app_bar_image_view"
-        app:layout_constraintStart_toStartOf="@+id/app_bar_image_view"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar_image_view" />
+        app:layout_constraintEnd_toEndOf="@+id/profile_activity_header_app_bar_image_view"
+        app:layout_constraintStart_toStartOf="@+id/profile_activity_header_app_bar_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/profile_activity_header_app_bar_image_view" />
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
@@ -60,9 +60,9 @@
         android:text="@string/header_edit_profile_button"
         app:cornerRadius="@dimen/margin_20dp"
         app:layout_constraintBottom_toTopOf="@+id/app_bar_view"
-        app:layout_constraintEnd_toEndOf="@+id/header_client_name_text_view"
-        app:layout_constraintStart_toStartOf="@+id/header_client_name_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/header_client_name_text_view" />
+        app:layout_constraintEnd_toEndOf="@+id/profile_activity_header_client_name_text_view"
+        app:layout_constraintStart_toStartOf="@+id/profile_activity_header_client_name_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/profile_activity_header_client_name_text_view" />
 
     <View
         android:id="@+id/app_bar_view"

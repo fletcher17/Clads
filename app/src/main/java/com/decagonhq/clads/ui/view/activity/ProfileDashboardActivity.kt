@@ -27,14 +27,14 @@ class ProfileDashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityProfileDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.toolbarLayout.toolbar)
+        setSupportActionBar(binding.activityProfileDashboardToolbarLayout.profileActivityAppBarToolbar)
 
         setUpBottomNavigationView()
 
         // setting up drawer layout
         val drawerLayout = binding.drawerLayout
-        val navView = binding.navigationView.getHeaderView(0)
-        navView.findViewById<ImageView>(R.id.activity_profile_dashboard_close_header_icon).setOnClickListener {
+        val navView = binding.activityProfileDashboardNavigationView.getHeaderView(0)
+        navView.findViewById<ImageView>(R.id.profile_activity_header_dashboard_close_header_icon).setOnClickListener {
             drawerLayout.closeDrawer(Gravity.LEFT)
         }
     }
@@ -45,18 +45,18 @@ class ProfileDashboardActivity : AppCompatActivity() {
         navController = navHostFragment.navController
         appBarConfiguration = AppBarConfiguration(navController.graph, binding.drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
-        binding.navigationView.setupWithNavController(navController)
-        binding.toolbarLayout.activityProfileDashboardBottomNavigationView.setupWithNavController(navController)
+        binding.activityProfileDashboardNavigationView.setupWithNavController(navController)
+        binding.activityProfileDashboardToolbarLayout.activityProfileDashboardBottomNavigationView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when {
                 (destination.id == R.id.messageFragment) -> {
-                    binding.toolbarLayout.toolbar.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.profileActivityAppBarToolbar.visibility = View.GONE
                 }
                 else -> {
-                    binding.toolbarLayout.toolbar.visibility = View.VISIBLE
-                    binding.toolbarLayout.appBarNotificationIcon.visibility = View.VISIBLE
-                    binding.toolbarLayout.activityProfileDashboardBottomNavigationView.visibility = View.VISIBLE
+                    binding.activityProfileDashboardToolbarLayout.profileActivityAppBarToolbar.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.profileActivityAppBarNotificationIcon.visibility = View.VISIBLE
+                    binding.activityProfileDashboardToolbarLayout.activityProfileDashboardBottomNavigationView.visibility = View.VISIBLE
                 }
             }
         }

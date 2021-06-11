@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.decagonhq.clads.R
@@ -43,6 +44,16 @@ class DashboardFragment : Fragment() {
             LinearLayoutManager.VERTICAL, false
         )
         binding.fragmentDashboardClientListRecyclerView.adapter = DashBoardClientAdapter(clientList)
+
+        // Populating the date spinner
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.fragment_dashboard_dates_array,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            binding.fragmentDashboardDatesSpinner.adapter = adapter
+        }
     }
 
     private fun displayListOfClient() {
@@ -88,7 +99,7 @@ class DashboardFragment : Fragment() {
         // color to fill the chart
         val chartGraphColor = Color.argb(100, 116, 158, 218)
 
-        val lineDataSet = LineDataSet(lineEntry, "My Type")
+        val lineDataSet = LineDataSet(lineEntry, "Client")
         lineDataSet.color = resources.getColor(R.color.chart_blue)
         lineDataSet.setDrawValues(false)
         lineDataSet.setDrawFilled(true)
@@ -107,7 +118,7 @@ class DashboardFragment : Fragment() {
 
         chart.xAxis.position = XAxis.XAxisPosition.BOTTOM
         chart.xAxis.setDrawGridLines(false)
-        chart.xAxis.textSize = 12f
+        chart.xAxis.textSize = 6f
         chart.xAxis.labelRotationAngle = -90f
         chart.xAxis.axisLineColor = R.color.deep_sky_blue
 
@@ -117,6 +128,7 @@ class DashboardFragment : Fragment() {
 
         chart.axisRight.isEnabled = false
         chart.axisLeft.setDrawGridLines(false)
+        chart.axisLeft.textSize = 6f
         chart.axisLeft.axisLineColor = R.color.deep_sky_blue
 
         chart.setTouchEnabled(true)

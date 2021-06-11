@@ -90,4 +90,15 @@
     <string name="fragment_message_day_of_post">Today</string>
     <string name="fragment_message_indicator">An indicator</string>
     <string name="fragment_message_user_icon">User icon</string>
+
+    <string-array name="fragment_dashboard_dates_array">
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+        <item>2025</item>
+        <item>2026</item>
+        <item>2027</item>
+    </string-array>
 </resources>

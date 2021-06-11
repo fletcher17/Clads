@@ -1,7 +1,5 @@
 package com.decagonhq.clads.models
 
-import com.decagonhq.clads.R
-
 class Specialty(var name: String, var checked: Boolean) {
 
     companion object {

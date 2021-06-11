@@ -4,15 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import com.decagonhq.clads.databinding.FragmentProfileAccountFirstNameCustomDialogBinding
+import androidx.lifecycle.ViewModelProvider
 import com.decagonhq.clads.databinding.FragmentProfileAccountOtherNameCustomDialogBinding
+import com.decagonhq.clads.viewmodel.EditProfileFragmentViewModel
 
 class EditProfileAccountOtherNameCustomDialogFragment : DialogFragment() {
 
     private var _binding: FragmentProfileAccountOtherNameCustomDialogBinding? = null
     private val binding get() = _binding!!
+    lateinit var viewModel: EditProfileFragmentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,18 +23,23 @@ class EditProfileAccountOtherNameCustomDialogFragment : DialogFragment() {
         _binding =
             FragmentProfileAccountOtherNameCustomDialogBinding.inflate(inflater, container, false)
 
+        viewModel = ViewModelProvider(requireParentFragment()).get(EditProfileFragmentViewModel::class.java)
+
         binding.fragmentProfileAccountOtherNameCustomDialogCancelTextView.setOnClickListener {
             dismiss()
         }
 
         binding.fragmentProfileAccountOtherNameCustomDialogOkTextView.setOnClickListener {
-            val OtherName =
-                binding.fragmentProfileAccountOtherNameCustomDialogOtherNameEditText.editText?.text.toString()
-            Toast.makeText(context, "Is your Other Name really $OtherName ?", Toast.LENGTH_LONG)
-                .show()
+            val otherName = binding.fragmentProfileAccountOtherNameCustomDialogOtherNameEditText.editText?.text.toString()
+            viewModel.otherName.value = otherName
             dismiss()
         }
 
         return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

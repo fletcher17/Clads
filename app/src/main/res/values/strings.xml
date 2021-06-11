@@ -141,4 +141,19 @@
     <string name="fragment_profile_specialty_contemporary_text">Contemporary</string>
     <string name="fragment_profile_specialty_western_fashion_text">Western fashion</string>
     <string name="fragment_profile_specialty_caps_text">Caps</string>
+    <string name="edit_profile_fragment_add_specialty_text">Add Specialty</string>
+    <string name="edit_profile_fragment_add_specialty_popup_hint">Add specialty</string>
+    <string name="edit_profile_fragment_add_text">Add</string>
+    <string name="edit_profile_specialty_clads_trained_text">Clads trained and Certified?</string>
+    <string name="fragment_profile_specialty_no_text">No</string>
+    <string name="edit_profile_specialty_fragment_delivery_lead_time_text">Delivery lead time</string>
+    <string name="specialty_fragment_delivery_lead_time_popup_hint">Add delivery lead time</string>
+    <string name="fragment_profile_specialty_delivery_lead_time_custom_dialog_months_text">Months</string>
+    <string name="fragment_profile_specialty_delivery_lead_time_custom_dialog_weeks_text">Weeks</string>
+    <string name="fragment_profile_specialty_delivery_lead_time_custom_dialog_days_text">Days</string>
+    <string name="profile_specialy_fragment_add_specialty_dialog_fragment_tag">addSpecialtyDialog</string>
+    <string name="profile_specialy_fragment_clads_trained_dialog_fragment_tag">cladsTrainedDialog</string>
+    <string name="profile_specialy_fragment_delivery_lead_time_dialog_fragment_tag">deliveryLeadTimeDialog</string>
+    <string name="payment">Payment</string>
+    <string name="security">Security</string>
 </resources>

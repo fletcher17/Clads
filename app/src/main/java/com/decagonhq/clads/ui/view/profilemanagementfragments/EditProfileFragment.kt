@@ -11,7 +11,7 @@ import com.decagonhq.clads.adapter.EditProfileFragmentViewPagerAdapter
 import com.decagonhq.clads.databinding.FragmentEditProfileBinding
 import com.google.android.material.tabs.TabLayout
 
-class EditProfileFragment : Fragment(), ProfileAccountFragment.ButtonClick {
+class EditProfileFragment : Fragment(), ProfileAccountFragment.ButtonClick, ProfileSpecialtyTabFragment.ButtonClick {
 
     private var _binding: FragmentEditProfileBinding? = null
     private val binding get() = _binding!!
@@ -19,7 +19,6 @@ class EditProfileFragment : Fragment(), ProfileAccountFragment.ButtonClick {
     private lateinit var viewPager: ViewPager2
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPagerAdapter: EditProfileFragmentViewPagerAdapter
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -62,7 +61,6 @@ class EditProfileFragment : Fragment(), ProfileAccountFragment.ButtonClick {
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
 
             override fun onTabReselected(tab: TabLayout.Tab?) {}
-
         })
 
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
@@ -75,5 +73,4 @@ class EditProfileFragment : Fragment(), ProfileAccountFragment.ButtonClick {
     override fun buttonClicked() {
         viewPager.currentItem += 1
     }
-
 }

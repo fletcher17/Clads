@@ -4,17 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import com.decagonhq.clads.R
-import com.decagonhq.clads.databinding.FragmentProfileAccountFirstNameCustomDialogBinding
+import androidx.lifecycle.ViewModelProvider
 import com.decagonhq.clads.databinding.FragmentProfileAccountGenderCustomDialogBinding
-import com.decagonhq.clads.databinding.FragmentProfileAccountLastNameCustomDialogBinding
+import com.decagonhq.clads.viewmodel.EditProfileFragmentViewModel
 
 class EditProfileAccountGenderCustomDialogFragment : DialogFragment() {
 
     private var _binding: FragmentProfileAccountGenderCustomDialogBinding? = null
     private val binding get() = _binding!!
+    lateinit var viewModel: EditProfileFragmentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,19 +24,25 @@ class EditProfileAccountGenderCustomDialogFragment : DialogFragment() {
         _binding =
             FragmentProfileAccountGenderCustomDialogBinding.inflate(inflater, container, false)
 
-        binding.femaleRadioButton.setOnClickListener {
+        viewModel = ViewModelProvider(requireParentFragment()).get(EditProfileFragmentViewModel::class.java)
 
+        binding.femaleRadioButton.setOnClickListener {
             val selectedGender = binding.femaleRadioButton.text.toString()
-            Toast.makeText(context, "Wow! You are a $selectedGender?", Toast.LENGTH_LONG).show()
+            viewModel.gender.value = selectedGender
             dismiss()
         }
 
         binding.maleRadioButton.setOnClickListener {
             val selectedGender = binding.maleRadioButton.text.toString()
-            Toast.makeText(context, "We don't do $selectedGender here!", Toast.LENGTH_LONG).show()
+            viewModel.gender.value = selectedGender
             dismiss()
         }
 
         return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

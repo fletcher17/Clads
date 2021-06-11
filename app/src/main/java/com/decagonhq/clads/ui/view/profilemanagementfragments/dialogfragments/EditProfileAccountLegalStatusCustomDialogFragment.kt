@@ -4,15 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import com.decagonhq.clads.databinding.FragmentProfileAccountFirstNameCustomDialogBinding
+import androidx.lifecycle.ViewModelProvider
 import com.decagonhq.clads.databinding.FragmentProfileAccountLegalStatusCustomDialogBinding
+import com.decagonhq.clads.viewmodel.EditProfileFragmentViewModel
 
 class EditProfileAccountLegalStatusCustomDialogFragment : DialogFragment() {
 
     private var _binding: FragmentProfileAccountLegalStatusCustomDialogBinding? = null
     private val binding get() = _binding!!
+    lateinit var viewModel: EditProfileFragmentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,17 +23,23 @@ class EditProfileAccountLegalStatusCustomDialogFragment : DialogFragment() {
         _binding =
             FragmentProfileAccountLegalStatusCustomDialogBinding.inflate(inflater, container, false)
 
+        viewModel = ViewModelProvider(requireParentFragment()).get(EditProfileFragmentViewModel::class.java)
+
         binding.fragmentProfileAccountLegalStatusCustomDialogCancelTextView.setOnClickListener {
             dismiss()
         }
 
         binding.fragmentProfileAccountLegalStatusCustomDialogOkTextView.setOnClickListener {
-            val legalStatus =
-                binding.fragmentProfileAccountLegalStatusCustomDialogLegalStatusEditText.editText?.text.toString()
-            Toast.makeText(context, "Legal Status: $legalStatus ?", Toast.LENGTH_LONG).show()
+            val legalStatus = binding.fragmentProfileAccountLegalStatusCustomDialogLegalStatusEditText.editText?.text.toString()
+            viewModel.legalStatus.value = legalStatus
             dismiss()
         }
 
         return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

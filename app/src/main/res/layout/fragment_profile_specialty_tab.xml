@@ -11,7 +11,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/dimen_24_dp">
+        android:paddingStart="@dimen/dimen_24_dp"
+        android:paddingTop="@dimen/margin_8dp"
+        android:paddingEnd="@dimen/dimen_24_dp"
+        android:paddingBottom="@dimen/dimen_24_dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/fragment_profile_specialty_recycler_view"
@@ -41,6 +44,8 @@
         <TextView
             android:id="@+id/fragment_profile_specialty_add_new_specialty_text_view"
             style="@style/ProfileSpecialtyTextView"
+            android:clickable="true"
+            android:focusable="true"
             android:text="@string/fragment_profile_specialty_add_new_specialty_text"
             android:textColor="@color/deep_sky_blue"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_specialty_add_new_specialty_button"
@@ -63,6 +68,7 @@
             android:drawableStart="@drawable/fragment_specialty_checkbox_selector"
             android:drawablePadding="@dimen/margin_8dp"
             android:text="@string/female"
+            android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_specialty_male_checkbox"
             app:layout_constraintEnd_toStartOf="@+id/fragment_profile_specialty_kids_checkbox"
             app:layout_constraintHorizontal_bias="0.5"
@@ -75,6 +81,7 @@
             android:drawableStart="@drawable/fragment_specialty_checkbox_selector"
             android:drawablePadding="@dimen/margin_8dp"
             android:text="@string/unisex"
+            android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_specialty_kids_checkbox"
             app:layout_constraintEnd_toEndOf="@+id/fragment_profile_specialty_add_new_specialty_text_view"
             app:layout_constraintHorizontal_bias="0.5"
@@ -85,6 +92,7 @@
             style="@style/ProfileSpecialtyTextView"
             android:layout_marginTop="@dimen/margin_24dp"
             android:button="@null"
+            android:background="@color/white"
             android:drawableStart="@drawable/fragment_specialty_checkbox_selector"
             android:drawablePadding="@dimen/margin_8dp"
             android:text="@string/male"
@@ -97,6 +105,7 @@
             android:id="@+id/fragment_profile_specialty_kids_checkbox"
             style="@style/ProfileSpecialtyTextView"
             android:button="@null"
+            android:background="@color/white"
             android:drawableStart="@drawable/fragment_specialty_checkbox_selector"
             android:drawablePadding="@dimen/margin_8dp"
             android:text="@string/kids"
@@ -118,8 +127,8 @@
             style="@style/ProfileAccountTextView"
             android:layout_marginTop="@dimen/margin_32dp"
             android:text="@string/fragment_profile_specialty_measurement_options_text"
-            app:layout_constraintStart_toStartOf="@+id/fragment_profile_specialty_obioma_trained_text_view"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_specialty_obioma_trained_text_view" />
+            app:layout_constraintStart_toStartOf="@+id/fragment_profile_specialty_clads_trained_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_specialty_clads_trained_text_view" />
 
         <TextView
             android:id="@+id/fragment_profile_specialty_delivery_lead_time_text_view"
@@ -131,7 +140,7 @@
 
 
         <TextView
-            android:id="@+id/fragment_profile_specialty_obioma_trained_text_view"
+            android:id="@+id/fragment_profile_specialty_clads_trained_text_view"
             style="@style/ProfileSpecialtyTextView"
             android:layout_marginTop="@dimen/margin_24dp"
             android:text="@string/fragment_profile_specialty_obioma_trained_text"
@@ -140,14 +149,14 @@
 
 
         <TextView
-            android:id="@+id/fragment_profile_specialty_yes_text_view"
+            android:id="@+id/fragment_profile_specialty_clads_trained_answer_text_view"
             style="@style/ProfileSpecialtyTextView"
             android:text="@string/fragment_profile_specialty_yes_text"
-            app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_specialty_obioma_trained_text_view"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_specialty_clads_trained_text_view"
             app:layout_constraintEnd_toEndOf="@+id/fragment_profile_specialty_recycler_view"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/fragment_profile_specialty_obioma_trained_text_view"
-            app:layout_constraintTop_toTopOf="@+id/fragment_profile_specialty_obioma_trained_text_view"
+            app:layout_constraintStart_toEndOf="@+id/fragment_profile_specialty_clads_trained_text_view"
+            app:layout_constraintTop_toTopOf="@+id/fragment_profile_specialty_clads_trained_text_view"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
@@ -172,7 +181,7 @@
             style="@style/ProfileSpecialtyTextView"
             android:text="@string/fragment_profile_specialty_lead_time_text"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_specialty_delivery_lead_time_text_view"
-            app:layout_constraintEnd_toEndOf="@+id/fragment_profile_specialty_yes_text_view"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_profile_specialty_clads_trained_answer_text_view"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/fragment_profile_specialty_delivery_lead_time_text_view"
             app:layout_constraintTop_toTopOf="@+id/fragment_profile_specialty_delivery_lead_time_text_view"
@@ -194,15 +203,17 @@
             android:id="@+id/fragment_profile_specialty_visit_us_for_your_measurement_checkbox"
             style="@style/ProfileSpecialtyTextView"
             android:button="@null"
+            android:background="@color/white"
             android:drawableEnd="@drawable/fragment_specialty_checkbox_selector"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_specialty_visit_us_for_your_measurement_text_view"
-            app:layout_constraintEnd_toEndOf="@+id/fragment_profile_specialty_yes_text_view"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_profile_specialty_clads_trained_answer_text_view"
             app:layout_constraintTop_toTopOf="@+id/fragment_profile_specialty_visit_us_for_your_measurement_text_view" />
 
         <CheckBox
             android:id="@+id/fragment_profile_specialty_will_accept_self_measurement_checkbox"
             style="@style/ProfileSpecialtyTextView"
             android:button="@null"
+            android:background="@color/white"
             android:drawableEnd="@drawable/fragment_specialty_checkbox_selector"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_specialty_will_accept_self_measurement_text_view"
             app:layout_constraintEnd_toEndOf="@+id/fragment_profile_specialty_visit_us_for_your_measurement_checkbox"

@@ -10,6 +10,7 @@
         style="@style/ProfileSpecialtyTextView"
         android:layout_width="match_parent"
         android:button="@null"
+        android:background="@color/white"
         android:drawableStart="@drawable/fragment_specialty_checkbox_selector"
         android:drawablePadding="@dimen/margin_8dp"
         android:text="@string/fragment_profile_specialty_african_fashion_text"

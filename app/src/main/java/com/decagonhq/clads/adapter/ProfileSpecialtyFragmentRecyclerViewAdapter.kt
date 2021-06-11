@@ -2,9 +2,11 @@ package com.decagonhq.clads.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.decagonhq.clads.databinding.FragmentProfileSpecialtyItemBinding
 import com.decagonhq.clads.models.Specialty
+import com.decagonhq.clads.utils.SpecialtyDiffCallback
 
 class ProfileSpecialtyFragmentRecyclerViewAdapter :
     RecyclerView.Adapter<ProfileSpecialtyFragmentRecyclerViewAdapter.SpecialtyViewHolder>() {
@@ -34,8 +36,11 @@ class ProfileSpecialtyFragmentRecyclerViewAdapter :
         }
     }
 
-    fun populateList(list: ArrayList<Specialty>) {
-        this.specialtyList = list
-        notifyDataSetChanged()
+    fun setData(newSpecialtyList: ArrayList<Specialty>) {
+        val diffCallBack = SpecialtyDiffCallback(specialtyList, newSpecialtyList)
+        val diffResult = DiffUtil.calculateDiff(diffCallBack)
+        specialtyList.clear()
+        specialtyList.addAll(newSpecialtyList)
+        diffResult.dispatchUpdatesTo(this)
     }
 }

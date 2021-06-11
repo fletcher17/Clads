@@ -12,24 +12,24 @@
         android:padding="@dimen/dimen_16_dp">
 
         <TextView
-            android:id="@+id/fragment_profile_account_gender_custom_dialog_textView"
+            android:id="@+id/fragment_profile_specialty_clads_trained_custom_dialog_textView"
             style="@style/ProfileAccountTextView"
-            android:text="@string/edit_profile_fragment_gender_text"
+            android:text="@string/edit_profile_specialty_clads_trained_text"
             android:textSize="@dimen/text_size_16_sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <RadioGroup
-            android:id="@+id/gender_radio_group"
+            android:id="@+id/clads_trained_radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_gender_custom_dialog_textView">
+            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_specialty_clads_trained_custom_dialog_textView">
 
             <RadioButton
-                android:id="@+id/female_radio_button"
+                android:id="@+id/yes_radio_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
@@ -37,19 +37,19 @@
                 android:drawableStart="@drawable/fragment_gender_custom_dialog_radiobutton_selector"
                 android:drawablePadding="@dimen/margin_4dp"
                 android:fontFamily="@font/poppins"
-                android:text="@string/female"
+                android:text="@string/fragment_profile_specialty_yes_text"
                 android:textColor="@color/navy_blue" />
 
             <RadioButton
-                android:id="@+id/male_radio_button"
+                android:id="@+id/no_radio_button"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:button="@null"
                 android:drawableStart="@drawable/fragment_gender_custom_dialog_radiobutton_selector"
                 android:drawablePadding="@dimen/margin_4dp"
-                android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
-                android:text="@string/male"
+                android:text="@string/fragment_profile_specialty_no_text"
                 android:textColor="@color/navy_blue" />
         </RadioGroup>
 

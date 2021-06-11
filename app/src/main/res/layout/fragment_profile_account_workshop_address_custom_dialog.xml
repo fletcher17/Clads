@@ -115,7 +115,7 @@
             android:fontFamily="@font/poppins"
             android:text="@string/edit_profile_fragment_popup_ok_text"
             android:textAllCaps="true"
-            android:textColor="@color/card_text_color"
+            android:textColor="@color/deep_sky_blue"
             android:textSize="@dimen/text_size_14sp"
             app:layout_constraintEnd_toEndOf="@+id/fragment_profile_account_workshop_address_custom_dialog_state_edit_text"
             app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_workshop_address_custom_dialog_state_edit_text" />

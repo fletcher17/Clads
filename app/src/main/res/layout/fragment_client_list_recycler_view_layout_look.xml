@@ -22,17 +22,17 @@
 
 
         <LinearLayout
-            android:id="@+id/client_home_image_profile_color_background"
+            android:id="@+id/fragment_client_home_image_profile_color_background"
+            style="@style/fragment_client_home_list_image_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/client_home_list_image_profile"
-            android:background="@drawable/client_list_round_image_background"
+            android:background="@drawable/fragment_client_list_round_image_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/client_home_list_recycler_look_client_first_name_initial"
+                android:id="@+id/fragment_client_home_list_recycler_look_client_first_name_initial_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -42,7 +42,7 @@
                 android:textColor="@color/white" />
 
             <TextView
-                android:id="@+id/client_home_list_recycler_look_client_last_name_initials"
+                android:id="@+id/fragment_client_home_list_recycler_look_client_last_name_initials_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -54,46 +54,46 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/client_home_list_first_name"
-            style="@style/client_list_names"
+            android:id="@+id/fragment_client_home_list_first_name_textview"
+            style="@style/fragment_client_home_list_names"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/margin_8dp"
             android:text="@string/bawo"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/client_home_image_profile_color_background"
+            app:layout_constraintStart_toEndOf="@+id/fragment_client_home_image_profile_color_background"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/client_home_list_last_name"
-            style="@style/client_list_names"
+            android:id="@+id/fragment_client_home_list_last_name_textview"
+            style="@style/fragment_client_home_list_names"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/nelson"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/client_home_list_first_name"
+            app:layout_constraintStart_toEndOf="@+id/fragment_client_home_list_first_name_textview"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.454" />
 
         <ImageView
-            android:id="@+id/client_home_list_recycler_look_location_pointer"
+            android:id="@+id/fragment_client_home_list_recycler_look_location_pointer_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginEnd="@dimen/margin_9dp"
             android:contentDescription="@string/client_home_location_pointer_icon"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/client_home_list_recycler_look_client_location"
+            app:layout_constraintEnd_toStartOf="@+id/fragment_client_home_list_recycler_look_client_location"
             app:layout_constraintHorizontal_bias="0.98"
-            app:layout_constraintStart_toEndOf="@+id/client_home_list_last_name"
+            app:layout_constraintStart_toEndOf="@+id/fragment_client_home_list_last_name_textview"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.513"
-            app:srcCompat="@drawable/client_screen_location_pin" />
+            app:srcCompat="@drawable/fragment_client_screen_location_pin" />
         <TextView
-            android:id="@+id/client_home_list_recycler_look_client_location"
-            style="@style/client_list_names"
+            android:id="@+id/fragment_client_home_list_recycler_look_client_location"
+            style="@style/fragment_client_home_list_names"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"

@@ -107,7 +107,7 @@
         <item name="hintEnabled">false</item>
     </style>
 
-    <style name="have_no_client_yet_text">
+    <style name="fragment_client_home_have_no_client_yet_text">
         <item name="android:textSize">14sp</item>
         <item name="android:letterSpacing">0.1</item>
         <item name="android:textColor">@color/card_text_color</item>
@@ -115,7 +115,7 @@
 
     </style>
 
-    <style name="client_list_names">
+    <style name="fragment_client_home_list_names">
 
         <item name="android:textSize">12sp</item>
         <item name="android:letterSpacing">-0.03</item>
@@ -125,7 +125,7 @@
 
     </style>
 
-    <style name="client_home_list_image_profile">
+    <style name="fragment_client_home_list_image_profile">
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginStart">@dimen/margin_11dp</item>
         <item name="android:gravity">center</item>
@@ -133,7 +133,7 @@
 
     </style>
 
-    <style name="client_home_list_image_profile._home_list_name_initial">
+    <style name="fragment_client_home_list_image_profile_home_list_name_initial">
         <item name="fontFamily">@font/poppins</item>
         <item name="android:textColor">@color/white</item>
     </style>
@@ -145,7 +145,6 @@
         <item name="android:textColor">@color/navy_blue</item>
 
     </style>
-
 
 
 </resources>

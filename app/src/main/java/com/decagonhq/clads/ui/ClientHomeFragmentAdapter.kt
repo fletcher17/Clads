@@ -50,21 +50,23 @@ class ClientHomeFragmentAdapter(private var clientDetailsList: ArrayList<ClientL
     private fun getClientNamesInitials(Name: String): String {
         return Name[0].toUpperCase().toString()
     }
-// SETTING DIFFERENT BACKGROUNDS COLORS FOR THE BACKGROUND PROFILE IMAGE
+
+    // SETTING DIFFERENT BACKGROUNDS COLORS FOR THE BACKGROUND PROFILE IMAGE
     private fun changeClientProfileBackgroundColor(): Drawable? {
         val colorDrawables = arrayOf(
-            R.drawable.client_list_background_color_drawable_1,
-            R.drawable.client_list_background_color_drawable_2,
-            R.drawable.client_list_background_color_drawable_3,
-            R.drawable.client_list_background_color_drawable_4,
-            R.drawable.client_list_background_color_drawable_5,
-            R.drawable.client_list_background_color_drawable_6
+            R.drawable.fragment_client_list_background_color_drawable_1,
+            R.drawable.fragment_client_list_background_color_drawable_2,
+            R.drawable.fragment_client_list_background_color_drawable_3,
+            R.drawable.fragment_client_list_background_color_drawable_4,
+            R.drawable.fragment_client_list_background_color_drawable_5,
+            R.drawable.fragment_client_list_background_color_drawable_6
         )
         return ContextCompat.getDrawable(
             context!!,
             colorDrawables[(Math.random() * 5).roundToInt()]
         )
     }
+
     // VIEW HOLDER FOR THE RECYCLER VIEW
     inner class ClientHomeFragmentViewHolder(private var binding: FragmentClientListRecyclerViewLayoutLookBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -72,18 +74,20 @@ class ClientHomeFragmentAdapter(private var clientDetailsList: ArrayList<ClientL
             val currentClientListItem = clientDetailsList[position]
 
             // BINDING ALL VIEWS
-            binding.clientHomeListRecyclerLookClientFirstNameInitial.text =
-                getClientNamesInitials(currentClientListItem.clientFirstName)
-            binding.clientHomeListRecyclerLookClientLastNameInitials.text =
-                getClientNamesInitials(currentClientListItem.clientLastName)
-            binding.clientHomeListFirstName.text = currentClientListItem.clientFirstName
-            binding.clientHomeListLastName.text = currentClientListItem.clientLastName
-            binding.clientHomeListRecyclerLookClientLocation.text =
-                currentClientListItem.clientLocation
+            binding.apply {
+                fragmentClientHomeListRecyclerLookClientFirstNameInitialTextview.text =
+                    getClientNamesInitials(currentClientListItem.clientFirstName)
+                fragmentClientHomeListRecyclerLookClientLastNameInitialsTextview.text =
+                    getClientNamesInitials(currentClientListItem.clientLastName)
+                fragmentClientHomeListFirstNameTextview.text = currentClientListItem.clientFirstName
+                fragmentClientHomeListLastNameTextview.text = currentClientListItem.clientLastName
+                fragmentClientHomeListRecyclerLookClientLocation.text =
+                    currentClientListItem.clientLocation
 
-            // ROUNDED PROFILE IMAGE DRAWABLE
-            binding.clientHomeImageProfileColorBackground.background =
-                changeClientProfileBackgroundColor()
+                // ROUNDED PROFILE IMAGE DRAWABLE
+                fragmentClientHomeImageProfileColorBackground.background =
+                    changeClientProfileBackgroundColor()
+            }
         }
     }
 }

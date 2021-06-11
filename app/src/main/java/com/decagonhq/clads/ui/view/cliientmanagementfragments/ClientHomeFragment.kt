@@ -36,7 +36,7 @@ class ClientHomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // SET ONCLICK LISTENER ON CLIENT HOME FRAGMENT ADD CLIENT BUTTON
-        binding.clientHomeScreenAddClientFab.setOnClickListener {
+        binding.fragmentClientHomeScreenAddClientFab.setOnClickListener {
             findNavController().navigate(R.id.action_clientHomeFragment_to_addClientFragment)
         }
     }
@@ -45,14 +45,14 @@ class ClientHomeFragment : Fragment() {
     private fun swapPlaceHolderWithRecyclerView() {
 
         if (clientHomeArrayList.isEmpty()) {
-            binding.clientListHomeImageTextPlaceholder.isVisible = true
+            binding.fragmentClientListHomeImageTextPlaceholder.isVisible = true
         } else {
 
-            binding.clientListScreenRecyclerView.layoutManager =
+            binding.fragmentClientListScreenRecyclerView.layoutManager =
                 LinearLayoutManager(requireContext())
             clientHomeFragmentAdapter = ClientHomeFragmentAdapter(clientHomeArrayList)
-            binding.clientListScreenRecyclerView.adapter = clientHomeFragmentAdapter
-            binding.clientListHomeImageTextPlaceholder.isVisible = false
+            binding.fragmentClientListScreenRecyclerView.adapter = clientHomeFragmentAdapter
+            binding.fragmentClientListHomeImageTextPlaceholder.isVisible = false
         }
     }
 

@@ -136,7 +136,7 @@ dependencies {
     // Viewpager2
     implementation "androidx.viewpager2:viewpager2:$versions.viewpager_version"
 
-    // recycler view
+    // recycler profile_activity_header_view
     implementation "androidx.recyclerview:recyclerview:$versions.recycler_version"
 
     // Chart Library

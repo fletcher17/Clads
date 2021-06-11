@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fragment_message_recycler_list_view"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_22dp"
         android:layout_marginTop="@dimen/margin_16dp"
@@ -75,11 +75,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_7dp"
+            android:contentDescription="@string/fragment_message_arrow_icon_description"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/fragment_message_message_content_text_view"
             app:srcCompat="@drawable/fragment_message_arrow_right_icon"
-            app:tint="@color/deep_sky_blue"
-            android:contentDescription="@string/fragment_message_arrow_icon_description" />
+            app:tint="@color/deep_sky_blue" />
 
         <TextView
             android:id="@+id/fragment_message_message_date_text_view"
@@ -101,9 +101,9 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_30dp"
             android:layout_marginBottom="@dimen/margin_24dp"
+            android:contentDescription="@string/fragment_message_indicator"
             app:layout_constraintBottom_toTopOf="@+id/fragment_message_message_content_text_view"
-            app:layout_constraintEnd_toStartOf="@+id/fragment_message_today_text_view"
-            app:srcCompat="@drawable/fragment_message_ellipse_icon"
-            android:contentDescription="@string/fragment_message_indicator" />
+            app:layout_constraintEnd_toStartOf="@+id/fragment_message_message_date_text_view"
+            app:srcCompat="@drawable/fragment_message_ellipse_icon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

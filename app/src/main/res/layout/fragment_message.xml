@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_46dp"
-        android:layout_marginTop="@dimen/margin_65dp"
+        android:layout_marginTop="@dimen/margin_35dp"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/fragment_dashboard_messages"
         android:textColor="@color/navy_blue"
@@ -23,11 +23,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_message_client_message_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_30dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/fragment_messages_message_list_layout"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_message_messages_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/fragment_message_messages_text_view"
+        tools:listitem="@layout/fragment_messages_message_list_layout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

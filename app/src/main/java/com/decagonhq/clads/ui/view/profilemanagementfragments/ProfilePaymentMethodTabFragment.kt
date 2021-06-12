@@ -63,9 +63,7 @@ class ProfilePaymentMethodTabFragment : Fragment() {
         selectedPaymentOptions = mutableSetOf()
         selectedPaymentOptions.add("Bank deposit (Naira)")
         paymentOptions.text = selectedPaymentOptions.joinToString(
-            separator = ",  ",
-            limit = 3,
-            truncated = "..."
+            separator = "\n "
         )
 
         val allPaymentTermsInDataBase = arrayListOf(
@@ -94,7 +92,8 @@ class ProfilePaymentMethodTabFragment : Fragment() {
 
                     addNewPaymentDialog.dismiss()
 
-                    Toast.makeText(requireContext(), newPaymentTerms, Toast.LENGTH_SHORT).show()
+                    // Adding the created payment term to the payment term textView
+                    paymentTerms.text = newPaymentTerms
                 } else {
                     inputPaymentTermsEditText.error = "Field must not be empty"
                 }
@@ -135,9 +134,7 @@ class ProfilePaymentMethodTabFragment : Fragment() {
 
                 // updating the payment options TextView
                 paymentOptions.text = selectedPaymentOptions.joinToString(
-                    separator = ",  ",
-                    limit = 3,
-                    truncated = "..."
+                    separator = "\n  "
                 )
             }
 

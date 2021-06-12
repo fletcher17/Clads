@@ -105,7 +105,8 @@ tools:context=".ui.view.profilemanagementfragments.ProfileSecurityTabFragment">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/payment_method_tab_screen_payment_options_user_input_old_password_text_view"
@@ -115,6 +116,7 @@ tools:context=".ui.view.profilemanagementfragments.ProfileSecurityTabFragment">
                     android:background="@color/white"
                     android:paddingHorizontal="@dimen/dimen_0_dp"
                     android:hint="@string/old_password"
+                    android:inputType="textPassword"
                     android:textAlignment="gravity"
                     android:layout_gravity="start"
                     android:textColor="@color/grey_color"
@@ -124,7 +126,8 @@ tools:context=".ui.view.profilemanagementfragments.ProfileSecurityTabFragment">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
 
                 <EditText
                     android:id="@+id/payment_method_tab_screen_payment_options_user_input_new_password_text_view"
@@ -133,6 +136,7 @@ tools:context=".ui.view.profilemanagementfragments.ProfileSecurityTabFragment">
                     android:fontFamily="@font/roboto"
                     android:background="@color/white"
                     android:hint="@string/new_password"
+                    android:inputType="textPassword"
                     android:textColor="@color/grey_color"
                     android:textSize="@dimen/text_size_16sp" />
 

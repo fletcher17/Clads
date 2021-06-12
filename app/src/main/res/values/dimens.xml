@@ -149,6 +149,8 @@
     <dimen name="margin_80dp">80dp</dimen>
     <dimen name="padding_10dp">10dp</dimen>
     <dimen name="stroke_width_2dp">2dp</dimen>
+
+    <dimen name="letter_spacing_0.05">0.05</dimen>
     <dimen name="text_size_10sp">10sp</dimen>
     <dimen name="margin_125dp">125dp</dimen>
     <dimen name="margin_120dp">120dp</dimen>

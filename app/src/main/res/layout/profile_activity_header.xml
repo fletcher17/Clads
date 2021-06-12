@@ -48,7 +48,8 @@
         app:layout_constraintStart_toStartOf="@+id/profile_activity_header_app_bar_image_view"
         app:layout_constraintTop_toBottomOf="@+id/profile_activity_header_app_bar_image_view" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
+        android:id="@+id/profile_activity_header_edit_profile_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_20dp"

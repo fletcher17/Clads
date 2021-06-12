@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_24_dp">
+
+        <TextView
+            android:id="@+id/fragment_profile_account_showroom_address_custom_dialog_showroom_address_text_view"
+            style="@style/ProfileAccountTextView"
+            android:text="@string/edit_profile_fragment_showroom_address_text"
+            android:textSize="@dimen/text_size_16_sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fragment_profile_account_showroom_address_custom_dialog_showroom_address_sub_text_view"
+            style="@style/ProfileAccountTextView"
+            android:layout_marginTop="@dimen/dimen_44_dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/edit_profile_fragment_showroom_address_popup_hint"
+            app:layout_constraintStart_toStartOf="@+id/fragment_profile_account_showroom_address_custom_dialog_showroom_address_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_showroom_address_custom_dialog_showroom_address_text_view" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_profile_account_showroom_address_custom_dialog_street_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16_dp"
+            android:textColorHint="@color/login_screen_grey_color"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:layout_constraintStart_toStartOf="@+id/fragment_profile_account_showroom_address_custom_dialog_showroom_address_sub_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_showroom_address_custom_dialog_showroom_address_sub_text_view">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edit_profile_fragment_workshop_showroom_address_popup_street_hint"
+                android:lines="1"
+                android:paddingStart="@dimen/dimen_0_dp"
+                android:paddingEnd="@dimen/dimen_0_dp"
+                android:textSize="@dimen/text_size_16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_profile_account_showroom_address_custom_dialog_city_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16_dp"
+            android:textColorHint="@color/login_screen_grey_color"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_profile_account_showroom_address_custom_dialog_street_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/fragment_profile_account_showroom_address_custom_dialog_street_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_showroom_address_custom_dialog_street_edit_text">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edit_profile_fragment_workshop_showroom_address_popup_city_hint"
+                android:lines="1"
+                android:paddingStart="@dimen/dimen_0_dp"
+                android:paddingEnd="@dimen/dimen_0_dp"
+                android:textSize="@dimen/text_size_16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_profile_account_showroom_address_custom_dialog_state_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16_dp"
+            android:textColorHint="@color/login_screen_grey_color"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_profile_account_showroom_address_custom_dialog_city_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/fragment_profile_account_showroom_address_custom_dialog_city_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_showroom_address_custom_dialog_city_edit_text">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edit_profile_fragment_workshop_showroom_address_popup_state_hint"
+                android:lines="1"
+                android:paddingStart="@dimen/dimen_0_dp"
+                android:paddingEnd="@dimen/dimen_0_dp"
+                android:textSize="@dimen/text_size_16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/fragment_profile_account_showroom_address_custom_dialog_cancel_text_view"
+            style="@style/ProfileAccountTextView"
+            android:layout_marginEnd="@dimen/dimen_44_dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/edit_profile_fragment_popup_cancel_text"
+            android:textAllCaps="true"
+            android:textColor="@color/card_text_color"
+            android:textSize="@dimen/text_size_14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_account_showroom_address_custom_dialog_ok_text_view"
+            app:layout_constraintEnd_toStartOf="@+id/fragment_profile_account_showroom_address_custom_dialog_ok_text_view"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fragment_profile_account_showroom_address_custom_dialog_ok_text_view"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/fragment_profile_account_showroom_address_custom_dialog_ok_text_view"
+            style="@style/ProfileAccountTextView"
+            android:layout_marginTop="@dimen/margin_36dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/edit_profile_fragment_popup_ok_text"
+            android:textAllCaps="true"
+            android:textColor="@color/deep_sky_blue"
+            android:textSize="@dimen/text_size_14sp"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_profile_account_showroom_address_custom_dialog_state_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_showroom_address_custom_dialog_state_edit_text" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
+

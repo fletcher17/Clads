@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.decagonhq.clads.R
-import com.decagonhq.clads.databinding.FragmentProfileAccountFirstNameCustomDialogBinding
-import com.decagonhq.clads.databinding.FragmentProfileAccountStateCustomDialogBinding
 import com.decagonhq.clads.databinding.FragmentProfileAccountWardCustomDialogBinding
 import com.decagonhq.clads.utils.toast
 import com.decagonhq.clads.viewmodel.EditProfileFragmentViewModel

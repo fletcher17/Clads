@@ -39,7 +39,7 @@ class EditProfileAccountShowroomAddressCustomDialogFragment : DialogFragment() {
             val state = binding.fragmentProfileAccountShowroomAddressCustomDialogStateEditText.editText?.text.toString().trim()
 
             if (street != "" && city != "" && state != "") {
-                viewModel.showRoomAddress.value =  "$street, $city, $state"
+                viewModel.showRoomAddress.value = "$street, $city, $state"
                 dismiss()
             } else {
                 toast(getString(R.string.edit_profile_fragment_field_cannot_be_empty_text))

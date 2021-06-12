@@ -54,7 +54,6 @@ class EditProfileSpecialtyCladsTrainedCustomDialogFragment : DialogFragment() {
                 toast(getString(R.string.edit_profile_fragment_selection_cannot_be_empty_text))
             }
         }
-
     }
 
     override fun onDestroy() {

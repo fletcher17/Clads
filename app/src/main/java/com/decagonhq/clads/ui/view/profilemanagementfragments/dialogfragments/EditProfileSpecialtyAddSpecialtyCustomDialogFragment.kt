@@ -36,14 +36,12 @@ class EditProfileSpecialtyAddSpecialtyCustomDialogFragment : DialogFragment() {
         binding.fragmentProfileSpecialtyAddSpecialtyCustomDialogAddSpecialtyButton.setOnClickListener {
             val specialtyName = binding.fragmentProfileSpecialtyAddSpecialtyCustomDialogAddSpecialtyEditText.editText?.text.toString().trim()
 
-            if(specialtyName != "") {
+            if (specialtyName != "") {
                 viewModel.addToSpecialtyList(Specialty(specialtyName, true))
                 dismiss()
             } else {
                 toast(getString(R.string.edit_profile_fragment_field_cannot_be_empty_text))
             }
-
-
         }
     }
 

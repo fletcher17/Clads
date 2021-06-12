@@ -40,7 +40,7 @@ class EditProfileAccountWorkshopAddressCustomDialogFragment : DialogFragment() {
             val state = binding.fragmentProfileAccountWorkshopAddressCustomDialogStateEditText.editText?.text.toString().trim()
 
             if (street != "" && city != "" && state != "") {
-                viewModel.workShopAddress.value =  "$street, $city, $state"
+                viewModel.workShopAddress.value = "$street, $city, $state"
                 dismiss()
             } else {
                 toast(getString(R.string.edit_profile_fragment_field_cannot_be_empty_text))

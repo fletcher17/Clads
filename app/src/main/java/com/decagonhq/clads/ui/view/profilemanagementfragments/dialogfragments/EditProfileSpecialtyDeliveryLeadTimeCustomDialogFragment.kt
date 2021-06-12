@@ -58,7 +58,6 @@ class EditProfileSpecialtyDeliveryLeadTimeCustomDialogFragment : DialogFragment(
             } else {
                 toast(getString(R.string.edit_profile_fragment_field_and_selction_cannot_be_empty_text))
             }
-
         }
     }
 

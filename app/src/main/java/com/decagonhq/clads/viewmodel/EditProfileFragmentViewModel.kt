@@ -17,12 +17,13 @@ class EditProfileFragmentViewModel : ViewModel() {
     val gender = MutableLiveData<String>()
     val workShopAddress = MutableLiveData<String>()
     val showRoomAddress = MutableLiveData<String>()
-    val numberOfEmployees = MutableLiveData<Int>()
+    val numberOfEmployees = MutableLiveData<String>()
     val legalStatus = MutableLiveData<String>()
     val nameOfUnion = MutableLiveData<String>()
     val ward = MutableLiveData<String>()
     val localGovtArea = MutableLiveData<String>()
     val state = MutableLiveData<String>()
+    val cladsTrained = MutableLiveData<String>()
 
     init {
         getDefaultList()

@@ -50,6 +50,10 @@ class ProfileSpecialtyTabFragment : Fragment() {
             }
         )
 
+        viewModel.cladsTrained.observe(viewLifecycleOwner, {
+            cladsTrained -> binding.fragmentProfileSpecialtyCladsTrainedAnswerTextView.text = cladsTrained
+        })
+
         binding.fragmentProfileSpecialtyAddNewSpecialtyTextView.setOnClickListener {
 
             val dialog = EditProfileSpecialtyAddSpecialtyCustomDialogFragment()

@@ -7,7 +7,7 @@ data class Profile(
     var gender: String? = null,
     var workShopAddress: String? = null,
     var showRoomAddress: String? = null,
-    var numberOfEmployees: Int? = null,
+    var numberOfEmployees: String? = null,
     var legalStatus: String? = null,
     var nameOfUnion: String? = null,
     var ward: String? = null,

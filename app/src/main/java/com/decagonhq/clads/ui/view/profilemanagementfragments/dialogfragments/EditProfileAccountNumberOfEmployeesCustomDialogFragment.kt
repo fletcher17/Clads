@@ -33,7 +33,7 @@ class EditProfileAccountNumberOfEmployeesCustomDialogFragment : DialogFragment()
 
         binding.fragmentProfileAccountNumberOfEmployeesCustomDialogOkTextView.setOnClickListener {
             val numberOfEmployees = binding.fragmentProfileAccountNumberOfEmployeesCustomDialogNumberOfEmployeesEditText.editText?.text.toString()
-            viewModel.numberOfEmployees.value = numberOfEmployees.toInt()
+            viewModel.numberOfEmployees.value = numberOfEmployees
             dismiss()
         }
 

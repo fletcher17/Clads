@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
+import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentProfileAccountShowroomAddressCustomDialogBinding
+import com.decagonhq.clads.utils.toast
 import com.decagonhq.clads.viewmodel.EditProfileFragmentViewModel
 
 class EditProfileAccountShowroomAddressCustomDialogFragment : DialogFragment() {
@@ -32,12 +34,16 @@ class EditProfileAccountShowroomAddressCustomDialogFragment : DialogFragment() {
         }
 
         binding.fragmentProfileAccountShowroomAddressCustomDialogOkTextView.setOnClickListener {
-            val street = binding.fragmentProfileAccountShowroomAddressCustomDialogStreetEditText.editText?.text.toString()
-            val city = binding.fragmentProfileAccountShowroomAddressCustomDialogCityEditText.editText?.text.toString()
-            val state = binding.fragmentProfileAccountShowroomAddressCustomDialogStateEditText.editText?.text.toString()
+            val street = binding.fragmentProfileAccountShowroomAddressCustomDialogStreetEditText.editText?.text.toString().trim()
+            val city = binding.fragmentProfileAccountShowroomAddressCustomDialogCityEditText.editText?.text.toString().trim()
+            val state = binding.fragmentProfileAccountShowroomAddressCustomDialogStateEditText.editText?.text.toString().trim()
 
-            viewModel.showRoomAddress.value = "$street, $city, $state"
-            dismiss()
+            if (street != "" && city != "" && state != "") {
+                viewModel.showRoomAddress.value =  "$street, $city, $state"
+                dismiss()
+            } else {
+                toast(getString(R.string.edit_profile_fragment_field_cannot_be_empty_text))
+            }
         }
 
         return binding.root

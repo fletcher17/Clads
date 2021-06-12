@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
+import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentProfileAccountLastNameCustomDialogBinding
+import com.decagonhq.clads.utils.toast
 import com.decagonhq.clads.viewmodel.EditProfileFragmentViewModel
 
 class EditProfileAccountLastNameCustomDialogFragment : DialogFragment() {
@@ -30,9 +32,13 @@ class EditProfileAccountLastNameCustomDialogFragment : DialogFragment() {
         }
 
         binding.fragmentProfileAccountLastNameCustomDialogOkTextView.setOnClickListener {
-            val lastName = binding.fragmentProfileAccountLastNameCustomDialogLastNameEditText.editText?.text.toString()
-            viewModel.lastName.value = lastName
-            dismiss()
+            val lastName = binding.fragmentProfileAccountLastNameCustomDialogLastNameEditText.editText?.text.toString().trim()
+            if (lastName != "") {
+                viewModel.lastName.value = lastName
+                dismiss()
+            } else {
+                toast(getString(R.string.edit_profile_fragment_field_cannot_be_empty_text))
+            }
         }
 
         return binding.root

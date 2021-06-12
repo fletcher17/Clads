@@ -34,6 +34,7 @@ class ProfileSpecialtyTabFragment : Fragment() {
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -50,9 +51,6 @@ class ProfileSpecialtyTabFragment : Fragment() {
             }
         )
 
-        viewModel.cladsTrained.observe(viewLifecycleOwner, {
-            cladsTrained -> binding.fragmentProfileSpecialtyCladsTrainedAnswerTextView.text = cladsTrained
-        })
 
         binding.fragmentProfileSpecialtyAddNewSpecialtyTextView.setOnClickListener {
 
@@ -80,6 +78,10 @@ class ProfileSpecialtyTabFragment : Fragment() {
             )
         }
 
+        viewModel.cladsTrained.observe(viewLifecycleOwner, {
+                cladsTrained -> binding.fragmentProfileSpecialtyCladsTrainedAnswerTextView.text = cladsTrained
+        })
+
         binding.fragmentProfileSpecialtyLeadTimeTextView.setOnClickListener {
             val dialog = EditProfileSpecialtyDeliveryLeadTimeCustomDialogFragment()
             dialog.show(
@@ -87,6 +89,10 @@ class ProfileSpecialtyTabFragment : Fragment() {
                 getString(R.string.profile_specialy_fragment_delivery_lead_time_dialog_fragment_tag)
             )
         }
+
+        viewModel.deliveryLeadTime.observe(viewLifecycleOwner, {
+                deliveryLeadTime -> binding.fragmentProfileSpecialtyLeadTimeTextView.text = deliveryLeadTime
+        })
 
         binding.fragmentProfileSpecialtySaveButton.setOnClickListener {
             (parentFragment as ButtonClick).buttonClicked()

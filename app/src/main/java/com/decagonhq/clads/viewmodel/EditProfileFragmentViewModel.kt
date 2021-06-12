@@ -24,6 +24,7 @@ class EditProfileFragmentViewModel : ViewModel() {
     val localGovtArea = MutableLiveData<String>()
     val state = MutableLiveData<String>()
     val cladsTrained = MutableLiveData<String>()
+    val deliveryLeadTime = MutableLiveData<String>()
 
     init {
         getDefaultList()

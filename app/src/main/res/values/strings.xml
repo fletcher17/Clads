@@ -198,4 +198,7 @@
     <string name="drawer_menu_clients_item">Clients</string>
     <string name="drawer_menu_resources_item">Resources</string>
     <string name="drawer_menu_subscription_item">Subscription</string>
+    <string name="edit_profile_fragment_field_cannot_be_empty_text">Field cannot be empty!</string>
+    <string name="edit_profile_fragment_selection_cannot_be_empty_text">Selection cannot be empty!</string>
+    <string name="edit_profile_fragment_field_and_selction_cannot_be_empty_text">Text field and selection cannot be empty!</string>
 </resources>

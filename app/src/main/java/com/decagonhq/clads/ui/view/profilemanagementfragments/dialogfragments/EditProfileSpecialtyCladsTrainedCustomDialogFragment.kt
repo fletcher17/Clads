@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
+import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentProfileSpecialtyCladsTrainedCustomDialogBinding
+import com.decagonhq.clads.utils.toast
 import com.decagonhq.clads.viewmodel.EditProfileFragmentViewModel
 
 class EditProfileSpecialtyCladsTrainedCustomDialogFragment : DialogFragment() {
@@ -30,17 +32,29 @@ class EditProfileSpecialtyCladsTrainedCustomDialogFragment : DialogFragment() {
 
         viewModel = ViewModelProvider(requireParentFragment()).get(EditProfileFragmentViewModel::class.java)
 
-        binding.yesRadioButton.setOnClickListener {
-            val response = binding.yesRadioButton.text
-            viewModel.cladsTrained.value = response.toString()
+        binding.fragmentProfileSpecialtyCladsTrainedCustomDialogCancelTextView.setOnClickListener {
             dismiss()
         }
 
-        binding.noRadioButton.setOnClickListener {
-            val response = binding.noRadioButton.text
-            viewModel.cladsTrained.value = response.toString()
-            dismiss()
+        binding.fragmentProfileSpecialtyCladsTrainedCustomDialogOkTextView.setOnClickListener {
+            val checkedRadioButtonId = binding.cladsTrainedRadioGroup.checkedRadioButtonId
+
+            val text = with(binding) {
+                when (checkedRadioButtonId) {
+                    yesRadioButton.id -> yesRadioButton.text
+                    noRadioButton.id -> noRadioButton.text
+                    else -> ""
+                }
+            }
+
+            if (text != "") {
+                viewModel.cladsTrained.value = "$text"
+                dismiss()
+            } else {
+                toast(getString(R.string.edit_profile_fragment_selection_cannot_be_empty_text))
+            }
         }
+
     }
 
     override fun onDestroy() {

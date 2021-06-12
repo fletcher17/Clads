@@ -117,10 +117,11 @@
 
         </RadioGroup>
 
+
         <TextView
             android:id="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_cancel_text_view"
             style="@style/ProfileAccountTextView"
-            android:layout_marginEnd="@dimen/dimen_44_dp"
+            android:layout_marginEnd="8dp"
             android:fontFamily="@font/poppins"
             android:text="@string/edit_profile_fragment_popup_cancel_text"
             android:textAllCaps="true"
@@ -128,11 +129,10 @@
             android:textSize="@dimen/text_size_14sp"
             app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_ok_text_view"
             app:layout_constraintEnd_toStartOf="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_ok_text_view"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.906"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_ok_text_view"
             app:layout_constraintVertical_bias="0.0" />
-
 
         <TextView
             android:id="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_ok_text_view"

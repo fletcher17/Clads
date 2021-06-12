@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
+import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentProfileAccountGenderCustomDialogBinding
+import com.decagonhq.clads.utils.toast
 import com.decagonhq.clads.viewmodel.EditProfileFragmentViewModel
 
 class EditProfileAccountGenderCustomDialogFragment : DialogFragment() {
@@ -23,22 +25,36 @@ class EditProfileAccountGenderCustomDialogFragment : DialogFragment() {
 
         _binding =
             FragmentProfileAccountGenderCustomDialogBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(requireParentFragment()).get(EditProfileFragmentViewModel::class.java)
 
-        binding.femaleRadioButton.setOnClickListener {
-            val selectedGender = binding.femaleRadioButton.text.toString()
-            viewModel.gender.value = selectedGender
+        binding.fragmentProfileAccountGenderCustomDialogCancelTextView.setOnClickListener {
             dismiss()
         }
 
-        binding.maleRadioButton.setOnClickListener {
-            val selectedGender = binding.maleRadioButton.text.toString()
-            viewModel.gender.value = selectedGender
-            dismiss()
-        }
+        binding.fragmentProfileAccountGenderCustomDialogOkTextView.setOnClickListener {
+            val checkedRadioButtonId = binding.genderRadioGroup.checkedRadioButtonId
 
-        return binding.root
+            val text = with(binding) {
+                when (checkedRadioButtonId) {
+                    femaleRadioButton.id -> femaleRadioButton.text
+                    maleRadioButton.id -> maleRadioButton.text
+                    else -> ""
+                }
+            }
+
+            if (text != "") {
+                viewModel.gender.value = "$text"
+                dismiss()
+            } else {
+                toast(getString(R.string.edit_profile_fragment_selection_cannot_be_empty_text))
+            }
+        }
     }
 
     override fun onDestroy() {

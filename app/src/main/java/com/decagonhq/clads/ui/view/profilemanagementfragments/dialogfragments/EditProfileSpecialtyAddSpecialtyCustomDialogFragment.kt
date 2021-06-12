@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
+import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentProfileSpecialtyAddSpecialtyCustomDialogBinding
 import com.decagonhq.clads.models.Specialty
+import com.decagonhq.clads.utils.toast
 import com.decagonhq.clads.viewmodel.EditProfileFragmentViewModel
 
 class EditProfileSpecialtyAddSpecialtyCustomDialogFragment : DialogFragment() {
@@ -32,9 +34,16 @@ class EditProfileSpecialtyAddSpecialtyCustomDialogFragment : DialogFragment() {
         viewModel = ViewModelProvider(requireParentFragment()).get(EditProfileFragmentViewModel::class.java)
 
         binding.fragmentProfileSpecialtyAddSpecialtyCustomDialogAddSpecialtyButton.setOnClickListener {
-            val specialtyName = binding.fragmentProfileSpecialtyAddSpecialtyCustomDialogAddSpecialtyEditText.editText?.text.toString()
-            viewModel.addToSpecialtyList(Specialty(specialtyName, true))
-            dismiss()
+            val specialtyName = binding.fragmentProfileSpecialtyAddSpecialtyCustomDialogAddSpecialtyEditText.editText?.text.toString().trim()
+
+            if(specialtyName != "") {
+                viewModel.addToSpecialtyList(Specialty(specialtyName, true))
+                dismiss()
+            } else {
+                toast(getString(R.string.edit_profile_fragment_field_cannot_be_empty_text))
+            }
+
+
         }
     }
 

@@ -42,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/edit_profile_fragment_first_name_popup_hint"
                 android:maxLength="100"
+                android:lines="1"
                 android:paddingStart="@dimen/dimen_0_dp"
                 android:paddingEnd="@dimen/dimen_0_dp"
                 android:textSize="@dimen/text_size_16sp" />

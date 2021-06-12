@@ -43,6 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/edit_profile_fragment_workshop_showroom_address_popup_street_hint"
+                android:lines="1"
                 android:paddingStart="@dimen/dimen_0_dp"
                 android:paddingEnd="@dimen/dimen_0_dp"
                 android:textSize="@dimen/text_size_16sp" />
@@ -64,6 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/edit_profile_fragment_workshop_showroom_address_popup_city_hint"
+                android:lines="1"
                 android:paddingStart="@dimen/dimen_0_dp"
                 android:paddingEnd="@dimen/dimen_0_dp"
                 android:textSize="@dimen/text_size_16sp" />
@@ -86,6 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/edit_profile_fragment_workshop_showroom_address_popup_state_hint"
+                android:lines="1"
                 android:paddingStart="@dimen/dimen_0_dp"
                 android:paddingEnd="@dimen/dimen_0_dp"
                 android:textSize="@dimen/text_size_16sp" />

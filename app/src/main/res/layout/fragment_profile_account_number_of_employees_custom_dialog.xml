@@ -40,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/edit_profile_fragment_number_of_employees_popup_hint"
                 android:inputType="number"
+                android:lines="1"
                 android:paddingStart="@dimen/dimen_0_dp"
                 android:paddingEnd="@dimen/dimen_0_dp"
                 android:textSize="@dimen/text_size_16sp" />

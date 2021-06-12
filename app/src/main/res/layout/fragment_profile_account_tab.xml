@@ -234,11 +234,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <TextView
             android:id="@+id/fragment_profile_account_name_of_union_edit_text"
             style="@style/ProfileAccountEditText"
             android:layout_marginStart="@dimen/dimen_0_dp"
-            android:layout_marginTop="@dimen/dimen_0_dp"
+            android:layout_marginTop="@dimen/margin_8dp"
             android:hint="@string/edit_profile_fragment_name_of_union_popup_hint"
             android:paddingStart="@dimen/dimen_0_dp"
             android:paddingEnd="@dimen/dimen_0_dp"
@@ -255,11 +255,11 @@
             app:layout_constraintStart_toStartOf="@+id/fragment_profile_account_name_of_union_edit_text"
             app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_name_of_union_edit_text" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <TextView
             android:id="@+id/fragment_profile_account_ward_edit_text"
             style="@style/ProfileAccountEditText"
             android:layout_marginStart="@dimen/dimen_0_dp"
-            android:layout_marginTop="@dimen/dimen_0_dp"
+            android:layout_marginTop="@dimen/margin_8dp"
             android:hint="@string/edit_profile_fragment_ward_popup_hint"
             android:paddingStart="@dimen/dimen_0_dp"
             android:paddingEnd="@dimen/dimen_0_dp"
@@ -276,16 +276,15 @@
             app:layout_constraintStart_toStartOf="@+id/fragment_profile_account_ward_edit_text"
             app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_ward_edit_text" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <TextView
             android:id="@+id/fragment_profile_account_local_govt_area_edit_text"
             style="@style/ProfileAccountEditText"
             android:layout_marginStart="@dimen/dimen_0_dp"
-            android:layout_marginTop="@dimen/dimen_0_dp"
+            android:layout_marginTop="@dimen/margin_8dp"
             android:hint="@string/edit_profile_fragment_local_government_area_popup_hint"
             android:paddingStart="@dimen/dimen_0_dp"
             android:paddingEnd="@dimen/dimen_0_dp"
             android:textAlignment="textStart"
-            app:flow_horizontalBias="1.0"
             app:layout_constraintEnd_toEndOf="@+id/fragment_profile_account_ward_edit_text"
             app:layout_constraintStart_toStartOf="@+id/fragment_profile_local_govt_area_text_view"
             app:layout_constraintTop_toBottomOf="@+id/fragment_profile_local_govt_area_text_view" />
@@ -298,16 +297,15 @@
             app:layout_constraintStart_toStartOf="@+id/fragment_profile_account_local_govt_area_edit_text"
             app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_local_govt_area_edit_text" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <TextView
             android:id="@+id/fragment_profile_account_state_edit_text"
             style="@style/ProfileAccountEditText"
             android:layout_marginStart="@dimen/dimen_0_dp"
-            android:layout_marginTop="@dimen/dimen_0_dp"
+            android:layout_marginTop="@dimen/margin_8dp"
             android:hint="@string/edit_profile_fragment_workshop_showroom_address_popup_state_hint"
             android:paddingStart="@dimen/dimen_0_dp"
             android:paddingEnd="@dimen/dimen_0_dp"
             android:textAlignment="textStart"
-            app:flow_horizontalBias="1.0"
             app:layout_constraintEnd_toEndOf="@+id/fragment_profile_account_local_govt_area_edit_text"
             app:layout_constraintStart_toStartOf="@+id/fragment_profile_state_text_view"
             app:layout_constraintTop_toBottomOf="@+id/fragment_profile_state_text_view" />

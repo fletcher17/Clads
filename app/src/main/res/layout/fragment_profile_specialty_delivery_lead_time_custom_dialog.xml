@@ -43,6 +43,7 @@
                 android:hint="@string/specialty_fragment_delivery_lead_time_popup_hint"
                 android:inputType="number"
                 android:maxLength="100"
+                android:lines="1"
                 android:paddingStart="@dimen/dimen_0_dp"
                 android:paddingEnd="@dimen/dimen_0_dp"
                 android:textSize="@dimen/text_size_16sp" />

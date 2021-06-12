@@ -41,6 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/edit_profile_fragment_add_specialty_popup_hint"
+                android:lines="1"
                 android:maxLength="100"
                 android:paddingStart="@dimen/dimen_0_dp"
                 android:paddingEnd="@dimen/dimen_0_dp"

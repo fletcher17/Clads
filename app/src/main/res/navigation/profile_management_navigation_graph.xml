@@ -4,13 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/profile_management_navigation_graph"
-    app:startDestination="@id/dashboardFragment">
+    app:startDestination="@+id/dashboardFragment">
 
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.decagonhq.clads.ui.view.profilemanagementfragments.DashboardFragment"
         android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" >
+        tools:layout="@layout/fragment_dashboard">
         <action
             android:id="@+id/action_dashboardFragment_to_messageFragment"
             app:destination="@id/messageFragment" />

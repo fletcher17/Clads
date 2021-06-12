@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -18,14 +19,15 @@ import com.decagonhq.clads.databinding.ActivityProfileDashboardBinding
 
 class ProfileDashboardActivity : AppCompatActivity() {
 
-    private var _binding: ActivityProfileDashboardBinding? = null
-    private val binding get() = _binding!!
-    lateinit var navController: NavController
-    lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var binding: ActivityProfileDashboardBinding
+
+    private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = ActivityProfileDashboardBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
+        binding = ActivityProfileDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.activityProfileDashboardToolbarLayout.profileActivityAppBarToolbar)
 
@@ -37,6 +39,11 @@ class ProfileDashboardActivity : AppCompatActivity() {
         navView.findViewById<ImageView>(R.id.profile_activity_header_dashboard_close_header_icon)
             .setOnClickListener {
                 drawerLayout.closeDrawer(Gravity.LEFT)
+            }
+        navView.findViewById<Button>(R.id.profile_activity_header_edit_profile_button)
+            .setOnClickListener {
+                drawerLayout.closeDrawer(Gravity.LEFT)
+                navController.navigate(R.id.action_dashboardFragment_to_editProfileFragment)
             }
     }
 

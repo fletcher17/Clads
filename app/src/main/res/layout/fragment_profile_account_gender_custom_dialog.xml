@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_24_dp">
+
+        <TextView
+            android:id="@+id/fragment_profile_account_gender_custom_dialog_textView"
+            style="@style/ProfileAccountTextView"
+            android:text="@string/edit_profile_fragment_gender_text"
+            android:textSize="@dimen/text_size_16_sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/gender_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_gender_custom_dialog_textView">
+
+            <RadioButton
+                android:id="@+id/female_radio_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:button="@null"
+                android:drawableStart="@drawable/fragment_gender_custom_dialog_radiobutton_selector"
+                android:drawablePadding="@dimen/margin_4dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/female"
+                android:textColor="@color/navy_blue" />
+
+            <RadioButton
+                android:id="@+id/male_radio_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:button="@null"
+                android:drawableStart="@drawable/fragment_gender_custom_dialog_radiobutton_selector"
+                android:drawablePadding="@dimen/margin_4dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/male"
+                android:textColor="@color/navy_blue" />
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/fragment_profile_account_gender_custom_dialog_cancel_text_view"
+            style="@style/ProfileAccountTextView"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/edit_profile_fragment_popup_cancel_text"
+            android:textAllCaps="true"
+            android:textColor="@color/card_text_color"
+            android:textSize="@dimen/text_size_14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_account_gender_custom_dialog_ok_text_view"
+            app:layout_constraintEnd_toStartOf="@+id/fragment_profile_account_gender_custom_dialog_ok_text_view"
+            app:layout_constraintHorizontal_bias="0.903"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fragment_profile_account_gender_custom_dialog_ok_text_view"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/fragment_profile_account_gender_custom_dialog_ok_text_view"
+            style="@style/ProfileAccountTextView"
+            android:layout_marginTop="@dimen/dimen_24_dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/edit_profile_fragment_popup_ok_text"
+            android:textAllCaps="true"
+            android:textColor="@color/deep_sky_blue"
+            android:textSize="@dimen/text_size_14sp"
+            app:layout_constraintEnd_toEndOf="@+id/gender_radio_group"
+            app:layout_constraintTop_toBottomOf="@+id/gender_radio_group" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

@@ -36,7 +36,11 @@ class ProfilePaymentMethodTabFragment : Fragment() {
     private lateinit var payoneerCheckBox: CheckBox
     private lateinit var selectedPaymentOptions: MutableSet<String>
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentProfilePaymentMethodTabBinding.inflate(
             layoutInflater,
             container,
@@ -44,11 +48,14 @@ class ProfilePaymentMethodTabFragment : Fragment() {
         )
 
         // Initializing binding variables for the dialog xmls
-        addNewPaymentDialogBinding = EditProfilePaymentMethodAddPaymentDialogBinding.inflate(layoutInflater)
+        addNewPaymentDialogBinding =
+            EditProfilePaymentMethodAddPaymentDialogBinding.inflate(layoutInflater)
 
         // creating reference to views
-        paymentTerms = binding.fragmentProfilePagePaymentMethodTabScreenPaymentTermsUserChoiceModalTextView
-        paymentOptions = binding.fragmentProfilePaymentMethodTabScreenPaymentOptionsUserChoiceModalTextView
+        paymentTerms =
+            binding.fragmentProfilePagePaymentMethodTabScreenPaymentTermsUserChoiceModalTextView
+        paymentOptions =
+            binding.fragmentProfilePaymentMethodTabScreenPaymentOptionsUserChoiceModalTextView
         addPaymentTerms = binding.fragmentProfileAddNewPaymentTermsFloatingActionButton
         saveChanges = binding.fragmentProfilePaymentMethodTabScreenSaveChangesBtn
 
@@ -61,7 +68,11 @@ class ProfilePaymentMethodTabFragment : Fragment() {
             truncated = "..."
         )
 
-        val allPaymentTermsInDataBase = arrayListOf("100% Deposit", "50% Deposit and 50% balance on delivery", "0% Deposit and 100% balance on delivery")
+        val allPaymentTermsInDataBase = arrayListOf(
+            "100% Deposit",
+            "50% Deposit and 50% balance on delivery",
+            "0% Deposit and 100% balance on delivery"
+        )
 
         // creating alert dialogs
         val addNewPaymentDialog = createDialog(addNewPaymentDialogBinding.root).create()
@@ -93,11 +104,14 @@ class ProfilePaymentMethodTabFragment : Fragment() {
         // Setting onClick listener to the payment options textView
         paymentOptions.setOnClickListener() {
             // Intializing the binding variable
-            paymentOptionsDialogBinding = EditProfilePaymentOptionsDialogBinding.inflate(layoutInflater)
+            paymentOptionsDialogBinding =
+                EditProfilePaymentOptionsDialogBinding.inflate(layoutInflater)
 
             // initailizing the check boxes
-            nairaCheckBox = paymentOptionsDialogBinding.fragmentProfilePaymentOptionsBankDepositNaira
-            usdCheckBox = paymentOptionsDialogBinding.fragmentProfilePaymentOptionsBankDepositForeignCurrencies
+            nairaCheckBox =
+                paymentOptionsDialogBinding.fragmentProfilePaymentOptionsBankDepositNaira
+            usdCheckBox =
+                paymentOptionsDialogBinding.fragmentProfilePaymentOptionsBankDepositForeignCurrencies
             cashCheckBox = paymentOptionsDialogBinding.fragmentProfilePaymentOptionsCash
             vCashCheckBox = paymentOptionsDialogBinding.fragmentProfilePaymentOptionsVCash
             payoneerCheckBox = paymentOptionsDialogBinding.fragmentProfilePaymentOptionsPayoneer
@@ -143,7 +157,8 @@ class ProfilePaymentMethodTabFragment : Fragment() {
             paymentTermsDialogBinding = EditProfilePaymentTermsDialogBinding.inflate(layoutInflater)
 
             // Getting reference to the RecyclerView RadioGroup
-            val paymentTermsRadioGroup = paymentTermsDialogBinding.fragmentProfilePaymentMethodRadioGroup
+            val paymentTermsRadioGroup =
+                paymentTermsDialogBinding.fragmentProfilePaymentMethodRadioGroup
 
             // populating the RadioGroup dynamically
             for (i in allPaymentTermsInDataBase) {
@@ -167,15 +182,13 @@ class ProfilePaymentMethodTabFragment : Fragment() {
 
             paymentTermsDialog.setPositiveButton(
                 R.string.all_ok
-            ) {
-                _: DialogInterface, _: Int ->
+            ) { _: DialogInterface, _: Int ->
                 paymentTerms.text = selectedPaymentOption
             }
 
             paymentTermsDialog.setNegativeButton(
                 R.string.all_cancel
-            ) {
-                _: DialogInterface, _: Int ->
+            ) { _: DialogInterface, _: Int ->
             }
 
             paymentTermsDialog.create().show()

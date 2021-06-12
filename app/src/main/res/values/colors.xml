@@ -16,8 +16,10 @@
     <color name="card_text_color">#506992</color>
     <color name="lighter_shade_sky_blue">#4D0066F5</color>
     <color name="login_screen_grey_color">#ADBACD</color>
+    <color name="grey_color">#ADBACD</color>
     <color name="deep_sky_blue">#0066F5</color>
     <color name="blue">#0066F5</color>
+    <color name="menu_text_color">#506992</color>
     <color name="off_white">#F2F2F2</color>
     <color name="navy_blue">#0A2E65</color>
     <color name="grey">#99FFFFFF</color>

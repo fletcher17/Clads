@@ -157,7 +157,6 @@ tools:context=".ui.view.profilemanagementfragments.ProfileSecurityTabFragment">
         app:layout_constraintStart_toStartOf="@+id/fragment_profile_payment_options_containing_linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/fragment_profile_payment_options_containing_linearLayout" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

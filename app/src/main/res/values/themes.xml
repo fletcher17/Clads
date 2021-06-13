@@ -115,5 +115,10 @@
         <item name="android:windowBackground">@drawable/splash_screen_background</item>
         <item name="android:statusBarColor">@color/blue</item>
     </style>
-
+    <style name="add_client_DividerViewStyle">
+        <item name="android:layout_marginTop">@dimen/margin_10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/add_client_fragment_horizontal_divider_view_height</item>
+        <item name="android:background">@color/text_input_line_grey</item>
+    </style>
 </resources>

@@ -20,11 +20,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_27dp"
             android:layout_marginTop="@dimen/margin_top_20dp"
+            android:layout_marginBottom="@dimen/margin_20dp"
             android:fontFamily="@font/poppins_bold"
             android:letterSpacing="@dimen/letter_spacing_0.05"
             android:text="@string/edit_profile_fragment_title"
             android:textColor="@color/navy_blue"
             android:textSize="@dimen/text_size_20sp"
+            app:layout_constraintBottom_toTopOf="@id/edit_profile_fragment_tabLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,6 +34,7 @@
             android:id="@+id/edit_profile_fragment_tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_profile_fragment_title"

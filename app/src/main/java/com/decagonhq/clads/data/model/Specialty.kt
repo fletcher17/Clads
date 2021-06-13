@@ -1,4 +1,4 @@
-package com.decagonhq.clads.models
+package com.decagonhq.clads.data.model
 
 class Specialty(var name: String, var checked: Boolean) {
 

@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.decagonhq.clads.R
-import com.decagonhq.clads.adapters.FragmentMessageClientAdapter
+import com.decagonhq.clads.data.model.ClientMessageModel
 import com.decagonhq.clads.databinding.FragmentMessageBinding
-import com.decagonhq.clads.models.ClientMessageModel
+import com.decagonhq.clads.ui.adapters.recyclerviewadapters.FragmentMessageClientAdapter
 
 class MessageFragment : Fragment() {
 

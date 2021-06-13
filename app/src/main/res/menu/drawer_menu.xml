@@ -4,7 +4,7 @@
     tools:showIn="navigation_view">
 
         <item
-            android:id="@+id/clients"
+            android:id="@+id/clientHomeFragment"
             android:title="@string/drawer_menu_clients_item"
             android:icon="@drawable/navigation_drawer_client_icon" />
 

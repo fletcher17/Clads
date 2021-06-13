@@ -1,4 +1,4 @@
-package com.decagonhq.clads.Interface
+package com.decagonhq.clads.utils.Interface
 
 interface IButtonClick {
     fun buttonClicked()

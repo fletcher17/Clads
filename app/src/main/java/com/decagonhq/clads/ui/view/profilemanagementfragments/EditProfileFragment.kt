@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.decagonhq.clads.R
-import com.decagonhq.clads.adapter.EditProfileFragmentViewPagerAdapter
 import com.decagonhq.clads.databinding.FragmentEditProfileBinding
+import com.decagonhq.clads.ui.adapters.viewpagersadapters.EditProfileFragmentViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 
 class EditProfileFragment : Fragment(), ProfileAccountFragment.ButtonClick, ProfileSpecialtyTabFragment.ButtonClick {

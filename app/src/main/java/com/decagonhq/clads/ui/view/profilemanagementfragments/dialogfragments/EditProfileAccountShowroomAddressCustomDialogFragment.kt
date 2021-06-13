@@ -8,8 +8,8 @@ import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentProfileAccountShowroomAddressCustomDialogBinding
+import com.decagonhq.clads.ui.viewmodel.EditProfileFragmentViewModel
 import com.decagonhq.clads.utils.toast
-import com.decagonhq.clads.viewmodel.EditProfileFragmentViewModel
 
 class EditProfileAccountShowroomAddressCustomDialogFragment : DialogFragment() {
 

@@ -62,12 +62,10 @@ class ProfileDashboardActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when {
-                (destination.id == R.id.messageFragment) -> {
-                    setNavigationBarItems(true)
-                }
-                else -> {
-                    setNavigationBarItems(false)
-                }
+                (destination.id == R.id.messageFragment) -> setNavigationBarItems(true)
+                (destination.id == R.id.clientHomeFragment) -> setNavigationBarItems(true)
+
+                else -> setNavigationBarItems(false)
             }
         }
     }
@@ -75,28 +73,18 @@ class ProfileDashboardActivity : AppCompatActivity() {
     private fun setNavigationBarItems(requiredDestination: Boolean) {
         binding.apply {
             if (requiredDestination) {
-                activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarImageView.visibility =
-                    View.GONE
-                activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarTitleTextView.visibility =
-                    View.GONE
-                activityProfileDashboardToolbarLayout.profileActivityAppBarNotificationIcon.visibility =
-                    View.GONE
+                activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarImageView.visibility = View.GONE
+                activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarTitleTextView.visibility = View.GONE
+                activityProfileDashboardToolbarLayout.profileActivityAppBarNotificationIcon.visibility = View.GONE
             } else {
-                activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarImageView.visibility =
-                    View.VISIBLE
-                activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarTitleTextView.visibility =
-                    View.VISIBLE
-                activityProfileDashboardToolbarLayout.profileActivityAppBarNotificationIcon.visibility =
-                    View.VISIBLE
+                activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarImageView.visibility = View.VISIBLE
+                activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarTitleTextView.visibility = View.VISIBLE
+                activityProfileDashboardToolbarLayout.profileActivityAppBarNotificationIcon.visibility = View.VISIBLE
             }
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }
+    override fun onSupportNavigateUp(): Boolean = navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
-    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
 }

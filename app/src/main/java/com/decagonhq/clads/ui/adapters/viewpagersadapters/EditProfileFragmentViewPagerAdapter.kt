@@ -1,4 +1,4 @@
-package com.decagonhq.clads.adapter
+package com.decagonhq.clads.ui.adapters.viewpagersadapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

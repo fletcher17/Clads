@@ -9,9 +9,9 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.decagonhq.clads.R
-import com.decagonhq.clads.adapters.DashBoardClientAdapter
+import com.decagonhq.clads.data.model.ClientModel
 import com.decagonhq.clads.databinding.FragmentDashboardBinding
-import com.decagonhq.clads.models.ClientModel
+import com.decagonhq.clads.ui.adapters.recyclerviewadapters.DashBoardClientAdapter
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData

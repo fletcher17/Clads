@@ -1,11 +1,11 @@
-package com.decagonhq.clads.adapter
+package com.decagonhq.clads.ui.adapters.recyclerviewadapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.decagonhq.clads.data.model.Specialty
 import com.decagonhq.clads.databinding.FragmentProfileSpecialtyItemBinding
-import com.decagonhq.clads.models.Specialty
 import com.decagonhq.clads.utils.SpecialtyDiffCallback
 
 class ProfileSpecialtyFragmentRecyclerViewAdapter :

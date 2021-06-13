@@ -6,10 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.decagonhq.clads.Interface.IButtonClick
 import com.decagonhq.clads.R
+import com.decagonhq.clads.data.model.Profile
 import com.decagonhq.clads.databinding.FragmentProfileAccountTabBinding
-import com.decagonhq.clads.models.Profile
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountFirstNameCustomDialogFragment
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountGenderCustomDialogFragment
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountLastNameCustomDialogFragment
@@ -22,7 +21,8 @@ import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.Ed
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountStateCustomDialogFragment
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountWardCustomDialogFragment
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountWorkshopAddressCustomDialogFragment
-import com.decagonhq.clads.viewmodel.EditProfileFragmentViewModel
+import com.decagonhq.clads.ui.viewmodel.EditProfileFragmentViewModel
+import com.decagonhq.clads.utils.Interface.IButtonClick
 
 class ProfileAccountFragment : Fragment() {
 

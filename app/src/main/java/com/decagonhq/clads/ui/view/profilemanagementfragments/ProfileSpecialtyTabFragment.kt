@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import com.decagonhq.clads.Interface.IButtonClick
 import com.decagonhq.clads.R
-import com.decagonhq.clads.adapter.ProfileSpecialtyFragmentRecyclerViewAdapter
 import com.decagonhq.clads.databinding.FragmentProfileSpecialtyTabBinding
+import com.decagonhq.clads.ui.adapters.recyclerviewadapters.ProfileSpecialtyFragmentRecyclerViewAdapter
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileSpecialtyAddSpecialtyCustomDialogFragment
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileSpecialtyCladsTrainedCustomDialogFragment
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileSpecialtyDeliveryLeadTimeCustomDialogFragment
-import com.decagonhq.clads.viewmodel.EditProfileFragmentViewModel
+import com.decagonhq.clads.ui.viewmodel.EditProfileFragmentViewModel
+import com.decagonhq.clads.utils.Interface.IButtonClick
 
 class ProfileSpecialtyTabFragment : Fragment() {
 

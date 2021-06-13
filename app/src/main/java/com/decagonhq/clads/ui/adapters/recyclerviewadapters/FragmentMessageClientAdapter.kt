@@ -1,10 +1,10 @@
-package com.decagonhq.clads.adapters
+package com.decagonhq.clads.ui.adapters.recyclerviewadapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.decagonhq.clads.data.model.ClientMessageModel
 import com.decagonhq.clads.databinding.FragmentMessagesMessageListLayoutBinding
-import com.decagonhq.clads.models.ClientMessageModel
 
 class FragmentMessageClientAdapter(private var clientMessageList: ArrayList<ClientMessageModel>) :
     RecyclerView.Adapter<FragmentMessageClientAdapter.MessageClientViewHolder>() {

@@ -1,4 +1,4 @@
-package com.decagonhq.clads.models
+package com.decagonhq.clads.data.model
 
 data class Profile(
     var firstName: String? = null,

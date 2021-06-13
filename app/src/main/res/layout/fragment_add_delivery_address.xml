@@ -1,14 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_add_delivery_address_nested_scroll_view"
+    style="@style/AddDeliveryAddressFragmentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddDeliveryAddressFragment">
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".ui.view.cliientmanagementfragments.AddDeliveryAddressFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/fragment_add_delivery_address_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/fragment_add_delivery_address_title_text_view"
+            style="@style/AddDeliveryAddressFragmentTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_delivery_address_fragment_title_text_view" />
+
+        <TextView
+            android:id="@+id/fragment_add_delivery_address_subtitle_text_view"
+            style="@style/AddDeliveryAddressFragmentSubTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/fragment_add_delivery_address_text_input_field_layout"
+            style="@style/AddDeliveryAddressFragmentTextFieldLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fragment_add_delivery_address_delivery_address_text_view"
+                style="@style/AddDeliveryAddressFragmentDeliveryAddressTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fragment_add_delivery_enter_delivery_text_input_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false"
+                android:textColorHint="@color/grey_color"
+                app:boxBackgroundColor="@color/white_grey"
+                app:boxStrokeColor="@color/deep_sky_blue"
+                app:hintTextColor="@color/deep_sky_blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fragment_add_delivery_enter_delivery_edit_text_input"
+                    android:layout_width="match_parent"
+                    android:hint="@string/fragment_add_delivery_address_enter_delivery_address_hint_text"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fragment_add_delivery_city_text_input_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30dp"
+                app:hintEnabled="false"
+                app:boxBackgroundColor="@color/white_grey"
+                app:boxStrokeColor="@color/deep_sky_blue"
+                app:hintTextColor="@color/deep_sky_blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fragment_add_delivery_city_edit_text_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/fragment_add_delivery_address_city_hint_text"
+                    android:textColorHint="@color/grey_color"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fragment_add_delivery_state_text_input_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30dp"
+                app:hintEnabled="false"
+                app:boxBackgroundColor="@color/white_grey"
+                app:boxStrokeColor="@color/deep_sky_blue"
+                app:hintTextColor="@color/deep_sky_blue">
+
+                <AutoCompleteTextView
+                    android:id="@+id/fragment_add_delivery_state_auto_complete_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColorHint="@color/grey_color"
+                    android:hint="@string/fragment_add_delivery_address_state_hint_text"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+                    android:text="" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/fragment_add_delivery_address_button"
+            style="@style/AddDeliveryAddressFragmentButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

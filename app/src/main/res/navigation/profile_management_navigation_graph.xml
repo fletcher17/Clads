@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/profile_management_navigation_graph"
-    app:startDestination="@id/dashboardFragment">
+    app:startDestination="@id/clientMeasurementTabFragment">
 
     <fragment
         android:id="@+id/dashboardFragment"
@@ -68,7 +68,8 @@
         tools:layout="@layout/fragment_add_measurement" >
         <action
             android:id="@+id/action_addMeasurementFragment_to_clientMeasurementTabFragment"
-            app:destination="@id/clientMeasurementTabFragment" />
+            app:destination="@id/clientMeasurementTabFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/addDeliveryAddressFragment"
@@ -96,6 +97,11 @@
         <action
             android:id="@+id/action_clientDeliveryAdderssTabFragment_to_addDeliveryAddressFragment"
             app:destination="@id/addDeliveryAddressFragment" />
+        <argument
+            android:name="ClientAddress"
+            app:argType="com.decagonhq.clads.utils.ClientAddressData"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/clientMeasurementTabFragment"
@@ -104,6 +110,13 @@
         tools:layout="@layout/fragment_client_measurement_tab" >
         <action
             android:id="@+id/action_clientMeasurementTabFragment_to_addMeasurementFragment"
-            app:destination="@id/addMeasurementFragment" />
+            app:destination="@id/addMeasurementFragment"
+            app:popUpTo="@id/clientHomeFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="clientMeasurement"
+            app:argType="com.decagonhq.clads.utils.ClientMeasurementData"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
 </navigation>

@@ -8,7 +8,6 @@
         <item name="android:textColor">@color/off_white</item>
         <item name="android:textSize">@dimen/text_size_18sp</item>
     </style>
-
     <style name="SignUpScreenGetToKnowYouText">
         <item name="android:layout_marginStart">@dimen/margin_18dp</item>
         <item name="android:layout_marginTop">@dimen/margin_9dp</item>
@@ -27,7 +26,6 @@
         <item name="android:textCursorDrawable">@drawable/cursor_appearance</item>
         <item name="android:textSize">@dimen/text_size_16sp</item>
     </style>
-
     <style name="SignUpScreenSignUpButton">
         <item name="android:layout_marginTop">@dimen/margin_40dp</item>
         <item name="android:layout_marginEnd">@dimen/margin_18dp</item>
@@ -102,7 +100,32 @@
         <item name="errorTextColor">@color/red</item>
         <item name="hintEnabled">false</item>
     </style>
+    
+    <style name="fragment_profile_page_payment_terms_headings">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/navy_blue</item>
+        <item name="android:textSize">@dimen/text_size_18sp</item>
+    </style>
 
+    <style name="edit_profile_page_dialog_sub_headings">
+        <item name="android:fontFamily">@font/poppins_light</item>
+        <item name="android:textColor">@color/deep_sky_blue</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+    </style>
+
+    <style name="edit_profile_page_dialog_submit_buttons">
+        <item name="android:textSize">@dimen/text_size_13sp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/deep_sky_blue</item>
+    </style>
+
+    <style name="fragment_profile_edit_profile_page_payment_options_check_boxes">
+        <item name="buttonTint">@color/deep_sky_blue</item>
+        <item name="android:textColor">@color/menu_text_color</item>
+        <item name="android:paddingStart">@dimen/margin_16dp</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
     <style name="add_client_fragment_add_client_text_View">
         <item name="android:layout_marginTop">@dimen/dimen_44_dp</item>
         <item name="android:layout_marginLeft">@dimen/margin_27dp</item>
@@ -146,8 +169,8 @@
     <style name="add_client_fragment_next_button">
         <item name="textAllCaps">false</item>
         <item name="backgroundTint">@color/blue</item>
-        <item name="android:layout_marginTop">@dimen/margin_40dp</item>
         <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:layout_marginEnd">@dimen/margin_24dp</item>
         <item name="android:layout_marginStart">@dimen/margin_24dp</item>
         <item name="android:layout_marginBottom">@dimen/margin_10dp</item>
@@ -173,6 +196,42 @@
         <item name="android:layout_marginTop">@dimen/margin_top_28dp</item>
         <item name="android:layout_marginBottom">@dimen/margin_24dp</item>
         <item name="layout_constraintHorizontal_bias">0.89</item>
+    </style>
+    <style name="EditProfileTabLayoutTabText">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="ProfileAccountTextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textColor">@color/navy_blue</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <style name="ProfileSpecialtyTextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/off_blue</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+    <style name="ProfileAccountEditText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">#C4C4C4</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_marginTop">@dimen/dimen_16_dp</item>
+        <item name="android:textColor">@color/off_blue</item>
+        <item name="android:layout_marginStart">32dp</item>
     </style>
 </resources>
 

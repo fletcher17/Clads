@@ -8,26 +8,30 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.cliientmanagementfragments.AddClientFragment">
 
-            <TextView
-                android:id="@+id/add_client_fragment_add_client_text"
-                style="@style/add_client_fragment_add_client_text_View"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:text="@string/add_client"
-                app:layout_constraintBottom_toTopOf="@id/add_client_fragment_tab_layout"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/add_client_fragment_add_client_text"
+        style="@style/add_client_fragment_add_client_text_View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:layout_marginBottom="@dimen/margin_20dp"
+        android:text="@string/add_client"
+        app:layout_constraintBottom_toTopOf="@id/add_client_fragment_tab_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/add_client_fragment_tab_layout"
         style="@style/tab_layout_style"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/add_client_fragment_view_pager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:tabTextAppearance="@style/EditProfileTabLayoutTabText"
         app:layout_constraintTop_toBottomOf="@+id/add_client_fragment_add_client_text"
         app:tabMode="scrollable">
 

@@ -1,6 +1,6 @@
 package com.decagonhq.clads.data.model
 
-data class ClientDetails(
+data class AccountScreenClientDetails(
     var firstName: String? = null,
     var lastName: String? = null,
     var phoneNumber: String? = null,

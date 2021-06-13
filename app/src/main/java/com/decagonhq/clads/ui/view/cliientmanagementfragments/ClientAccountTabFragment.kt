@@ -49,7 +49,7 @@ class ClientAccountTabFragment : Fragment() {
             val clientEmail = binding.clientAccountFragmentClientEmailInput.text.toString().trim()
 
             // create a new client object from the data
-            // var client = ClientDetails(clientFirstName, clientLastName, clientPhone, clientEmail, clientGender)
+            // var client = AccountScreenClientDetails(clientFirstName, clientLastName, clientPhone, clientEmail, clientGender)
 
             // navigate to next tab
             (parentFragment as IButtonClickInterface).buttonClick()

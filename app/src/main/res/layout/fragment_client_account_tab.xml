@@ -141,6 +141,8 @@
                 android:id="@+id/add_client_account_tab_next_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_40dp"
+                android:padding="@dimen/margin_16dp"
                 android:text="@string/next"
                 style="@style/add_client_fragment_next_button"
                 app:layout_constraintBottom_toBottomOf="parent"

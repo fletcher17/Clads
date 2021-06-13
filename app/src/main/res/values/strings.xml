@@ -75,6 +75,17 @@
     <string name="generic_lorem_ipsum_string">Lorem ipsum, ipsum sum</string>
     <string name="all_sign_up">SIGN UP</string>
     <string name="all_login">LOGIN</string>
+    <string name="you_have_not_clients_yet">You have no clients yet</string>
+    <string name="client_list_image_description">Float button to add new client</string>
+    <string name="clients">Clients</string>
+    <string name="lagos">Lagos</string>
+    <string name="nelson">Nelson</string>
+    <string name="bawo">Bawo</string>
+    <string name="b">B</string>
+    <string name="n">N</string>
+    <string name="client_home_location_pointer_icon">client home location pointer icon</string>
+    <string name="client_home_screen_female_emoji_placeholder">client home screen female emoji placeholder</string>
+    <string name="client_home_screen_male_emoji_placeholder">client home screen male emoji placeholder</string>
     <string name="add_client">Add Client</string>
     <string name="client_account">Client Account</string>
     <string name="measurements">Measurements</string>
@@ -107,7 +118,6 @@
     <string name="payment_option_cash">Cash</string>
     <string name="payment_option_payoneer">Payoneer</string>
     <string name="payment_option_vcash">VCash</string>
-
     <string name="edit_profile_fragment_title">Edit Profile</string>
     <string name="edit_profile_fragment_tabLayout_account_tab_title">Account</string>
     <string name="edit_profile_fragment_tabLayout_specialty_tab_title">Specialty</string>
@@ -212,7 +222,6 @@
     <string name="fragment_message_day_of_post">Today</string>
     <string name="fragment_message_indicator">An indicator</string>
     <string name="fragment_message_user_icon">User icon</string>
-
     <string-array name="fragment_dashboard_dates_array">
         <item>2020</item>
         <item>2021</item>

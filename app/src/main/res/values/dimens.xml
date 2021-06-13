@@ -48,7 +48,6 @@
     <dimen name="login_fragment_signup_for_free_vertical_margin">37dp</dimen>
     <dimen name="login_fragment_askin_if_new_user_text_view_margin_end">10dp</dimen>
     <dimen name="login_fragment_forgot_password_text_view_margin_top">22dp</dimen>
-
     <dimen name="dimen_16_dp">16dp</dimen>
     <dimen name="dimen_0_dp">0dp</dimen>
     <dimen name="dimen_1_dp">1dp</dimen>
@@ -133,6 +132,7 @@
     <dimen name="text_size_20sp">20sp</dimen>
     <dimen name="corner_radius_12dp">12dp</dimen>
     <dimen name="elevation_5dp">5dp</dimen>
+    <dimen name="elevation_6dp">6dp</dimen>
     <dimen name="text_size_signup_options_fragment_12sp">12sp</dimen>
     <dimen name="text_size_signup_options_fragment_14sp">14sp</dimen>
     <dimen name="image_width_clads_logo_signup_options_fragment_146dp">146dp</dimen>
@@ -152,8 +152,13 @@
     <dimen name="margin_bottom_9dp">9dp</dimen>
     <dimen name="margin_bottom_65dp">65dp</dimen>
     <dimen name="margin_80dp">80dp</dimen>
+    <dimen name="margin_98dp">98dp</dimen>
     <dimen name="padding_10dp">10dp</dimen>
+    <dimen name="width">0.6dp</dimen>
     <dimen name="stroke_width_2dp">2dp</dimen>
+    <dimen name="radius">10dp</dimen>
+    <dimen name="height_52dp">52dp</dimen>
+    <dimen name="width_325dp">325dp</dimen>
     <dimen name="padding_16_dp">16dp</dimen>
     <dimen name="padding_15_dp">15dp</dimen>
     <dimen name="add_client_fragment_horizontal_divider_view_height">1dp</dimen>

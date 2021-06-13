@@ -30,9 +30,7 @@
     <color name="client_home_background_color_4">#60CF83</color>
     <color name="client_home_background_color_5">#2A6A73</color>
     <color name="client_home_background_color_6">#E5BD85</color>
-=======
     <color name="off_black">#393939</color>
->>>>>>> d5a6f32f04e3b99330193fd89e9051978131c9b8
     <color name="mtrl_textinput_default_box_stroke_color">#F2F2F2</color>
     <color name="text_input_line_grey">#80C4C4C4</color>
     <color name="off_blue">#506992</color>

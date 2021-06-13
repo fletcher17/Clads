@@ -34,14 +34,15 @@
             android:id="@+id/edit_profile_fragment_tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_profile_fragment_title"
             app:tabIndicatorColor="@color/deep_sky_blue"
             app:tabRippleColor="@color/white"
             app:tabSelectedTextColor="@color/deep_sky_blue"
             app:tabTextAppearance="@style/EditProfileTabLayoutTabText"
-            app:tabTextColor="@color/login_screen_grey_color"
-            tools:layout_editor_absoluteY="54dp" />
+            app:tabTextColor="@color/login_screen_grey_color" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/edit_profile_fragment_viewPager"

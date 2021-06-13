@@ -15,7 +15,7 @@ object LoginFragmentValidation {
 
     fun passwordValidator(email: String): Boolean {
         val p: Pattern = Pattern.compile(
-            "[a-zA-Z0-9]{6,}"
+            "[\\w\\W]{6,}"
         )
         val m: Matcher = p.matcher(email)
         return m.matches()

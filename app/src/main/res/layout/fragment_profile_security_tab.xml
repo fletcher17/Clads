@@ -1,14 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:paddingHorizontal="@dimen/margin_26dp"
+android:fillViewport="true"
+tools:context=".ui.view.profilemanagementfragments.ProfileSecurityTabFragment">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ProfileSecurityTabFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        style="@style/edit_profile_page_dialog_sub_headings"
+        android:id="@+id/edit_profile_security_tab_fragment_verified_information_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_profile_security_tab_fragment_verified_information_text_view"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_profile_payment_payment_terms_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/margin_16dp"/>
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/fragment_profile_payment_payment_terms_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_13dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/edit_profile_security_tab_fragment_verified_information_text_view">
+
+
+        <TextView
+            style="@style/fragment_profile_page_payment_terms_headings"
+            android:id="@+id/profile_security_tab_screen_phone_number_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/fragment_profile_page_payment_method_tab_screen_payment_terms_text_view"
+            android:textSize="@dimen/text_size_16sp" />
+
+        <TextView
+            android:id="@+id/profile_security_tab_screen_user_phone_number_container_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="end"
+            android:maxLines="3"
+            android:text="@string/payment_method_tab_screen_profile_security_user_phone_number_text_view"
+            android:textColor="@color/menu_text_color"
+            android:textSize="@dimen/text_size_15sp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/profile_security_screen_horizontal_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_2_dp"
+        android:background="?android:attr/listDivider"
+        android:layout_marginTop="@dimen/dimen_29_dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_profile_payment_payment_terms_layout" />
+
+    <TextView
+        style="@style/edit_profile_page_dialog_sub_headings"
+        android:id="@+id/edit_profile_tab_screen_password_heading_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_light"
+        android:text="@string/password"
+        android:layout_marginTop="@dimen/margin_35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_security_screen_horizontal_divider" />
+
+    <LinearLayout
+        android:id="@+id/fragment_profile_payment_options_containing_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_28dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/edit_profile_tab_screen_password_heading_text_view">
+
+
+        <TextView
+            style="@style/fragment_profile_page_payment_terms_headings"
+            android:id="@+id/profile_security_tab_screen_change_password_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_password"
+            android:textSize="@dimen/text_size_16sp" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20dp"
+            android:paddingHorizontal="0dp"
+            android:textAlignment="gravity"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/payment_method_tab_screen_payment_options_user_input_old_password_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:background="@color/white"
+                    android:paddingHorizontal="@dimen/dimen_0_dp"
+                    android:hint="@string/old_password"
+                    android:inputType="textPassword"
+                    android:textAlignment="gravity"
+                    android:layout_gravity="start"
+                    android:textColor="@color/grey_color"
+                    android:textSize="@dimen/text_size_16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/payment_method_tab_screen_payment_options_user_input_new_password_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:background="@color/white"
+                    android:hint="@string/new_password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/grey_color"
+                    android:textSize="@dimen/text_size_16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/edit_profile_profile_security_tab_screen_save_changes_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_60_dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:layout_marginTop="@dimen/dimen_70_dp"
+        android:text="@string/save_changes"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_profile_payment_options_containing_linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/fragment_profile_payment_options_containing_linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_profile_payment_options_containing_linearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

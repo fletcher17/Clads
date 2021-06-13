@@ -19,5 +19,8 @@ ext.versions = [
         progress_bar_version   : "1.2.17",
         viewpager_version      : "1.0.0",
         recycler_version       : "1.2.1",
-        color_generator        :"1.0.1"
+        color_generator        :"1.0.1",
+        chart_library_version  : "2.2.2",
+        circle_image_view      : "1.0.1"
+
 ]

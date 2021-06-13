@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/profile_management_navigation_graph"
-    app:startDestination="@id/dashboardFragment">
-
+    app:startDestination="@+id/dashboardFragment">
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.decagonhq.clads.ui.view.profilemanagementfragments.DashboardFragment"
         android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" >
+        tools:layout="@layout/fragment_dashboard">
         <action
             android:id="@+id/action_dashboardFragment_to_messageFragment"
             app:destination="@id/messageFragment" />
@@ -60,7 +60,14 @@
         android:id="@+id/addClientFragment"
         android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.AddClientFragment"
         android:label="fragment_add_client"
-        tools:layout="@layout/fragment_add_client" />
+        tools:layout="@layout/fragment_add_client" >
+        <action
+            android:id="@+id/action_addClientFragment_to_clientHomeFragment"
+            app:destination="@id/clientHomeFragment" />
+        <action
+            android:id="@+id/action_addClientFragment_to_addMeasurementFragment"
+            app:destination="@id/addMeasurementFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addMeasurementFragment"
         android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.AddMeasurementFragment"
@@ -69,6 +76,9 @@
         <action
             android:id="@+id/action_addMeasurementFragment_to_clientMeasurementTabFragment"
             app:destination="@id/clientMeasurementTabFragment" />
+        <action
+            android:id="@+id/action_addMeasurementFragment_to_addClientFragment"
+            app:destination="@id/addClientFragment" />
     </fragment>
     <fragment
         android:id="@+id/addDeliveryAddressFragment"

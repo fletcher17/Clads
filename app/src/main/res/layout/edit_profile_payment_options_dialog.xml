@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="@dimen/margin_20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        style="@style/fragment_profile_page_payment_terms_headings"
+        android:id="@+id/fragment_profile_payment_options_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_18dp"
+        android:text="@string/payment_method_tab_screen_payment_options_text_view"
+        android:textSize="@dimen/text_size_18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="@dimen/margin_5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_profile_payment_options_textView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <CheckBox
+                style="@style/fragment_profile_edit_profile_page_payment_options_check_boxes"
+                android:id="@+id/fragment_profile_payment_options_bank_deposit_naira"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_option_bank_deposit_naira" />
+
+            <CheckBox
+                style="@style/fragment_profile_edit_profile_page_payment_options_check_boxes"
+                android:id="@+id/fragment_profile_payment_options_bank_deposit_foreign_currencies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_option_bank_deposit_foreign_currencies"/>
+
+
+            <CheckBox
+                style="@style/fragment_profile_edit_profile_page_payment_options_check_boxes"
+                android:id="@+id/fragment_profile_payment_options_cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_option_cash"/>
+
+
+            <CheckBox
+                style="@style/fragment_profile_edit_profile_page_payment_options_check_boxes"
+                android:id="@+id/fragment_profile_payment_options_vCash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_option_vcash" />
+
+
+            <CheckBox
+                style="@style/fragment_profile_edit_profile_page_payment_options_check_boxes"
+                android:id="@+id/fragment_profile_payment_options_payoneer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_option_payoneer" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

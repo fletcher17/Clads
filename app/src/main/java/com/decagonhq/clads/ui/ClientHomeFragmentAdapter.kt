@@ -47,8 +47,8 @@ class ClientHomeFragmentAdapter(private var clientDetailsList: ArrayList<ClientL
         return clientDetailsList.size
     }
 
-    private fun getClientNamesInitials(Name: String): String {
-        return Name[0].toUpperCase().toString()
+    private fun getClientNamesInitials(clientName: String): String {
+        return clientName[0].toUpperCase().toString()
     }
 
     // SETTING DIFFERENT BACKGROUNDS COLORS FOR THE BACKGROUND PROFILE IMAGE

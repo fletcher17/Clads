@@ -27,6 +27,7 @@ class ClientHomeFragment : Fragment() {
     ): View {
         _binding = FragmentClientHomeBinding.inflate(inflater, container, false)
 
+        // REPLACES LAYOUT WITH A PLACEHOLDER IF CLIENT LIST IS EMPTY
         swapPlaceHolderWithRecyclerView()
 
         return binding.root

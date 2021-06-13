@@ -9,7 +9,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/client_account_fragment_client_first_name_input_layout"
@@ -25,12 +25,10 @@
                     android:id="@+id/client_account_fragment_client_first_name_input"
                     style="@style/input_text_style"
                     android:layout_width="match_parent"
-                    android:hint="@string/first_name"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:hint="@string/first_name"/>
 
-                <View
-                    style="@style/add_client_DividerViewStyle"
-                    android:layout_marginTop="@dimen/add_client_fragment_horizontal_divider_view_height" />
+                <View style="@style/add_client_DividerViewStyle" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -51,9 +49,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/last_name"/>
 
-                <View
-                    style="@style/add_client_DividerViewStyle"
-                    android:layout_marginTop="@dimen/login_fragment_horizontal_divider_view_margin_top" />
+                <View style="@style/add_client_DividerViewStyle" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,9 +71,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <View
-                    style="@style/add_client_DividerViewStyle"
-                    android:layout_marginTop="@dimen/login_fragment_horizontal_divider_view_margin_top" />
+                <View style="@style/add_client_DividerViewStyle" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,45 +93,38 @@
                     android:hint="@string/enter_email_adderss"
                     android:fontFamily="@font/poppins" />
 
-                <View
-                    style="@style/add_client_DividerViewStyle"
-                    android:id="@+id/login_screen_fragment_email_address_bottom_divider_view"
-                    android:layout_marginTop="@dimen/login_fragment_horizontal_divider_view_margin_top" />
+                <View style="@style/add_client_DividerViewStyle" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <RadioGroup
                 android:id="@+id/client_fragment_account_tab_radioGroup"
+                style="@style/radio_styles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_top_28dp"
-                android:layout_marginEnd="@dimen/margin_24dp"
-                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/add_client_account_tab_gender_text_view"
                 app:layout_constraintTop_toBottomOf="@+id/client_account_fragment_email_address_input_layout">
 
                 <RadioButton
                     android:id="@+id/radio_button_male"
+                    style="@style/radio_input_text_style"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="start"
-                    android:gravity="center"
-                    style="@style/radio_input_text_style"
                     android:paddingStart="@dimen/margin_15dp"
                     android:paddingEnd="@dimen/margin_15dp"
                     android:text="@string/gender_male" />
 
                 <RadioButton
                     android:id="@+id/radio_button_female"
+                    style="@style/radio_input_text_style"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingStart="@dimen/margin_15dp"
-                    android:paddingEnd="@dimen/margin_15dp"
-                    style="@style/radio_input_text_style"
                     android:buttonTint="@color/deep_sky_blue"
                     android:fontFamily="@font/poppins"
+                    android:paddingStart="@dimen/margin_15dp"
+                    android:paddingEnd="@dimen/margin_15dp"
                     android:text="@string/gender_female" />
             </RadioGroup>
 
@@ -154,7 +141,6 @@
                 android:id="@+id/add_client_account_tab_next_button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingHorizontal="@dimen/padding_20_dp"
                 android:text="@string/next"
                 style="@style/add_client_fragment_next_button"
                 app:layout_constraintBottom_toBottomOf="parent"

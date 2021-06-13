@@ -63,7 +63,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0-beta01'
 
     //fragment Ktx
-    debugImplementation "androidx.fragment:fragment-ktx:$versions.fragment_version"
+    implementation "androidx.fragment:fragment-ktx:$versions.fragment_version"
     debugImplementation "androidx.fragment:fragment-testing:$versions.fragment_version"
 
     // androidx.test

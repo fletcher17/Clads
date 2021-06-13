@@ -52,7 +52,7 @@ class ClientHomeFragmentAdapter(private var clientDetailsList: ArrayList<ClientL
     }
 
     // SETTING DIFFERENT BACKGROUNDS COLORS FOR THE BACKGROUND PROFILE IMAGE
-    private fun changeClientProfileBackgroundColor(): Drawable? {
+    private fun changeClientProfileBackgroundColor(context: Context): Drawable? {
         val colorDrawables = arrayOf(
             R.drawable.fragment_client_list_background_color_drawable_1,
             R.drawable.fragment_client_list_background_color_drawable_2,
@@ -62,7 +62,7 @@ class ClientHomeFragmentAdapter(private var clientDetailsList: ArrayList<ClientL
             R.drawable.fragment_client_list_background_color_drawable_6
         )
         return ContextCompat.getDrawable(
-            context!!,
+            context,
             colorDrawables[(Math.random() * 5).roundToInt()]
         )
     }
@@ -86,7 +86,7 @@ class ClientHomeFragmentAdapter(private var clientDetailsList: ArrayList<ClientL
 
                 // ROUNDED PROFILE IMAGE DRAWABLE
                 fragmentClientHomeImageProfileColorBackground.background =
-                    changeClientProfileBackgroundColor()
+                    changeClientProfileBackgroundColor(binding.root.context)
             }
         }
     }

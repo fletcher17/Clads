@@ -47,6 +47,9 @@
     <string name="have_an_account">Have an account?<b> Login</b></string>
     <string name="signup">Signup</string>
     <string name="password">Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="change_password">Change Password</string>
     <string name="email_address">Email Address</string>
     <string name="lets_get_to_know_you">Lets get to know you</string>
     <string name="choose_account_category">Choose account category</string>
@@ -55,12 +58,13 @@
     <string name="other_name">Other Name</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="sign_up">Sign Up</string>
+    <string name="all_ok">OK</string>
+    <string name="all_cancel">CANCEL</string>
     <string-array name="category_list">
         <item>Tailor</item>
         <item>Weaver</item>
         <item>Client</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="account_category">Account category</string>
     <string name="signup_options_fragment_signup_with_google_button_text">Sign up with Google</string>
     <string name="signup_options_fragment_signup_with_email_button_text">Sign up with email</string>
@@ -133,4 +137,182 @@
         <item>Zamfara</item>
         <item>FCT</item>
     </string-array>
+
+    <string name="you_have_not_clients_yet">You have no clients yet</string>
+    <string name="client_list_image_description">Float button to add new client</string>
+    <string name="clients">Clients</string>
+    <string name="lagos">Lagos</string>
+    <string name="nelson">Nelson</string>
+    <string name="bawo">Bawo</string>
+    <string name="b">B</string>
+    <string name="n">N</string>
+    <string name="client_home_location_pointer_icon">client home location pointer icon</string>
+    <string name="client_home_screen_female_emoji_placeholder">client home screen female emoji placeholder</string>
+    <string name="client_home_screen_male_emoji_placeholder">client home screen male emoji placeholder</string>
+    <string name="add_client">Add Client</string>
+    <string name="client_account">Client Account</string>
+    <string name="measurements">Measurements</string>
+    <string name="delivery_addresses">Delivery Addresses</string>
+    <string name="gender">Gender</string>
+    <string name="delivery_address">Delivery Address</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="next">Next</string>
+    <string name="bawonelson_gmail_com">bawonelson@gmail.com</string>
+    <string name="bawo_nelson">Bawo Nelson</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="_07052215845">07052215845</string>
+    <string name="An">An</string>
+    <string name="Droid">Droid</string>
+    <string name="enter_first_name">enter first name</string>
+    <string name="enter_last_name">enter last name</string>
+    <string name="enter_phone_number">enter  phone number</string>
+    <string name="enter_email_adderss">enter email adderss</string>
+    <string name="fragment_profile_page_payment_method_tab_screen_payment_terms_text_view">Payment Terms</string>
+    <string name="payment_terms_items_place_holder">100% Deposit</string>
+    <string name="payment_terms_dialog_add_new_payment_term_text_view">Add payment terms</string>
+    <string name="payment_method_tab_screen_profile_security_user_phone_number_text_view">07012345678</string>
+    <string name="payment_method_tab_screen_payment_options_text_view">Payment Options</string>
+    <string name="add_new">Add</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="edit_profile_security_tab_fragment_verified_information_text_view">Verified Information</string>
+    <string name="payment_option_bank_deposit_naira">Bank deposit (Naira)</string>
+    <string name="payment_option_bank_deposit_foreign_currencies">Bank deposit (USD, GPB, EUR)</string>
+    <string name="payment_option_cash">Cash</string>
+    <string name="payment_option_payoneer">Payoneer</string>
+    <string name="payment_option_vcash">VCash</string>
+    <string name="edit_profile_fragment_title">Edit Profile</string>
+    <string name="edit_profile_fragment_tabLayout_account_tab_title">Account</string>
+    <string name="edit_profile_fragment_tabLayout_specialty_tab_title">Specialty</string>
+    <string name="edit_profile_fragment_tabLayout_payment_method_tab_title">Payment</string>
+    <string name="edit_profile_fragment_tabLayout_security_tab_title">Security</string>
+    <string name="edit_profile_fragment_tap_to_change_picture_text">Tap to change picture</string>
+    <string name="edit_profile_fragment_first_name_text">First Name</string>
+    <string name="edit_profile_fragment_first_name_popup_hint">First name</string>
+    <string name="edit_profile_fragment_last_name_text">Last Name</string>
+    <string name="edit_profile_fragment_last_name_popup_hint">Last name</string>
+    <string name="edit_profile_fragment_other_name_text">Other Name</string>
+    <string name="edit_profile_fragment_other_name_popup_hint">Other name</string>
+    <string name="edit_profile_fragment_number_of_employees_text">Number of Employees /<br> </br>Apprentices</string>
+    <string name="edit_profile_fragment_number_of_employees_popup_hint">Number of employees/apprentices</string>
+    <string name="edit_profile_fragment_number_of_employees_hint_value">0</string>
+    <string name="edit_profile_fragment_gender_text">Gender</string>
+    <string name="edit_profile_fragment_workshop_address_text">Workshop Address</string>
+    <string name="edit_profile_fragment_workshop_address_popup_hint">Workshop address</string>
+    <string name="edit_profile_fragment_showroom_address_text">Showroom Address</string>
+    <string name="edit_profile_fragment_showroom_address_popup_hint">Showroom address</string>
+    <string name="edit_profile_fragment_workshop_showroom_address_popup_street_hint">Street</string>
+    <string name="edit_profile_fragment_workshop_showroom_address_popup_city_hint">City</string>
+    <string name="edit_profile_fragment_workshop_showroom_address_popup_state_hint">State</string>
+    <string name="edit_profile_fragment_legal_status_text">Legal Status</string>
+    <string name="edit_profile_fragment_legal_status_popup_hint">Legal status</string>
+    <string name="edit_profile_fragment_union_membership_text">UNION MEMBERSHIP</string>
+    <string name="edit_profile_fragment_name_of_union_text">Name of Union</string>
+    <string name="edit_profile_fragment_name_of_union_popup_hint">Name of Union</string>
+    <string name="edit_profile_fragment_ward_text">Ward</string>
+    <string name="edit_profile_fragment_ward_popup_hint">Ward</string>
+    <string name="edit_profile_fragment_local_government_area_text">Local Government Area</string>
+    <string name="edit_profile_fragment_local_government_area_popup_hint">Local Government Area</string>
+    <string name="edit_profile_fragment_save_changes_text">SAVE CHANGES</string>
+    <string name="edit_profile_fragment_popup_cancel_text">Cancel</string>
+    <string name="edit_profile_fragment_popup_ok_text">Ok</string>
+    <string name="edit_profile_fragment_gender_hint">Gender</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="profile_account_fragment_other_name_dialog_fragment_tag">otherNameDialog</string>
+    <string name="profile_account_fragment_last_name_dialog_fragment_tag">lastNameDialog</string>
+    <string name="profile_account_fragment_first_name_dialog_fragment_tag">firstNameDialog</string>
+    <string name="profile_account_fragment_showroom_address_dialog_fragment_tag">showroomDialog</string>
+    <string name="profile_account_fragment_workshop_address_dialog_fragment_tag">workshopDialog</string>
+    <string name="profile_account_fragment_number_of_employees_dialog_fragment_tag">numberOfEmployeesDialog</string>
+    <string name="profile_account_fragment_legal_status_dialog_fragment_tag">legalStatusDialog</string>
+    <string name="profile_account_fragment_gender_dialog_fragment_tag">genderDialog</string>
+    <string name="fragment_profile_specialty_add_new_specialty_text">Add new specialty</string>
+    <string name="fragment_profile_specialty_gender_focus_text">Gender Focus</string>
+    <string name="kids">Kids</string>
+    <string name="unisex">Unisex</string>
+    <string name="fragment_profile_specialty_quality_assurance_text">Quality Assurance</string>
+    <string name="fragment_profile_specialty_measurement_options_text">Measurement Options</string>
+    <string name="fragment_profile_specialty_delivery_lead_time_text">Delivery lead time</string>
+    <string name="fragment_profile_specialty_obioma_trained_text">Clads trained and certified</string>
+    <string name="fragment_profile_specialty_yes_text">Yes</string>
+    <string name="fragment_profile_specialty_visit_us_for_your_measurement_text">Visit us for your measurement</string>
+    <string name="fragment_profile_specialty_will_accept_self_measurement_text">Will accept self-measurement</string>
+    <string name="fragment_profile_specialty_lead_time_text">2 Weeks</string>
+    <string name="fragment_profile_specialty_Hausa_attires_text">Hausa attires</string>
+    <string name="fragment_profile_specialty_senator_text">Senator</string>
+    <string name="fragment_profile_specialty_embroidery_text">Embroidery</string>
+    <string name="fragment_profile_specialty_african_fashion_text">African fashion</string>
+    <string name="fragment_profile_specialty_military_and_paramilitary_uniforms_text">Military and paramilitary uniforms</string>
+    <string name="fragment_profile_specialty_south_south_attires_text">South-south attires</string>
+    <string name="fragment_profile_specialty_kaftans_attires_text">Kaftans attires</string>
+    <string name="fragment_profile_specialty_igbo_attires_text">Igbo attires</string>
+    <string name="fragment_profile_specialty_youruba_attires_text">Yoruba attires</string>
+    <string name="fragment_profile_specialty_contemporary_text">Contemporary</string>
+    <string name="fragment_profile_specialty_western_fashion_text">Western fashion</string>
+    <string name="fragment_profile_specialty_caps_text">Caps</string>
+    <string name="edit_profile_fragment_add_specialty_text">Add Specialty</string>
+    <string name="edit_profile_fragment_add_specialty_popup_hint">Add specialty</string>
+    <string name="edit_profile_fragment_add_text">Add</string>
+    <string name="edit_profile_specialty_clads_trained_text">Clads trained and Certified?</string>
+    <string name="fragment_profile_specialty_no_text">No</string>
+    <string name="edit_profile_specialty_fragment_delivery_lead_time_text">Delivery lead time</string>
+    <string name="specialty_fragment_delivery_lead_time_popup_hint">Add delivery lead time</string>
+    <string name="fragment_profile_specialty_delivery_lead_time_custom_dialog_months_text">Months</string>
+    <string name="fragment_profile_specialty_delivery_lead_time_custom_dialog_weeks_text">Weeks</string>
+    <string name="fragment_profile_specialty_delivery_lead_time_custom_dialog_days_text">Days</string>
+    <string name="profile_specialy_fragment_add_specialty_dialog_fragment_tag">addSpecialtyDialog</string>
+    <string name="profile_specialy_fragment_clads_trained_dialog_fragment_tag">cladsTrainedDialog</string>
+    <string name="profile_specialy_fragment_delivery_lead_time_dialog_fragment_tag">deliveryLeadTimeDialog</string>
+    <string name="payment">Payment</string>
+    <string name="security">Security</string>
+    <string name="fragment_dashboard_home">Home</string>
+    <string name="fragment_dashboard_media">Media</string>
+    <string name="fragment_dashboard_messages">Messages</string>
+    <string name="fragment_dashboard_user_name">Ijeoma Ibukun Babangida</string>
+    <string name="fragment_dashboard_wallet">Wallet</string>
+    <string name="fragment_dashboard_dollar">$</string>
+    <string name="fragment_dashboard_wallet_amount">23, 481,000.00</string>
+    <string name="fragment_message_message_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</string>
+    <string name="fragment_dashboard_client_name">Mubarak Yang</string>
+    <string name="fragment_dashboard_client_location">Yola</string>
+    <string name="notification_icon">Notification Icon</string>
+    <string name="fragment_dashboard_view_details">View All Details</string>
+    <string name="fragment_dashboard_clients">Clients</string>
+    <string name="fragment_message_user_name">Ola Machiavelli</string>
+    <string name="fragment_message_read_more">Read more</string>
+    <string name="fragment_message_arrow_icon_description">Arrow facing the right</string>
+    <string name="fragment_message_day_of_post">Today</string>
+    <string name="fragment_message_indicator">An indicator</string>
+    <string name="fragment_message_user_icon">User icon</string>
+    <string-array name="fragment_dashboard_dates_array">
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+        <item>2025</item>
+        <item>2026</item>
+        <item>2027</item>
+    </string-array>
+    <string name="navigation_drawer_close"> close</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="app_version">Version 1.0</string>
+    <string name="profile_dashboard_client_name">Hi, Ijeoma</string>
+    <string name="header_client_name">Ijeoma Ibukun Babangida</string>
+    <string name="header_edit_profile_button">Edit Profile</string>
+    <string name="fragment_message">Messages Fragment</string>
+    <string name="fragment_media">Media Fragment</string>
+    <string name="fragment_dashboard">Dashboard Fragment</string>
+    <string name="drawer_menu_clients_item">Clients</string>
+    <string name="drawer_menu_resources_item">Resources</string>
+    <string name="drawer_menu_subscription_item">Subscription</string>
+    <string name="edit_profile_fragment_field_cannot_be_empty_text">Field cannot be empty!</string>
+    <string name="edit_profile_fragment_selection_cannot_be_empty_text">Selection cannot be empty!</string>
+    <string name="edit_profile_fragment_field_and_selction_cannot_be_empty_text">Text field and selection cannot be empty!</string>
+    <string name="edit_profile_fragment_state_text">State</string>
+    <string name="profile_account_fragment_name_of_union_dialog_fragment_tag">nameOfUnionDialog</string>
+    <string name="profile_account_fragment_ward_dialog_fragment_tag">wardDialog</string>
+    <string name="profile_account_fragment_local_govt_area_dialog_fragment_tag">localGovtAreaDialog</string>
+    <string name="profile_account_fragment_state_dialog_fragment_tag">stateDialog</string>
 </resources>

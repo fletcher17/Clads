@@ -7,10 +7,11 @@ import kotlinx.parcelize.Parcelize
 data class ClientMeasurementData(
     var nameOfMeasurement: String,
     var valueOfMeasurement: String
-): Parcelable
+) : Parcelable
 
 @Parcelize
 data class ClientAddressData(
     val DeliveryAddress: String,
-    val city: String
-): Parcelable
+    val city: String,
+    val state: String
+) : Parcelable

@@ -5,17 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.decagonhq.clads.utils.ClientMeasurementData
 import com.decagonhq.clads.utils.clicklistener.ClientMeasurementClickListener
 
 class ClientMeasurementAdapter(
-    private var listOfClientMeasurements: List<ClientMeasurementData>,
+    var listOfClientMeasurements: ArrayList<ClientMeasurementData>,
     var clickItem: ClientMeasurementClickListener,
     var editdetails: ClientMeasurementClickListener
 ) : RecyclerView.Adapter<ClientMeasurementAdapter.ClientMeasurementViewHolder>() {
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientMeasurementViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -41,7 +39,8 @@ class ClientMeasurementAdapter(
         return listOfClientMeasurements.size
     }
 
-    inner class ClientMeasurementViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+    inner class ClientMeasurementViewHolder(itemView: View) :
+        RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
         var nameOfMeasurement: TextView
         var value: TextView
@@ -60,12 +59,10 @@ class ClientMeasurementAdapter(
                 clickItem.onClickItem(listOfClientMeasurements[position], position)
             }
         }
-
     }
 
     fun setList(listOfClient: ClientMeasurementData) {
-        this.listOfClientMeasurements = listOf(listOfClient)
+        this.listOfClientMeasurements.add(listOfClient)
         notifyDataSetChanged()
     }
 }
-

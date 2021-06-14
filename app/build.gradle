@@ -72,6 +72,10 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit-ktx:1.1.2"
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    
+
+    // Random color generator
+    implementation "com.amulyakhare:com.amulyakhare.textdrawable:$versions.color_generator"
 
     //navigation controller
     implementation "androidx.navigation:navigation-fragment-ktx:$versions.nav_version"
@@ -136,6 +140,12 @@ dependencies {
     // Viewpager2
     implementation "androidx.viewpager2:viewpager2:$versions.viewpager_version"
 
-    // recycler view
+    // recycler profile_activity_header_view
     implementation "androidx.recyclerview:recyclerview:$versions.recycler_version"
+
+    // Chart Library
+    implementation "com.github.PhilJay:MPAndroidChart:$versions.chart_library_version"
+
+    // Circle ImageView
+    implementation "com.amulyakhare:com.amulyakhare.textdrawable:$versions.circle_image_view"
 }

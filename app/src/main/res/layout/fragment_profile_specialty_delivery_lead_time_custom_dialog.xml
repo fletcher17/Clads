@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_24_dp">
+
+        <TextView
+            android:id="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_delivery_lead_time_text_view"
+            style="@style/ProfileAccountTextView"
+            android:layout_width="171dp"
+            android:layout_height="25dp"
+            android:text="@string/edit_profile_specialty_fragment_delivery_lead_time_text"
+            android:textSize="@dimen/text_size_16_sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_delivery_lead_time_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_24dp"
+            android:textColorHint="@color/login_screen_grey_color"
+            app:boxBackgroundColor="@android:color/transparent"
+            app:counterEnabled="true"
+            app:counterMaxLength="100"
+            app:counterTextColor="@color/card_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.041"
+            app:layout_constraintStart_toStartOf="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_delivery_lead_time_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_delivery_lead_time_text_view">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/specialty_fragment_delivery_lead_time_popup_hint"
+                android:inputType="number"
+                android:maxLength="100"
+                android:lines="1"
+                android:paddingStart="@dimen/dimen_0_dp"
+                android:paddingEnd="@dimen/dimen_0_dp"
+                android:textSize="@dimen/text_size_16sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/delivery_lead_time_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_delivery_lead_time_edit_text"
+            app:layout_constraintStart_toStartOf="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_delivery_lead_time_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_delivery_lead_time_edit_text">
+
+
+            <RadioButton
+                android:id="@+id/days_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:button="@null"
+                android:drawableStart="@drawable/fragment_gender_custom_dialog_radiobutton_selector"
+                android:drawablePadding="@dimen/margin_4dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/fragment_profile_specialty_delivery_lead_time_custom_dialog_days_text"
+                android:textColor="@color/navy_blue"
+                app:layout_constraintBottom_toBottomOf="@+id/weeks_radio_button"
+                app:layout_constraintEnd_toStartOf="@+id/weeks_radio_button"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioButton
+                android:id="@+id/weeks_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:button="@null"
+                android:drawableStart="@drawable/fragment_gender_custom_dialog_radiobutton_selector"
+                android:drawablePadding="@dimen/margin_4dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/fragment_profile_specialty_delivery_lead_time_custom_dialog_weeks_text"
+                android:textColor="@color/navy_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/months_radio_button"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/days_radio_button"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioButton
+                android:id="@+id/months_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:button="@null"
+                android:buttonTint="@color/navy_blue"
+                android:drawableStart="@drawable/fragment_gender_custom_dialog_radiobutton_selector"
+                android:drawablePadding="@dimen/margin_4dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/fragment_profile_specialty_delivery_lead_time_custom_dialog_months_text"
+                android:textColor="@color/navy_blue"
+                app:layout_constraintBottom_toBottomOf="@+id/weeks_radio_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/weeks_radio_button" />
+
+
+        </RadioGroup>
+
+
+        <TextView
+            android:id="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_cancel_text_view"
+            style="@style/ProfileAccountTextView"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/edit_profile_fragment_popup_cancel_text"
+            android:textAllCaps="true"
+            android:textColor="@color/card_text_color"
+            android:textSize="@dimen/text_size_14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_ok_text_view"
+            app:layout_constraintEnd_toStartOf="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_ok_text_view"
+            app:layout_constraintHorizontal_bias="0.906"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_ok_text_view"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_ok_text_view"
+            style="@style/ProfileAccountTextView"
+            android:layout_marginTop="@dimen/dimen_24_dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/edit_profile_fragment_popup_ok_text"
+            android:textAllCaps="true"
+            android:textColor="@color/deep_sky_blue"
+            android:textSize="@dimen/text_size_14sp"
+            app:layout_constraintEnd_toEndOf="@+id/fragment_profile_specialty_delivery_lead_time_custom_dialog_delivery_lead_time_edit_text"
+            app:layout_constraintTop_toBottomOf="@+id/delivery_lead_time_radio_group" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

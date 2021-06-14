@@ -7,8 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:orientation="vertical"
-    tools:context=".ui.view.cliientmanagementfragments.AddDeliveryAddressFragment">
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/fragment_add_delivery_address_linear_layout"

@@ -9,12 +9,13 @@ import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.decagonhq.clads.ClientMeasurementAdapter
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentClientMeasurementTabBinding
+import com.decagonhq.clads.ui.viewmodel.ClientViewModel
 import com.decagonhq.clads.utils.ClientMeasurementData
 import com.decagonhq.clads.utils.Constant.listOfClientData
 import com.decagonhq.clads.utils.clicklistener.ClientMeasurementClickListener
@@ -22,7 +23,7 @@ import com.decagonhq.clads.utils.clicklistener.ClientMeasurementClickListener
 class ClientMeasurementTabFragment : Fragment(), ClientMeasurementClickListener {
 
     private lateinit var clientAdapterMeasurement: ClientMeasurementAdapter
-    private val args: ClientMeasurementTabFragmentArgs by navArgs()
+    lateinit var clientMeasurementViewModel: ClientViewModel
 
     private var _binding: FragmentClientMeasurementTabBinding? = null
     private val binding get() = _binding!!
@@ -31,40 +32,60 @@ class ClientMeasurementTabFragment : Fragment(), ClientMeasurementClickListener 
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentClientMeasurementTabBinding.inflate(layoutInflater, container, false)
         val view = binding.root
 
-        /** The float action button navigates to the Add measurement fragment */
+        clientMeasurementViewModel = ViewModelProvider(requireParentFragment()).get(ClientViewModel::class.java)
+
+        /** The float action button inflates the Add measurement fragment */
         binding.fragmentMeasurementTabFloatActionButton.setOnClickListener {
-            findNavController().navigate(R.id.addMeasurementFragment)
+            var dialog = AlertDialog.Builder(requireContext())
+            val display = LayoutInflater.from(requireContext()).inflate(R.layout.fragment_add_measurement, null)
+
+            dialog.setView(display)
+            val addDialog = dialog.create()
+            addDialog.show()
+
+            var measurementName: EditText = display.findViewById(R.id.fragment_add_measurement_textInput_measurement_name_edit_text)
+            var measurementValue: EditText = display.findViewById(R.id.fragment_add_measurement_textInput_measurement_value_edit_text)
+            var addbutton: Button = display.findViewById(R.id.fragment_add_measurement_button)
+
+            addbutton.setOnClickListener {
+                val nameOfMeasurement = measurementName.text.toString()
+                val valueOfMeasurement = measurementValue.text.toString()
+
+                val clientMeasurement = ClientMeasurementData(nameOfMeasurement, valueOfMeasurement)
+
+                clientMeasurementViewModel.clientNewMeasurement(clientMeasurement)
+                addDialog.dismiss()
+            }
         }
 
-        /**client data received from custom args*/
-        val clientData = args.clientMeasurement
-        if (clientData != null) {
-            listOfClientData.add(clientData)
-        }
-        clientAdapterMeasurement = ClientMeasurementAdapter(listOfClientData, this, this)
-        clientAdapterMeasurement.notifyDataSetChanged()
-
-
-        /**this checks if the list of Client data isn't empty and makes the button and recyclerview visible to display the clients data */
-        if (listOfClientData.isNotEmpty()) {
-            binding.fragmentMeasurementTabRecyclerview.isVisible = true
-            binding.fragmentMeasurementTabButton.isVisible = true
-            binding.fragmentAddMeasurementTabTextView.isVisible = false
-            binding.fragmentMeasurementTabRecyclerview.layoutManager =
-                StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-            binding.fragmentMeasurementTabRecyclerview.adapter = clientAdapterMeasurement
-        } else {
-            binding.fragmentAddMeasurementTabTextView.isVisible = true
-        }
+        /**client data received from view model*/
+        clientMeasurementViewModel.clientMeasurement.observe(
+            viewLifecycleOwner,
+            Observer {
+                listOfClientData.add(it)
+                if (listOfClientData.isNotEmpty()) {
+                    binding.fragmentMeasurementTabRecyclerview.isVisible = true
+                    binding.fragmentMeasurementTabButton.isVisible = true
+                    binding.fragmentAddMeasurementTabTextView.isVisible = false
+                    clientAdapterMeasurement = ClientMeasurementAdapter(listOfClientData, this, this)
+                    binding.fragmentMeasurementTabRecyclerview.layoutManager =
+                        StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+                    binding.fragmentMeasurementTabRecyclerview.adapter = clientAdapterMeasurement
+                } else if (clientAdapterMeasurement.listOfClientMeasurements.isEmpty()) {
+                    binding.fragmentMeasurementTabRecyclerview.isVisible = false
+                    binding.fragmentMeasurementTabButton.isVisible = false
+                    binding.fragmentAddMeasurementTabTextView.isVisible = true
+                }
+            }
+        )
 
         return view
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -73,7 +94,7 @@ class ClientMeasurementTabFragment : Fragment(), ClientMeasurementClickListener 
 
     /**item is deleted when clicked*/
     override fun onClickItem(itemName: ClientMeasurementData, position: Int) {
-        listOfClientData.removeAt(position)
+        clientAdapterMeasurement.listOfClientMeasurements.removeAt(position)
         clientAdapterMeasurement.notifyDataSetChanged()
     }
 
@@ -99,6 +120,5 @@ class ClientMeasurementTabFragment : Fragment(), ClientMeasurementClickListener 
             clientAdapterMeasurement.notifyDataSetChanged()
             editDialog.dismiss()
         }
-
     }
 }

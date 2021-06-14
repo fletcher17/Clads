@@ -71,13 +71,13 @@ class ClientDeliveryAddressTabFragment : Fragment() {
         addressViewModel.clientAddress.observe(
             viewLifecycleOwner,
             Observer {
-                var addrress = binding.fragmentClientDeliveryAddressTabTextView
+                var address = binding.fragmentClientDeliveryAddressTabTextView
                 val numberOfAddress =
                     binding.fragmentClientDeliveryAddressTabClientHasOneDeliveryAddressTextView
                 val horizontalView = binding.fragmentClientDeliveryAddressTabHorizontalLineView
 
-                if (it.DeliveryAddress != "") {
-                    addrress.text = it.DeliveryAddress
+                if (it.toString() != "") {
+                    address.text = "${it.DeliveryAddress}, ${it.city}, ${it.state}"
 
                     numberOfAddress.isVisible = true
                     horizontalView.isVisible = true

@@ -121,6 +121,8 @@
     
     <style name="AddMeasurementFragment">
         <item name="android:background">@color/white_grey</item>
+        <item name="android:paddingTop">@dimen/margin_20dp</item>
+        <item name="android:paddingBottom">@dimen/margin_20dp</item>
     </style>
     
     <style name="AddMeasurementFragmentTitleTextView">
@@ -142,6 +144,7 @@
     <style name="DialogEditMeasurementFragmentLayout">
         <item name="android:background">@color/white_grey</item>
         <item name="android:paddingBottom">@dimen/margin_22dp</item>
+        <item name="android:paddingTop">@dimen/margin_22dp</item>
     </style>
 
     <style name="AddMeasurementFragmentTextInputLinearLayout">

@@ -22,11 +22,6 @@
             android:layout_height="wrap_content"
             android:text="@string/add_delivery_address_fragment_title_text_view" />
 
-        <TextView
-            android:id="@+id/fragment_add_delivery_address_subtitle_text_view"
-            style="@style/AddDeliveryAddressFragmentSubTitleTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:id="@+id/fragment_add_delivery_address_text_input_field_layout"
@@ -35,11 +30,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/fragment_add_delivery_address_delivery_address_text_view"
-                style="@style/AddDeliveryAddressFragmentDeliveryAddressTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/fragment_add_delivery_enter_delivery_text_input_layout"

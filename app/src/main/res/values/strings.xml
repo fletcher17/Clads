@@ -75,6 +75,69 @@
     <string name="generic_lorem_ipsum_string">Lorem ipsum, ipsum sum</string>
     <string name="all_sign_up">SIGN UP</string>
     <string name="all_login">LOGIN</string>
+    <string name="client_measurement_tab_fragment_text_when_there_is_no_measurement_for_client">There are no measurements
+    <br />for this client</string>
+    <string name="client_delivery_address_tab_fragment_text_there_are_no_delivery_address">There are no delivery address <br>for this client</br></string>
+    <string name="client_delivery_address_tab_fragment_text_client_has_one_delivery_address">This client has 1 delivery address for this client</string>
+    <string name="client_measurement_tab_text_on_button">Save</string>
+    <string name="fragment_add_measurement_title_textView">Add Measurement</string>
+    <string name="dialog_fragment_edit_measurement_Name_text_view">Name</string>
+    <string name="fragment_add_measurement_hint_measurement_name_text">Measurement Name</string>
+    <string name="fragment_add_measurement_value_text_view">Value</string>
+    <string name="fragment_add_measurement_hint_measurement_value_text">Measurement Value</string>
+    <string name="fragment_add_measurement_button">Add Measurement</string>
+    <string name="client_delivery_address_tab_fragment_button">Add Address</string>
+    <string name="add_delivery_address_fragment_title_text_view">Add Address</string>
+    <string name="add_delivery_address_fragment_subtitle_text_view">Add Delivery Address</string>
+    <string name="add_delivery_address_fragment_delivery_address_text_view">Delivery Address</string>
+    <string name="fragment_add_delivery_address_enter_delivery_address_hint_text">Enter Delivery Address</string>
+    <string name="fragment_add_delivery_address_save_text_on_button">Save</string>
+    <string name="fragment_add_delivery_address_city_hint_text">City</string>
+    <string name="fragment_add_delivery_address_state_hint_text">State</string>
+    <string name="dialog_fragment_edit_measurement_title_text_view">Edit Measurement</string>
+    <string name="dialog_fragment_edit_measurement_add_measurement_text_view">Add Measurement</string>
+    <string name="dialog_fragment_edit_measurement_save_text_button">Save</string>
+
+    <string-array name="states">
+        <item>Abia</item>
+        <item>Adamawa</item>
+        <item>Akwa Ibom</item>
+        <item>Anambra</item>
+        <item>Bauchi</item>
+        <item>Bayelsa</item>
+        <item>Benue</item>
+        <item>Borno</item>
+        <item>Cross River</item>
+        <item>Delta</item>
+        <item>Ebonyi</item>
+        <item>Edo</item>
+        <item>Ekiti</item>
+        <item>Enugu</item>
+        <item>Gombe</item>
+        <item>Imo</item>
+        <item>Jigawa</item>
+        <item>Kaduna</item>
+        <item>Kano</item>
+        <item>Katsina</item>
+        <item>Kebbi</item>
+        <item>Kogi</item>
+        <item>Kwara</item>
+        <item>Lagos</item>
+        <item>Nassarawa</item>
+        <item>Niger</item>
+        <item>Ogun</item>
+        <item>Ondo</item>
+        <item>Osun</item>
+        <item>Oyo</item>
+        <item>Plateau</item>
+        <item>Rivers</item>
+        <item>Sokoto</item>
+        <item>Taraba</item>
+        <item>Yobe</item>
+        <item>Zamfara</item>
+        <item>FCT</item>
+    </string-array>
+
     <string name="you_have_not_clients_yet">You have no clients yet</string>
     <string name="client_list_image_description">Float button to add new client</string>
     <string name="clients">Clients</string>

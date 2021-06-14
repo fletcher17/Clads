@@ -14,13 +14,9 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class AddClientFragment : Fragment(), ClientAccountTabFragment.IButtonClickInterface {
 
-    /**
-     * The pager widget, which handles animation and allows swiping horizontally to access previous
-     * and next wizard steps.
-     */
-
     private lateinit var viewPager2: ViewPager2
     private lateinit var tabLayout: TabLayout
+//    private val args: AddClientFragmentArgs by navArgs()
 
     // view binding
     private var _binding: FragmentAddClientBinding? = null

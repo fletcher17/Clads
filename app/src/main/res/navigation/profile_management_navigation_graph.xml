@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/profile_management_navigation_graph"
-    app:startDestination="@+id/dashboardFragment">
+    app:startDestination="@id/dashboardFragment">
+
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.decagonhq.clads.ui.view.profilemanagementfragments.DashboardFragment"
@@ -64,30 +64,11 @@
         <action
             android:id="@+id/action_addClientFragment_to_clientHomeFragment"
             app:destination="@id/clientHomeFragment" />
-        <action
-            android:id="@+id/action_addClientFragment_to_addMeasurementFragment"
-            app:destination="@id/addMeasurementFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/addMeasurementFragment"
-        android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.AddMeasurementFragment"
-        android:label="fragment_add_measurement"
-        tools:layout="@layout/fragment_add_measurement" >
-        <action
-            android:id="@+id/action_addMeasurementFragment_to_clientMeasurementTabFragment"
-            app:destination="@id/clientMeasurementTabFragment" />
-        <action
-            android:id="@+id/action_addMeasurementFragment_to_addClientFragment"
-            app:destination="@id/addClientFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/addDeliveryAddressFragment"
-        android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.AddDeliveryAddressFragment"
-        android:label="fragment_add_delivery_address"
-        tools:layout="@layout/fragment_add_delivery_address" >
-        <action
-            android:id="@+id/action_addDeliveryAddressFragment_to_clientDeliveryAdderssTabFragment"
-            app:destination="@id/clientDeliveryAdderssTabFragment" />
+        <argument
+            android:name="clientMeasurement"
+            app:argType="com.decagonhq.clads.utils.ClientMeasurementData"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/clientHomeFragment"
@@ -97,23 +78,5 @@
         <action
             android:id="@+id/action_clientHomeFragment_to_addClientFragment"
             app:destination="@id/addClientFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/clientDeliveryAdderssTabFragment"
-        android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.ClientDeliveryAddressTabFragment"
-        android:label="fragment_client_delivery_adderss_tab"
-        tools:layout="@layout/fragment_client_delivery_adderss_tab" >
-        <action
-            android:id="@+id/action_clientDeliveryAdderssTabFragment_to_addDeliveryAddressFragment"
-            app:destination="@id/addDeliveryAddressFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/clientMeasurementTabFragment"
-        android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.ClientMeasurementTabFragment"
-        android:label="fragment_client_measurement_tab"
-        tools:layout="@layout/fragment_client_measurement_tab" >
-        <action
-            android:id="@+id/action_clientMeasurementTabFragment_to_addMeasurementFragment"
-            app:destination="@id/addMeasurementFragment" />
     </fragment>
 </navigation>

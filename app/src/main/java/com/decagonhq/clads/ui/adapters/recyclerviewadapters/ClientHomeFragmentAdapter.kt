@@ -1,4 +1,4 @@
-package com.decagonhq.clads.ui
+package com.decagonhq.clads.ui.adapters.recyclerviewadapters
 
 import android.content.Context
 import android.graphics.drawable.Drawable

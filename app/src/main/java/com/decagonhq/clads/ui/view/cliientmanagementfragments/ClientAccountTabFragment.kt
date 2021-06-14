@@ -14,6 +14,7 @@ class ClientAccountTabFragment : Fragment() {
     // view binding
     private var _binding: FragmentClientAccountTabBinding? = null
     private val binding get() = _binding!!
+    private var clientGender: String? = null
 
     interface IButtonClickInterface : IButtonClick
 
@@ -29,9 +30,6 @@ class ClientAccountTabFragment : Fragment() {
         // get reference to radio group
         val radioGroup = binding.clientFragmentAccountTabRadioGroup
 
-        // client gender variable
-        var clientGender = ""
-
         radioGroup.setOnCheckedChangeListener { radioGroup, checkedId ->
             // Responds to child RadioButton checked/unchecked
 
@@ -43,14 +41,6 @@ class ClientAccountTabFragment : Fragment() {
 
         // get client details for saving
         binding.addClientAccountTabNextButton.setOnClickListener {
-            val clientFirstName = binding.clientAccountFragmentClientFirstNameInput.text.toString().trim()
-            val clientLastName = binding.clientAccountFragmentClientLastNameInput.text.toString().trim()
-            val clientPhone = binding.clientAccountFragmentClientPhoneNumberInput.text.toString().trim()
-            val clientEmail = binding.clientAccountFragmentClientEmailInput.text.toString().trim()
-
-            // create a new client object from the data
-            // var client = AccountScreenClientDetails(clientFirstName, clientLastName, clientPhone, clientEmail, clientGender)
-
             // navigate to next tab
             (parentFragment as IButtonClickInterface).buttonClick()
         }

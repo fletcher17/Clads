@@ -9,7 +9,6 @@ import com.decagonhq.clads.R
 
 class ResourceViewIndividualVideoFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -18,5 +17,4 @@ class ResourceViewIndividualVideoFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_resource_view_individual_video, container, false)
     }
-
 }

@@ -9,7 +9,6 @@ import com.decagonhq.clads.R
 
 class ResourceViewIndividualArticleFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

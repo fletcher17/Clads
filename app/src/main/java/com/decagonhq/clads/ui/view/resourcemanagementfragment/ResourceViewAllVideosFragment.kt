@@ -9,7 +9,6 @@ import com.decagonhq.clads.R
 
 class ResourceViewAllVideosFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -18,5 +17,4 @@ class ResourceViewAllVideosFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_resource_view_all_videos, container, false)
     }
-
 }

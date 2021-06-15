@@ -62,24 +62,62 @@ class ProfileDashboardActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when {
-                (destination.id == R.id.messageFragment) -> setNavigationBarItems(true)
-                (destination.id == R.id.clientHomeFragment) -> setNavigationBarItems(true)
+                (destination.id == R.id.messageFragment) -> {
+                    binding.activityProfileDashboardToolbarLayout
+                        .profileActivityAppBarConstraintLayout.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout
+                        .activityProfileDashboardBottomNavigationView.visibility = View.GONE
+                }
+                (destination.id == R.id.editProfileFragment) -> {
+                    binding.activityProfileDashboardToolbarLayout
+                        .profileActivityAppBarConstraintLayout.visibility = View.GONE
+                }
+                (destination.id == R.id.mediaFragment) ->
+                    binding.activityProfileDashboardToolbarLayout
+                        .profileActivityAppBarConstraintLayout.visibility = View.GONE
+                (destination.id == R.id.addClientFragment) ->
+                    binding.activityProfileDashboardToolbarLayout
+                        .profileActivityAppBarConstraintLayout.visibility = View.GONE
+                (destination.id == R.id.clientHomeFragment) ->
+                    binding.activityProfileDashboardToolbarLayout
+                        .profileActivityAppBarConstraintLayout.visibility = View.GONE
 
-                else -> setNavigationBarItems(false)
-            }
-        }
-    }
-
-    private fun setNavigationBarItems(requiredDestination: Boolean) {
-        binding.apply {
-            if (requiredDestination) {
-                activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarImageView.visibility = View.GONE
-                activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarTitleTextView.visibility = View.GONE
-                activityProfileDashboardToolbarLayout.profileActivityAppBarNotificationIcon.visibility = View.GONE
-            } else {
-                activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarImageView.visibility = View.VISIBLE
-                activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarTitleTextView.visibility = View.VISIBLE
-                activityProfileDashboardToolbarLayout.profileActivityAppBarNotificationIcon.visibility = View.VISIBLE
+                (destination.id == R.id.resourceHomeFragment) -> {
+                    binding.activityProfileDashboardToolbarLayout
+                        .profileActivityAppBarConstraintLayout.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout
+                        .activityProfileDashboardBottomNavigationView.visibility = View.GONE
+                }
+                (destination.id == R.id.resourceViewAllArticlesFragment) -> {
+                    binding.activityProfileDashboardToolbarLayout
+                        .profileActivityAppBarConstraintLayout.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout
+                        .activityProfileDashboardBottomNavigationView.visibility = View.GONE
+                }
+                (destination.id == R.id.resourceViewAllVideosFragment) -> {
+                    binding.activityProfileDashboardToolbarLayout
+                        .profileActivityAppBarConstraintLayout.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout
+                        .activityProfileDashboardBottomNavigationView.visibility = View.GONE
+                }
+                (destination.id == R.id.resourceViewIndividualVideoFragment) -> {
+                    binding.activityProfileDashboardToolbarLayout
+                        .profileActivityAppBarConstraintLayout.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout
+                        .activityProfileDashboardBottomNavigationView.visibility = View.GONE
+                }
+                (destination.id == R.id.resourceViewIndividualArticleFragment) -> {
+                    binding.activityProfileDashboardToolbarLayout
+                        .profileActivityAppBarConstraintLayout.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout
+                        .activityProfileDashboardBottomNavigationView.visibility = View.GONE
+                }
+                else -> {
+                    binding.activityProfileDashboardToolbarLayout
+                        .profileActivityAppBarConstraintLayout.visibility = View.VISIBLE
+                    binding.activityProfileDashboardToolbarLayout
+                        .activityProfileDashboardBottomNavigationView.visibility = View.VISIBLE
+                }
             }
         }
     }

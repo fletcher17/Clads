@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_clientHomeFragment"
             app:destination="@id/clientHomeFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_resourceHomeFragment"
+            app:destination="@id/resourceHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/messageFragment"
@@ -37,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/mediaFragment"
-        android:name="com.decagonhq.clads.ui.view.profilemanagementfragments.MediaFragment"
+        android:name="com.decagonhq.clads.ui.view.mediamanagementfragment.MediaFragment"
         android:label="fragment_media"
         tools:layout="@layout/fragment_media" >
         <action
@@ -46,6 +49,9 @@
         <action
             android:id="@+id/action_mediaFragment_to_messageFragment"
             app:destination="@id/messageFragment" />
+        <action
+            android:id="@+id/action_mediaFragment_to_mediaDisplayPictureFragment"
+            app:destination="@id/mediaDisplayPictureFragment" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
@@ -78,5 +84,77 @@
         <action
             android:id="@+id/action_clientHomeFragment_to_addClientFragment"
             app:destination="@id/addClientFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resourceHomeFragment"
+        android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceHomeFragment"
+        android:label="fragment_resource_home"
+        tools:layout="@layout/fragment_resource_home" >
+        <action
+            android:id="@+id/action_resourceHomeFragment_to_resourceViewAllArticlesFragment"
+            app:destination="@id/resourceViewAllArticlesFragment" />
+        <action
+            android:id="@+id/action_resourceHomeFragment_to_resourceViewAllVideosFragment"
+            app:destination="@id/resourceViewAllVideosFragment" />
+        <action
+            android:id="@+id/action_resourceHomeFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_resourceHomeFragment_to_resourceViewIndividualVideoFragment"
+            app:destination="@id/resourceViewIndividualVideoFragment" />
+        <action
+            android:id="@+id/action_resourceHomeFragment_to_resourceViewIndividualArticleFragment"
+            app:destination="@id/resourceViewIndividualArticleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resourceViewAllArticlesFragment"
+        android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewAllArticlesFragment"
+        android:label="fragment_resource_view_all_article"
+        tools:layout="@layout/fragment_resource_view_all_articles" >
+        <action
+            android:id="@+id/action_resourceViewAllArticlesFragment_to_resourceHomeFragment2"
+            app:destination="@id/resourceHomeFragment" />
+        <action
+            android:id="@+id/action_resourceViewAllArticlesFragment_to_resourceViewIndividualArticleFragment"
+            app:destination="@id/resourceViewIndividualArticleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resourceViewAllVideosFragment"
+        android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewAllVideosFragment"
+        android:label="fragment_resource_view_all_videos"
+        tools:layout="@layout/fragment_resource_view_all_videos" >
+        <action
+            android:id="@+id/action_resourceViewAllVideosFragment_to_resourceHomeFragment"
+            app:destination="@id/resourceHomeFragment" />
+        <action
+            android:id="@+id/action_resourceViewAllVideosFragment_to_resourceViewIndividualVideoFragment"
+            app:destination="@id/resourceViewIndividualVideoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resourceViewIndividualVideoFragment"
+        android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewIndividualVideoFragment"
+        android:label="fragment_resource_view_individual_videos"
+        tools:layout="@layout/fragment_resource_view_individual_video" >
+        <action
+            android:id="@+id/action_resourceViewIndividualVideoFragment_to_resourceViewAllVideosFragment"
+            app:destination="@id/resourceViewAllVideosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resourceViewIndividualArticleFragment"
+        android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewIndividualArticleFragment"
+        android:label="fragment_resource_view_individual_article"
+        tools:layout="@layout/fragment_resource_view_individual_article" >
+        <action
+            android:id="@+id/action_resourceViewIndividualArticleFragment_to_resourceViewAllArticlesFragment"
+            app:destination="@id/resourceViewAllArticlesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mediaDisplayPictureFragment"
+        android:name="com.decagonhq.clads.ui.view.mediamanagementfragment.MediaDisplayPictureFragment"
+        android:label="fragment_media_display_picture"
+        tools:layout="@layout/fragment_media_display_picture" >
+        <action
+            android:id="@+id/action_mediaDisplayPictureFragment_to_mediaFragment"
+            app:destination="@id/mediaFragment" />
     </fragment>
 </navigation>

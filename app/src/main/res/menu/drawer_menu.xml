@@ -10,7 +10,7 @@
 
 
         <item
-            android:id="@+id/resources"
+            android:id="@+id/resourceHomeFragment"
             android:title="@string/drawer_menu_resources_item"
             android:icon="@drawable/navigation_drawer_resources_icon" />
 

@@ -25,6 +25,7 @@ class EmailSignUpFragmentTest : TestCase() {
     @Before
     fun fragment_Set_Up() {
         val scenario =
+
             launchFragmentInContainer<EmailSignUpFragment>(themeResId = R.style.Base_Theme_MaterialComponents)
     }
 

@@ -1,14 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_add_measurement_nested_scroll_view_layout"
+    style="@style/AddMeasurementFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddMeasurementFragment">
+    android:fillViewport="true">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/fragment_add_measurement_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/fragment_add_measurement_text_view"
+            style="@style/AddMeasurementFragmentTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_add_measurement_title_textView" />
+
+        <LinearLayout
+            android:id="@+id/fragment_add_measurement_textInput_linear_layout"
+            style="@style/AddMeasurementFragmentTextInputLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fragment_add_measurement_Name_text_view"
+                style="@style/AddMeasurementFragmentNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_fragment_edit_measurement_Name_text_view" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fragment_add_measurement_textInput_measurement_name_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/grey_color"
+                app:hintEnabled="false"
+                app:boxBackgroundColor="@color/white_grey"
+                app:boxStrokeColor="@color/deep_sky_blue"
+                app:hintTextColor="@color/deep_sky_blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fragment_add_measurement_textInput_measurement_name_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/fragment_add_measurement_hint_measurement_name_text"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/fragment_add_measurement_Value_text_view"
+                style="@style/AddMeasurementFragmentValueTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fragment_add_measurement_value_text_view" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fragment_add_measurement_textInput_measurement_value_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/grey_color"
+                app:hintEnabled="false"
+                app:boxBackgroundColor="@color/white_grey"
+                app:boxStrokeColor="@color/deep_sky_blue"
+                app:hintTextColor="@color/deep_sky_blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fragment_add_measurement_textInput_measurement_value_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/fragment_add_measurement_hint_measurement_value_text"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/fragment_add_measurement_button"
+            style="@style/AddMeasurementFragmentButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_add_measurement_button" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -9,7 +9,7 @@
         android:id="@+id/dashboardFragment"
         android:name="com.decagonhq.clads.ui.view.profilemanagementfragments.DashboardFragment"
         android:label="fragment_dashboard"
-        tools:layout="@layout/fragment_dashboard" >
+        tools:layout="@layout/fragment_dashboard">
         <action
             android:id="@+id/action_dashboardFragment_to_messageFragment"
             app:destination="@id/messageFragment" />
@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_clientHomeFragment"
             app:destination="@id/clientHomeFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_resourceHomeFragment"
+            app:destination="@id/resourceHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/messageFragment"
@@ -46,6 +49,9 @@
         <action
             android:id="@+id/action_mediaFragment_to_messageFragment"
             app:destination="@id/messageFragment" />
+        <action
+            android:id="@+id/action_mediaFragment_to_mediaDisplayPictureFragment"
+            app:destination="@id/mediaDisplayPictureFragment" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
@@ -60,24 +66,15 @@
         android:id="@+id/addClientFragment"
         android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.AddClientFragment"
         android:label="fragment_add_client"
-        tools:layout="@layout/fragment_add_client" />
-    <fragment
-        android:id="@+id/addMeasurementFragment"
-        android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.AddMeasurementFragment"
-        android:label="fragment_add_measurement"
-        tools:layout="@layout/fragment_add_measurement" >
+        tools:layout="@layout/fragment_add_client" >
         <action
-            android:id="@+id/action_addMeasurementFragment_to_clientMeasurementTabFragment"
-            app:destination="@id/clientMeasurementTabFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/addDeliveryAddressFragment"
-        android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.AddDeliveryAddressFragment"
-        android:label="fragment_add_delivery_address"
-        tools:layout="@layout/fragment_add_delivery_address" >
-        <action
-            android:id="@+id/action_addDeliveryAddressFragment_to_clientDeliveryAdderssTabFragment"
-            app:destination="@id/clientDeliveryAdderssTabFragment" />
+            android:id="@+id/action_addClientFragment_to_clientHomeFragment"
+            app:destination="@id/clientHomeFragment" />
+        <argument
+            android:name="clientMeasurement"
+            app:argType="com.decagonhq.clads.utils.ClientMeasurementData"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/clientHomeFragment"
@@ -89,21 +86,80 @@
             app:destination="@id/addClientFragment" />
     </fragment>
     <fragment
-        android:id="@+id/clientDeliveryAdderssTabFragment"
-        android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.ClientDeliveryAddressTabFragment"
-        android:label="fragment_client_delivery_adderss_tab"
-        tools:layout="@layout/fragment_client_delivery_adderss_tab" >
+        android:id="@+id/resourceHomeFragment"
+        android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceHomeFragment"
+        android:label="fragment_resource_home"
+        tools:layout="@layout/fragment_resource_home" >
         <action
-            android:id="@+id/action_clientDeliveryAdderssTabFragment_to_addDeliveryAddressFragment"
-            app:destination="@id/addDeliveryAddressFragment" />
+            android:id="@+id/action_resourceHomeFragment_to_resourceViewAllArticlesFragment"
+            app:destination="@id/resourceViewAllArticlesFragment" />
+        <action
+            android:id="@+id/action_resourceHomeFragment_to_resourceViewAllVideosFragment"
+            app:destination="@id/resourceViewAllVideosFragment" />
+        <action
+            android:id="@+id/action_resourceHomeFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_resourceHomeFragment_to_resourceViewIndividualVideoFragment"
+            app:destination="@id/resourceViewIndividualVideoFragment" />
+        <action
+            android:id="@+id/action_resourceHomeFragment_to_resourceViewIndividualArticleFragment"
+            app:destination="@id/resourceViewIndividualArticleFragment" />
     </fragment>
     <fragment
-        android:id="@+id/clientMeasurementTabFragment"
-        android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.ClientMeasurementTabFragment"
-        android:label="fragment_client_measurement_tab"
-        tools:layout="@layout/fragment_client_measurement_tab" >
+        android:id="@+id/resourceViewAllArticlesFragment"
+        android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewAllArticlesFragment"
+        android:label="fragment_resource_view_all_articles"
+        tools:layout="@layout/fragment_resource_view_all_articles" >
         <action
-            android:id="@+id/action_clientMeasurementTabFragment_to_addMeasurementFragment"
-            app:destination="@id/addMeasurementFragment" />
+            android:id="@+id/action_resourceViewAllArticlesFragment_to_resourceHomeFragment2"
+            app:destination="@id/resourceHomeFragment" />
+        <action
+            android:id="@+id/action_resourceViewAllArticlesFragment_to_resourceViewIndividualArticleFragment"
+            app:destination="@id/resourceViewIndividualArticleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resourceViewAllVideosFragment"
+        android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewAllVideosFragment"
+        android:label="fragment_resource_view_all_videos"
+        tools:layout="@layout/fragment_resource_view_all_videos" >
+        <action
+            android:id="@+id/action_resourceViewAllVideosFragment_to_resourceHomeFragment"
+            app:destination="@id/resourceHomeFragment" />
+        <action
+            android:id="@+id/action_resourceViewAllVideosFragment_to_resourceViewIndividualVideoFragment"
+            app:destination="@id/resourceViewIndividualVideoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resourceViewIndividualVideoFragment"
+        android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewIndividualVideoFragment"
+        android:label="fragment_resource_view_individual_video"
+        tools:layout="@layout/fragment_resource_view_individual_video" >
+        <action
+            android:id="@+id/action_resourceViewIndividualVideoFragment_to_resourceViewAllVideosFragment"
+            app:destination="@id/resourceViewAllVideosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resourceViewIndividualArticleFragment"
+        android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewIndividualArticleFragment"
+        android:label="fragment_resource_view_individual_article"
+        tools:layout="@layout/fragment_resource_view_individual_article" >
+        <action
+            android:id="@+id/action_resourceViewIndividualArticleFragment_to_resourceViewAllArticlesFragment"
+            app:destination="@id/resourceViewAllArticlesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mediaHomeFragment"
+        android:name="com.decagonhq.clads.ui.view.mediamanagementfragment.MediaHomeFragment"
+        android:label="fragment_media_home"
+        tools:layout="@layout/fragment_media_home" />
+    <fragment
+        android:id="@+id/mediaDisplayPictureFragment"
+        android:name="com.decagonhq.clads.ui.view.mediamanagementfragment.MediaDisplayPictureFragment"
+        android:label="fragment_media_display_picture"
+        tools:layout="@layout/fragment_media_display_picture" >
+        <action
+            android:id="@+id/action_mediaDisplayPictureFragment_to_mediaFragment"
+            app:destination="@id/mediaFragment" />
     </fragment>
 </navigation>

@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/mediaFragment"
-        android:name="com.decagonhq.clads.ui.view.profilemanagementfragments.MediaFragment"
+        android:name="com.decagonhq.clads.ui.view.mediamanagementfragment.MediaFragment"
         android:label="fragment_media"
         tools:layout="@layout/fragment_media" >
         <action
@@ -109,7 +109,7 @@
     <fragment
         android:id="@+id/resourceViewAllArticlesFragment"
         android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewAllArticlesFragment"
-        android:label="fragment_resource_view_all_articles"
+        android:label="fragment_resource_view_all_article"
         tools:layout="@layout/fragment_resource_view_all_articles" >
         <action
             android:id="@+id/action_resourceViewAllArticlesFragment_to_resourceHomeFragment2"
@@ -133,7 +133,7 @@
     <fragment
         android:id="@+id/resourceViewIndividualVideoFragment"
         android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewIndividualVideoFragment"
-        android:label="fragment_resource_view_individual_video"
+        android:label="fragment_resource_view_individual_videos"
         tools:layout="@layout/fragment_resource_view_individual_video" >
         <action
             android:id="@+id/action_resourceViewIndividualVideoFragment_to_resourceViewAllVideosFragment"
@@ -148,11 +148,6 @@
             android:id="@+id/action_resourceViewIndividualArticleFragment_to_resourceViewAllArticlesFragment"
             app:destination="@id/resourceViewAllArticlesFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/mediaHomeFragment"
-        android:name="com.decagonhq.clads.ui.view.mediamanagementfragment.MediaHomeFragment"
-        android:label="fragment_media_home"
-        tools:layout="@layout/fragment_media_home" />
     <fragment
         android:id="@+id/mediaDisplayPictureFragment"
         android:name="com.decagonhq.clads.ui.view.mediamanagementfragment.MediaDisplayPictureFragment"

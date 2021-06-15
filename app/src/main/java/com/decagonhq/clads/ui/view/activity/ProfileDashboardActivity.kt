@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -63,68 +62,62 @@ class ProfileDashboardActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when {
-                (destination.id == R.id.messageFragment) -> binding.activityProfileDashboardToolbarLayout.profileActivityAppBarConstraintLayout.visibility = View.GONE
-                (destination.id == R.id.editProfileFragment) -> binding.activityProfileDashboardToolbarLayout.profileActivityAppBarConstraintLayout.visibility = View.GONE
-                (destination.id == R.id.mediaFragment) ->  binding.activityProfileDashboardToolbarLayout.profileActivityAppBarConstraintLayout.visibility = View.GONE
-                (destination.id == R.id.addClientFragment) ->  binding.activityProfileDashboardToolbarLayout.profileActivityAppBarConstraintLayout.visibility = View.GONE
-                (destination.id == R.id.clientHomeFragment) ->  binding.activityProfileDashboardToolbarLayout.profileActivityAppBarConstraintLayout.visibility = View.GONE
+                (destination.id == R.id.messageFragment) -> {
+                    binding.activityProfileDashboardToolbarLayout.
+                    profileActivityAppBarConstraintLayout.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.
+                    activityProfileDashboardBottomNavigationView.visibility = View.GONE
+                }
+                (destination.id == R.id.editProfileFragment) -> {
+                    binding.activityProfileDashboardToolbarLayout.
+                    profileActivityAppBarConstraintLayout.visibility = View.GONE
+                }
+                (destination.id == R.id.mediaFragment) -> binding.activityProfileDashboardToolbarLayout.
+                profileActivityAppBarConstraintLayout.visibility = View.GONE
+                (destination.id == R.id.addClientFragment) -> binding.activityProfileDashboardToolbarLayout.
+                profileActivityAppBarConstraintLayout.visibility = View.GONE
+                (destination.id == R.id.clientHomeFragment) -> binding.activityProfileDashboardToolbarLayout.
+                profileActivityAppBarConstraintLayout.visibility = View.GONE
 
                 (destination.id == R.id.resourceHomeFragment) -> {
-                    binding.activityProfileDashboardToolbarLayout.profileActivityAppBarConstraintLayout.visibility = View.GONE
-                    binding.activityProfileDashboardToolbarLayout.activityProfileDashboardBottomNavigationView.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.
+                    profileActivityAppBarConstraintLayout.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.
+                    activityProfileDashboardBottomNavigationView.visibility = View.GONE
                 }
                 (destination.id == R.id.resourceViewAllArticlesFragment) -> {
-                    binding.activityProfileDashboardToolbarLayout.profileActivityAppBarConstraintLayout.visibility = View.GONE
-                    binding.activityProfileDashboardToolbarLayout.activityProfileDashboardBottomNavigationView.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.
+                    profileActivityAppBarConstraintLayout.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.
+                    activityProfileDashboardBottomNavigationView.visibility = View.GONE
                 }
                 (destination.id == R.id.resourceViewAllVideosFragment) -> {
-                    binding.activityProfileDashboardToolbarLayout.profileActivityAppBarConstraintLayout.visibility = View.GONE
-                    binding.activityProfileDashboardToolbarLayout.activityProfileDashboardBottomNavigationView.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.
+                    profileActivityAppBarConstraintLayout.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.
+                    activityProfileDashboardBottomNavigationView.visibility = View.GONE
                 }
                 (destination.id == R.id.resourceViewIndividualVideoFragment) -> {
-                    binding.activityProfileDashboardToolbarLayout.profileActivityAppBarConstraintLayout.visibility = View.GONE
-                    binding.activityProfileDashboardToolbarLayout.activityProfileDashboardBottomNavigationView.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.
+                    profileActivityAppBarConstraintLayout.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.
+                    activityProfileDashboardBottomNavigationView.visibility = View.GONE
                 }
                 (destination.id == R.id.resourceViewIndividualArticleFragment) -> {
-                    binding.activityProfileDashboardToolbarLayout.profileActivityAppBarConstraintLayout.visibility = View.GONE
-                    binding.activityProfileDashboardToolbarLayout.activityProfileDashboardBottomNavigationView.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.
+                    profileActivityAppBarConstraintLayout.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.
+                    activityProfileDashboardBottomNavigationView.visibility = View.GONE
                 }
                 else -> {
-                    binding.activityProfileDashboardToolbarLayout.profileActivityAppBarConstraintLayout.visibility =
-                        View.VISIBLE
-                    binding.activityProfileDashboardToolbarLayout.activityProfileDashboardBottomNavigationView.visibility =
-                        View.VISIBLE
+                    binding.activityProfileDashboardToolbarLayout.
+                    profileActivityAppBarConstraintLayout.visibility = View.VISIBLE
+                    binding.activityProfileDashboardToolbarLayout.
+                    activityProfileDashboardBottomNavigationView.visibility = View.VISIBLE
                 }
             }
         }
-//        navController.addOnDestinationChangedListener { _, destination, _ ->
-//            when {
-//                (destination.id == R.id.resourceHomeFragment) -> setNavigationBottomBarItems(true)
-//                (destination.id == R.id.resourceViewAllArticlesFragment) -> setNavigationBottomBarItems(true)
-//                (destination.id == R.id.resourceViewAllVideosFragment) -> setNavigationBottomBarItems(true)
-//                (destination.id == R.id.resourceViewIndividualVideoFragment) -> setNavigationBottomBarItems(true)
-//                (destination.id == R.id.resourceViewIndividualArticleFragment) -> setNavigationBottomBarItems(true)
-//
-//                else -> setNavigationBottomBarItems(false)
-//            }
-//        }
     }
-
-//    private fun setNavigationToolBarItems(requiredDestination: Boolean) {
-//        if (requiredDestination){
-//            binding.activityProfileDashboardToolbarLayout.profileActivityAppBarConstraintLayout.visibility = View.GONE
-//        }else{
-//            binding.activityProfileDashboardToolbarLayout.profileActivityAppBarConstraintLayout.visibility = View.VISIBLE
-//        }
-//    }
-//    private fun setNavigationBottomBarItems(requiredDestination: Boolean) {
-//        binding.apply {
-//            if (requiredDestination) {
-//                activityProfileDashboardToolbarLayout.profileActivityAppBarConstraintLayout.visibility = View.GONE
-//                activityProfileDashboardToolbarLayout.activityProfileDashboardBottomNavigationView.visibility = View.GONE
-//            }
-//        }
-//    }
 
     override fun onSupportNavigateUp(): Boolean = navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
 

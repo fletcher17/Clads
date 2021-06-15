@@ -1,4 +1,4 @@
-package com.decagonhq.clads.ui.view.profilemanagementfragments
+package com.decagonhq.clads.ui.view.mediamanagementfragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

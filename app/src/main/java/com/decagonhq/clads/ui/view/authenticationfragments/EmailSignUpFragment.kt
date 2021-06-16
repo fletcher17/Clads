@@ -41,6 +41,7 @@ class EmailSignUpFragment : Fragment() {
                 findNavController().navigate(R.id.action_email_sign_up_fragment_to_email_confirmation_fragment)
             }
         }
+
         // SETTING TEXTWATCHER TO THE SIGN UP FORM FIELDS FOR FIRST NAME
         binding.fragmentEmailSignUpScreenFirstNameEditText.addTextChangedListener(object :
                 TextWatcher {

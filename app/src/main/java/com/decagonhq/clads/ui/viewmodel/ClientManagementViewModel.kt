@@ -1,5 +1,6 @@
 package com.decagonhq.clads.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,9 +15,9 @@ import javax.inject.Inject
 @HiltViewModel
 class ClientManagementViewModel @Inject constructor (private val repository: Repository): ViewModel() {
 
-    private val _postsLiveData = MutableLiveData<Resource<List<Post>>>()
-
-    val postsLiveData: LiveData<Resource<List<Post>>> = _postsLiveData
+    // example live data
+    //    private val _postsLiveData = MutableLiveData<List<Post>>()
+    //    val postsLiveData: LiveData<List<Post>> = _postsLiveData
 
 
     /**
@@ -38,14 +39,16 @@ class ClientManagementViewModel @Inject constructor (private val repository: Rep
      */
     fun launchDataLoad() {
         uiScope.launch {
+            // example method
             fetchPost() // happens on the background
             // Modify UI
         }
     }
 
     // Move the execution off the main thread using withContext(Dispatchers.Default)
-    suspend fun fetchPost() = withContext(Dispatchers.Default) {
-        _postsLiveData.value = repository.getPost().value
+    // example method for network call
+    suspend fun fetchPost() = withContext(Dispatchers.Main) {
+        // postsLiveData.value = repository.getPost()
     }
 
 //    /**

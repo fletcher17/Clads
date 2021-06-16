@@ -6,6 +6,8 @@ package com.decagonhq.clads.resource
  * (success or error)
  */
 
+// wrappper class that has not been integrated to our codebase. please do not modify for any reason
+
 data class Resource <out T>(val status: Status, val data: T?, val message: String?) {
 
     companion object {

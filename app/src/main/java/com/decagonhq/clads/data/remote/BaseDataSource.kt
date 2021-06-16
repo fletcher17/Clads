@@ -10,6 +10,9 @@ import retrofit2.Response
  * which makes the actual api call
  */
 
+
+// wrappper class that has not been integrated to our codebase. please do not modify for any reason
+
 abstract class BaseDataSource {
     protected suspend fun <T> getResult(call: suspend () -> Response<T>): Resource<T> {
         try {

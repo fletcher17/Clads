@@ -6,6 +6,8 @@ import retrofit2.http.GET
 
 interface RemoteDataSourceApi {
     // HTTP POSTS AND GET REQUESTS
-    @GET("/DummyFoodiumApi/api/posts/")
-    suspend fun getPosts(): Response<List<Post>>
+
+    // example request
+    //    @GET("/posts")
+    //    suspend fun getPosts(): List<Post>
 }

@@ -152,6 +152,7 @@ dependencies {
     // Room
     implementation("androidx.room:room-runtime:$versions.room_version")
     kapt "androidx.room:room-compiler:$versions.room_version"
+    annotationProcessor "android.arch.persistence.room:compiler:$versions.room_persistence"
 
     // exo player
     implementation "com.google.android.exoplayer:exoplayer-core:$versions.exoplayer_version"

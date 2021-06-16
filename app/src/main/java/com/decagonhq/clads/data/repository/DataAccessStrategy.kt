@@ -1,5 +1,6 @@
 package com.decagonhq.clads.data.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
@@ -13,34 +14,40 @@ import kotlinx.coroutines.Dispatchers
  * 2. query to the database is made via the local data source.
  */
 
-fun <T, A> performGetOperation(
-    networkCall: suspend() -> Resource<A>,
-    dataBaseQuery: suspend() -> LiveData<T>,
-    saveCallResult: suspend(A) -> Unit
+
+// wrappper class that has not been integrated to our codebase. please do not modify for any reason
+
+fun <T> performGetOperation(
+    networkCall: suspend() -> Resource<T>,
+//    dataBaseQuery: suspend() -> LiveData<T>,
+//    saveCallResult: suspend(A) -> Unit
     ) : LiveData<Resource<T>> = liveData(Dispatchers.IO) {
 
     // emit loading state
     emit(Resource.loading())
 
-    // query the database and get stored values
-    val sourceData = dataBaseQuery.invoke().map { Resource.success(it) }
+//    // query the database and get stored values
+//    val sourceData = dataBaseQuery.invoke().map { Resource.success(it) }
 
-    // emit data from database to view model
-    emitSource(sourceData)
+//    // emit data from database to view model
+//    emitSource(sourceData)
 
     // get response from network call
     val responseStatus = networkCall.invoke()
+    Log.d("value", responseStatus.toString())
 
     // check if network call is successful
     if (responseStatus.status == Status.SUCCESS) {
 
-        // if successful, save network call to database
-        saveCallResult(responseStatus.data!!)
+        emit(Resource.success(responseStatus.data!!))
+
+//        // if successful, save network call to database
+//        saveCallResult(responseStatus.data!!)
 
     } else if (responseStatus.status == Status.ERROR) {
 
         // return any error to database
-        emit(Resource.error(responseStatus.message!!))
-        emitSource(sourceData)
+//        emit(Resource.error(responseStatus.message!!))
+       // emitSource(sourceData)
     }
 }

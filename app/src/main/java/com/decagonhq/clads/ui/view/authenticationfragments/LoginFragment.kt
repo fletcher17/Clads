@@ -11,10 +11,12 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentLoginBinding
 import com.decagonhq.clads.ui.view.activity.ProfileDashboardActivity
+import com.decagonhq.clads.ui.viewmodel.ClientManagementViewModel
 import com.decagonhq.clads.utils.GOOGLE_SIGN_IN_REQUEST_CODE
 import com.decagonhq.clads.utils.validator.LoginFragmentValidation
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -23,9 +25,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
+    val viewModel: ClientManagementViewModel by viewModels()
     private lateinit var binding: FragmentLoginBinding // profile_activity_header_view binding for this current fragment (Login fragment)
     // Creating variables to store views references
     private lateinit var showPasswordIcon: ImageView

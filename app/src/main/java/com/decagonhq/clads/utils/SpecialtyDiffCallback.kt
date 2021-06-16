@@ -1,7 +1,7 @@
 package com.decagonhq.clads.utils
 
 import androidx.recyclerview.widget.DiffUtil
-import com.decagonhq.clads.data.model.Specialty
+import com.decagonhq.clads.data.entity.Specialty
 
 class SpecialtyDiffCallback(
     private val oldList: ArrayList<Specialty>,

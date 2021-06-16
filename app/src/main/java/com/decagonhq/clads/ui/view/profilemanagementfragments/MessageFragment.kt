@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.decagonhq.clads.R
-import com.decagonhq.clads.data.model.ClientMessageModel
+import com.decagonhq.clads.data.entity.ClientMessageModel
 import com.decagonhq.clads.databinding.FragmentMessageBinding
 import com.decagonhq.clads.ui.adapters.recyclerviewadapters.FragmentMessageClientAdapter
 

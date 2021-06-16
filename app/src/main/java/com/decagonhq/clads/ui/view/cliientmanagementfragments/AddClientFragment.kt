@@ -50,7 +50,7 @@ class AddClientFragment : Fragment(), ClientAccountTabFragment.IButtonClickInter
         }.attach()
     }
 
-    override fun buttonClick() {
+    override fun buttonClicked() {
         viewPager2.currentItem = 1
     }
 }

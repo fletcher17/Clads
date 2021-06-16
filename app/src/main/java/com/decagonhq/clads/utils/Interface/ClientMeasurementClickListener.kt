@@ -1,4 +1,4 @@
-package com.decagonhq.clads.utils.clicklistener
+package com.decagonhq.clads.utils.Interface
 
 import com.decagonhq.clads.utils.ClientMeasurementData
 

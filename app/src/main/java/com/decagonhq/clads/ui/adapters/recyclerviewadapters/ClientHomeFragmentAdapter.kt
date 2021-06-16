@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentClientListRecyclerViewLayoutLookBinding
-import com.decagonhq.clads.models.ClientListAddClientModel
+import com.decagonhq.clads.data.entity.ClientListAddClientModel
 import kotlin.collections.ArrayList
 import kotlin.math.roundToInt
 

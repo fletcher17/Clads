@@ -1,6 +1,6 @@
 ext.versions = [
         nav_version            : '2.3.5',
-        retrofit_version       : '2.9.0',
+        retrofit_version        : '2.9.0',
         okhttp3_version        : '5.0.0-alpha.2',
         hilt_version           : '2.33-beta',
         hilt_life_cycle_version: '1.0.0-alpha03',
@@ -21,6 +21,9 @@ ext.versions = [
         recycler_version       : "1.2.1",
         color_generator        :"1.0.1",
         chart_library_version  : "2.2.2",
-        circle_image_view      : "1.0.1"
+        circle_image_view      : "1.0.1",
+        room_version           : "2.3.0",
+        exoplayer_version      : "2.12.0"
+
 
 ]

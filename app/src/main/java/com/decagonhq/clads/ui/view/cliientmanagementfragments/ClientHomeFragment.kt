@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentClientHomeBinding
-import com.decagonhq.clads.models.ClientListAddClientModel
+import com.decagonhq.clads.data.entity.ClientListAddClientModel
 import com.decagonhq.clads.ui.adapters.recyclerviewadapters.ClientHomeFragmentAdapter
 
 class ClientHomeFragment : Fragment() {

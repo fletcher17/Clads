@@ -12,13 +12,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.decagonhq.clads.ClientMeasurementAdapter
+import com.decagonhq.clads.ui.adapters.recyclerviewadapters.ClientMeasurementAdapter
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentClientMeasurementTabBinding
 import com.decagonhq.clads.ui.viewmodel.ClientViewModel
 import com.decagonhq.clads.utils.ClientMeasurementData
 import com.decagonhq.clads.utils.Constant.listOfClientData
-import com.decagonhq.clads.utils.clicklistener.ClientMeasurementClickListener
+import com.decagonhq.clads.utils.Interface.ClientMeasurementClickListener
 
 class ClientMeasurementTabFragment : Fragment(), ClientMeasurementClickListener {
 

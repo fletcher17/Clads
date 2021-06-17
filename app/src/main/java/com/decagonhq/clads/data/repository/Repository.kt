@@ -1,11 +1,8 @@
 package com.decagonhq.clads.data.repository
 
-import com.decagonhq.clads.data.entity.mappedmodel.RegisterUserResponse
 import com.decagonhq.clads.data.entity.mappedmodel.User
-import com.decagonhq.clads.data.remote.BaseDataSource
+import com.decagonhq.clads.data.remote.BaseRepository
 import com.decagonhq.clads.data.remote.RemoteDataSourceApi
-import com.decagonhq.clads.resource.Resource
-import retrofit2.Call
 import javax.inject.Inject
 
 /**
@@ -15,16 +12,12 @@ import javax.inject.Inject
 
 class Repository @Inject constructor(
     private val remoteDataSourceApi: RemoteDataSourceApi
-) : BaseDataSource() {
+) : BaseRepository() {
 
-    // this is an example of how all calls are to be made
-    //        suspend fun getPost(): List<Post> {
-    //            return remoteDataSourceApi.getPosts()
-    //        }
-
-    suspend fun registerUser(user : User): Resource<RegisterUserResponse> {
-        return remoteDataSourceApi.registerUser(user)
-    }
+    suspend fun registerUser(user: User) =
+        safeApiCall {
+            remoteDataSourceApi.registerUser(user)
+        }
 
     // this will bw needed when we implement local persistence. leave it for now
     //    suspend fun getPost() = performGetOperation (

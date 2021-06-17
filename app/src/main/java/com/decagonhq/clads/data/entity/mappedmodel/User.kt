@@ -5,11 +5,11 @@ data class User(
     val lastName: String,
     val email: String,
     val phoneNumber: String,
-    val gender: String,
     val category: String,
     val deliveryddress: String,
-    val thumbnail: String? = "",
-    val country: String? = "",
     val role: String,
     val password: String,
-    )
+    val gender: String? = null,
+    val thumbnail: String? = null,
+    val country: String? = null,
+)

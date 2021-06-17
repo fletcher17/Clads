@@ -7,11 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads.R
 import com.decagonhq.clads.data.entity.mappedmodel.User
+import com.decagonhq.clads.data.remote.Resource
 import com.decagonhq.clads.databinding.FragmentEmailSignUpBinding
 import com.decagonhq.clads.ui.viewmodel.UserManagementViewModel
 import com.decagonhq.clads.utils.validator.SignUpFormValidation
@@ -24,7 +27,11 @@ class EmailSignUpFragment : Fragment() {
     private var _binding: FragmentEmailSignUpBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
 
         _binding = FragmentEmailSignUpBinding.inflate(inflater, container, false)
 
@@ -43,23 +50,56 @@ class EmailSignUpFragment : Fragment() {
         binding.fragmentEmailSignUpScreenSignUpButton.setOnClickListener {
             if (validateFields()) {
 
-                val category = binding.fragmentEmailSignUpScreenAccountCategoryFilledDropdown.text.toString()
-                val country = ""
-                val address = binding.fragmentEmailSignUpScreenEmailAddressEditText.text.toString().trim()
-                val emailAddress = binding.fragmentEmailSignUpScreenEmailAddressEditText.text.toString().trim()
-                val firstName = binding.fragmentEmailSignUpScreenFirstNameEditText.text.toString().trim()
-                val gender = ""
-                val lastName = binding.fragmentEmailSignUpScreenLastNameEditText.text.toString().trim()
-                val password = binding.fragmentEmailSignUpScreenConfirmPasswordEditText.text.toString().trim()
-                val phoneNumber = ""
-                val role = ""
-                val thumbnail = ""
+                val category =
+                    binding.fragmentEmailSignUpScreenAccountCategoryFilledDropdown.text.toString()
+                val country = "Nigeria"
+                val address = "Lagos"
+                val emailAddress =
+                    binding.fragmentEmailSignUpScreenEmailAddressEditText.text.toString().trim()
+                val firstName =
+                    binding.fragmentEmailSignUpScreenFirstNameEditText.text.toString().trim()
+                val gender = "male"
+                val lastName =
+                    binding.fragmentEmailSignUpScreenLastNameEditText.text.toString().trim()
+                val password =
+                    binding.fragmentEmailSignUpScreenConfirmPasswordEditText.text.toString().trim()
+                val phoneNumber = "09034572526"
+                val role = "Tailor"
+                val thumbnail = "darot.jpg"
 
-                val newUser = User(firstName,lastName,emailAddress,phoneNumber,gender,category, address,thumbnail,country,role,password)
+                val newUser = User(
+                    firstName = firstName,
+                    lastName = lastName,
+                    email = emailAddress,
+                    phoneNumber = phoneNumber,
+                    category = category,
+                    deliveryddress = address,
+                    role = role,
+                    password = password
+                )
 
                 viewModel.registerThisUser(newUser)
                 // NAVIGATE TO THE EMAIL CONFIRMATION FRAGMENT
-                findNavController().navigate(R.id.action_email_sign_up_fragment_to_email_confirmation_fragment)
+
+                viewModel.userLiveData.observe(
+                    viewLifecycleOwner,
+                    Observer {
+                        when (it) {
+                            is Resource.Success -> {
+                                val result = it.value.payload
+                                Toast.makeText(requireContext(), result, Toast.LENGTH_LONG).show()
+                                findNavController().navigate(R.id.action_email_sign_up_fragment_to_email_confirmation_fragment)
+                            }
+                            else -> {
+                                Toast.makeText(
+                                    requireContext(),
+                                    "fuccccckkkkk yooou!",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }
+                        }
+                    }
+                )
             }
         }
 

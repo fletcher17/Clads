@@ -23,6 +23,8 @@ object NetworkModule {
         return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
 
+    @Provides
+    @Singleton
     fun provideClient(logging: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(logging)
@@ -34,11 +36,14 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(gson: Gson): Retrofit = Retrofit.Builder()
+    fun provideRetrofit(client: OkHttpClient, gson: Gson): Retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
+        .client(client)
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
     @Provides
-    fun provideRemoteDataSourceApi(retrofit: Retrofit): RemoteDataSourceApi = retrofit.create(RemoteDataSourceApi::class.java)
+    @Singleton
+    fun provideRemoteDataSourceApi(retrofit: Retrofit): RemoteDataSourceApi =
+        retrofit.create(RemoteDataSourceApi::class.java)
 }

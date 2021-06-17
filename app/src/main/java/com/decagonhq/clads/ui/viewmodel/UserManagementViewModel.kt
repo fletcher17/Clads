@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.decagonhq.clads.data.entity.mappedmodel.RegisterUserResponse
 import com.decagonhq.clads.data.entity.mappedmodel.User
-import com.decagonhq.clads.resource.Resource
 import com.decagonhq.clads.data.repository.Repository
+import com.decagonhq.clads.resource.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

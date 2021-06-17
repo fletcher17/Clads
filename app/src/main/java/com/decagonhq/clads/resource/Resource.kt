@@ -8,7 +8,6 @@ import retrofit2.Response
  * (success or error)
  */
 
-
 sealed class Resource<out T> {
     data class Success<out T>(val value: T) : Resource<T>()
     data class Failure(

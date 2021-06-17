@@ -20,7 +20,6 @@ import com.decagonhq.clads.utils.ClientMeasurementData
 import com.decagonhq.clads.utils.Constant.listOfClientData
 import com.decagonhq.clads.utils.Interface.ClientMeasurementClickListener
 
-
 class ClientMeasurementTabFragment : Fragment(), ClientMeasurementClickListener {
 
     private lateinit var clientAdapterMeasurement: ClientMeasurementAdapter

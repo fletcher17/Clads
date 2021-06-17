@@ -52,20 +52,17 @@ class EmailSignUpFragment : Fragment() {
 
                 val category =
                     binding.fragmentEmailSignUpScreenAccountCategoryFilledDropdown.text.toString()
-                val country = "Nigeria"
-                val address = "Lagos"
+                val address = ""
                 val emailAddress =
                     binding.fragmentEmailSignUpScreenEmailAddressEditText.text.toString().trim()
                 val firstName =
                     binding.fragmentEmailSignUpScreenFirstNameEditText.text.toString().trim()
-                val gender = "male"
                 val lastName =
                     binding.fragmentEmailSignUpScreenLastNameEditText.text.toString().trim()
                 val password =
                     binding.fragmentEmailSignUpScreenConfirmPasswordEditText.text.toString().trim()
                 val phoneNumber = "09034572526"
                 val role = "Tailor"
-                val thumbnail = "darot.jpg"
 
                 val newUser = User(
                     firstName = firstName,
@@ -79,23 +76,16 @@ class EmailSignUpFragment : Fragment() {
                 )
 
                 viewModel.registerThisUser(newUser)
-                // NAVIGATE TO THE EMAIL CONFIRMATION FRAGMENT
 
                 viewModel.userLiveData.observe(
-                    viewLifecycleOwner,
-                    Observer {
+                    viewLifecycleOwner, {
                         when (it) {
                             is Resource.Success -> {
                                 val result = it.value.payload
-                                Toast.makeText(requireContext(), result, Toast.LENGTH_LONG).show()
                                 findNavController().navigate(R.id.action_email_sign_up_fragment_to_email_confirmation_fragment)
                             }
                             else -> {
-                                Toast.makeText(
-                                    requireContext(),
-                                    "fuccccckkkkk yooou!",
-                                    Toast.LENGTH_LONG
-                                ).show()
+                                Toast.makeText(requireContext(), "A network error has occured", Toast.LENGTH_LONG).show()
                             }
                         }
                     }

@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.decagonhq.clads.data.entity.mappedmodel.RegisterUserResponse
 import com.decagonhq.clads.data.entity.mappedmodel.User
-import com.decagonhq.clads.data.remote.Resource
+import com.decagonhq.clads.resource.Resource
 import com.decagonhq.clads.data.repository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -23,7 +23,6 @@ class UserManagementViewModel
      * Heavy operation that cannot be done in the Main Thread
      */
     fun registerThisUser(user: User) {
-
         viewModelScope.launch {
             _userLiveData.value = repository.registerUser(user)
         }

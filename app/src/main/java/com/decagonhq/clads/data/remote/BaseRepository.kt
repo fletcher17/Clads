@@ -1,5 +1,6 @@
 package com.decagonhq.clads.data.remote
 
+import com.decagonhq.clads.resource.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException

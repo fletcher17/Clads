@@ -14,10 +14,9 @@ class Repository @Inject constructor(
     private val remoteDataSourceApi: RemoteDataSourceApi
 ) : BaseRepository() {
 
-    suspend fun registerUser(user: User) =
-        safeApiCall {
-            remoteDataSourceApi.registerUser(user)
-        }
+    suspend fun registerUser(user: User) = safeApiCall {
+        remoteDataSourceApi.registerUser(user)
+    }
 
     // this will bw needed when we implement local persistence. leave it for now
     //    suspend fun getPost() = performGetOperation (

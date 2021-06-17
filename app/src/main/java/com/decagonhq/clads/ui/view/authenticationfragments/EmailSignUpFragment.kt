@@ -14,7 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads.R
 import com.decagonhq.clads.data.entity.mappedmodel.User
-import com.decagonhq.clads.data.remote.Resource
+import com.decagonhq.clads.resource.Resource
 import com.decagonhq.clads.databinding.FragmentEmailSignUpBinding
 import com.decagonhq.clads.ui.viewmodel.UserManagementViewModel
 import com.decagonhq.clads.utils.validator.SignUpFormValidation

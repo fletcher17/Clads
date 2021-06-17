@@ -20,6 +20,7 @@ import com.decagonhq.clads.utils.ClientMeasurementData
 import com.decagonhq.clads.utils.Constant.listOfClientData
 import com.decagonhq.clads.utils.Interface.ClientMeasurementClickListener
 
+
 class ClientMeasurementTabFragment : Fragment(), ClientMeasurementClickListener {
 
     private lateinit var clientAdapterMeasurement: ClientMeasurementAdapter
@@ -41,16 +42,16 @@ class ClientMeasurementTabFragment : Fragment(), ClientMeasurementClickListener 
 
         /** The float action button inflates the Add measurement fragment */
         binding.fragmentMeasurementTabFloatActionButton.setOnClickListener {
-            var dialog = AlertDialog.Builder(requireContext())
+            val dialog = AlertDialog.Builder(requireContext())
             val display = LayoutInflater.from(requireContext()).inflate(R.layout.fragment_add_measurement, null)
 
             dialog.setView(display)
             val addDialog = dialog.create()
             addDialog.show()
 
-            var measurementName: EditText = display.findViewById(R.id.fragment_add_measurement_textInput_measurement_name_edit_text)
-            var measurementValue: EditText = display.findViewById(R.id.fragment_add_measurement_textInput_measurement_value_edit_text)
-            var addbutton: Button = display.findViewById(R.id.fragment_add_measurement_button)
+            val measurementName: EditText = display.findViewById(R.id.fragment_add_measurement_textInput_measurement_name_edit_text)
+            val measurementValue: EditText = display.findViewById(R.id.fragment_add_measurement_textInput_measurement_value_edit_text)
+            val addbutton: Button = display.findViewById(R.id.fragment_add_measurement_button)
 
             addbutton.setOnClickListener {
                 val nameOfMeasurement = measurementName.text.toString()

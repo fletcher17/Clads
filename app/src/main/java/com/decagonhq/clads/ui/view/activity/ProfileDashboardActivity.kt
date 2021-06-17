@@ -69,12 +69,23 @@ class ProfileDashboardActivity : AppCompatActivity() {
                         .activityProfileDashboardBottomNavigationView.visibility = View.GONE
                 }
                 (destination.id == R.id.editProfileFragment) -> {
-                    binding.activityProfileDashboardToolbarLayout
-                        .profileActivityAppBarConstraintLayout.visibility = View.GONE
+//                    binding.activityProfileDashboardToolbarLayout
+//                        .profileActivityAppBarConstraintLayout.visiblity = View.GONE
                 }
-                (destination.id == R.id.mediaFragment) ->
-                    binding.activityProfileDashboardToolbarLayout
-                        .profileActivityAppBarConstraintLayout.visibility = View.GONE
+                (destination.id == R.id.mediaFragment) -> {
+                    binding.activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarTitleTextView.text =
+                        "Photo Gallery"
+                    binding.activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarImageView.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.profileActivityAppBarNotificationIcon.visibility = View.GONE
+                }
+
+                (destination.id == R.id.mediaDisplayPictureFragment) -> {
+                    binding.activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarTitleTextView.text =
+                        "Jenipha Stitches"
+                    binding.activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarImageView.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.profileActivityAppBarNotificationIcon.visibility = View.GONE
+                }
+
                 (destination.id == R.id.addClientFragment) ->
                     binding.activityProfileDashboardToolbarLayout
                         .profileActivityAppBarConstraintLayout.visibility = View.GONE

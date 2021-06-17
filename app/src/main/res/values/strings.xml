@@ -302,7 +302,7 @@
     <string name="header_client_name">Ijeoma Ibukun Babangida</string>
     <string name="header_edit_profile_button">Edit Profile</string>
     <string name="fragment_message">Messages Fragment</string>
-    <string name="fragment_media">Media Fragment</string>
+    <string name="fragment_media">Photo Gallery</string>
     <string name="fragment_dashboard">Dashboard Fragment</string>
     <string name="drawer_menu_clients_item">Clients</string>
     <string name="drawer_menu_resources_item">Resources</string>
@@ -315,4 +315,11 @@
     <string name="profile_account_fragment_ward_dialog_fragment_tag">wardDialog</string>
     <string name="profile_account_fragment_local_govt_area_dialog_fragment_tag">localGovtAreaDialog</string>
     <string name="profile_account_fragment_state_dialog_fragment_tag">stateDialog</string>
+    <string name="fragment_media_no_photos">You have no photo in your gallery</string>
+    <string name="fragment_media_add_new_photo">Add a new photo to your gallery</string>
+    <string name="fragment_media_display_picture_photo_description">A beautiful lady wearing a slit ankara top matching with a flair skirt</string>
+    <string name="fragment_media_photo_list_image_description">Description</string>
+    <string name="fragment_media_display_menu_share">Share</string>
+    <string name="fragment_media_display_menu_edit">Edit</string>
+    <string name="fragment_menu_display_menu_delete">Delete</string>
 </resources>

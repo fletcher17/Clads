@@ -10,7 +10,6 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads.R
 import com.decagonhq.clads.data.entity.mappedmodel.User
@@ -78,7 +77,8 @@ class EmailSignUpFragment : Fragment() {
                 viewModel.registerThisUser(newUser)
 
                 viewModel.userLiveData.observe(
-                    viewLifecycleOwner, {
+                    viewLifecycleOwner,
+                    {
                         when (it) {
                             is Resource.Success -> {
                                 val result = it.value.payload

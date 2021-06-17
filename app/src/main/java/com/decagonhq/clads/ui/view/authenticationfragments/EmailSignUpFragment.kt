@@ -36,8 +36,7 @@ class EmailSignUpFragment : Fragment() {
 
         //  POPULATE EMAIL SIGNUP SCREEN ACCOUNT CATEGORY SPINNER DROP DOWN LIST
         val accountCategory = resources.getStringArray(R.array.category_list)
-        val arrayAdapter =
-            ArrayAdapter(requireContext(), R.layout.dropdown_menu_popup_item, accountCategory)
+        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_menu_popup_item, accountCategory)
         binding.fragmentEmailSignUpScreenAccountCategoryFilledDropdown.setAdapter(arrayAdapter)
         return binding.root
     }
@@ -49,19 +48,14 @@ class EmailSignUpFragment : Fragment() {
         binding.fragmentEmailSignUpScreenSignUpButton.setOnClickListener {
             if (validateFields()) {
 
-                val category =
-                    binding.fragmentEmailSignUpScreenAccountCategoryFilledDropdown.text.toString()
+                val category = binding.fragmentEmailSignUpScreenAccountCategoryFilledDropdown.text.toString()
                 val address = ""
-                val emailAddress =
-                    binding.fragmentEmailSignUpScreenEmailAddressEditText.text.toString().trim()
-                val firstName =
-                    binding.fragmentEmailSignUpScreenFirstNameEditText.text.toString().trim()
-                val lastName =
-                    binding.fragmentEmailSignUpScreenLastNameEditText.text.toString().trim()
-                val password =
-                    binding.fragmentEmailSignUpScreenConfirmPasswordEditText.text.toString().trim()
-                val phoneNumber = "09034572526"
-                val role = "Tailor"
+                val emailAddress = binding.fragmentEmailSignUpScreenEmailAddressEditText.text.toString().trim()
+                val firstName = binding.fragmentEmailSignUpScreenFirstNameEditText.text.toString().trim()
+                val lastName = binding.fragmentEmailSignUpScreenLastNameEditText.text.toString().trim()
+                val password = binding.fragmentEmailSignUpScreenConfirmPasswordEditText.text.toString().trim()
+                val phoneNumber = getString(R.string.phone)
+                val role = getString(R.string.tailor)
 
                 val newUser = User(
                     firstName = firstName,
@@ -83,8 +77,7 @@ class EmailSignUpFragment : Fragment() {
                             is Resource.Success -> {
                                 val result = it.value.payload
                                 findNavController().navigate(R.id.action_email_sign_up_fragment_to_email_confirmation_fragment)
-                            }
-                            else -> {
+                            } else -> {
                                 Toast.makeText(requireContext(), "A network error has occured", Toast.LENGTH_LONG).show()
                             }
                         }
@@ -104,8 +97,7 @@ class EmailSignUpFragment : Fragment() {
                     binding.fragmentEmailSignUpFirstNameLayout.error = null
                 }
 
-                override fun afterTextChanged(s: Editable?) {
-                }
+                override fun afterTextChanged(s: Editable?) {}
             })
         // SETTING TEXTWATCHER TO THE SIGN UP FORM FIELDS FOR LAST NAME
         binding.fragmentEmailSignUpScreenLastNameEditText.addTextChangedListener(object :
@@ -118,8 +110,7 @@ class EmailSignUpFragment : Fragment() {
                     binding.fragmentEmailSignUpScreenLastNameLayout.error = null
                 }
 
-                override fun afterTextChanged(s: Editable?) {
-                }
+                override fun afterTextChanged(s: Editable?) {}
             })
         // SETTING TEXTWATCHER TO THE SIGN UP FORM FIELDS FOR ACCOUNT CATEGORY SPINNER
         binding.fragmentEmailSignUpScreenAccountCategoryFilledDropdown.addTextChangedListener(object :
@@ -132,8 +123,7 @@ class EmailSignUpFragment : Fragment() {
                     binding.fragmentEmailSignUpScreenAccountCategoryLayout.error = null
                 }
 
-                override fun afterTextChanged(s: Editable?) {
-                }
+                override fun afterTextChanged(s: Editable?) {}
             })
         // SETTING TEXTWATCHER TO THE SIGN UP FORM FIELDS FOR EMAIL ADDRESS
         binding.fragmentEmailSignUpScreenEmailAddressEditText.addTextChangedListener(object :
@@ -146,8 +136,7 @@ class EmailSignUpFragment : Fragment() {
                     binding.fragmentEmailSignUpScreenEmailAddressLayout.error = null
                 }
 
-                override fun afterTextChanged(s: Editable?) {
-                }
+                override fun afterTextChanged(s: Editable?) {}
             })
         // SETTING TEXTWATCHER TO THE SIGN UP FORM FIELDS FOR PASSWORD
         binding.fragmentEmailSignUpScreenPasswordEditText.addTextChangedListener(object :
@@ -159,8 +148,7 @@ class EmailSignUpFragment : Fragment() {
                     binding.fragmentEmailSignUpScreenPasswordLayout.error = null
                 }
 
-                override fun afterTextChanged(s: Editable?) {
-                }
+                override fun afterTextChanged(s: Editable?) {}
             })
         // SETTING TEXTWATCHER TO THE SIGN UP FORM FIELDS FOR CONFIRM PASSWORD
         binding.fragmentEmailSignUpScreenConfirmPasswordEditText.addTextChangedListener(object :

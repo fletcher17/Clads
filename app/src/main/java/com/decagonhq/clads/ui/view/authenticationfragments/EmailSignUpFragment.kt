@@ -8,13 +8,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads.R
+import com.decagonhq.clads.data.entity.mappedmodel.User
 import com.decagonhq.clads.databinding.FragmentEmailSignUpBinding
+import com.decagonhq.clads.ui.viewmodel.UserManagementViewModel
 import com.decagonhq.clads.utils.validator.SignUpFormValidation
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EmailSignUpFragment : Fragment() {
 
+    val viewModel: UserManagementViewModel by viewModels()
     private var _binding: FragmentEmailSignUpBinding? = null
     private val binding get() = _binding!!
 
@@ -37,6 +43,21 @@ class EmailSignUpFragment : Fragment() {
         binding.fragmentEmailSignUpScreenSignUpButton.setOnClickListener {
             if (validateFields()) {
 
+                val category = binding.fragmentEmailSignUpScreenAccountCategoryFilledDropdown.text.toString()
+                val country = ""
+                val address = binding.fragmentEmailSignUpScreenEmailAddressEditText.text.toString().trim()
+                val emailAddress = binding.fragmentEmailSignUpScreenEmailAddressEditText.text.toString().trim()
+                val firstName = binding.fragmentEmailSignUpScreenFirstNameEditText.text.toString().trim()
+                val gender = ""
+                val lastName = binding.fragmentEmailSignUpScreenLastNameEditText.text.toString().trim()
+                val password = binding.fragmentEmailSignUpScreenConfirmPasswordEditText.text.toString().trim()
+                val phoneNumber = ""
+                val role = ""
+                val thumbnail = ""
+
+                val newUser = User(firstName,lastName,emailAddress,phoneNumber,gender,category, address,thumbnail,country,role,password)
+
+                viewModel.registerThisUser(newUser)
                 // NAVIGATE TO THE EMAIL CONFIRMATION FRAGMENT
                 findNavController().navigate(R.id.action_email_sign_up_fragment_to_email_confirmation_fragment)
             }

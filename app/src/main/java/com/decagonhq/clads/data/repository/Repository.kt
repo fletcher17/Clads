@@ -1,10 +1,11 @@
 package com.decagonhq.clads.data.repository
 
-import android.util.Log
-import com.decagonhq.clads.data.entity.Post
+import com.decagonhq.clads.data.entity.mappedmodel.RegisterUserResponse
+import com.decagonhq.clads.data.entity.mappedmodel.User
 import com.decagonhq.clads.data.remote.BaseDataSource
 import com.decagonhq.clads.data.remote.RemoteDataSourceApi
-import retrofit2.Response
+import com.decagonhq.clads.resource.Resource
+import retrofit2.Call
 import javax.inject.Inject
 
 /**
@@ -13,7 +14,7 @@ import javax.inject.Inject
  */
 
 class Repository @Inject constructor(
-    private val remoteDataSourceApi: RemoteDataSourceApi,
+    private val remoteDataSourceApi: RemoteDataSourceApi
 ) : BaseDataSource() {
 
     // this is an example of how all calls are to be made
@@ -21,7 +22,9 @@ class Repository @Inject constructor(
     //            return remoteDataSourceApi.getPosts()
     //        }
 
-
+    suspend fun registerUser(user : User): Resource<RegisterUserResponse> {
+        return remoteDataSourceApi.registerUser(user)
+    }
 
     // this will bw needed when we implement local persistence. leave it for now
     //    suspend fun getPost() = performGetOperation (
@@ -29,5 +32,4 @@ class Repository @Inject constructor(
     //        dataBaseQuery = { localDataSource.getUserDao().getPost() },
     //        saveCallResult = { localDataSource.getUserDao().savePost() }
     //    )
-
 }

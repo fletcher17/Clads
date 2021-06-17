@@ -1,29 +1,23 @@
 package com.decagonhq.clads.ui.viewmodel
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.decagonhq.clads.data.entity.Post
 import com.decagonhq.clads.data.repository.Repository
-import com.decagonhq.clads.resource.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-
 @HiltViewModel
-class ClientManagementViewModel @Inject constructor (private val repository: Repository): ViewModel() {
-
-    // example live data
-    //    private val _postsLiveData = MutableLiveData<List<Post>>()
-    //    val postsLiveData: LiveData<List<Post>> = _postsLiveData
-
+class ClientManagementViewModel @Inject constructor (private val repository: Repository) : ViewModel() {
 
     /**
      * This is the job for all coroutines started by this ViewModel.
      * Cancelling this job will cancel all coroutines started by this ViewModel.
      */
+
     private val viewModelJob = SupervisorJob()
 
     /**
@@ -32,7 +26,6 @@ class ClientManagementViewModel @Inject constructor (private val repository: Rep
      * launched by uiScope by calling viewModelJob.cancel()
      */
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
-
 
     /**
      * Heavy operation that cannot be done in the Main Thread
@@ -51,9 +44,9 @@ class ClientManagementViewModel @Inject constructor (private val repository: Rep
         // postsLiveData.value = repository.getPost()
     }
 
-//    /**
-//     * Cancel all coroutines when the ViewModel is cleared
-//     */
+    //    /**
+    //     * Cancel all coroutines when the ViewModel is cleared
+    //     */
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()

@@ -7,7 +7,7 @@ import com.decagonhq.clads.data.entity.Post
 @Dao
 interface UserDao {
 
-    suspend fun getPost() : LiveData<List<Post>>
+    suspend fun getPost(): LiveData<List<Post>>
 
     suspend fun savePost()
 }

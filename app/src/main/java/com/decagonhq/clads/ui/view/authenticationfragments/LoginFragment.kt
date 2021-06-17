@@ -27,10 +27,8 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
-    val viewModel: ClientManagementViewModel by viewModels()
     private lateinit var binding: FragmentLoginBinding // profile_activity_header_view binding for this current fragment (Login fragment)
     // Creating variables to store views references
     private lateinit var showPasswordIcon: ImageView

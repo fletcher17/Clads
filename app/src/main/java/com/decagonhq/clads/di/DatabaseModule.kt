@@ -33,10 +33,10 @@ object DatabaseModule {
 //        @Provides
 //        fun provideUserDao(database: LocalDataSource) = database.getUserDao()
 
-        @Singleton
-        @Provides
-        fun provideRepository(
-            remoteDataSource: RemoteDataSourceApi,
-            // localDataSource: LocalDataSource
-        ) = Repository(remoteDataSource)
-    }
+    @Singleton
+    @Provides
+    fun provideRepository(
+        remoteDataSource: RemoteDataSourceApi,
+        // localDataSource: LocalDataSource
+    ) = Repository(remoteDataSource)
+}

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/profile_management_navigation_graph"
-    app:startDestination="@id/dashboardFragment">
+    app:startDestination="@+id/resourceViewAllArticlesFragment">
 
     <fragment
         android:id="@+id/dashboardFragment"
@@ -109,8 +109,8 @@
     <fragment
         android:id="@+id/resourceViewAllArticlesFragment"
         android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewAllArticlesFragment"
-        android:label="fragment_resource_view_all_article"
-        tools:layout="@layout/fragment_resource_view_all_articles" >
+        android:label="Articles / Publications"
+        tools:layout="@layout/fragment_resource_view_all_articles">
         <action
             android:id="@+id/action_resourceViewAllArticlesFragment_to_resourceHomeFragment2"
             app:destination="@id/resourceHomeFragment" />
@@ -142,8 +142,8 @@
     <fragment
         android:id="@+id/resourceViewIndividualArticleFragment"
         android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewIndividualArticleFragment"
-        android:label="fragment_resource_view_individual_article"
-        tools:layout="@layout/fragment_resource_view_individual_article" >
+        android:label="Articles / Publications"
+        tools:layout="@layout/fragment_resource_view_individual_article">
         <action
             android:id="@+id/action_resourceViewIndividualArticleFragment_to_resourceViewAllArticlesFragment"
             app:destination="@id/resourceViewAllArticlesFragment" />

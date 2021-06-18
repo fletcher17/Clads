@@ -1,30 +1,49 @@
 package com.decagonhq.clads.ui.view.profilemanagementfragments
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContract
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.decagonhq.clads.R
 import com.decagonhq.clads.data.model.Profile
 import com.decagonhq.clads.databinding.FragmentProfileAccountTabBinding
-import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountFirstNameCustomDialogFragment
-import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountGenderCustomDialogFragment
-import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountLastNameCustomDialogFragment
-import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountLegalStatusCustomDialogFragment
-import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountLocalGovernmentAreaCustomDialogFragment
-import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountNameOfUnionCustomDialogFragment
-import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountNumberOfEmployeesCustomDialogFragment
-import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountOtherNameCustomDialogFragment
-import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountShowroomAddressCustomDialogFragment
-import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountStateCustomDialogFragment
-import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountWardCustomDialogFragment
-import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountWorkshopAddressCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.*
 import com.decagonhq.clads.ui.viewmodel.EditProfileFragmentViewModel
 import com.decagonhq.clads.utils.Interface.IButtonClick
+import com.theartofdev.edmodo.cropper.CropImage
 
 class ProfileAccountFragment : Fragment() {
+
+    // INITIALIZING CROP IMAGE LAUNCHER
+    private val cropActivityResultContract = object : ActivityResultContract<Any?, Uri>() {
+        override fun createIntent(context: Context, input: Any?): Intent {
+            return CropImage.activity()
+                .setAspectRatio(1, 1)
+                .getIntent(context)
+        }
+
+        override fun parseResult(resultCode: Int, intent: Intent?): Uri? {
+            var imageUri: Uri? = null
+            try {
+                imageUri = CropImage.getActivityResult(intent).uri
+            } catch (e: Exception) {
+                Log.d("NPE", e.localizedMessage)
+            }
+
+            return imageUri
+        }
+    }
+
+    // INITIALIZING CROP IMAGE LAUNCHER
+    private lateinit var cropActivityResultLauncher: ActivityResultLauncher<Any?>
 
     private var _binding: FragmentProfileAccountTabBinding? = null
     private val binding get() = _binding!!
@@ -43,6 +62,14 @@ class ProfileAccountFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // SETTING THE CROP IMAGE LAUNCHER TO THE PROFILE IMAGE
+        cropActivityResultLauncher = registerForActivityResult(cropActivityResultContract) {
+
+            it?.let { uri ->
+                binding.fragmentProfileAccountProfileImageView.setImageURI(uri)
+            }
+        }
 
         viewModel = ViewModelProvider(this).get(EditProfileFragmentViewModel::class.java)
 
@@ -70,6 +97,10 @@ class ProfileAccountFragment : Fragment() {
 
             (parentFragment as ButtonClick).buttonClicked()
         }
+        // SETTING ONCLICKLISTENER TO THE TAP TO CHANGE TEXT
+        binding.fragmentProfileAccountTapToChangeTextView.setOnClickListener {
+            cropActivityResultLauncher.launch(null)
+        }
 
         binding.fragmentProfileAccountFirstNameEditText.setOnClickListener {
             val dialog = EditProfileAccountFirstNameCustomDialogFragment()
@@ -81,8 +112,7 @@ class ProfileAccountFragment : Fragment() {
 
         viewModel.firstName.observe(
             viewLifecycleOwner,
-            {
-                firstName ->
+            { firstName ->
                 binding.fragmentProfileAccountFirstNameEditText.text = firstName
             }
         )
@@ -97,8 +127,7 @@ class ProfileAccountFragment : Fragment() {
 
         viewModel.lastName.observe(
             viewLifecycleOwner,
-            {
-                lastName ->
+            { lastName ->
                 binding.fragmentProfileAccountLastNameEditText.text = lastName
             }
         )
@@ -113,8 +142,7 @@ class ProfileAccountFragment : Fragment() {
 
         viewModel.otherName.observe(
             viewLifecycleOwner,
-            {
-                otherName ->
+            { otherName ->
                 binding.fragmentProfileAccountOtherNameEditText.text = otherName
             }
         )
@@ -129,8 +157,7 @@ class ProfileAccountFragment : Fragment() {
 
         viewModel.gender.observe(
             viewLifecycleOwner,
-            {
-                gender ->
+            { gender ->
                 binding.fragmentProfileAccountGenderEditText.text = gender
             }
         )
@@ -145,8 +172,7 @@ class ProfileAccountFragment : Fragment() {
 
         viewModel.showRoomAddress.observe(
             viewLifecycleOwner,
-            {
-                showRoomAddress ->
+            { showRoomAddress ->
                 binding.fragmentProfileAccountShowroomAddressEditText.text = showRoomAddress
             }
         )
@@ -161,8 +187,7 @@ class ProfileAccountFragment : Fragment() {
 
         viewModel.workShopAddress.observe(
             viewLifecycleOwner,
-            {
-                workShopAddress ->
+            { workShopAddress ->
                 binding.fragmentProfileAccountWorkshopAddressEditText.text = workShopAddress
             }
         )
@@ -177,8 +202,7 @@ class ProfileAccountFragment : Fragment() {
 
         viewModel.numberOfEmployees.observe(
             viewLifecycleOwner,
-            {
-                numberOfEmployees ->
+            { numberOfEmployees ->
                 binding.fragmentProfileAccountNumberOfEmployeesEditText.text =
                     numberOfEmployees.toString()
             }
@@ -194,8 +218,7 @@ class ProfileAccountFragment : Fragment() {
 
         viewModel.legalStatus.observe(
             viewLifecycleOwner,
-            {
-                legalStatus ->
+            { legalStatus ->
                 binding.fragmentProfileAccountLegalStatusEditText.text = legalStatus
             }
         )
@@ -210,8 +233,7 @@ class ProfileAccountFragment : Fragment() {
 
         viewModel.nameOfUnion.observe(
             viewLifecycleOwner,
-            {
-                nameOfUnion ->
+            { nameOfUnion ->
                 binding.fragmentProfileAccountNameOfUnionEditText.text = nameOfUnion
             }
         )
@@ -226,8 +248,7 @@ class ProfileAccountFragment : Fragment() {
 
         viewModel.ward.observe(
             viewLifecycleOwner,
-            {
-                ward ->
+            { ward ->
                 binding.fragmentProfileAccountWardEditText.text = ward
             }
         )
@@ -242,8 +263,7 @@ class ProfileAccountFragment : Fragment() {
 
         viewModel.localGovtArea.observe(
             viewLifecycleOwner,
-            {
-                lga ->
+            { lga ->
                 binding.fragmentProfileAccountLocalGovtAreaEditText.text = lga
             }
         )
@@ -258,8 +278,7 @@ class ProfileAccountFragment : Fragment() {
 
         viewModel.state.observe(
             viewLifecycleOwner,
-            {
-                state ->
+            { state ->
                 binding.fragmentProfileAccountStateEditText.text = state
             }
         )

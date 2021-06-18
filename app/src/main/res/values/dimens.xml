@@ -172,4 +172,5 @@
     <dimen name="margin_125dp">125dp</dimen>
     <dimen name="margin_120dp">120dp</dimen>
     <dimen name="margin_200dp">200dp</dimen>
+    <dimen name="card_corner_radius_10dp">10dp</dimen>
 </resources>

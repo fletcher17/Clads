@@ -3,7 +3,7 @@ package com.decagonhq.clads.ui.adapters.recyclerviewadapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.decagonhq.clads.data.model.ClientMessageModel
+import com.decagonhq.clads.data.entity.ClientMessageModel
 import com.decagonhq.clads.databinding.FragmentMessagesMessageListLayoutBinding
 
 class FragmentMessageClientAdapter(private var clientMessageList: ArrayList<ClientMessageModel>) :

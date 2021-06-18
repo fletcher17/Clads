@@ -18,10 +18,4 @@ class Repository @Inject constructor(
         remoteDataSourceApi.registerUser(user)
     }
 
-    // this will bw needed when we implement local persistence. leave it for now
-    //    suspend fun getPost() = performGetOperation (
-    //        networkCall = { getResult { remoteDataSourceApi.getPosts() } },
-    //        dataBaseQuery = { localDataSource.getUserDao().getPost() },
-    //        saveCallResult = { localDataSource.getUserDao().savePost() }
-    //    )
 }

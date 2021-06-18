@@ -12,31 +12,9 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
 
-    // dependency injection for database tp be uncommented when we need it.
-
-//        @Singleton
-//        @Provides
-//        fun provideDatabase(@ApplicationContext appContext: Context): LocalDataSource {
-//            // build database with 3 parameters. context, database class and a name
-//            return Room.databaseBuilder(
-//                appContext,
-//                LocalDataSource::class.java,
-//                "cladsDatabase"
-//            ).build()
-//        }
-
-//        @Singleton
-//        @Provides
-//        fun provideClientDao(database: LocalDataSource) = database.getClientDao()
-//
-//        @Singleton
-//        @Provides
-//        fun provideUserDao(database: LocalDataSource) = database.getUserDao()
-
     @Singleton
     @Provides
     fun provideRepository(
-        remoteDataSource: RemoteDataSourceApi,
-        // localDataSource: LocalDataSource
+        remoteDataSource: RemoteDataSourceApi
     ) = Repository(remoteDataSource)
 }

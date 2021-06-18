@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.decagonhq.clads.R
-import com.decagonhq.clads.data.model.Specialty
+import com.decagonhq.clads.data.entity.Specialty
 import com.decagonhq.clads.databinding.FragmentProfileSpecialtyAddSpecialtyCustomDialogBinding
 import com.decagonhq.clads.ui.viewmodel.EditProfileFragmentViewModel
 import com.decagonhq.clads.utils.toast

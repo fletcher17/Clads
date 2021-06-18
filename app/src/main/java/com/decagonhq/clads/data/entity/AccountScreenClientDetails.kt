@@ -1,4 +1,4 @@
-package com.decagonhq.clads.data.model
+package com.decagonhq.clads.data.entity
 
 data class AccountScreenClientDetails(
     var firstName: String? = null,

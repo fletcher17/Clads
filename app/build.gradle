@@ -148,4 +148,15 @@ dependencies {
 
     // Circle ImageView
     implementation "com.amulyakhare:com.amulyakhare.textdrawable:$versions.circle_image_view"
+
+    // Room
+    implementation("androidx.room:room-runtime:$versions.room_version")
+    kapt "androidx.room:room-compiler:$versions.room_version"
+    annotationProcessor "android.arch.persistence.room:compiler:$versions.room_persistence"
+
+    // exo player
+    implementation "com.google.android.exoplayer:exoplayer-core:$versions.exoplayer_version"
+    implementation "com.google.android.exoplayer:exoplayer-dash:$versions.exoplayer_version"
+    implementation "com.google.android.exoplayer:exoplayer-ui:$versions.exoplayer_version"
+
 }

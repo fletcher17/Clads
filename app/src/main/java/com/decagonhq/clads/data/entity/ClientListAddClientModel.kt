@@ -1,4 +1,4 @@
-package com.decagonhq.clads.models
+package com.decagonhq.clads.data.entity
 
 data class ClientListAddClientModel(
     var clientFirstName: String,

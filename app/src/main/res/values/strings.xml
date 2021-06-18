@@ -315,4 +315,6 @@
     <string name="profile_account_fragment_ward_dialog_fragment_tag">wardDialog</string>
     <string name="profile_account_fragment_local_govt_area_dialog_fragment_tag">localGovtAreaDialog</string>
     <string name="profile_account_fragment_state_dialog_fragment_tag">stateDialog</string>
+    <string name="phone">09034572526</string>
+    <string name="tailor">Tailor</string>
 </resources>

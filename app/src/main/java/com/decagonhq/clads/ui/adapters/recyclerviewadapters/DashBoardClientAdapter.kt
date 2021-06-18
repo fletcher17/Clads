@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.amulyakhare.textdrawable.TextDrawable
 import com.amulyakhare.textdrawable.util.ColorGenerator
-import com.decagonhq.clads.data.model.ClientModel
+import com.decagonhq.clads.data.entity.ClientModel
 import com.decagonhq.clads.databinding.FragmentDashboardClientListBinding
 
 class DashBoardClientAdapter(private var clientList: ArrayList<ClientModel>) :

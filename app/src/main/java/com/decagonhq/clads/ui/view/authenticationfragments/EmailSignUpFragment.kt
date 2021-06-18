@@ -86,7 +86,7 @@ class EmailSignUpFragment : Fragment() {
             }
         }
 
-        // SETTING TEXTWATCHER TO THE SIGN UP FORM FIELDS FOR FIRST NAME
+        // SETTING TEXT WATCHER TO THE SIGN UP FORM FIELDS FOR FIRST NAME
         binding.fragmentEmailSignUpScreenFirstNameEditText.addTextChangedListener(object :
                 TextWatcher {
                 override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {

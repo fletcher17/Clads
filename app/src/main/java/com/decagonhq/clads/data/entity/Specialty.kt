@@ -1,4 +1,4 @@
-package com.decagonhq.clads.data.model
+package com.decagonhq.clads.data.entity
 
 class Specialty(var name: String, var checked: Boolean) {
 

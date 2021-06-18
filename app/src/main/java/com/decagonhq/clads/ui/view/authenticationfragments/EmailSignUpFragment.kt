@@ -7,25 +7,36 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads.R
+import com.decagonhq.clads.data.entity.mappedmodel.User
 import com.decagonhq.clads.databinding.FragmentEmailSignUpBinding
+import com.decagonhq.clads.resource.Resource
+import com.decagonhq.clads.ui.viewmodel.UserManagementViewModel
 import com.decagonhq.clads.utils.validator.SignUpFormValidation
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EmailSignUpFragment : Fragment() {
 
+    val viewModel: UserManagementViewModel by viewModels()
     private var _binding: FragmentEmailSignUpBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
 
         _binding = FragmentEmailSignUpBinding.inflate(inflater, container, false)
 
         //  POPULATE EMAIL SIGNUP SCREEN ACCOUNT CATEGORY SPINNER DROP DOWN LIST
         val accountCategory = resources.getStringArray(R.array.category_list)
-        val arrayAdapter =
-            ArrayAdapter(requireContext(), R.layout.dropdown_menu_popup_item, accountCategory)
+        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_menu_popup_item, accountCategory)
         binding.fragmentEmailSignUpScreenAccountCategoryFilledDropdown.setAdapter(arrayAdapter)
         return binding.root
     }
@@ -37,10 +48,44 @@ class EmailSignUpFragment : Fragment() {
         binding.fragmentEmailSignUpScreenSignUpButton.setOnClickListener {
             if (validateFields()) {
 
-                // NAVIGATE TO THE EMAIL CONFIRMATION FRAGMENT
-                findNavController().navigate(R.id.action_email_sign_up_fragment_to_email_confirmation_fragment)
+                val category = binding.fragmentEmailSignUpScreenAccountCategoryFilledDropdown.text.toString()
+                val address = ""
+                val emailAddress = binding.fragmentEmailSignUpScreenEmailAddressEditText.text.toString().trim()
+                val firstName = binding.fragmentEmailSignUpScreenFirstNameEditText.text.toString().trim()
+                val lastName = binding.fragmentEmailSignUpScreenLastNameEditText.text.toString().trim()
+                val password = binding.fragmentEmailSignUpScreenConfirmPasswordEditText.text.toString().trim()
+                val phoneNumber = getString(R.string.phone)
+                val role = getString(R.string.tailor)
+
+                val newUser = User(
+                    firstName = firstName,
+                    lastName = lastName,
+                    email = emailAddress,
+                    phoneNumber = phoneNumber,
+                    category = category,
+                    deliveryddress = address,
+                    role = role,
+                    password = password
+                )
+
+                viewModel.registerThisUser(newUser)
+
+                viewModel.userLiveData.observe(
+                    viewLifecycleOwner,
+                    {
+                        when (it) {
+                            is Resource.Success -> {
+                                val result = it.value.payload
+                                findNavController().navigate(R.id.action_email_sign_up_fragment_to_email_confirmation_fragment)
+                            } else -> {
+                                Toast.makeText(requireContext(), "A network error has occured", Toast.LENGTH_LONG).show()
+                            }
+                        }
+                    }
+                )
             }
         }
+
         // SETTING TEXTWATCHER TO THE SIGN UP FORM FIELDS FOR FIRST NAME
         binding.fragmentEmailSignUpScreenFirstNameEditText.addTextChangedListener(object :
                 TextWatcher {
@@ -52,8 +97,7 @@ class EmailSignUpFragment : Fragment() {
                     binding.fragmentEmailSignUpFirstNameLayout.error = null
                 }
 
-                override fun afterTextChanged(s: Editable?) {
-                }
+                override fun afterTextChanged(s: Editable?) {}
             })
         // SETTING TEXTWATCHER TO THE SIGN UP FORM FIELDS FOR LAST NAME
         binding.fragmentEmailSignUpScreenLastNameEditText.addTextChangedListener(object :
@@ -66,8 +110,7 @@ class EmailSignUpFragment : Fragment() {
                     binding.fragmentEmailSignUpScreenLastNameLayout.error = null
                 }
 
-                override fun afterTextChanged(s: Editable?) {
-                }
+                override fun afterTextChanged(s: Editable?) {}
             })
         // SETTING TEXTWATCHER TO THE SIGN UP FORM FIELDS FOR ACCOUNT CATEGORY SPINNER
         binding.fragmentEmailSignUpScreenAccountCategoryFilledDropdown.addTextChangedListener(object :
@@ -80,8 +123,7 @@ class EmailSignUpFragment : Fragment() {
                     binding.fragmentEmailSignUpScreenAccountCategoryLayout.error = null
                 }
 
-                override fun afterTextChanged(s: Editable?) {
-                }
+                override fun afterTextChanged(s: Editable?) {}
             })
         // SETTING TEXTWATCHER TO THE SIGN UP FORM FIELDS FOR EMAIL ADDRESS
         binding.fragmentEmailSignUpScreenEmailAddressEditText.addTextChangedListener(object :
@@ -94,8 +136,7 @@ class EmailSignUpFragment : Fragment() {
                     binding.fragmentEmailSignUpScreenEmailAddressLayout.error = null
                 }
 
-                override fun afterTextChanged(s: Editable?) {
-                }
+                override fun afterTextChanged(s: Editable?) {}
             })
         // SETTING TEXTWATCHER TO THE SIGN UP FORM FIELDS FOR PASSWORD
         binding.fragmentEmailSignUpScreenPasswordEditText.addTextChangedListener(object :
@@ -107,8 +148,7 @@ class EmailSignUpFragment : Fragment() {
                     binding.fragmentEmailSignUpScreenPasswordLayout.error = null
                 }
 
-                override fun afterTextChanged(s: Editable?) {
-                }
+                override fun afterTextChanged(s: Editable?) {}
             })
         // SETTING TEXTWATCHER TO THE SIGN UP FORM FIELDS FOR CONFIRM PASSWORD
         binding.fragmentEmailSignUpScreenConfirmPasswordEditText.addTextChangedListener(object :

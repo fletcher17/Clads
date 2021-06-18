@@ -13,7 +13,7 @@ import androidx.activity.result.contract.ActivityResultContract
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.decagonhq.clads.R
-import com.decagonhq.clads.data.model.Profile
+import com.decagonhq.clads.data.entity.Profile
 import com.decagonhq.clads.databinding.FragmentProfileAccountTabBinding
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.*
 import com.decagonhq.clads.ui.viewmodel.EditProfileFragmentViewModel

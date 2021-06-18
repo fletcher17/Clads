@@ -1,4 +1,4 @@
-package com.decagonhq.clads
+package com.decagonhq.clads.ui.adapters.recyclerviewadapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.decagonhq.clads.R
 import com.decagonhq.clads.utils.ClientMeasurementData
-import com.decagonhq.clads.utils.clicklistener.ClientMeasurementClickListener
+import com.decagonhq.clads.utils.Interface.ClientMeasurementClickListener
 
 class ClientMeasurementAdapter(
     var listOfClientMeasurements: ArrayList<ClientMeasurementData>,

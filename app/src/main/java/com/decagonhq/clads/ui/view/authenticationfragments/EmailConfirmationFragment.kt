@@ -21,26 +21,16 @@ class EmailConfirmationFragment : Fragment() {
         // the verification button which navigates to the email fragment when clicked
         binding.fragmentEmailConfirmationEmailVerificationButton.setOnClickListener {
 
-//            val intent = Intent(Intent.ACTION_VIEW)
-//            intent.addCategory(Intent.CATEGORY_APP_EMAIL)
-//            startActivity(Intent.createChooser(intent, "Email"))
-
-//            val intent = Intent.makeMainSelectorActivity(Intent.ACTION_MAIN, Intent.CATEGORY_APP_EMAIL)
-//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-//            startActivity(intent)
-
             val intent = Intent.makeMainSelectorActivity(
                 Intent.ACTION_MAIN,
                 Intent.CATEGORY_APP_EMAIL
             )
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(Intent.createChooser(intent, "Email"))
-            
         }
 
         return view
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

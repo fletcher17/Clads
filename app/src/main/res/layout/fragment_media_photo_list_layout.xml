@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/fragment_media_photo_list_photo_image_view"
-        android:layout_width="152dp"
-        android:layout_height="172dp"
+        android:layout_width="@dimen/margin_152dp"
+        android:layout_height="@dimen/margin_172dp"
         android:layout_marginStart="@dimen/margin_24dp"
         android:layout_marginTop="@dimen/margin_46dp"
         android:contentDescription="@string/fragment_media_no_photos"
@@ -20,7 +20,7 @@
         android:id="@+id/fragment_media_photo_list_image_description_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_16dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/fragment_media_photo_list_image_description"
         android:textSize="@dimen/text_size_14sp"

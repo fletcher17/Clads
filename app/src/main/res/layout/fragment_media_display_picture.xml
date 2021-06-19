@@ -10,12 +10,12 @@
 
     <ImageView
         android:id="@+id/fragment_media_photo_display_image_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="@dimen/dimen_0_dp"
+        android:layout_height="@dimen/dimen_0dp"
+        android:contentDescription="@string/fragment_media_display_picture_photo_description"
         android:src="@drawable/fragment_media_jenipha_stitches"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/fragment_media_display_picture_photo_description" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

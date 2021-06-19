@@ -8,13 +8,15 @@ import com.decagonhq.clads.databinding.FragmentMediaPhotoListLayoutBinding
 import com.decagonhq.clads.models.MediaModel
 import com.decagonhq.clads.utils.Interface.ImageClick
 
-class FragmentMediaAdapter(private var mediaList: ArrayList<MediaModel>, var imageClick: ImageClick) :
+class FragmentMediaAdapter(var imageClick: ImageClick) :
     RecyclerView.Adapter<FragmentMediaAdapter.MediaViewHolder>() {
+
+    private var mediaList: MutableList<MediaModel> = mutableListOf()
 
     inner class MediaViewHolder(val binding: FragmentMediaPhotoListLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
         var clientImage = binding.fragmentMediaPhotoListPhotoImageView
-        var imageDescription = binding.fragmentMediaPhotoListImageDescriptionTextView
+//        var imageDescription = binding.fragmentMediaPhotoListImageDescriptionTextView
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MediaViewHolder {
@@ -23,8 +25,7 @@ class FragmentMediaAdapter(private var mediaList: ArrayList<MediaModel>, var ima
     }
 
     override fun onBindViewHolder(holder: MediaViewHolder, position: Int) {
-        holder.imageDescription.text = mediaList[position].imageDescription
-        Glide.with(holder.clientImage.context)
+        Glide.with(holder.binding.root.context)
             .load(mediaList[position].imageUri)
             .into(holder.clientImage)
 
@@ -34,4 +35,9 @@ class FragmentMediaAdapter(private var mediaList: ArrayList<MediaModel>, var ima
     }
 
     override fun getItemCount(): Int = mediaList.size
+
+    fun add(media: MediaModel) {
+        mediaList.add(media)
+        notifyDataSetChanged()
+    }
 }

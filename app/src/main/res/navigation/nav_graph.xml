@@ -65,7 +65,7 @@
 
         <deepLink
             android:id="@+id/log_in_deeplink"
-            app:uri="https://clads-service.herokuapp.com/api/v1//log_in_fragment" />
+            app:uri="https://clads-service.herokuapp.com/api/v1/confirm" />
 
     </fragment>
     <fragment

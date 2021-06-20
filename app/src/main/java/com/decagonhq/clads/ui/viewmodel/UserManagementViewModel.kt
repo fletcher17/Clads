@@ -1,11 +1,9 @@
 package com.decagonhq.clads.ui.viewmodel
 
-import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.decagonhq.clads.data.entity.mappedmodel.ImageProfilePayload
 import com.decagonhq.clads.data.entity.mappedmodel.RegisterUserResponse
 import com.decagonhq.clads.data.entity.mappedmodel.UploadPhotoResponse
 import com.decagonhq.clads.data.entity.mappedmodel.User
@@ -33,6 +31,4 @@ class UserManagementViewModel
             _userLiveData.value = repository.registerUser(user)
         }
     }
-
-
 }

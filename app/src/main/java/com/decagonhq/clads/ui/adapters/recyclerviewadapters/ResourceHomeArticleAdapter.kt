@@ -73,9 +73,6 @@ class ResourceHomeArticleAdapter(private var articleList: ArrayList<ArticleModel
             Glide.with(context!!).applyDefaultRequestOptions(requestOption)
                 .load(currentArticleListItem.articleImage)
                 .into(binding.resourceHomeRecyclerViewItemArticleShapeableImageView)
-
         }
-
-
     }
 }

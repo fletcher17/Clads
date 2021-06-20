@@ -15,11 +15,11 @@ import com.decagonhq.clads.data.model.DataSource
 import com.decagonhq.clads.databinding.FragmentResourceHomeBinding
 import com.decagonhq.clads.ui.adapters.recyclerviewadapters.ResourceHomeVideoPlayerThumbnailAdapter
 
-class ResourceHomeFragment : Fragment(){
+class ResourceHomeFragment : Fragment() {
     private var _binding: FragmentResourceHomeBinding? = null
     private val binding get() = _binding!!
     private var articleHomeArrayList: ArrayList<ArticleModel> = ArrayList()
-    private var videoHomeArrayList:ArrayList<ResourceHomeVideoModel> = ArrayList()
+    private var videoHomeArrayList: ArrayList<ResourceHomeVideoModel> = ArrayList()
     private lateinit var resourceHomeFragmentVideoAdapter: ResourceHomeVideoPlayerThumbnailAdapter
     private lateinit var resourceHomeArticleAdapter: ResourceHomeArticleAdapter
 
@@ -51,7 +51,7 @@ class ResourceHomeFragment : Fragment(){
         val articleData = DataSource.createDataSet()
         resourceHomeArticleAdapter.submitArticleList(articleData)
     }
-    private fun addVideoDataSet(){
+    private fun addVideoDataSet() {
         val videoData = DataSource.createVideoDataSet()
         resourceHomeFragmentVideoAdapter.submitVideoList(videoData)
     }
@@ -74,5 +74,4 @@ class ResourceHomeFragment : Fragment(){
         super.onDestroy()
         _binding = null
     }
-
 }

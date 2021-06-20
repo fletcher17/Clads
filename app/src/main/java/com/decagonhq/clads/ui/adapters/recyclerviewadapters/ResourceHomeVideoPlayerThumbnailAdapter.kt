@@ -69,10 +69,6 @@ class ResourceHomeVideoPlayerThumbnailAdapter(private var videoPlayerList: Array
             Glide.with(context!!).applyDefaultRequestOptions(requestOption)
                 .load(currentVideoListItem.thumbNailUrl)
                 .into(binding.resourceHomeVideoThumbnailImageView)
-
         }
-
-
     }
-
 }

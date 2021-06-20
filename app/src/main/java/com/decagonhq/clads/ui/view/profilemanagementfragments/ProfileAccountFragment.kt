@@ -15,7 +15,34 @@ import androidx.lifecycle.ViewModelProvider
 import com.decagonhq.clads.R
 import com.decagonhq.clads.data.entity.Profile
 import com.decagonhq.clads.databinding.FragmentProfileAccountTabBinding
-import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.*
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountNameOfUnionCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountLegalStatusCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountNumberOfEmployeesCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountWorkshopAddressCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountShowroomAddressCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountGenderCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountFirstNameCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountOtherNameCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountWardCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountLocalGovernmentAreaCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountStateCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountLastNameCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileSpecialtyAddSpecialtyCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileSpecialtyCladsTrainedCustomDialogFragment
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileSpecialtyDeliveryLeadTimeCustomDialogFragment
+
+
+
+
+
+
+
+
+
+
+
+
+
 import com.decagonhq.clads.ui.viewmodel.EditProfileFragmentViewModel
 import com.decagonhq.clads.utils.Interface.IButtonClick
 import com.theartofdev.edmodo.cropper.CropImage
@@ -49,7 +76,6 @@ class ProfileAccountFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var editProfileViewModel: EditProfileFragmentViewModel
 
-
     interface ButtonClick : IButtonClick
 
     override fun onCreateView(
@@ -75,7 +101,6 @@ class ProfileAccountFragment : Fragment() {
         editProfileViewModel = ViewModelProvider(this).get(EditProfileFragmentViewModel::class.java)
 
         binding.fragmentProfileAccountSaveButton.setOnClickListener {
-
 
             val firstName = editProfileViewModel.firstName.value
             val lastName = editProfileViewModel.lastName.value
@@ -285,7 +310,6 @@ class ProfileAccountFragment : Fragment() {
             }
         )
     }
-
 
     override fun onDestroy() {
         super.onDestroy()

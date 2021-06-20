@@ -92,7 +92,7 @@ class ProfilePaymentMethodTabFragment : Fragment() {
 
                     addNewPaymentDialog.dismiss()
 
-                    // Adding the created payment term to the payment term textView
+                    // Adding the created payment term to the payment term resources_view_individual_video_design_layout_how_to_sew_text_view
                     paymentTerms.text = newPaymentTerms
                 } else {
                     inputPaymentTermsEditText.error = "Field must not be empty"
@@ -100,7 +100,7 @@ class ProfilePaymentMethodTabFragment : Fragment() {
             }
         }
 
-        // Setting onClick listener to the payment options textView
+        // Setting onClick listener to the payment options resources_view_individual_video_design_layout_how_to_sew_text_view
         paymentOptions.setOnClickListener() {
             // Intializing the binding variable
             paymentOptionsDialogBinding =
@@ -148,7 +148,7 @@ class ProfilePaymentMethodTabFragment : Fragment() {
             paymentOptionsDialog.show()
         }
 
-        // setting onClick Listener to the payment terms textView
+        // setting onClick Listener to the payment terms resources_view_individual_video_design_layout_how_to_sew_text_view
         paymentTerms.setOnClickListener {
             // Initializing the binding variable
             paymentTermsDialogBinding = EditProfilePaymentTermsDialogBinding.inflate(layoutInflater)

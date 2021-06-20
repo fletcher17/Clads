@@ -22,8 +22,8 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".ui.view.activity.ProfileDashboardActivity">
-
+        <activity android:name=".ui.view.activity.ProfileDashboardActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode">
         </activity>
 
         <meta-data

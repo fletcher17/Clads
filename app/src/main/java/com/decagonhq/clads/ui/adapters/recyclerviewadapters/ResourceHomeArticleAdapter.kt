@@ -10,8 +10,8 @@ import com.decagonhq.clads.R
 import com.decagonhq.clads.data.model.ArticleModel
 import com.decagonhq.clads.databinding.ResourceHomeArticleRecyclerViewItemBinding
 
-class ArticleAdapter(private var articleList: ArrayList<ArticleModel>) :
-    RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
+class ResourceHomeArticleAdapter(private var articleList: ArrayList<ArticleModel>) :
+    RecyclerView.Adapter<ResourceHomeArticleAdapter.ArticleViewHolder>() {
 
     private var context: Context? = null
 
@@ -52,26 +52,30 @@ class ArticleAdapter(private var articleList: ArrayList<ArticleModel>) :
     }
 
     // SET UP LIST FOR DUMMY DATA
-    fun submitList(allArticleList: ArrayList<ArticleModel>) {
+    fun submitArticleList(allArticleList: ArrayList<ArticleModel>) {
         articleList = allArticleList
     }
 
     // VIEW HOLDER FOR THE RECYCLER VIEW
     inner class ArticleViewHolder(private var binding: ResourceHomeArticleRecyclerViewItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         fun bindAllViews(position: Int) {
             val currentArticleListItem = articleList[position]
 
             // BINDING ALL VIEWS
             binding.apply {
-                articleTitle.text = currentArticleListItem.articleTitle
+                resourceHomeRecyclerViewItemArticleTitle.text = currentArticleListItem.articleTitle
             }
             val requestOption = RequestOptions()
-                .placeholder(R.drawable.ic_article_placeholderarticle_placeholder)
-                .error(R.drawable.ic_article_placeholderarticle_placeholder)
+                .placeholder(R.drawable.ic_article_placeholder_article_placeholder)
+                .error(R.drawable.ic_article_placeholder_article_placeholder)
             Glide.with(context!!).applyDefaultRequestOptions(requestOption)
                 .load(currentArticleListItem.articleImage)
-                .into(binding.shapeableImageView)
+                .into(binding.resourceHomeRecyclerViewItemArticleShapeableImageView)
+
         }
+
+
     }
 }

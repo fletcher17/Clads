@@ -331,7 +331,8 @@
         <item name="android:textColor">@color/deep_sky_blue</item>
         <item name="android:paddingTop">@dimen/padding_10dp</item>
         <item name="android:layout_marginStart">@dimen/margin_16dp</item>
-        <item name="android:paddingBottom">@dimen/margin_16dp</item>
+        <item name="android:paddingBottom">@dimen/padding_25</item>
+        <item name="android:layout_marginBottom">@dimen/margin_5dp</item>
 
     </style>
 
@@ -340,6 +341,10 @@
         <item name="android:letterSpacing">0.1</item>
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginTop">@dimen/margin_10dp</item>
+        <item name="android:layout_marginStart">@dimen/margin_18dp</item>
+        <item name="android:paddingTop">@dimen/padding_15_dp</item>
+
 
     </style>
 
@@ -347,6 +352,12 @@
         <item name="android:textSize">18sp</item>
         <item name="android:letterSpacing">0.1</item>
         <item name="android:textColor">#0A2E65</item>
+        <item name="android:paddingBottom">@dimen/padding_25</item>
+        <item name="android:layout_marginStart">@dimen/margin_18dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_10dp</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:paddingTop">@dimen/padding_20_dp</item>
+        <item name="android:gravity">top</item>
 
     </style>
 

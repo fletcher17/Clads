@@ -26,6 +26,7 @@ class ProfileAccountFragment : Fragment() {
     private val cropActivityResultContract = object : ActivityResultContract<Any?, Uri>() {
         override fun createIntent(context: Context, input: Any?): Intent {
             return CropImage.activity()
+                .setCropMenuCropButtonTitle("Done")
                 .setAspectRatio(1, 1)
                 .getIntent(context)
         }
@@ -44,10 +45,10 @@ class ProfileAccountFragment : Fragment() {
 
     // INITIALIZING CROP IMAGE LAUNCHER
     private lateinit var cropActivityResultLauncher: ActivityResultLauncher<Any?>
-
     private var _binding: FragmentProfileAccountTabBinding? = null
     private val binding get() = _binding!!
-    lateinit var viewModel: EditProfileFragmentViewModel
+    private lateinit var editProfileViewModel: EditProfileFragmentViewModel
+
 
     interface ButtonClick : IButtonClick
 
@@ -71,29 +72,30 @@ class ProfileAccountFragment : Fragment() {
             }
         }
 
-        viewModel = ViewModelProvider(this).get(EditProfileFragmentViewModel::class.java)
+        editProfileViewModel = ViewModelProvider(this).get(EditProfileFragmentViewModel::class.java)
 
         binding.fragmentProfileAccountSaveButton.setOnClickListener {
 
-            val firstName = viewModel.firstName.value
-            val lastName = viewModel.lastName.value
-            val otherName = viewModel.otherName.value
-            val gender = viewModel.gender.value
-            val workShopAddress = viewModel.workShopAddress.value
-            val showRoomAddress = viewModel.showRoomAddress.value
-            val numberOfEmployees = viewModel.numberOfEmployees.value
-            val legalStatus = viewModel.legalStatus.value
-            val nameOfUnion = viewModel.nameOfUnion.value
-            val ward = viewModel.ward.value
-            val localGovernmentArea = viewModel.localGovtArea.value
-            val state = viewModel.state.value
+
+            val firstName = editProfileViewModel.firstName.value
+            val lastName = editProfileViewModel.lastName.value
+            val otherName = editProfileViewModel.otherName.value
+            val gender = editProfileViewModel.gender.value
+            val workShopAddress = editProfileViewModel.workShopAddress.value
+            val showRoomAddress = editProfileViewModel.showRoomAddress.value
+            val numberOfEmployees = editProfileViewModel.numberOfEmployees.value
+            val legalStatus = editProfileViewModel.legalStatus.value
+            val nameOfUnion = editProfileViewModel.nameOfUnion.value
+            val ward = editProfileViewModel.ward.value
+            val localGovernmentArea = editProfileViewModel.localGovtArea.value
+            val state = editProfileViewModel.state.value
 
             val profile = Profile(
                 firstName, lastName, otherName, gender, workShopAddress, showRoomAddress,
                 numberOfEmployees, legalStatus, nameOfUnion, ward, localGovernmentArea, state
             )
 
-            viewModel.updateProfile(profile)
+            editProfileViewModel.updateProfile(profile)
 
             (parentFragment as ButtonClick).buttonClicked()
         }
@@ -110,7 +112,7 @@ class ProfileAccountFragment : Fragment() {
             )
         }
 
-        viewModel.firstName.observe(
+        editProfileViewModel.firstName.observe(
             viewLifecycleOwner,
             { firstName ->
                 binding.fragmentProfileAccountFirstNameEditText.text = firstName
@@ -125,7 +127,7 @@ class ProfileAccountFragment : Fragment() {
             )
         }
 
-        viewModel.lastName.observe(
+        editProfileViewModel.lastName.observe(
             viewLifecycleOwner,
             { lastName ->
                 binding.fragmentProfileAccountLastNameEditText.text = lastName
@@ -140,7 +142,7 @@ class ProfileAccountFragment : Fragment() {
             )
         }
 
-        viewModel.otherName.observe(
+        editProfileViewModel.otherName.observe(
             viewLifecycleOwner,
             { otherName ->
                 binding.fragmentProfileAccountOtherNameEditText.text = otherName
@@ -155,7 +157,7 @@ class ProfileAccountFragment : Fragment() {
             )
         }
 
-        viewModel.gender.observe(
+        editProfileViewModel.gender.observe(
             viewLifecycleOwner,
             { gender ->
                 binding.fragmentProfileAccountGenderEditText.text = gender
@@ -170,7 +172,7 @@ class ProfileAccountFragment : Fragment() {
             )
         }
 
-        viewModel.showRoomAddress.observe(
+        editProfileViewModel.showRoomAddress.observe(
             viewLifecycleOwner,
             { showRoomAddress ->
                 binding.fragmentProfileAccountShowroomAddressEditText.text = showRoomAddress
@@ -185,7 +187,7 @@ class ProfileAccountFragment : Fragment() {
             )
         }
 
-        viewModel.workShopAddress.observe(
+        editProfileViewModel.workShopAddress.observe(
             viewLifecycleOwner,
             { workShopAddress ->
                 binding.fragmentProfileAccountWorkshopAddressEditText.text = workShopAddress
@@ -200,7 +202,7 @@ class ProfileAccountFragment : Fragment() {
             )
         }
 
-        viewModel.numberOfEmployees.observe(
+        editProfileViewModel.numberOfEmployees.observe(
             viewLifecycleOwner,
             { numberOfEmployees ->
                 binding.fragmentProfileAccountNumberOfEmployeesEditText.text =
@@ -216,7 +218,7 @@ class ProfileAccountFragment : Fragment() {
             )
         }
 
-        viewModel.legalStatus.observe(
+        editProfileViewModel.legalStatus.observe(
             viewLifecycleOwner,
             { legalStatus ->
                 binding.fragmentProfileAccountLegalStatusEditText.text = legalStatus
@@ -231,7 +233,7 @@ class ProfileAccountFragment : Fragment() {
             )
         }
 
-        viewModel.nameOfUnion.observe(
+        editProfileViewModel.nameOfUnion.observe(
             viewLifecycleOwner,
             { nameOfUnion ->
                 binding.fragmentProfileAccountNameOfUnionEditText.text = nameOfUnion
@@ -246,7 +248,7 @@ class ProfileAccountFragment : Fragment() {
             )
         }
 
-        viewModel.ward.observe(
+        editProfileViewModel.ward.observe(
             viewLifecycleOwner,
             { ward ->
                 binding.fragmentProfileAccountWardEditText.text = ward
@@ -261,7 +263,7 @@ class ProfileAccountFragment : Fragment() {
             )
         }
 
-        viewModel.localGovtArea.observe(
+        editProfileViewModel.localGovtArea.observe(
             viewLifecycleOwner,
             { lga ->
                 binding.fragmentProfileAccountLocalGovtAreaEditText.text = lga
@@ -276,13 +278,14 @@ class ProfileAccountFragment : Fragment() {
             )
         }
 
-        viewModel.state.observe(
+        editProfileViewModel.state.observe(
             viewLifecycleOwner,
             { state ->
                 binding.fragmentProfileAccountStateEditText.text = state
             }
         )
     }
+
 
     override fun onDestroy() {
         super.onDestroy()

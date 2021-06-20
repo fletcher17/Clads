@@ -1,5 +1,6 @@
 package com.decagonhq.clads.data.repository
 
+import android.net.Uri
 import com.decagonhq.clads.data.entity.mappedmodel.User
 import com.decagonhq.clads.data.remote.BaseRepository
 import com.decagonhq.clads.data.remote.RemoteDataSourceApi
@@ -17,4 +18,5 @@ class Repository @Inject constructor(
     suspend fun registerUser(user: User) = safeApiCall {
         remoteDataSourceApi.registerUser(user)
     }
+
 }

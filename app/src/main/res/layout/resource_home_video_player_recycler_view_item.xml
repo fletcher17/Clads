@@ -22,12 +22,26 @@
             android:layout_height="200dp"
             app:cardCornerRadius="@dimen/card_corner_radius_10dp">
 
-            <com.google.android.exoplayer2.ui.PlayerView
-                android:id="@+id/resource_home_recycler_view_exoplayer_view"
-                android:layout_width="134dp"
-                android:layout_height="200dp">
+            <ImageView
+                android:id="@+id/resource_home_video_thumbnail_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/resource_home_video_placeholder"/>
 
-            </com.google.android.exoplayer2.ui.PlayerView>
+            <ImageView
+                android:id="@+id/resource_home_video_overlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.4"
+                android:src="@drawable/resource_home_recycler_view_video_thumbnail_overlay"/>
+            <ImageView
+                android:id="@+id/resource_home_video_player_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/resource_home_recycler_view_video_play_icon"/>
+
 
         </androidx.cardview.widget.CardView>
 

@@ -7,19 +7,21 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bawonelson.ezoplayerrecyclerview.ArticleAdapter
+import com.bawonelson.ezoplayerrecyclerview.ResourceHomeArticleAdapter
 import com.decagonhq.clads.R
+import com.decagonhq.clads.data.entity.mappedmodel.ResourceHomeVideoModel
 import com.decagonhq.clads.data.model.ArticleModel
 import com.decagonhq.clads.data.model.DataSource
 import com.decagonhq.clads.databinding.FragmentResourceHomeBinding
-import com.decagonhq.clads.ui.adapters.recyclerviewadapters.ExoplayerAdapter
+import com.decagonhq.clads.ui.adapters.recyclerviewadapters.ResourceHomeVideoPlayerThumbnailAdapter
 
-class ResourceHomeFragment : Fragment() {
+class ResourceHomeFragment : Fragment(){
     private var _binding: FragmentResourceHomeBinding? = null
     private val binding get() = _binding!!
     private var articleHomeArrayList: ArrayList<ArticleModel> = ArrayList()
-    private lateinit var ezoPlayerHomeFragmentAdapter: ExoplayerAdapter
-    private lateinit var articleAdapter: ArticleAdapter
+    private var videoHomeArrayList:ArrayList<ResourceHomeVideoModel> = ArrayList()
+    private lateinit var resourceHomeFragmentVideoAdapter: ResourceHomeVideoPlayerThumbnailAdapter
+    private lateinit var resourceHomeArticleAdapter: ResourceHomeArticleAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +31,8 @@ class ResourceHomeFragment : Fragment() {
         _binding = FragmentResourceHomeBinding.inflate(inflater, container, false)
         inflateVideoRecyclerView()
         inflateArticleRecyclerView()
-        addDataSet()
+        addVideoDataSet()
+        addArticleDataSet()
         return binding.root
     }
 
@@ -44,27 +47,32 @@ class ResourceHomeFragment : Fragment() {
         }
     }
 
-    private fun addDataSet() {
-        val data = DataSource.createDataSet()
-        articleAdapter.submitList(data)
+    private fun addArticleDataSet() {
+        val articleData = DataSource.createDataSet()
+        resourceHomeArticleAdapter.submitArticleList(articleData)
+    }
+    private fun addVideoDataSet(){
+        val videoData = DataSource.createVideoDataSet()
+        resourceHomeFragmentVideoAdapter.submitVideoList(videoData)
     }
 
     private fun inflateVideoRecyclerView() {
         binding.resourceHomeVideoRecyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        ezoPlayerHomeFragmentAdapter = ExoplayerAdapter()
-        binding.resourceHomeVideoRecyclerView.adapter = ezoPlayerHomeFragmentAdapter
+        resourceHomeFragmentVideoAdapter = ResourceHomeVideoPlayerThumbnailAdapter(videoHomeArrayList)
+        binding.resourceHomeVideoRecyclerView.adapter = resourceHomeFragmentVideoAdapter
     }
 
     private fun inflateArticleRecyclerView() {
         binding.resourceHomeArticleRecyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        articleAdapter = ArticleAdapter(articleHomeArrayList)
-        binding.resourceHomeArticleRecyclerView.adapter = articleAdapter
+        resourceHomeArticleAdapter = ResourceHomeArticleAdapter(articleHomeArrayList)
+        binding.resourceHomeArticleRecyclerView.adapter = resourceHomeArticleAdapter
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
+
 }

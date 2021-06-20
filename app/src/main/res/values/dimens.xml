@@ -130,6 +130,8 @@
     <dimen name="margin_100">100dp</dimen>
     <dimen name="padding_0dp">0dp</dimen>
     <dimen name="padding_10">10dp</dimen>
+    <dimen name="padding_20">20dp</dimen>
+    <dimen name="padding_25">25dp</dimen>
     <dimen name="text_size_18sp">18sp</dimen>
     <dimen name="text_size_20sp">20sp</dimen>
     <dimen name="corner_radius_12dp">12dp</dimen>

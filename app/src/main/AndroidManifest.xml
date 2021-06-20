@@ -15,19 +15,12 @@
         android:theme="@style/Theme.Clads">
 
         <activity
-            android:name=".ui.view.activity.ArticlesPublicationWebViewActivity">
-
-        </activity>
-        <activity
             android:name=".ui.view.activity.MainActivity"
             android:theme="@style/CladsSplashScreen">
             <nav-graph android:value="@navigation/nav_graph"/>
 
-        </activity>
-        <activity android:name=".ui.view.activity.ProfileDashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
 
                 <action android:name="android.intent.action.VIEW" />
@@ -41,6 +34,10 @@
                     android:scheme="https" />
 
             </intent-filter>
+
+        </activity>
+        <activity android:name=".ui.view.activity.ProfileDashboardActivity">
+
         </activity>
 
         <meta-data

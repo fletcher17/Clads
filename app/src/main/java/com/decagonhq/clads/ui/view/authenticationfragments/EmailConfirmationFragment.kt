@@ -25,6 +25,7 @@ class EmailConfirmationFragment : Fragment() {
                 Intent.ACTION_MAIN,
                 Intent.CATEGORY_APP_EMAIL
             )
+
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(Intent.createChooser(intent, "Email"))
         }

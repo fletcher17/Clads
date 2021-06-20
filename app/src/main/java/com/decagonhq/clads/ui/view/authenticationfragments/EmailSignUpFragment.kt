@@ -63,7 +63,7 @@ class EmailSignUpFragment : Fragment() {
                     email = emailAddress,
                     phoneNumber = phoneNumber,
                     category = category,
-                    deliveryddress = address,
+                    deliveryAddress = address,
                     role = role,
                     password = password
                 )

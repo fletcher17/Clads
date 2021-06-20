@@ -28,13 +28,12 @@
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/resources_view_individual_video_design_layout_how_to_sew_text_view"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/dimen_0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_10dp"
             android:layout_marginTop="@dimen/margin_8dp"
@@ -49,9 +48,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_10dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="@dimen/margin_2dp"
             android:fontFamily="@font/poppins_light"
             android:gravity="center"
+            android:paddingBottom="@dimen/margin_20dp"
             android:text="@string/fragment_resource_view_individual_video_posted_1_month_ago_text"
             android:textColor="@color/navy_blue"
             app:layout_constraintStart_toStartOf="parent"

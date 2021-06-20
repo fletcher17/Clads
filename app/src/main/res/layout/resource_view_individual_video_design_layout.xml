@@ -5,12 +5,14 @@
     android:layout_marginTop="@dimen/margin_10dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_10dp"
+    android:paddingBottom="@dimen/margin_20dp"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/resources_view_individual_video_design_layout_card_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/margin_134dp"
+        android:layout_height="@dimen/margin_200dp"
         android:layout_marginStart="@dimen/margin_20dp"
         android:layout_marginEnd="@dimen/margin_20dp"
         android:layout_marginTop="@dimen/margin_10dp"
@@ -23,21 +25,35 @@
         <ImageView
             android:id="@+id/resources_view_individual_video_design_layout_playerView_"
             android:layout_gravity="center"
-            android:layout_width="@dimen/margin_150"
-            android:layout_height="@dimen/margin_100" />
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/view_video_placeholder"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/navy_blue"
+            android:alpha="0.4"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/view_individual_video_play_icon"/>
 
     </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/resources_view_individual_video_design_layout_how_to_sew_text_view"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/dimen_0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_8dp"
-        android:gravity="center"
         android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginTop="@dimen/margin_8dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/resources_view_individual_video_design_layout_how_to_sew_text"
         android:textColor="@color/navy_blue"
+        app:layout_constraintEnd_toEndOf="@+id/resources_view_individual_video_design_layout_card_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resources_view_individual_video_design_layout_card_view" />
 

@@ -70,7 +70,7 @@ class ResourceHomeArticleAdapter(private var articleList: ArrayList<ArticleModel
             val requestOption = RequestOptions()
                 .placeholder(R.drawable.ic_article_placeholder_article_placeholder)
                 .error(R.drawable.ic_article_placeholder_article_placeholder)
-            Glide.with(context!!).applyDefaultRequestOptions(requestOption)
+            Glide.with(binding.root.context).applyDefaultRequestOptions(requestOption)
                 .load(currentArticleListItem.articleImage)
                 .into(binding.resourceHomeRecyclerViewItemArticleShapeableImageView)
         }

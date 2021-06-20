@@ -66,7 +66,7 @@ class ResourceHomeVideoPlayerThumbnailAdapter(private var videoPlayerList: Array
             val requestOption = RequestOptions()
                 .placeholder(R.drawable.resource_home_video_placeholder)
                 .error(R.drawable.resource_home_video_placeholder)
-            Glide.with(context!!).applyDefaultRequestOptions(requestOption)
+            Glide.with(binding.root.context).applyDefaultRequestOptions(requestOption)
                 .load(currentVideoListItem.thumbNailUrl)
                 .into(binding.resourceHomeVideoThumbnailImageView)
         }

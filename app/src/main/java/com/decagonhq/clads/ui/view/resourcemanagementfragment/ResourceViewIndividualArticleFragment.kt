@@ -33,9 +33,13 @@ class ResourceViewIndividualArticleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+            val articleLink = arguments?.getString(getString(R.string.resource_view_individual_article_fragment_article_link_key))
+
         webView.webViewClient = object :
             WebViewClient() {}
-        webView.loadUrl("https://www.google.com")
+        if (articleLink != null) {
+            webView.loadUrl(articleLink)
+        }
 
        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             if (webView.canGoBack()) {

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -44,6 +45,9 @@ class ResourceViewAllArticlesFragment : Fragment(), ViewAllArticlesRecyclerViewA
     }
 
     override fun onItemClick(article: Article, itemView: View) {
-        view?.findNavController()?.navigate(R.id.action_resourceViewAllArticlesFragment_to_resourceViewIndividualArticleFragment)
+
+        val articleBundle = bundleOf(getString(R.string.resource_view_individual_article_fragment_article_link_key) to article.articleLink)
+
+        view?.findNavController()?.navigate(R.id.action_resourceViewAllArticlesFragment_to_resourceViewIndividualArticleFragment, articleBundle)
     }
 }

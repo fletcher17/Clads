@@ -13,7 +13,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import com.decagonhq.clads.ui.view.activity.AuthActivity
+import com.decagonhq.clads.ui.view.activity.MainActivity
 import com.decagonhq.clads.ui.view.authenticationfragments.EmailSignUpFragment
 import junit.framework.TestCase
 import org.junit.Before
@@ -61,7 +61,7 @@ class EmailSignUpFragmentTest : TestCase() {
 
     @Test
     fun new_User_Sign_Up_Test() {
-        val activityTest = ActivityScenario.launch(AuthActivity::class.java)
+        val activityTest = ActivityScenario.launch(MainActivity::class.java)
 
         // DATA INPUT FOR UI TESTING
         val firstName = "Bawo"

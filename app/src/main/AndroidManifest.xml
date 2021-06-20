@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Clads">
 
         <activity
-            android:name=".ui.view.activity.AuthActivity"
+            android:name=".ui.view.activity.MainActivity"
             android:theme="@style/CladsSplashScreen">
             <nav-graph android:value="@navigation/nav_graph"/>
 

@@ -72,7 +72,6 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit-ktx:1.1.2"
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    
 
     // Random color generator
     implementation "com.amulyakhare:com.amulyakhare.textdrawable:$versions.color_generator"
@@ -158,5 +157,4 @@ dependencies {
     implementation "com.google.android.exoplayer:exoplayer-core:$versions.exoplayer_version"
     implementation "com.google.android.exoplayer:exoplayer-dash:$versions.exoplayer_version"
     implementation "com.google.android.exoplayer:exoplayer-ui:$versions.exoplayer_version"
-
 }

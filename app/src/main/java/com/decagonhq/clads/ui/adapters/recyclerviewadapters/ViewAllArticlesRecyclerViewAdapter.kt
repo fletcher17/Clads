@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.decagonhq.clads.databinding.FragmentResourceViewAllArticlesItemBinding
 import com.decagonhq.clads.data.model.Article
 
@@ -38,6 +39,9 @@ class ViewAllArticlesRecyclerViewAdapter :
             resourceViewAllArticlesItemFragmentArticleTitleTextView.text = article.title
             resourceViewAllArticlesItemFragmentArticleAuthorTextView.text = article.author
 
+            Glide.with(this.root.context)
+                .load(article.imageUrl)
+                .into(resourceViewAllArticlesItemFragmentArticleCoverImageView)
             this.root.setOnClickListener {
                 clickListener.onItemClick(article, it)
             }

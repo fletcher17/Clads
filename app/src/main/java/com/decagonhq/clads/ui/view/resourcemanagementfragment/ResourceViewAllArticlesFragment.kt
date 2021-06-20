@@ -7,12 +7,10 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.decagonhq.clads.R
 import com.decagonhq.clads.data.model.Article
 import com.decagonhq.clads.databinding.FragmentResourceViewAllArticlesBinding
-import com.decagonhq.clads.databinding.FragmentResourceViewIndividualArticleBinding
 import com.decagonhq.clads.ui.adapters.recyclerviewadapters.ViewAllArticlesRecyclerViewAdapter
 
 class ResourceViewAllArticlesFragment : Fragment(), ViewAllArticlesRecyclerViewAdapter.OnItemClickListener {

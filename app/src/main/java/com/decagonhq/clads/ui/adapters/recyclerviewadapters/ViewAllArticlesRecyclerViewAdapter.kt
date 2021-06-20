@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.decagonhq.clads.databinding.FragmentResourceViewAllArticlesItemBinding
 import com.decagonhq.clads.data.model.Article
+import com.decagonhq.clads.databinding.FragmentResourceViewAllArticlesItemBinding
 
 class ViewAllArticlesRecyclerViewAdapter :
     RecyclerView.Adapter<ViewAllArticlesRecyclerViewAdapter.ArticlesViewHolder>() {
@@ -46,7 +46,6 @@ class ViewAllArticlesRecyclerViewAdapter :
                 clickListener.onItemClick(article, it)
             }
         }
-
     }
 
     fun setData(listOfArticles: ArrayList<Article>, clickListener: OnItemClickListener) {

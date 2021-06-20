@@ -1,6 +1,5 @@
 package com.decagonhq.clads.ui.view.resourcemanagementfragment
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -33,7 +32,7 @@ class ResourceViewIndividualArticleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-            val articleLink = arguments?.getString(getString(R.string.resource_view_individual_article_fragment_article_link_key))
+        val articleLink = arguments?.getString(getString(R.string.resource_view_individual_article_fragment_article_link_key))
 
         webView.webViewClient = object :
             WebViewClient() {}
@@ -41,7 +40,7 @@ class ResourceViewIndividualArticleFragment : Fragment() {
             webView.loadUrl(articleLink)
         }
 
-       requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
             if (webView.canGoBack()) {
                 webView.goBack()
             } else {
@@ -49,9 +48,7 @@ class ResourceViewIndividualArticleFragment : Fragment() {
                 findNavController().navigateUp()
             }
         }
-
     }
-
 
     override fun onDestroy() {
         super.onDestroy()

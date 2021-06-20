@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.* // ktlint-disable no-wildcard-imports
 import android.widget.Toast
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
@@ -15,8 +16,8 @@ import timber.log.Timber
 class MediaDisplayPictureFragment : androidx.fragment.app.Fragment() {
     private var _binding: FragmentMediaDisplayPictureBinding? = null
     private val binding get() = _binding!!
-    private val args: MediaDisplayPictureFragmentArgs by navArgs()
     private var imageUri: Uri? = null
+    private val args: MediaDisplayPictureFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
@@ -28,7 +29,7 @@ class MediaDisplayPictureFragment : androidx.fragment.app.Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMediaDisplayPictureBinding.inflate(layoutInflater, container, false)
-        imageUri = args.mediaModel?.imageUri
+        imageUri = args.imageUri.toUri()
         Timber.d("imageUri: $imageUri")
         return binding.root
     }

@@ -8,10 +8,10 @@ import com.decagonhq.clads.databinding.FragmentMediaPhotoListLayoutBinding
 import com.decagonhq.clads.models.MediaModel
 import com.decagonhq.clads.utils.Interface.ImageClick
 
-class FragmentMediaAdapter(var imageClick: ImageClick) :
+class FragmentMediaAdapter(private var mediaList: MutableList<MediaModel>, var imageClick: ImageClick) :
     RecyclerView.Adapter<FragmentMediaAdapter.MediaViewHolder>() {
 
-    private var mediaList: MutableList<MediaModel> = mutableListOf()
+//    private var mediaList: MutableList<MediaModel> = mutableListOf()
 
     inner class MediaViewHolder(val binding: FragmentMediaPhotoListLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -30,7 +30,7 @@ class FragmentMediaAdapter(var imageClick: ImageClick) :
             .into(holder.clientImage)
 
         holder.clientImage.setOnClickListener {
-            imageClick.onImageClick()
+            imageClick.onImageClick(mediaList[position].imageUri)
         }
     }
 

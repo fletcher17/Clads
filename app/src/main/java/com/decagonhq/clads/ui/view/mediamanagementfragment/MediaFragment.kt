@@ -18,15 +18,15 @@ import com.decagonhq.clads.databinding.FragmentMediaBinding
 import com.decagonhq.clads.models.MediaModel
 import com.decagonhq.clads.ui.adapters.recyclerviewadapters.FragmentMediaAdapter
 import com.decagonhq.clads.utils.Interface.ImageClick
+import com.decagonhq.clads.utils.mediaList
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import timber.log.Timber
 
 class MediaFragment : Fragment(), ImageClick {
     private var _binding: FragmentMediaBinding? = null
     private val binding get() = _binding!!
-    private lateinit var adapter: FragmentMediaAdapter
-
     private var selectedImage: Uri? = null
+    private lateinit var adapter: FragmentMediaAdapter
 
     // used to replace startActivity
     private val resultLauncher = registerForActivityResult(
@@ -45,15 +45,15 @@ class MediaFragment : Fragment(), ImageClick {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
         _binding = FragmentMediaBinding.inflate(layoutInflater, container, false)
-        adapter = FragmentMediaAdapter(this)
+        adapter = FragmentMediaAdapter(mediaList, this)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.fragmentMediaPhotoListRecyclerView.adapter = adapter
-//        selectedImage?.let { it1 -> addMedia(it1) }
+        displayList()
+        adapter.notifyDataSetChanged()
 
         binding.fragmentMediaAddPhotoFab.setOnClickListener {
             setUpPermission()
@@ -81,6 +81,19 @@ class MediaFragment : Fragment(), ImageClick {
             makeRequest()
         }
         openImageChooser()
+    }
+
+    /**
+     * [displayList] returns a list if the list isn't empty
+     * */
+    private fun displayList() {
+        if (mediaList.isEmpty()) {
+            binding.fragmentMediaEmptyImageImageView.visibility = View.VISIBLE
+            binding.fragmentMediaNoPhotosYetTextView.visibility = View.VISIBLE
+        } else {
+            binding.fragmentMediaEmptyImageImageView.visibility = View.GONE
+            binding.fragmentMediaNoPhotosYetTextView.visibility = View.GONE
+        }
     }
 
     /**
@@ -133,10 +146,8 @@ class MediaFragment : Fragment(), ImageClick {
         }
     }
 
-    override fun onImageClick() {
-        val action = MediaFragmentDirections.actionMediaFragmentToMediaDisplayPictureFragment(
-            MediaModel(selectedImage)
-        )
+    override fun onImageClick(imageUri: Uri?) {
+        val action = MediaFragmentDirections.actionMediaFragmentToMediaDisplayPictureFragment(imageUri.toString())
         findNavController().navigate(action)
     }
 

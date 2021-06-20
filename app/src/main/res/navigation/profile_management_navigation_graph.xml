@@ -157,9 +157,7 @@
             android:id="@+id/action_mediaDisplayPictureFragment_to_mediaFragment"
             app:destination="@id/mediaFragment" />
         <argument
-            android:name="mediaModel"
-            app:argType="com.decagonhq.clads.models.MediaModel"
-            app:nullable="true"
-            android:defaultValue="@null" />
+            android:name="imageUri"
+            app:argType="string" />
     </fragment>
 </navigation>

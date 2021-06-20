@@ -1,5 +1,7 @@
 package com.decagonhq.clads.utils.Interface
 
+import android.net.Uri
+
 interface ImageClick {
-    fun onImageClick()
+    fun onImageClick(imageUri: Uri?)
 }

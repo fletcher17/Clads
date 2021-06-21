@@ -153,7 +153,7 @@
         <item name="android:maxEms">15</item>
         <item name="android:textSize">@dimen/text_size_12sp</item>
         <item name="android:letterSpacing">0.1</item>
-        <item name="android:textColor">#506992</item>
+        <item name="android:textColor">@color/menu_text_color</item>
     </style>
 
     <style name="radio_input_text_style">
@@ -291,7 +291,7 @@
     <style name="stitching_n">
         <item name="android:textSize">10sp</item>
         <item name="android:letterSpacing">0.1</item>
-        <item name="android:textColor">#506992</item>
+        <item name="android:textColor">@color/menu_text_color</item>
 
     </style>
 
@@ -299,14 +299,14 @@
 
         <item name="android:textSize">10sp</item>
         <item name="android:letterSpacing">0.1</item>
-        <item name="android:textColor">#506992</item>
+        <item name="android:textColor">@color/menu_text_color</item>
 
     </style>
 
     <style name="article">
         <item name="android:textSize">12sp</item>
         <item name="android:letterSpacing">0.1</item>
-        <item name="android:textColor">#000000</item>
+        <item name="android:textColor">@color/black</item>
 
     </style>
 
@@ -314,14 +314,14 @@
 
         <item name="android:textSize">12sp</item>
         <item name="android:letterSpacing">0.1</item>
-        <item name="android:textColor">#506992</item>
+        <item name="android:textColor">@color/menu_text_color</item>
 
     </style>
 
     <style name="hour_30_min">
         <item name="android:textSize">10sp</item>
         <item name="android:letterSpacing">0.1</item>
-        <item name="android:textColor">#506992</item>
+        <item name="android:textColor">@color/menu_text_color</item>
 
     </style>
 
@@ -341,7 +341,7 @@
         <item name="android:letterSpacing">0.1</item>
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:layout_marginTop">@dimen/margin_10dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_5dp</item>
         <item name="android:layout_marginStart">@dimen/margin_18dp</item>
         <item name="android:paddingTop">@dimen/padding_15_dp</item>
 
@@ -351,8 +351,8 @@
     <style name="resource_home_resource_title_text_style">
         <item name="android:textSize">18sp</item>
         <item name="android:letterSpacing">0.1</item>
-        <item name="android:textColor">#0A2E65</item>
-        <item name="android:paddingBottom">@dimen/padding_25</item>
+        <item name="android:textColor">@color/navy_blue</item>
+        <item name="android:paddingBottom">@dimen/padding_10dp</item>
         <item name="android:layout_marginStart">@dimen/margin_18dp</item>
         <item name="android:layout_marginTop">@dimen/margin_10dp</item>
         <item name="fontFamily">@font/poppins_bold</item>

@@ -1,6 +1,8 @@
 package com.decagonhq.clads.ui.view.resourcemanagementfragment
 
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,8 +16,11 @@ import com.decagonhq.clads.data.model.ArticleModel
 import com.decagonhq.clads.data.model.DataSource
 import com.decagonhq.clads.databinding.FragmentResourceHomeBinding
 import com.decagonhq.clads.ui.adapters.recyclerviewadapters.ResourceHomeVideoPlayerThumbnailAdapter
+import com.decagonhq.clads.utils.toast
+import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.SimpleExoPlayer
 
-class ResourceHomeFragment : Fragment() {
+class ResourceHomeFragment : Fragment(), ResourceHomeVideoPlayerThumbnailAdapter.VideoItemClick {
     private var _binding: FragmentResourceHomeBinding? = null
     private val binding get() = _binding!!
     private var articleHomeArrayList: ArrayList<ArticleModel> = ArrayList()
@@ -59,7 +64,7 @@ class ResourceHomeFragment : Fragment() {
     private fun inflateVideoRecyclerView() {
         binding.resourceHomeVideoRecyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        resourceHomeFragmentVideoAdapter = ResourceHomeVideoPlayerThumbnailAdapter(videoHomeArrayList)
+        resourceHomeFragmentVideoAdapter = ResourceHomeVideoPlayerThumbnailAdapter(videoHomeArrayList, this)
         binding.resourceHomeVideoRecyclerView.adapter = resourceHomeFragmentVideoAdapter
     }
 
@@ -73,5 +78,13 @@ class ResourceHomeFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    override fun playVideoOnClickListener(videoUrl: String) {
+        //var media = SimpleExoPlayer.Builder(requireContext()).build()
+        val media = MediaItem.fromUri(videoUrl)
+        val videoUrlLink = ResourceHomeFragmentDirections.actionResourceHomeFragmentToResourceViewIndividualVideoFragment(videoUrl)
+        findNavController().navigate(videoUrlLink)
+
     }
 }

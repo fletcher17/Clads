@@ -1,7 +1,5 @@
 package com.decagonhq.clads.ui.adapters.recyclerviewadapters
 
-import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.LinearLayout
@@ -25,6 +23,7 @@ class ResourceHomeVideoPlayerThumbnailAdapter(
     }
 
     override fun onCreateViewHolder(
+
         parent: ViewGroup,
         viewType: Int
     ): EzoPlayViewHolder {
@@ -40,7 +39,6 @@ class ResourceHomeVideoPlayerThumbnailAdapter(
 
         // BIND ALL VIEWS TO THEIR VARIOUS POSITION
         holder.bindAllThumbNailViews(videoPlayerList[position], position, videoItemListener)
-
     }
 
     override fun getItemCount(): Int {
@@ -77,7 +75,6 @@ class ResourceHomeVideoPlayerThumbnailAdapter(
             Glide.with(binding.root.context).applyDefaultRequestOptions(requestOption)
                 .load(resourceHomeVideoModel.thumbNailUrl)
                 .into(binding.resourceHomeVideoThumbnailImageView)
-
         }
     }
 
@@ -85,6 +82,5 @@ class ResourceHomeVideoPlayerThumbnailAdapter(
         fun playVideoOnClickListener(
             videoUrl: String
         )
-
     }
 }

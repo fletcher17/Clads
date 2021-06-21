@@ -23,11 +23,13 @@ import com.google.android.exoplayer2.util.Util
 class ResourceViewIndividualVideoFragment : Fragment(), Player.EventListener, ResourceViewIndividualVideoFragmentAdapter.OnItemClickListener {
     private var _binding: FragmentResourceViewIndividualVideoBinding? = null
     private val binding get() = _binding!!
+
+    lateinit var args: ResourceViewIndividualVideoFragmentArgs
+    private lateinit var mp4Url: String
+    private lateinit var urlList: List<Pair<String, String>>
     private lateinit var simpleExoplayer: SimpleExoPlayer
     private var playbackPosition: Long = 0
     private var currentWindow = 0
-    private val mp4Url = "https://html5demos.com/assets/dizzy.mp4"
-    private val urlList = listOf(mp4Url to "default")
     private val dataSourceFactory: DataSource.Factory by lazy {
         DefaultDataSourceFactory(requireContext(), "exoplayer-sample")
     }
@@ -39,6 +41,14 @@ class ResourceViewIndividualVideoFragment : Fragment(), Player.EventListener, Re
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentResourceViewIndividualVideoBinding.inflate(inflater, container, false)
+        arguments?.let {
+            args = ResourceViewIndividualVideoFragmentArgs.fromBundle(it)
+            val receivedUrl = args.videoLink
+
+            mp4Url = receivedUrl
+            urlList = listOf(mp4Url to "default")
+        }
+
         return binding.root
     }
 
@@ -83,11 +93,11 @@ class ResourceViewIndividualVideoFragment : Fragment(), Player.EventListener, Re
     private fun initializePlayer() {
         simpleExoplayer = SimpleExoPlayer.Builder(requireContext()).build()
         val randomUrl = urlList.random()
-        preparePlayer(randomUrl.first)
+        randomUrl.first?.let { preparePlayer(it) }
         val playerView = binding.fragmentResourceViewIndividualVideoPlayerView
         playerView.player = simpleExoplayer
         simpleExoplayer.seekTo(playbackPosition)
-        simpleExoplayer.playWhenReady = false
+        simpleExoplayer.playWhenReady = true
     }
 
     // Build the media source

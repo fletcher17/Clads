@@ -315,8 +315,17 @@
     <string name="profile_account_fragment_ward_dialog_fragment_tag">wardDialog</string>
     <string name="profile_account_fragment_local_govt_area_dialog_fragment_tag">localGovtAreaDialog</string>
     <string name="profile_account_fragment_state_dialog_fragment_tag">stateDialog</string>
+    <string name="resource_home_recycler_view_video_title">How to perfectly sew adire</string>
+    <string name="resource_home_video_duration">1 hour 30 mins</string>
+    <string name="video_player_timer_icon_description">video player timer icon</string>
+    <string name="resource_home_article_publications_text_view">Article/Publications</string>
+    <string name="resource_home_screen_view_all_text_view">View all</string>
+    <string name="resource_home_screen_video_text_view">Videos</string>
+    <string name="resources_home_resource_title">Resources</string>
     <string name="phone">09034572526</string>
     <string name="tailor">Tailor</string>
+    <string name="stitching_neatly">Stitching neatly</string>
+    <string name="by_nathan_maro">By Nathan Maro</string>
     <string name="resources_view_individual_video_design_layout_time_text">1 hour 30 mins</string>
     <string name="resources_view_individual_video_design_layout_how_to_sew_text">How to perfectly sew adire</string>
     <string name="fragment_resource_view_individual_video_posted_1_month_ago_text">Posted 1 month ago</string>

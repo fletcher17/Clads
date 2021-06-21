@@ -2,7 +2,6 @@ package com.decagonhq.clads.ui.view.resourcemanagementfragment
 
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,7 +44,6 @@ class ResourceViewIndividualVideoFragment : Fragment(), Player.EventListener, Re
         arguments?.let {
             args = ResourceViewIndividualVideoFragmentArgs.fromBundle(it)
             val receivedUrl = args.videoLink
-
 
             mp4Url = receivedUrl
             urlList = listOf(mp4Url to "default")

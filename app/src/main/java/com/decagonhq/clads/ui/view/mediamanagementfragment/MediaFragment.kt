@@ -9,6 +9,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.FrameLayout
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -20,11 +22,11 @@ import com.decagonhq.clads.ui.adapters.recyclerviewadapters.FragmentMediaAdapter
 import com.decagonhq.clads.utils.Interface.ImageClick
 import com.decagonhq.clads.utils.mediaList
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import timber.log.Timber
 
 class MediaFragment : Fragment(), ImageClick {
     private var _binding: FragmentMediaBinding? = null
     private val binding get() = _binding!!
+
     private var selectedImage: Uri? = null
     private lateinit var adapter: FragmentMediaAdapter
 
@@ -38,7 +40,6 @@ class MediaFragment : Fragment(), ImageClick {
             binding.fragmentMediaNoPhotosYetTextView.visibility = View.GONE
             selectedImage = it.data?.data
             selectedImage?.let { it1 -> addMedia(it1) }
-            Timber.d("$selectedImage")
         }
     }
 
@@ -74,7 +75,6 @@ class MediaFragment : Fragment(), ImageClick {
                     requireActivity(), Manifest.permission.READ_EXTERNAL_STORAGE
                 )
             ) {
-                Timber.d("setUpPermission: Permission not granted")
                 showPermissionDeniedDialog()
             }
         } else {
@@ -115,11 +115,9 @@ class MediaFragment : Fragment(), ImageClick {
             100 ->
                 if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
                     makeRequest()
-                    Timber.d("Permission has been denied by user")
                 }
             else -> {
                 openImageChooser()
-                Timber.d("Permission has been granted by user")
             }
         }
     }
@@ -151,8 +149,33 @@ class MediaFragment : Fragment(), ImageClick {
         findNavController().navigate(action)
     }
 
+    override fun editImageDescription(imageDescription: String, position: Int) {
+        val editText = EditText(requireContext())
+        editText.hint = "Enter Image Description"
+        editText.maxLines = 2
+
+        val layout = FrameLayout(requireContext())
+        layout.setPaddingRelative(16, 16, 16, 16)
+
+        layout.addView(editText)
+
+        MaterialAlertDialogBuilder(requireContext())
+            .setView(layout)
+            .setTitle("Enter Image Name")
+            .setNegativeButton("Cancel", null)
+            .setPositiveButton("Save Description") { dialog, _ ->
+                mediaList[position].imageDescription = editText.text.toString()
+                adapter.notifyDataSetChanged()
+                dialog.dismiss()
+            }
+            .setNeutralButton("Dismiss") { dialog, _ ->
+                dialog.cancel()
+            }
+            .show()
+    }
+
     private fun addMedia(uri: Uri) {
-        val media = MediaModel(uri)
+        val media = MediaModel(uri, imageDescription = "Description")
         adapter.add(media)
     }
 }

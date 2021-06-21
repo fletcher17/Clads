@@ -5,13 +5,13 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.* // ktlint-disable no-wildcard-imports
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentMediaDisplayPictureBinding
-import timber.log.Timber
 
 class MediaDisplayPictureFragment : androidx.fragment.app.Fragment() {
     private var _binding: FragmentMediaDisplayPictureBinding? = null
@@ -30,7 +30,6 @@ class MediaDisplayPictureFragment : androidx.fragment.app.Fragment() {
     ): View {
         _binding = FragmentMediaDisplayPictureBinding.inflate(layoutInflater, container, false)
         imageUri = args.imageUri.toUri()
-        Timber.d("imageUri: $imageUri")
         return binding.root
     }
 
@@ -43,7 +42,6 @@ class MediaDisplayPictureFragment : androidx.fragment.app.Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val imageDisplayed = binding.fragmentMediaPhotoDisplayImageView
-
         Glide.with(this)
             .load(imageUri)
             .into(imageDisplayed)
@@ -72,17 +70,21 @@ class MediaDisplayPictureFragment : androidx.fragment.app.Fragment() {
     }
 
     private fun editImage() {
-        Toast.makeText(requireContext(), "Edit Image", Toast.LENGTH_SHORT).show()
+        pickImage.launch("image/*")
     }
 
     // method to share photo
     private fun shareImage() {
-        Timber.d("share image now working")
         val shareIntent = Intent()
         shareIntent.action = Intent.ACTION_SEND
         shareIntent.type = "image/*"
-        Timber.d("imageUri: $imageUri")
         shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri)
         startActivity(Intent.createChooser(shareIntent, "Share With"))
+    }
+
+    private val pickImage = registerForActivityResult(ActivityResultContracts.GetContent()) {
+        it.let { uri ->
+            binding.fragmentMediaPhotoDisplayImageView.setImageURI(uri)
+        }
     }
 }

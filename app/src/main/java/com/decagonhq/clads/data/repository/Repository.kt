@@ -17,4 +17,5 @@ class Repository @Inject constructor(
     suspend fun registerUser(user: User) = safeApiCall {
         remoteDataSourceApi.registerUser(user)
     }
+
 }

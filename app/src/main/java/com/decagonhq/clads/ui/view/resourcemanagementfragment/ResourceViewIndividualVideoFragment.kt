@@ -50,7 +50,7 @@ class ResourceViewIndividualVideoFragment : Fragment(), Player.EventListener, Re
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
     }
 
-    //Method to start media file
+    // Method to start media file
     override fun onStart() {
         super.onStart()
         if (Util.SDK_INT >= 24) {

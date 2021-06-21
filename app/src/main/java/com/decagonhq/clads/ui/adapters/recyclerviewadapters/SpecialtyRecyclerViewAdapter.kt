@@ -8,8 +8,8 @@ import com.decagonhq.clads.data.entity.Specialty
 import com.decagonhq.clads.databinding.FragmentProfileSpecialtyItemBinding
 import com.decagonhq.clads.utils.SpecialtyDiffCallback
 
-class ProfileSpecialtyFragmentRecyclerViewAdapter :
-    RecyclerView.Adapter<ProfileSpecialtyFragmentRecyclerViewAdapter.SpecialtyViewHolder>() {
+class SpecialtyRecyclerViewAdapter :
+    RecyclerView.Adapter<SpecialtyRecyclerViewAdapter.SpecialtyViewHolder>() {
 
     private var specialtyList = arrayListOf<Specialty>()
 

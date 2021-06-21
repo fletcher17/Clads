@@ -317,7 +317,13 @@
     <string name="profile_account_fragment_state_dialog_fragment_tag">stateDialog</string>
     <string name="phone">09034572526</string>
     <string name="tailor">Tailor</string>
+<<<<<<< HEAD
     <string name="resources_view_individual_video_design_layout_time_text">1 hour 30 mins</string>
     <string name="resources_view_individual_video_design_layout_how_to_sew_text">How to perfectly sew adire</string>
     <string name="fragment_resource_view_individual_video_posted_1_month_ago_text">Posted 1 month ago</string>
+=======
+    <string name="resource_view_individual_article_fragment_article_link_key">articleLink</string>
+    <string name="resource_view_all_articles_fragment_author_placholder_text">Author</string>
+    <string name="resource_view_all_articles_fragment_title_placholder_text">Article Title</string>
+>>>>>>> c3147ca85392af3b5f69631f2dc4df84c8f0963b
 </resources>

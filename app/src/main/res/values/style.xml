@@ -288,6 +288,7 @@
         <item name="android:layout_marginStart">32dp</item>
     </style>
 
+<<<<<<< HEAD
     <style name="stitching_n">
         <item name="android:textSize">10sp</item>
         <item name="android:letterSpacing">0.1</item>
@@ -370,6 +371,11 @@
 
     <style name="profile_account_profile_picture_circular">
         <item name="cornerSize">50%</item>
+=======
+    <style name="ImageStyle">
+        <item name="android:bottomLeftRadius">24dp</item>
+        <item name="android:topRightRadius">24dp</item>
+>>>>>>> b40c9fe62b7b9ce04a7de4295ed63bbdd4264fc2
     </style>
 </resources>
 

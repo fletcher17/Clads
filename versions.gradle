@@ -22,7 +22,11 @@ ext.versions = [
         color_generator        :"1.0.1",
         chart_library_version  : "2.2.2",
         circle_image_view      : "1.0.1",
+<<<<<<< HEAD
         exo_player             :"2.14.1",
+=======
+        exoplayer_version      : "2.14.1",
+>>>>>>> b40c9fe62b7b9ce04a7de4295ed63bbdd4264fc2
         room_version           : "2.3.0",
         exoplayer_version      : "2.14.1",
         room_persistence       : "1.0.0",

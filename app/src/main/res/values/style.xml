@@ -370,6 +370,11 @@
 
     <style name="profile_account_profile_picture_circular">
         <item name="cornerSize">50%</item>
+
+    <style name="ImageStyle">
+        <item name="android:bottomLeftRadius">24dp</item>
+        <item name="android:topRightRadius">24dp</item>
+
     </style>
 </resources>
 

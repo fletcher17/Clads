@@ -176,10 +176,7 @@
     <dimen name="margin_125dp">125dp</dimen>
     <dimen name="margin_120dp">120dp</dimen>
     <dimen name="margin_200dp">200dp</dimen>
-<<<<<<< HEAD
     <dimen name="card_corner_radius_10dp">10dp</dimen>
-=======
     <dimen name="article_image_cover_width">110dp</dimen>
     <dimen name="article_image_cover_height">150dp</dimen>
->>>>>>> b40c9fe62b7b9ce04a7de4295ed63bbdd4264fc2
 </resources>

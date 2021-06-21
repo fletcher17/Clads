@@ -31,7 +31,6 @@ class ResourceViewIndividualVideoFragment : Fragment(), Player.EventListener, Re
     private val dataSourceFactory: DataSource.Factory by lazy {
         DefaultDataSourceFactory(requireContext(), "exoplayer-sample")
     }
-
     private lateinit var adapter: ResourceViewIndividualVideoFragmentAdapter
 
     override fun onCreateView(

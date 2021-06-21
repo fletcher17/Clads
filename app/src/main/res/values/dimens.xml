@@ -128,6 +128,7 @@
     <dimen name="margin_40dp">40dp</dimen>
     <dimen name="margin_75dp">75dp</dimen>
     <dimen name="margin_100">100dp</dimen>
+    <dimen name="margin_150">150dp</dimen>
     <dimen name="padding_0dp">0dp</dimen>
     <dimen name="padding_10">10dp</dimen>
     <dimen name="text_size_18sp">18sp</dimen>
@@ -160,6 +161,7 @@
     <dimen name="stroke_width_2dp">2dp</dimen>
     <dimen name="radius">10dp</dimen>
     <dimen name="height_52dp">52dp</dimen>
+    <dimen name="margin_134dp">134dp</dimen>
     <dimen name="width_325dp">325dp</dimen>
     <dimen name="padding_16_dp">16dp</dimen>
     <dimen name="padding_15_dp">15dp</dimen>

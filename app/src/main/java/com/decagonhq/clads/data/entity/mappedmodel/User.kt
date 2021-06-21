@@ -14,5 +14,5 @@ data class User(
     val password: String,
     val gender: String? = null,
     val thumbnail: String? = null,
-    val country: String? = null,
+    val country: String? = null
 )

@@ -327,4 +327,10 @@
         <item name="android:src">@drawable/ic_baseline_cancel_24</item>
     </style>
 
+
+    <style name="ResourceViewAllArticlesImageViewShapeAppearance">
+        <item name="cornerSizeTopLeft">24dp</item>
+        <item name="cornerSizeBottomRight">24dp</item>
+    </style>
+
 </resources>

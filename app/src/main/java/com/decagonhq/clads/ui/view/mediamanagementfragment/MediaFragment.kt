@@ -9,19 +9,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.FrameLayout
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.decagonhq.clads.MediaFragmentPhotoName
 import com.decagonhq.clads.databinding.FragmentMediaBinding
 import com.decagonhq.clads.models.MediaModel
 import com.decagonhq.clads.ui.adapters.recyclerviewadapters.FragmentMediaAdapter
 import com.decagonhq.clads.utils.Interface.ImageClick
 import com.decagonhq.clads.utils.mediaList
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import timber.log.Timber
 
 class MediaFragment : Fragment(), ImageClick {
     private var _binding: FragmentMediaBinding? = null
@@ -29,6 +30,7 @@ class MediaFragment : Fragment(), ImageClick {
 
     private var selectedImage: Uri? = null
     private lateinit var adapter: FragmentMediaAdapter
+    private lateinit var photoGalleryModel: MediaModel
 
     // used to replace startActivity
     private val resultLauncher = registerForActivityResult(
@@ -39,7 +41,9 @@ class MediaFragment : Fragment(), ImageClick {
             binding.fragmentMediaEmptyImageImageView.visibility = View.GONE
             binding.fragmentMediaNoPhotosYetTextView.visibility = View.GONE
             selectedImage = it.data?.data
-            selectedImage?.let { it1 -> addMedia(it1) }
+            val action = MediaFragmentDirections.actionMediaFragmentToMediaFragmentPhotoName(selectedImage.toString())
+            findNavController().navigate(action)
+            MediaFragmentPhotoName.DataListener.imageListener.value = false
         }
     }
 
@@ -52,6 +56,23 @@ class MediaFragment : Fragment(), ImageClick {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<Bundle>("IMAGE_KEY")
+            ?.observe(viewLifecycleOwner) {
+                val imageName = it.getString("IMAGE_NAME_BUNDLE_KEY")
+                val imageData = it.getString("IMAGE_DATA_BUNDLE_KEY")
+                val imageDataUri = imageData!!.toUri()
+                photoGalleryModel =
+                    MediaModel(
+                        imageDataUri,
+                        imageName!!
+                    )
+                if (MediaFragmentPhotoName.DataListener.imageListener.value == true) {
+                    adapter.add(photoGalleryModel)
+                    adapter.notifyDataSetChanged()
+                }
+            }
+
         binding.fragmentMediaPhotoListRecyclerView.adapter = adapter
         displayList()
         adapter.notifyDataSetChanged()
@@ -87,7 +108,7 @@ class MediaFragment : Fragment(), ImageClick {
      * [displayList] returns a list if the list isn't empty
      * */
     private fun displayList() {
-        if (mediaList.isEmpty()) {
+        if (mediaList.size == 0) {
             binding.fragmentMediaEmptyImageImageView.visibility = View.VISIBLE
             binding.fragmentMediaNoPhotosYetTextView.visibility = View.VISIBLE
         } else {
@@ -147,35 +168,5 @@ class MediaFragment : Fragment(), ImageClick {
     override fun onImageClick(imageUri: Uri?) {
         val action = MediaFragmentDirections.actionMediaFragmentToMediaDisplayPictureFragment(imageUri.toString())
         findNavController().navigate(action)
-    }
-
-    override fun editImageDescription(imageDescription: String, position: Int) {
-        val editText = EditText(requireContext())
-        editText.hint = "Enter Image Description"
-        editText.maxLines = 2
-
-        val layout = FrameLayout(requireContext())
-        layout.setPaddingRelative(16, 16, 16, 16)
-
-        layout.addView(editText)
-
-        MaterialAlertDialogBuilder(requireContext())
-            .setView(layout)
-            .setTitle("Enter Image Name")
-            .setNegativeButton("Cancel", null)
-            .setPositiveButton("Save Description") { dialog, _ ->
-                mediaList[position].imageDescription = editText.text.toString()
-                adapter.notifyDataSetChanged()
-                dialog.dismiss()
-            }
-            .setNeutralButton("Dismiss") { dialog, _ ->
-                dialog.cancel()
-            }
-            .show()
-    }
-
-    private fun addMedia(uri: Uri) {
-        val media = MediaModel(uri, imageDescription = "Description")
-        adapter.add(media)
     }
 }

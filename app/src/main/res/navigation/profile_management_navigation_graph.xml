@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_mediaFragment_to_mediaDisplayPictureFragment"
             app:destination="@id/mediaDisplayPictureFragment" />
+        <action
+            android:id="@+id/action_mediaFragment_to_mediaFragmentPhotoName"
+            app:destination="@id/mediaFragmentPhotoName" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
@@ -158,6 +161,15 @@
             app:destination="@id/mediaFragment" />
         <argument
             android:name="imageUri"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mediaFragmentPhotoName"
+        android:name="com.decagonhq.clads.MediaFragmentPhotoName"
+        android:label="fragment_media_photo_name"
+        tools:layout="@layout/fragment_media_photo_name" >
+        <argument
+            android:name="imageDetails"
             app:argType="string" />
     </fragment>
 </navigation>

@@ -31,10 +31,6 @@ class FragmentMediaAdapter(private var mediaList: MutableList<MediaModel>, var i
         holder.clientImage.setOnClickListener {
             imageClick.onImageClick(mediaList[position].imageUri)
         }
-
-        holder.imageDescription.setOnClickListener {
-            imageClick.editImageDescription(mediaList[position].imageDescription, position)
-        }
     }
 
     override fun getItemCount(): Int = mediaList.size

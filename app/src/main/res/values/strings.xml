@@ -322,4 +322,5 @@
     <string name="fragment_media_display_menu_share">Share</string>
     <string name="fragment_media_display_menu_edit">Edit</string>
     <string name="fragment_menu_display_menu_delete">Delete</string>
+    <string name="enter_name">Enter Your Name</string>
 </resources>

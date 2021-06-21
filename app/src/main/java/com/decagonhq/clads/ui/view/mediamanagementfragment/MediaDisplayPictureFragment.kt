@@ -10,6 +10,7 @@ import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.decagonhq.clads.MediaFragmentPhotoName
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentMediaDisplayPictureBinding
 
@@ -42,6 +43,7 @@ class MediaDisplayPictureFragment : androidx.fragment.app.Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val imageDisplayed = binding.fragmentMediaPhotoDisplayImageView
+        MediaFragmentPhotoName.DataListener.imageListener.value = false
         Glide.with(this)
             .load(imageUri)
             .into(imageDisplayed)

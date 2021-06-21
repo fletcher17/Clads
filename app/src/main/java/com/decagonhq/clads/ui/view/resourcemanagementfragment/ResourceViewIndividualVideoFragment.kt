@@ -46,7 +46,6 @@ class ResourceViewIndividualVideoFragment : Fragment(), Player.EventListener, Re
             args = ResourceViewIndividualVideoFragmentArgs.fromBundle(it)
             val receivedUrl = args.videoLink
 
-            Log.d("RECEIVED_URL_LINK", receivedUrl)
 
             mp4Url = receivedUrl
             urlList = listOf(mp4Url to "default")

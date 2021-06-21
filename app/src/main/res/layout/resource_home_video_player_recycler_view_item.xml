@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:id="@+id/video_recycler_view_player_layout"
-        android:layout_width="134dp"
+        android:layout_width="@dimen/layout_width_134dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_13dp"
         android:layout_marginTop="@dimen/margin_8dp"
@@ -18,8 +18,8 @@
 
 
         <androidx.cardview.widget.CardView
-            android:layout_width="134dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/layout_width_134dp"
+            android:layout_height="@dimen/layout_height_200dp"
             app:cardCornerRadius="@dimen/card_corner_radius_10dp">
 
             <ImageView
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_8dp"
         android:fontFamily="@font/poppins"
         android:gravity="top"
         android:text="@string/resource_home_video_duration"
@@ -84,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_8dp"
         android:contentDescription="@string/video_player_timer_icon_description"
         android:src="@drawable/ic_vector_time"
         app:layout_constraintBottom_toBottomOf="@+id/resource_home_video_duration_text_view"

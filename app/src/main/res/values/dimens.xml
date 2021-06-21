@@ -179,4 +179,9 @@
     <dimen name="card_corner_radius_10dp">10dp</dimen>
     <dimen name="article_image_cover_width">110dp</dimen>
     <dimen name="article_image_cover_height">150dp</dimen>
+    <dimen name="layout_width_134dp">134dp</dimen>
+    <dimen name="layout_width_106dp">106dp</dimen>
+    <dimen name="layout_height_200dp">200dp</dimen>
+    <dimen name="layout_height_140dp">140dp</dimen>
+
 </resources>

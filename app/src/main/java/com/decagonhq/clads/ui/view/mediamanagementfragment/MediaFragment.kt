@@ -22,7 +22,6 @@ import com.decagonhq.clads.ui.adapters.recyclerviewadapters.FragmentMediaAdapter
 import com.decagonhq.clads.utils.Interface.ImageClick
 import com.decagonhq.clads.utils.mediaList
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import timber.log.Timber
 
 class MediaFragment : Fragment(), ImageClick {
     private var _binding: FragmentMediaBinding? = null

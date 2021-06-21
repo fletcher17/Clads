@@ -52,7 +52,7 @@ class MediaFragmentPhotoName : Fragment() {
             val bundle = bundleOf("IMAGE_NAME_BUNDLE_KEY" to imageName, "IMAGE_DATA_BUNDLE_KEY" to imageData)
 
             if (imageName.isEmpty()) {
-                Toast.makeText(requireContext(), "Enter Image Name", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Enter Image Name", Toast.LENGTH_LONG).show()
             } else {
                 findNavController().previousBackStackEntry?.savedStateHandle?.set("IMAGE_KEY", bundle)
                 findNavController().popBackStack()

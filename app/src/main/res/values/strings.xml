@@ -318,4 +318,6 @@
     <string name="phone">09034572526</string>
     <string name="tailor">Tailor</string>
     <string name="resource_view_individual_article_fragment_article_link_key">articleLink</string>
+    <string name="resource_view_all_articles_fragment_author_placholder_text">Author</string>
+    <string name="resource_view_all_articles_fragment_title_placholder_text">Article Title</string>
 </resources>

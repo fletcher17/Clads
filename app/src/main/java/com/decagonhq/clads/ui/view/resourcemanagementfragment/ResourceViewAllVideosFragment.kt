@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentResourceViewAllVideosBinding
 import com.decagonhq.clads.utils.Interface.ExoPlayerVideosClickListener
 

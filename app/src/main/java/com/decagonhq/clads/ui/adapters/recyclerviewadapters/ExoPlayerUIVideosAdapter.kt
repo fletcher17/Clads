@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.decagonhq.clads.R
 import com.decagonhq.clads.utils.Interface.ExoPlayerVideosClickListener
 
-class ExoPlayerUIVideosAdapter(var clickVideo : ExoPlayerVideosClickListener): RecyclerView.Adapter<ExoPlayerUIVideosAdapter.ExpoPlayerUIVideosViewHolder>() {
+class ExoPlayerUIVideosAdapter(var clickVideo: ExoPlayerVideosClickListener) : RecyclerView.Adapter<ExoPlayerUIVideosAdapter.ExpoPlayerUIVideosViewHolder>() {
 
     var thumbnail = arrayOf(R.drawable.exoplayer_thumbnail, R.drawable.exoplayer_thumbnail, R.drawable.exoplayer_thumbnail, R.drawable.exoplayer_thumbnail, R.drawable.exoplayer_thumbnail, R.drawable.exoplayer_thumbnail)
 
@@ -31,7 +30,7 @@ class ExoPlayerUIVideosAdapter(var clickVideo : ExoPlayerVideosClickListener): R
     }
 
     inner class ExpoPlayerUIVideosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
-        var exoImageBackground : ImageView
+        var exoImageBackground: ImageView
 
         init {
             exoImageBackground = itemView.findViewById(R.id.exoplayer_ui_image_view)

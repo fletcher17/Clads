@@ -103,6 +103,8 @@ class ResourceViewIndividualVideoFragment : Fragment(), Player.EventListener, Re
         val mediaSource = buildMediaSource(uri)
         simpleExoplayer.prepare(mediaSource)
     }
+
+    // Release player
     private fun releasePlayer() {
         playbackPosition = simpleExoplayer.currentPosition
         currentWindow = simpleExoplayer.currentWindowIndex

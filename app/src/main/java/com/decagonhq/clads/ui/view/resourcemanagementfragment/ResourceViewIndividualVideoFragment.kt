@@ -20,7 +20,9 @@ import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
 
-class ResourceViewIndividualVideoFragment : Fragment(), Player.EventListener,
+class ResourceViewIndividualVideoFragment :
+    Fragment(),
+    Player.EventListener,
     ResourceViewIndividualVideoFragmentAdapter.OnItemClickListener {
     private var _binding: FragmentResourceViewIndividualVideoBinding? = null
     private val binding get() = _binding!!
@@ -45,7 +47,6 @@ class ResourceViewIndividualVideoFragment : Fragment(), Player.EventListener,
         arguments?.let {
             args = ResourceViewIndividualVideoFragmentArgs.fromBundle(it)
             val resourceHomeVideoModel = args.resourceVideos
-
 
             mp4Url = args.videoLink ?: (resourceHomeVideoModel?.videoUrl ?: "")
 

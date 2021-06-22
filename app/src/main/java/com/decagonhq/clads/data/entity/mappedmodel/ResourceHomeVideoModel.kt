@@ -8,4 +8,4 @@ data class ResourceHomeVideoModel(
     var videoUrl: String,
     var thumbNailUrl: String,
     var videoTitle: String
-): Parcelable
+) : Parcelable

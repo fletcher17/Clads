@@ -4,5 +4,4 @@ import com.decagonhq.clads.data.entity.mappedmodel.ResourceHomeVideoModel
 
 interface ExoPlayerVideosClickListener {
     fun onClickVideo(resourceHomeVideoModel: ResourceHomeVideoModel)
-
 }

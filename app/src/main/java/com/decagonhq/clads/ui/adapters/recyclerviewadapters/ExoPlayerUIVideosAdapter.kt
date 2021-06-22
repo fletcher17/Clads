@@ -13,7 +13,6 @@ class ExoPlayerUIVideosAdapter(
     var videoPlayerList: ArrayList<ResourceHomeVideoModel>
 ) : RecyclerView.Adapter<ExoPlayerUIVideosAdapter.ExpoPlayerUIVideosViewHolder>() {
 
-
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -33,9 +32,7 @@ class ExoPlayerUIVideosAdapter(
         return videoPlayerList.size
     }
 
-
     inner class ExpoPlayerUIVideosViewHolder(private val binding: ExoplayerUiLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
-
 
         fun bind(resourceHomeVideoModel: ResourceHomeVideoModel, clickListener: ExoPlayerVideosClickListener) {
 
@@ -43,12 +40,9 @@ class ExoPlayerUIVideosAdapter(
                 .load(resourceHomeVideoModel.thumbNailUrl)
                 .into(binding.exoplayerUiImageView)
 
-
             binding.root.setOnClickListener {
                 clickListener.onClickVideo(resourceHomeVideoModel)
             }
-
         }
-
     }
 }

@@ -1,12 +1,8 @@
 package com.decagonhq.clads.ui.adapters.recyclerviewadapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.StaggardRecyclerviewLayoutBinding
 import com.decagonhq.clads.utils.ClientMeasurementData
 import com.decagonhq.clads.utils.helpers.ClientMeasurementClickListener
@@ -47,8 +43,6 @@ class ClientMeasurementAdapter(
                 clickListener.onClickItem(clientMeasurementData)
             }
         }
-
-
     }
 
     fun setList(listOfClient: ClientMeasurementData) {

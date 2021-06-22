@@ -162,6 +162,9 @@
         <argument
             android:name="imageUri"
             app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/mediaFragmentPhotoName"

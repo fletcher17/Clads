@@ -164,8 +164,8 @@ class MediaFragment : Fragment(), ImageClick {
         }
     }
 
-    override fun onImageClick(imageUri: Uri?) {
-        val action = MediaFragmentDirections.actionMediaFragmentToMediaDisplayPictureFragment(imageUri.toString())
+    override fun onImageClick(imageUri: Uri?, description: String) {
+        val action = MediaFragmentDirections.actionMediaFragmentToMediaDisplayPictureFragment(imageUri.toString(), description)
         findNavController().navigate(action)
     }
 }

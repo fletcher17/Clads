@@ -4,17 +4,23 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.* // ktlint-disable no-wildcard-imports
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.net.toUri
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.decagonhq.clads.MediaFragmentPhotoName
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentMediaDisplayPictureBinding
+import timber.log.Timber
 
 class MediaDisplayPictureFragment : androidx.fragment.app.Fragment() {
+
+//    private val instance: ProfileDashboardActivity by lazy {
+//        ProfileDashboardActivity()
+//    }
+
     private var _binding: FragmentMediaDisplayPictureBinding? = null
     private val binding get() = _binding!!
     private var imageUri: Uri? = null
@@ -31,6 +37,10 @@ class MediaDisplayPictureFragment : androidx.fragment.app.Fragment() {
     ): View {
         _binding = FragmentMediaDisplayPictureBinding.inflate(layoutInflater, container, false)
         imageUri = args.imageUri.toUri()
+//        instance.supportActionBar?.title = args.description
+        val appBarTitleTextView = requireActivity().findViewById<TextView>(R.id.profile_activity_header_app_bar_title_text_view)
+        appBarTitleTextView.text = args.description
+        Timber.d("title: ${args.description}")
         return binding.root
     }
 

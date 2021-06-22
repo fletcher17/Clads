@@ -74,13 +74,13 @@ class ProfileDashboardActivity : AppCompatActivity() {
                 }
                 (destination.id == R.id.mediaFragment) -> {
                     binding.activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarTitleTextView.text =
-                        "Photo Gallery"
+                        getString(R.string.photo_gallery_str)
                     binding.activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarImageView.visibility = View.GONE
                     binding.activityProfileDashboardToolbarLayout.profileActivityAppBarNotificationIcon.visibility = View.GONE
                 }
 
                 (destination.id == R.id.mediaDisplayPictureFragment) -> {
-                    binding.activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarTitleTextView.visibility = View.GONE
+                    binding.activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarTitleTextView.visibility = View.VISIBLE
                     binding.activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarImageView.visibility = View.GONE
                     binding.activityProfileDashboardToolbarLayout.profileActivityAppBarNotificationIcon.visibility = View.GONE
                 }

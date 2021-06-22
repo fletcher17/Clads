@@ -29,7 +29,7 @@ class FragmentMediaAdapter(private var mediaList: MutableList<MediaModel>, var i
             .into(holder.clientImage)
 
         holder.clientImage.setOnClickListener {
-            imageClick.onImageClick(mediaList[position].imageUri)
+            imageClick.onImageClick(mediaList[position].imageUri, mediaList[position].imageDescription)
         }
     }
 

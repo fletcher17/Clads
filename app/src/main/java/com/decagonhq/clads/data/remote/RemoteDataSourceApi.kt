@@ -1,6 +1,10 @@
 package com.decagonhq.clads.data.remote
 
-import com.decagonhq.clads.data.entity.mappedmodel.*
+import com.decagonhq.clads.data.entity.mappedmodel.LoginUserResponse
+import com.decagonhq.clads.data.entity.mappedmodel.LoginWithGoogleCredentialsModel
+import com.decagonhq.clads.data.entity.mappedmodel.RegisterUserResponse
+import com.decagonhq.clads.data.entity.mappedmodel.User
+import com.decagonhq.clads.data.entity.mappedmodel.UserLoginCredentials
 import retrofit2.http.Body
 import retrofit2.http.Header
 import retrofit2.http.POST

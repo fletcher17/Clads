@@ -1,4 +1,4 @@
-package com.decagonhq.clads.utils.Interface
+package com.decagonhq.clads.utils.helpers
 
 import android.net.Uri
 

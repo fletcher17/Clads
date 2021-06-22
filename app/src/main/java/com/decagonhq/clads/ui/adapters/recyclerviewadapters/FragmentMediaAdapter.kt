@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.decagonhq.clads.databinding.FragmentMediaPhotoListLayoutBinding
 import com.decagonhq.clads.models.MediaModel
-import com.decagonhq.clads.utils.Interface.ImageClick
+import com.decagonhq.clads.utils.helpers.ImageClick
 
 class FragmentMediaAdapter(private var mediaList: MutableList<MediaModel>, var imageClick: ImageClick) :
     RecyclerView.Adapter<FragmentMediaAdapter.MediaViewHolder>() {

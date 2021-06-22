@@ -18,7 +18,7 @@ import com.decagonhq.clads.ui.adapters.recyclerviewadapters.ClientMeasurementAda
 import com.decagonhq.clads.ui.viewmodel.ClientViewModel
 import com.decagonhq.clads.utils.ClientMeasurementData
 import com.decagonhq.clads.utils.Constant.listOfClientData
-import com.decagonhq.clads.utils.Interface.ClientMeasurementClickListener
+import com.decagonhq.clads.utils.helpers.ClientMeasurementClickListener
 
 class ClientMeasurementTabFragment : Fragment(), ClientMeasurementClickListener {
 
@@ -93,13 +93,13 @@ class ClientMeasurementTabFragment : Fragment(), ClientMeasurementClickListener 
     }
 
     /**item is deleted when clicked*/
-    override fun onClickItem(itemName: ClientMeasurementData, position: Int) {
-        clientAdapterMeasurement.listOfClientMeasurements.removeAt(position)
+    override fun onClickItem(itemName: ClientMeasurementData) {
+        clientAdapterMeasurement.listOfClientMeasurements.remove(itemName)
         clientAdapterMeasurement.notifyDataSetChanged()
     }
 
     /** The item clicked displays the edit dialogue fragment */
-    override fun editMeasurement(measurementDetails: ClientMeasurementData, position: Int) {
+    override fun editMeasurement(measurementDetails: ClientMeasurementData) {
         var dialog = AlertDialog.Builder(requireContext())
         val view = LayoutInflater.from(requireContext())
             .inflate(R.layout.fragment_edit_measurement_dialog, null)

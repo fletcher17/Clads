@@ -20,7 +20,7 @@ import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentMediaBinding
 import com.decagonhq.clads.models.MediaModel
 import com.decagonhq.clads.ui.adapters.recyclerviewadapters.FragmentMediaAdapter
-import com.decagonhq.clads.utils.Interface.ImageClick
+import com.decagonhq.clads.utils.helpers.ImageClick
 import com.decagonhq.clads.utils.mediaList
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 

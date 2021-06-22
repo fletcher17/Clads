@@ -28,7 +28,7 @@ import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.Ed
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountWardCustomDialogFragment
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountWorkshopAddressCustomDialogFragment
 import com.decagonhq.clads.ui.viewmodel.EditProfileFragmentViewModel
-import com.decagonhq.clads.utils.Interface.IButtonClick
+import com.decagonhq.clads.utils.helpers.IButtonClick
 import com.theartofdev.edmodo.cropper.CropImage
 
 class ProfileAccountFragment : Fragment() {

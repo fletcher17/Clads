@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentClientAccountTabBinding
-import com.decagonhq.clads.utils.Interface.IButtonClick
+import com.decagonhq.clads.utils.helpers.IButtonClick
 
 class ClientAccountTabFragment : Fragment() {
 

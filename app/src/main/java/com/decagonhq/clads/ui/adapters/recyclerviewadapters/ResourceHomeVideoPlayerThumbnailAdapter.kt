@@ -65,7 +65,7 @@ class ResourceHomeVideoPlayerThumbnailAdapter(
             binding.apply {
                 videoThumbnailTitle.text = resourceHomeVideoModel.videoTitle
                 root.setOnClickListener {
-                    videoItemListener.playVideoOnClickListener(resourceHomeVideoModel.videoUrl)
+//                    videoItemListener.playVideoOnClickListener(resourceHomeVideoModel.videoUrl)
                     clicklistener.playVideoOnClickListener(resourceHomeVideoModel.videoUrl)
                 }
             }

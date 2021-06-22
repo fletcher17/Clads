@@ -333,6 +333,10 @@
     <string name="resources_home_resource_title">Resources</string>
     <string name="phone">09034572526</string>
     <string name="tailor">Tailor</string>
+    <string name="resource_view_all_videos_fragment_title_text_view">Resources</string>
+    <string name="resource_view_all_videos_fragment_video_text_view">Videos</string>
+    <string name="exoplayer_ui_item_text_view">How to perfectly sew adire</string>
+    <string name="exoplayer_ui_item_time_duration_text_view">1 hour 30 mins</string>
     <string name="stitching_neatly">Stitching neatly</string>
     <string name="by_nathan_maro">By Nathan Maro</string>
     <string name="resources_view_individual_video_design_layout_time_text">1 hour 30 mins</string>

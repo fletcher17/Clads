@@ -25,10 +25,6 @@ ext.versions = [
         exo_player             :"2.14.1",
         exoplayer_version      : "2.14.1",
         room_version           : "2.3.0",
-        exoplayer_version      : "2.14.1",
         room_persistence       : "1.0.0",
         image_cropper          : "2.8.0"
-
-
-
 ]

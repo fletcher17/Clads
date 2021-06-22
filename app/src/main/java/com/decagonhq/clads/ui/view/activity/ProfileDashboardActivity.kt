@@ -80,8 +80,7 @@ class ProfileDashboardActivity : AppCompatActivity() {
                 }
 
                 (destination.id == R.id.mediaDisplayPictureFragment) -> {
-                    binding.activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarTitleTextView.text =
-                        "Jenipha Stitches"
+                    binding.activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarTitleTextView.visibility = View.GONE
                     binding.activityProfileDashboardToolbarLayout.profileActivityHeaderAppBarImageView.visibility = View.GONE
                     binding.activityProfileDashboardToolbarLayout.profileActivityAppBarNotificationIcon.visibility = View.GONE
                 }

@@ -25,7 +25,7 @@ class ExoPlayerUIVideosAdapter(
     override fun onBindViewHolder(holder: ExpoPlayerUIVideosViewHolder, position: Int) {
         val videoList = videoPlayerList[position]
 
-        /// binding data here
+        // / binding data here
 
         holder.bind(videoList, clickVideo)
     }

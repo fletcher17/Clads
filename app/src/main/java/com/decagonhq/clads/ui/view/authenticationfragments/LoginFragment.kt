@@ -1,13 +1,16 @@
 package com.decagonhq.clads.ui.view.authenticationfragments
 
-import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -16,11 +19,14 @@ import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads.R
 import com.decagonhq.clads.data.entity.mappedmodel.LoginWithGoogleCredentialsModel
 import com.decagonhq.clads.data.entity.mappedmodel.UserLoginCredentials
+import com.decagonhq.clads.data.local.AppSharedPreference
 import com.decagonhq.clads.databinding.FragmentLoginBinding
 import com.decagonhq.clads.resource.Resource
 import com.decagonhq.clads.ui.view.activity.ProfileDashboardActivity
+import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.PleaseWaitDialogFragment
 import com.decagonhq.clads.ui.viewmodel.UserManagementViewModel
 import com.decagonhq.clads.utils.GOOGLE_SIGN_IN_REQUEST_CODE
+import com.decagonhq.clads.utils.USER_AUTHENTICATION_PAYLOAD
 import com.decagonhq.clads.utils.validator.LoginFragmentValidation
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -29,6 +35,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
@@ -47,8 +54,12 @@ class LoginFragment : Fragment() {
     private lateinit var signUpForFreeLink: TextView
     private lateinit var forgotPasswordLink: TextView
     private lateinit var cladsGoogleSignInClient: GoogleSignInClient
-    private var SHARED_PREFERENCE = "sharePrefs"
-    private var USER_AUTHENTICATION_TOKEN = "text"
+
+    // Saving the user authentication token into Shared Preference
+    @Inject
+    lateinit var sharedPref: AppSharedPreference
+
+    private lateinit var progressRequestingDialog: PleaseWaitDialogFragment
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
@@ -70,6 +81,9 @@ class LoginFragment : Fragment() {
         // Text Links
         signUpForFreeLink = binding.loginScreenFragmentSignUpForFreeLinkTextView
         forgotPasswordLink = binding.loginScreenFragmentForgotPasswordTextView
+
+        // Requesting Progress Bar Dialog
+        progressRequestingDialog = PleaseWaitDialogFragment()
 
         // Controlling the visibility of the password at the click of the visibility icons
         showPasswordIcon.setOnClickListener() {
@@ -97,14 +111,23 @@ class LoginFragment : Fragment() {
         loginBtn.setOnClickListener() {
             if (LoginFragmentValidation.emailValidator(email.text.toString())) {
                 viewModel.loginThisUserViaEmail(UserLoginCredentials(email.text.toString(), password.text.toString()))
+
+                // Showing the please wait dialog fragment while the network request is being made
+                progressRequestingDialog.show(requireActivity().supportFragmentManager, "PleaseWaitDialog")
+
                 viewModel.loginUserResponseLiveData.observe(
                     viewLifecycleOwner
                 ) {
+                    // closing the requesting please wait dialog fragment
+                    progressRequestingDialog.dismiss()
 
                     val validationResponse = LoginFragmentValidation.userDetailsNetworkCallResponseValidation(it)
 
                     if (validationResponse.is_Successful == true) {
                         val userAuthenticationToken = validationResponse.payload
+
+                        // Saving the token into the shared preference
+                        sharedPref.saveDataToTheSharedPreference(USER_AUTHENTICATION_PAYLOAD, userAuthenticationToken!!)
 
                         Toast.makeText(requireContext(), "Logged in successfully", Toast.LENGTH_LONG).show()
                         // navigate to the dashboard
@@ -139,7 +162,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun googleSignIn() {
-        // displays the select email options
+        // displays the select email option
         val signInIntent: Intent = cladsGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, GOOGLE_SIGN_IN_REQUEST_CODE)
     }
@@ -170,12 +193,17 @@ class LoginFragment : Fragment() {
                 // Make new network call with the token returned by google
                 viewModel.loginThisUserViaGoogle("Bearer $idToken", LoginWithGoogleCredentialsModel("Tailor"))
 
+                // Showing the please wait dialog fragment while the network request is being made
+                progressRequestingDialog.show(requireActivity().supportFragmentManager, "PleaseWaitDialog")
+
                 // Observe the response of the server to the network call
                 viewModel.loginUserWithGoogleResponseLiveData.observe(
                     viewLifecycleOwner,
                     Observer {
                         when (it) {
                             is Resource.Success -> {
+                                // Dismissing the requesting please wait dialog
+                                progressRequestingDialog.dismiss()
                                 // save the token gotten from the server into this variable
                                 val loginWithGoogleResponse = it.value.payload.toString()
 
@@ -183,6 +211,9 @@ class LoginFragment : Fragment() {
                                 saveAuthTokenAndGoToDashBoard(loginWithGoogleResponse)
                             }
                             is Resource.Failure -> {
+                                // Dismissing the requesting please wait dialog
+                                progressRequestingDialog.dismiss()
+                                Toast.makeText(requireContext(), "Invalid email and password combination", Toast.LENGTH_SHORT).show()
                             }
                         }
                     }
@@ -206,11 +237,8 @@ class LoginFragment : Fragment() {
         // Then navigate the user to the Dashboard
         if (loginWithGoogleResponse.isNotEmpty()) {
 
-            // Saving the user authentication token into Shared Preference
-            val sharedPreference = requireContext().getSharedPreferences(SHARED_PREFERENCE, MODE_PRIVATE)
-            val sharedPrefEditor = sharedPreference.edit()
-            sharedPrefEditor.putString(USER_AUTHENTICATION_TOKEN, loginWithGoogleResponse)
-            sharedPrefEditor.apply()
+            // Saving the token into the shared preference
+            sharedPref.saveDataToTheSharedPreference(USER_AUTHENTICATION_PAYLOAD, loginWithGoogleResponse)
 
             // navigate to the dashboard
             val intent = Intent(requireContext(), ProfileDashboardActivity::class.java)

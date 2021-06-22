@@ -62,7 +62,7 @@ class DashboardFragment : Fragment() {
             ClientModel("Jones", "Philips", "Jos"),
             ClientModel("Wilson", "Kent", "Owerri"),
             ClientModel("Mubarak", "Yang", "Yola"),
-            ClientModel("Michael", "Jenkins", "Imo"),
+            ClientModel("Michael", "Jenkins", "Imo")
         )
     }
 

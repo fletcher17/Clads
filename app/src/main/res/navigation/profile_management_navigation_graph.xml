@@ -140,7 +140,16 @@
             app:destination="@id/resourceViewAllVideosFragment" />
         <argument
             android:name="videoLink"
-            app:argType="string" />
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"
+            />
+        <argument
+            android:name="resourceVideos"
+            app:argType="com.decagonhq.clads.data.entity.mappedmodel.ResourceHomeVideoModel"
+            app:nullable="true"
+            android:defaultValue="@null"
+            />
     </fragment>
     <fragment
         android:id="@+id/resourceViewIndividualArticleFragment"

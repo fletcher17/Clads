@@ -14,7 +14,7 @@ import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.Ed
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileSpecialtyCladsTrainedCustomDialogFragment
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileSpecialtyDeliveryLeadTimeCustomDialogFragment
 import com.decagonhq.clads.ui.viewmodel.EditProfileFragmentViewModel
-import com.decagonhq.clads.utils.Interface.IButtonClick
+import com.decagonhq.clads.utils.helpers.IButtonClick
 
 class ProfileSpecialtyTabFragment : Fragment() {
 

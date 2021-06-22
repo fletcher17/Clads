@@ -9,7 +9,6 @@
     android:orientation="vertical"
     tools:context=".ui.view.resourcemanagementfragment.ResourceViewAllVideosFragment">
 
-
     <TextView
         android:id="@+id/fragment_resource_view_all_videos_resources_title_text"
         style="@style/ResourceViewAllVideosFragmentTitleTextView"
@@ -17,15 +16,20 @@
         android:layout_height="wrap_content"
         android:text="@string/resource_view_all_videos_fragment_title_text_view" />
 
-    <View
-        android:id="@+id/fragment_resource_view_all_videos_horizontal_view"
-        style="@style/ResourceViewAllVideosFragmentHorizontalView"
-        android:layout_width="match_parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
     <TextView
         android:id="@+id/fragment_resource_view_all_videos_videos_text_view"
         style="@style/ResourceViewAllVideosFragmentVideosTextView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/resource_view_all_videos_fragment_video_text_view" />
 
@@ -33,5 +37,9 @@
         android:id="@+id/fragment_resource_view_all_videos_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

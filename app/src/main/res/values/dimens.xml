@@ -165,7 +165,6 @@
     <dimen name="stroke_width_2dp">2dp</dimen>
     <dimen name="radius">10dp</dimen>
     <dimen name="height_52dp">52dp</dimen>
-    <dimen name="margin_134dp">134dp</dimen>
     <dimen name="width_325dp">325dp</dimen>
     <dimen name="padding_16_dp">16dp</dimen>
     <dimen name="padding_15_dp">15dp</dimen>

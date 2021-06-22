@@ -328,18 +328,21 @@
     </style>
     
     <style name="ResourceViewAllVideosFragmentLayout">
-        <item name="android:background">#E5E5E5</item>
+        <item name="android:background">@color/white</item>
     </style>
     
     <style name="ResourceViewAllVideosFragmentTitleTextView">
-        <item name="android:layout_marginTop">@dimen/margin_40dp</item>
-        <item name="android:layout_marginStart">@dimen/margin_start_27dp</item>
-        <item name="android:layout_marginBottom">@dimen/margin_17dp</item>
-        <item name="android:gravity">start</item>
-        <item name="android:textAppearance">?android:textAppearanceLarge</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#0A2E65</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textColor">@color/navy_blue</item>
+        <item name="android:paddingBottom">@dimen/padding_10dp</item>
+        <item name="android:layout_marginStart">@dimen/margin_18dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_10dp</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:paddingTop">@dimen/padding_20_dp</item>
+        <item name="android:gravity">top</item>
     </style>
+
 
     <style name="ResourceViewAllVideosFragmentHorizontalView">
         <item name="android:layout_height">2dp</item>
@@ -347,14 +350,15 @@
     </style>
 
     <style name="ResourceViewAllVideosFragmentVideosTextView">
-        <item name="android:layout_marginStart">@dimen/margin_20dp</item>
-        <item name="android:layout_marginTop">@dimen/margin_30dp</item>
-        <item name="android:layout_marginBottom">@dimen/margin_30dp</item>
-        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textAppearance">?android:textAppearanceMedium</item>
-        <item name="android:gravity">top</item>
+        <item name="android:layout_marginTop">@dimen/margin_5dp</item>
+        <item name="android:layout_marginStart">@dimen/margin_18dp</item>
+        <item name="android:paddingTop">@dimen/padding_15_dp</item>
     </style>
+
 
     <style name="ExoplayerRecyclerViewItemLayout">
         <item name="android:layout_width">@dimen/margin_134dp</item>
@@ -366,6 +370,7 @@
     <style name="ExoplayerRecyclerViewItemCardViewImageView">
         <item name="android:layout_gravity">center</item>
         <item name="android:src">@drawable/exoplayer_ui_screencover</item>
+        <item name="android:scaleType">centerCrop</item>
     </style>
 
     <style name="ExoplayerRecyclerViewItemTextView">
@@ -373,14 +378,15 @@
         <item name="android:fontFamily">@font/poppins</item>
         <item name="android:textAlignment">textStart</item>
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
-        <item name="android:textColor">#506992</item>
+        <item name="android:textColor">@color/menu_text_color</item>
         <item name="android:textStyle">normal</item>
     </style>
 
     <style name="ExoplayerRecyclerViewItemTimeDurationTextView">
-        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">top</item>
         <item name="android:layout_marginStart">@dimen/margin_12dp</item>
-        <item name="android:textColor">#0066F5</item>
+        <item name="android:textColor">@color/menu_text_color</item>
+        <item name="android:fontFamily">@font/poppins</item>
     </style>
 
 

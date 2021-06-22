@@ -14,10 +14,13 @@
         android:layout_height="match_parent"
         android:padding="@dimen/dimen_24_dp">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/fragment_profile_account_profile_image_view"
             android:layout_width="@dimen/margin_100"
             android:layout_height="@dimen/margin_100"
+            app:shapeAppearanceOverlay="@style/profile_account_profile_picture_circular"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="1:1"
             android:src="@drawable/fragment_profile_account_profile_photo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -215,7 +218,7 @@
             app:layout_constraintTop_toBottomOf="@+id/fragment_profile_account_legal_status_edit_text" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/resources_view_individual_video_design_layout_how_to_sew_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_24dp"
@@ -232,7 +235,7 @@
             android:layout_marginTop="@dimen/margin_24dp"
             android:text="@string/edit_profile_fragment_name_of_union_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/resources_view_individual_video_design_layout_how_to_sew_text_view" />
 
         <TextView
             android:id="@+id/fragment_profile_account_name_of_union_edit_text"

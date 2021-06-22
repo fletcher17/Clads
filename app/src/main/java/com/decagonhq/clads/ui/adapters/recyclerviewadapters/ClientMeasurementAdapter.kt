@@ -1,14 +1,11 @@
 package com.decagonhq.clads.ui.adapters.recyclerviewadapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.decagonhq.clads.R
+import com.decagonhq.clads.databinding.StaggardRecyclerviewLayoutBinding
 import com.decagonhq.clads.utils.ClientMeasurementData
-import com.decagonhq.clads.utils.Interface.ClientMeasurementClickListener
+import com.decagonhq.clads.utils.helpers.ClientMeasurementClickListener
 
 class ClientMeasurementAdapter(
     var listOfClientMeasurements: ArrayList<ClientMeasurementData>,
@@ -17,47 +14,33 @@ class ClientMeasurementAdapter(
 ) : RecyclerView.Adapter<ClientMeasurementAdapter.ClientMeasurementViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientMeasurementViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.staggard_recyclerview_layout, parent, false)
+        val view = StaggardRecyclerviewLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
         return ClientMeasurementViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ClientMeasurementViewHolder, position: Int) {
-        holder.nameOfMeasurement.text = listOfClientMeasurements[position].nameOfMeasurement
-        holder.value.text = listOfClientMeasurements[position].valueOfMeasurement
+        val clientData = listOfClientMeasurements[position]
 
-        holder.cancel.setOnClickListener {
-            clickItem.onClickItem(listOfClientMeasurements[position], position)
-        }
-
-        holder.nameOfMeasurement.setOnClickListener {
-            editdetails.editMeasurement(listOfClientMeasurements[position], position)
-        }
+        holder.bind(clientData, clickItem)
     }
 
     override fun getItemCount(): Int {
         return listOfClientMeasurements.size
     }
 
-    inner class ClientMeasurementViewHolder(itemView: View) :
-        RecyclerView.ViewHolder(itemView),
-        View.OnClickListener {
-        var nameOfMeasurement: TextView
-        var value: TextView
-        var cancel: ImageView
+    inner class ClientMeasurementViewHolder(private val binding: StaggardRecyclerviewLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        init {
-            nameOfMeasurement = itemView.findViewById(R.id.staggard_recyclerview_name_text_view)
-            value = itemView.findViewById(R.id.staggard_recyclerview_value_text_view)
-            cancel = itemView.findViewById(R.id.staggard_recyclerview_cancel_icon)
-        }
+        fun bind(clientMeasurementData: ClientMeasurementData, clickListener: ClientMeasurementClickListener) {
+            binding.staggardRecyclerviewNameTextView.text = clientMeasurementData.nameOfMeasurement
+            binding.staggardRecyclerviewValueTextView.text = clientMeasurementData.valueOfMeasurement
 
-        /**item position in recyclerview */
-        override fun onClick(v: View?) {
-            val position: Int = absoluteAdapterPosition
-            if (position != RecyclerView.NO_POSITION) {
-                clickItem.onClickItem(listOfClientMeasurements[position], position)
+            binding.staggardRecyclerviewNameTextView.setOnClickListener {
+                clickListener.editMeasurement(clientMeasurementData)
+            }
+
+            binding.staggardRecyclerviewCancelIcon.setOnClickListener {
+                clickListener.onClickItem(clientMeasurementData)
             }
         }
     }

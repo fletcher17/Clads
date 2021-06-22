@@ -9,12 +9,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentProfileSpecialtyTabBinding
-import com.decagonhq.clads.ui.adapters.recyclerviewadapters.ProfileSpecialtyFragmentRecyclerViewAdapter
+import com.decagonhq.clads.ui.adapters.recyclerviewadapters.SpecialtyRecyclerViewAdapter
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileSpecialtyAddSpecialtyCustomDialogFragment
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileSpecialtyCladsTrainedCustomDialogFragment
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileSpecialtyDeliveryLeadTimeCustomDialogFragment
 import com.decagonhq.clads.ui.viewmodel.EditProfileFragmentViewModel
-import com.decagonhq.clads.utils.Interface.IButtonClick
+import com.decagonhq.clads.utils.helpers.IButtonClick
 
 class ProfileSpecialtyTabFragment : Fragment() {
 
@@ -40,7 +40,7 @@ class ProfileSpecialtyTabFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(EditProfileFragmentViewModel::class.java)
 
         recyclerView = binding.fragmentProfileSpecialtyRecyclerView
-        val recyclerViewAdapter = ProfileSpecialtyFragmentRecyclerViewAdapter()
+        val recyclerViewAdapter = SpecialtyRecyclerViewAdapter()
         recyclerView.adapter = recyclerViewAdapter
 
         viewModel.listOfSpecialty.observe(

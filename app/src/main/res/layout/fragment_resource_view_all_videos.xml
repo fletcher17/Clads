@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_resource_view_all_videos_layout"
+    style="@style/ResourceViewAllVideosFragmentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.view.resourcemanagementfragment.ResourceViewAllVideosFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/fragment_resource_view_all_videos_resources_title_text"
+        style="@style/ResourceViewAllVideosFragmentTitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/resource_view_all_videos_fragment_title_text_view" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:fillViewport="true">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/fragment_resource_view_all_videos_videos_text_view"
+        style="@style/ResourceViewAllVideosFragmentVideosTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resource_view_all_videos_fragment_video_text_view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_resource_view_all_videos_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

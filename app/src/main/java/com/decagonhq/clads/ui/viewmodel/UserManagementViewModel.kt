@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.decagonhq.clads.data.entity.mappedmodel.LoginUserResponse
 import com.decagonhq.clads.data.entity.mappedmodel.LoginWithGoogleCredentialsModel
 import com.decagonhq.clads.data.entity.mappedmodel.RegisterUserResponse
+import com.decagonhq.clads.data.entity.mappedmodel.UploadPhotoResponse
 import com.decagonhq.clads.data.entity.mappedmodel.User
 import com.decagonhq.clads.data.entity.mappedmodel.UserLoginCredentials
 import com.decagonhq.clads.data.repository.Repository
@@ -18,6 +19,9 @@ import javax.inject.Inject
 @HiltViewModel
 class UserManagementViewModel
 @Inject constructor (private val repository: Repository) : ViewModel() {
+
+    private var _imageUploadLiveData = MutableLiveData<Resource<UploadPhotoResponse>>()
+    var imageUploadLiveData: LiveData<Resource<UploadPhotoResponse>> = _imageUploadLiveData
 
     private var _userLiveData = MutableLiveData<Resource<RegisterUserResponse>>()
     var userLiveData: LiveData<Resource<RegisterUserResponse>> = _userLiveData

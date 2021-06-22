@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentClientAccountTabBinding
-import com.decagonhq.clads.utils.IButtonClick
+import com.decagonhq.clads.utils.Interface.IButtonClick
 
 class ClientAccountTabFragment : Fragment() {
 
@@ -42,7 +42,7 @@ class ClientAccountTabFragment : Fragment() {
         // get client details for saving
         binding.addClientAccountTabNextButton.setOnClickListener {
             // navigate to next tab
-            (parentFragment as IButtonClickInterface).buttonClick()
+            (parentFragment as IButtonClickInterface).buttonClicked()
         }
     }
 }

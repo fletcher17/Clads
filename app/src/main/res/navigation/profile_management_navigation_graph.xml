@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/messageFragment"
         android:name="com.decagonhq.clads.ui.view.profilemanagementfragments.MessageFragment"
-        android:label="fragment_message"
+        android:label=" "
         tools:layout="@layout/fragment_message" >
         <action
             android:id="@+id/action_messageFragment_to_dashboardFragment"
@@ -41,7 +41,7 @@
     <fragment
         android:id="@+id/mediaFragment"
         android:name="com.decagonhq.clads.ui.view.mediamanagementfragment.MediaFragment"
-        android:label="fragment_media"
+        android:label=" "
         tools:layout="@layout/fragment_media" >
         <action
             android:id="@+id/action_mediaFragment_to_dashboardFragment"
@@ -59,7 +59,7 @@
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.decagonhq.clads.ui.view.profilemanagementfragments.EditProfileFragment"
-        android:label="fragment_edit_profile"
+        android:label=" "
         tools:layout="@layout/fragment_edit_profile" >
         <action
             android:id="@+id/action_editProfileFragment_to_dashboardFragment"
@@ -68,7 +68,7 @@
     <fragment
         android:id="@+id/addClientFragment"
         android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.AddClientFragment"
-        android:label="fragment_add_client"
+        android:label=" "
         tools:layout="@layout/fragment_add_client" >
         <action
             android:id="@+id/action_addClientFragment_to_clientHomeFragment"
@@ -82,7 +82,7 @@
     <fragment
         android:id="@+id/clientHomeFragment"
         android:name="com.decagonhq.clads.ui.view.cliientmanagementfragments.ClientHomeFragment"
-        android:label="fragment_client_home"
+        android:label=" "
         tools:layout="@layout/fragment_client_home" >
         <action
             android:id="@+id/action_clientHomeFragment_to_addClientFragment"
@@ -91,7 +91,7 @@
     <fragment
         android:id="@+id/resourceHomeFragment"
         android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceHomeFragment"
-        android:label="fragment_resource_home"
+        android:label=" "
         tools:layout="@layout/fragment_resource_home" >
         <action
             android:id="@+id/action_resourceHomeFragment_to_resourceViewAllArticlesFragment"
@@ -112,8 +112,8 @@
     <fragment
         android:id="@+id/resourceViewAllArticlesFragment"
         android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewAllArticlesFragment"
-        android:label="fragment_resource_view_all_article"
-        tools:layout="@layout/fragment_resource_view_all_articles" >
+        android:label=" "
+        tools:layout="@layout/fragment_resource_view_all_articles">
         <action
             android:id="@+id/action_resourceViewAllArticlesFragment_to_resourceHomeFragment2"
             app:destination="@id/resourceHomeFragment" />
@@ -124,7 +124,7 @@
     <fragment
         android:id="@+id/resourceViewAllVideosFragment"
         android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewAllVideosFragment"
-        android:label="fragment_resource_view_all_videos"
+        android:label=" "
         tools:layout="@layout/fragment_resource_view_all_videos" >
         <action
             android:id="@+id/action_resourceViewAllVideosFragment_to_resourceHomeFragment"
@@ -136,17 +136,20 @@
     <fragment
         android:id="@+id/resourceViewIndividualVideoFragment"
         android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewIndividualVideoFragment"
-        android:label="fragment_resource_view_individual_videos"
+        android:label=" "
         tools:layout="@layout/fragment_resource_view_individual_video" >
         <action
             android:id="@+id/action_resourceViewIndividualVideoFragment_to_resourceViewAllVideosFragment"
             app:destination="@id/resourceViewAllVideosFragment" />
+        <argument
+            android:name="videoLink"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/resourceViewIndividualArticleFragment"
         android:name="com.decagonhq.clads.ui.view.resourcemanagementfragment.ResourceViewIndividualArticleFragment"
-        android:label="fragment_resource_view_individual_article"
-        tools:layout="@layout/fragment_resource_view_individual_article" >
+        android:label=" "
+        tools:layout="@layout/fragment_resource_view_individual_article">
         <action
             android:id="@+id/action_resourceViewIndividualArticleFragment_to_resourceViewAllArticlesFragment"
             app:destination="@id/resourceViewAllArticlesFragment" />
@@ -154,7 +157,7 @@
     <fragment
         android:id="@+id/mediaDisplayPictureFragment"
         android:name="com.decagonhq.clads.ui.view.mediamanagementfragment.MediaDisplayPictureFragment"
-        android:label="fragment_media_display_picture"
+        android:label=" "
         tools:layout="@layout/fragment_media_display_picture" >
         <action
             android:id="@+id/action_mediaDisplayPictureFragment_to_mediaFragment"

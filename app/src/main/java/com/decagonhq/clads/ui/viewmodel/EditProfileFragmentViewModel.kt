@@ -3,8 +3,8 @@ package com.decagonhq.clads.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.decagonhq.clads.data.model.Profile
-import com.decagonhq.clads.data.model.Specialty
+import com.decagonhq.clads.data.entity.Profile
+import com.decagonhq.clads.data.entity.Specialty
 
 class EditProfileFragmentViewModel : ViewModel() {
 

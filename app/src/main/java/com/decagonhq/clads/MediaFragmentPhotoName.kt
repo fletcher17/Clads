@@ -49,12 +49,15 @@ class MediaFragmentPhotoName : Fragment() {
             val imageData = args.imageDetails
             DataListener.imageListener.value = true
 
-            val bundle = bundleOf("IMAGE_NAME_BUNDLE_KEY" to imageName, "IMAGE_DATA_BUNDLE_KEY" to imageData)
+            val bundle = bundleOf(
+                getString(R.string.image_name_bundle_key) to imageName,
+                getString(R.string.image_data_bundle_key) to imageData
+            )
 
             if (imageName.isEmpty()) {
-                Toast.makeText(requireContext(), "Enter Image Name", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), getString(R.string.fragment_media_enter_name), Toast.LENGTH_LONG).show()
             } else {
-                findNavController().previousBackStackEntry?.savedStateHandle?.set("IMAGE_KEY", bundle)
+                findNavController().previousBackStackEntry?.savedStateHandle?.set(getString(R.string.image_key), bundle)
                 findNavController().popBackStack()
             }
         }

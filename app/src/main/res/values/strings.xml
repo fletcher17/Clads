@@ -349,4 +349,5 @@
     <string name="image_data_bundle_key">IMAGE_DATA_BUNDLE_KEY</string>
     <string name="image_key">IMAGE_KEY</string>
     <string name="fragment_media_share_witn">Share With</string>
+    <string name="fragment_media_enter_name">Enter Image Name</string>
 </resources>

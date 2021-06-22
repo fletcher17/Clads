@@ -86,7 +86,7 @@ class MediaDisplayPictureFragment : androidx.fragment.app.Fragment() {
         shareIntent.action = Intent.ACTION_SEND
         shareIntent.type = "image/*"
         shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri)
-        startActivity(Intent.createChooser(shareIntent, "Share With"))
+        startActivity(Intent.createChooser(shareIntent, getString(R.string.fragment_media_share_witn)))
     }
 
     private val pickImage = registerForActivityResult(ActivityResultContracts.GetContent()) {

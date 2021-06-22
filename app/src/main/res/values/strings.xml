@@ -341,4 +341,12 @@
     <string name="resource_view_individual_article_fragment_article_link_key">articleLink</string>
     <string name="resource_view_all_articles_fragment_author_placholder_text">Author</string>
     <string name="resource_view_all_articles_fragment_title_placholder_text">Article Title</string>
+    <string name="fragment_media_permission_title">Permission to access galary denied</string>
+    <string name="fragment_media_permission_message">Permission denied. Please allow access to gallery for image upload.</string>
+    <string name="fragment_media_permission_cancel">Cancel</string>
+    <string name="fragment_media_permission_allow">Allow</string>
+    <string name="image_name_bundle_key">IMAGE_NAME_BUNDLE_KEY</string>
+    <string name="image_data_bundle_key">IMAGE_DATA_BUNDLE_KEY</string>
+    <string name="image_key">IMAGE_KEY</string>
+    <string name="fragment_media_share_witn">Share With</string>
 </resources>

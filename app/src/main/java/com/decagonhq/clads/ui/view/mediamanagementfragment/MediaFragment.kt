@@ -16,6 +16,7 @@ import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.decagonhq.clads.MediaFragmentPhotoName
+import com.decagonhq.clads.R
 import com.decagonhq.clads.databinding.FragmentMediaBinding
 import com.decagonhq.clads.models.MediaModel
 import com.decagonhq.clads.ui.adapters.recyclerviewadapters.FragmentMediaAdapter
@@ -56,10 +57,10 @@ class MediaFragment : Fragment(), ImageClick {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<Bundle>("IMAGE_KEY")
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<Bundle>(getString(R.string.image_key))
             ?.observe(viewLifecycleOwner) {
-                val imageName = it.getString("IMAGE_NAME_BUNDLE_KEY")
-                val imageData = it.getString("IMAGE_DATA_BUNDLE_KEY")
+                val imageName = it.getString(getString(R.string.image_name_bundle_key))
+                val imageData = it.getString(getString(R.string.image_data_bundle_key))
                 val imageDataUri = imageData!!.toUri()
                 photoGalleryModel =
                     MediaModel(
@@ -144,10 +145,10 @@ class MediaFragment : Fragment(), ImageClick {
 
     private fun showPermissionDeniedDialog() {
         MaterialAlertDialogBuilder(requireContext())
-            .setTitle("Permission to access galary denied")
-            .setMessage("Permission denied. Please allow access to gallery for image upload.")
-            .setNegativeButton("Cancel", null)
-            .setPositiveButton("Allow") { dialog, _ ->
+            .setTitle(getString(R.string.fragment_media_permission_title))
+            .setMessage(getString(R.string.fragment_media_permission_message))
+            .setNegativeButton(getString(R.string.fragment_media_permission_cancel), null)
+            .setPositiveButton(getString(R.string.fragment_media_permission_allow)) { dialog, _ ->
                 makeRequest()
                 dialog.dismiss()
             }

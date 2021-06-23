@@ -43,6 +43,7 @@ class ResourceViewAllVideosFragment : Fragment(), ExoPlayerVideosClickListener {
         return view
     }
 
+    // destroys the back stack
     override fun onDestroy() {
         super.onDestroy()
         _binding = null

@@ -1,7 +1,6 @@
 package com.decagonhq.clads.data.local
 
 import android.content.SharedPreferences
-import android.util.Log
 import javax.inject.Inject
 
 class AppSharedPreference @Inject constructor(private val sharedPref: SharedPreferences) {
@@ -21,7 +20,6 @@ class AppSharedPreference @Inject constructor(private val sharedPref: SharedPref
             }
             is String -> {
                 sharedPrefEditor.putString(keyName, sharedPrefValue)
-                Log.d("SavingPrefTAG", sharedPrefValue)
             }
             is Boolean -> {
                 sharedPrefEditor.putBoolean(keyName, sharedPrefValue)

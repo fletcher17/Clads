@@ -94,8 +94,8 @@ class ProfileDashboardActivity : AppCompatActivity() {
                 R.id.logout -> {
                     // Using a dialog to ask the user for confirmation before logging out
                     val confirmationDialog = AlertDialog.Builder(this)
-                    confirmationDialog.setMessage("Press \"YES\" to continue or \"NO\" to cancel.")
-                    confirmationDialog.setPositiveButton("Yes") { _: DialogInterface, _: Int ->
+                    confirmationDialog.setMessage(R.string.logout_confirmation_dialog_message)
+                    confirmationDialog.setPositiveButton(R.string.fragment_profile_specialty_yes_text) { _: DialogInterface, _: Int ->
                         // First clear the Shared preference, so that the authentication token stored in it will be deleted
                         sharedPref.clearSharedPref()
                         // After clearing the shared preference, navigate the user back to the landing screen which is the MainActivity
@@ -107,7 +107,7 @@ class ProfileDashboardActivity : AppCompatActivity() {
                         finish()
                     }
                     confirmationDialog.setNegativeButton(
-                        "No"
+                        R.string.fragment_profile_specialty_no_text
                     ) { _: DialogInterface, _: Int ->
                     }
                     confirmationDialog.create().show()

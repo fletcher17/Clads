@@ -191,7 +191,7 @@ class LoginFragment : Fragment() {
                 val idToken = account.idToken
 
                 // Make new network call with the token returned by google
-                viewModel.loginThisUserViaGoogle("Bearer $idToken", LoginWithGoogleCredentialsModel("Tailor"))
+                viewModel.loginThisUserViaGoogle("${R.string.user_authentication_token_prefix} $idToken", LoginWithGoogleCredentialsModel("Tailor"))
 
                 // Showing the please wait dialog fragment while the network request is being made
                 progressRequestingDialog.show(requireActivity().supportFragmentManager, "PleaseWaitDialog")

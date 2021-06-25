@@ -1,6 +1,5 @@
 package com.decagonhq.clads.data.remote
 
-import com.decagonhq.clads.data.entity.Profile
 import com.decagonhq.clads.data.entity.mappedmodel.LoginUserResponse
 import com.decagonhq.clads.data.entity.mappedmodel.LoginWithGoogleCredentialsModel
 import com.decagonhq.clads.data.entity.mappedmodel.RegisterUserResponse

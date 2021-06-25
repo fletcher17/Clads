@@ -4,16 +4,21 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 import com.decagonhq.clads.R
 import com.decagonhq.clads.data.entity.Profile
+import com.decagonhq.clads.data.entity.mappedmodel.Address
+import com.decagonhq.clads.data.entity.mappedmodel.Union
+import com.decagonhq.clads.data.entity.mappedmodel.UserProfileClass
 import com.decagonhq.clads.databinding.FragmentProfileAccountTabBinding
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountFirstNameCustomDialogFragment
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountGenderCustomDialogFragment
@@ -28,10 +33,19 @@ import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.Ed
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountWardCustomDialogFragment
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountWorkshopAddressCustomDialogFragment
 import com.decagonhq.clads.ui.viewmodel.EditProfileFragmentViewModel
+import com.decagonhq.clads.ui.viewmodel.UserManagementViewModel
 import com.decagonhq.clads.utils.helpers.IButtonClick
 import com.theartofdev.edmodo.cropper.CropImage
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfileAccountFragment : Fragment() {
+
+    /* 
+        UserManagementViewModel, the main viewModel for the app, the other view models reference in this page
+        are just to get data from the dialog fragment to the respective textViews 
+    */
+    val mainViewModel: UserManagementViewModel by viewModels()
 
     // INITIALIZING CROP IMAGE LAUNCHER
     private val cropActivityResultContract = object : ActivityResultContract<Any?, Uri>() {
@@ -47,7 +61,6 @@ class ProfileAccountFragment : Fragment() {
             try {
                 imageUri = CropImage.getActivityResult(intent).uri
             } catch (e: Exception) {
-                Log.d("NPE", e.localizedMessage)
             }
 
             return imageUri
@@ -82,7 +95,7 @@ class ProfileAccountFragment : Fragment() {
             }
         }
 
-        editProfileViewModel = ViewModelProvider(this).get(EditProfileFragmentViewModel::class.java)
+        editProfileViewModel = ViewModelProvider(requireActivity()).get(EditProfileFragmentViewModel::class.java)
 
         binding.fragmentProfileAccountSaveButton.setOnClickListener {
 
@@ -105,6 +118,33 @@ class ProfileAccountFragment : Fragment() {
             )
 
             editProfileViewModel.updateProfile(profile)
+            editProfileViewModel.updatedProfile.observe(
+                viewLifecycleOwner,
+                Observer {
+                    /*
+                Update what can be updated in the usersNewProfile object with the available details that we
+                have on this page, then move to the next page to update the rest
+            */
+                    val incompleteNewUserProfileObject = UserProfileClass(
+                        "",
+                        "",
+                        it.firstName,
+                        it.gender,
+                        0,
+                        it.lastName,
+                        "",
+                        "",
+                        createAddressObject(it.showRoomAddress),
+                        "",
+                        createUnionObject(it.localGovernmentArea, it.nameOfUnion, it.state, it.ward),
+                        createAddressObject(it.workShopAddress)
+                    )
+
+//                    mainViewModel.updateUsersNewProfileObjectBeforeSendingToRemoteServer(
+//                        incompleteNewUserProfileObject
+//                    )
+                }
+            )
 
             (parentFragment as ButtonClick).buttonClicked()
         }
@@ -298,5 +338,18 @@ class ProfileAccountFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    private fun createAddressObject(address: String?): Address? {
+        val splittedAddress = address?.split(",")
+        val street = splittedAddress?.get(0)?.trim()
+        val city = splittedAddress?.get(1)?.trim()
+        val state = splittedAddress?.last()?.trim()
+
+        return Address(city, state, street)
+    }
+
+    private fun createUnionObject(lga: String?, name: String?, state: String?, ward: String?): Union? {
+        return Union(lga, name, state, ward)
     }
 }

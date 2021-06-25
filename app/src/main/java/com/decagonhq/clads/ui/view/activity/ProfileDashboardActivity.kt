@@ -1,5 +1,6 @@
 package com.decagonhq.clads.ui.view.activity
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
@@ -8,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModelProvider
@@ -90,15 +92,25 @@ class ProfileDashboardActivity : AppCompatActivity() {
                 }
                 // When the item clicked is logout
                 R.id.logout -> {
-                    // First clear the Shared preference, so that the authentication token stored in it will be deleted
-                    sharedPref.clearSharedPref()
-                    // After clearing the shared preference, navigate the user back to the landing screen which is the MainActivity
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    // Use Toast to notify the user that they are being logged out
-                    Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
-                    // Finish the current activity so that the user can not use the back button to come back to this current screen
-                    finish()
+                    // Using a dialog to ask the user for confirmation before logging out
+                    val confirmationDialog = AlertDialog.Builder(this)
+                    confirmationDialog.setMessage("You are about to logout. \nPress \"YES\" to continue or \"NO\" to cancel.")
+                    confirmationDialog.setPositiveButton("Yes") { _: DialogInterface, _: Int ->
+                        // First clear the Shared preference, so that the authentication token stored in it will be deleted
+                        sharedPref.clearSharedPref()
+                        // After clearing the shared preference, navigate the user back to the landing screen which is the MainActivity
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        // Use Toast to notify the user that they are being logged out
+                        Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
+                        // Finish the current activity so that the user can not use the back button to come back to this current screen
+                        finish()
+                    }
+                    confirmationDialog.setNegativeButton(
+                        "No"
+                    ) { _: DialogInterface, _: Int ->
+                    }
+                    confirmationDialog.create().show()
                     return@setNavigationItemSelectedListener true
                 }
                 else -> {

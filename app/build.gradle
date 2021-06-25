@@ -168,5 +168,4 @@ dependencies {
     implementation "com.google.android.exoplayer:exoplayer-core:$versions.exoplayer_version"
     implementation "com.google.android.exoplayer:exoplayer-dash:$versions.exoplayer_version"
     implementation "com.google.android.exoplayer:exoplayer-ui:$versions.exoplayer_version"
-
 }

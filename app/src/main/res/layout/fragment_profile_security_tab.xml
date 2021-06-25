@@ -40,7 +40,7 @@ tools:context=".ui.view.profilemanagementfragments.ProfileSecurityTabFragment">
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/fragment_profile_page_payment_method_tab_screen_payment_terms_text_view"
+            android:text="@string/phone_number"
             android:textSize="@dimen/text_size_16sp" />
 
         <TextView

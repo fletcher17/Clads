@@ -9,7 +9,8 @@ import com.decagonhq.clads.data.entity.Specialty
 class EditProfileFragmentViewModel : ViewModel() {
 
     val listOfSpecialty = MutableLiveData<ArrayList<Specialty>>()
-    private val updatedProfile = MutableLiveData<Profile>()
+    private val _updatedProfile = MutableLiveData<Profile>()
+    val updatedProfile: LiveData<Profile> get() = _updatedProfile
 
     val firstName = MutableLiveData<String>()
     val lastName = MutableLiveData<String>()
@@ -42,8 +43,7 @@ class EditProfileFragmentViewModel : ViewModel() {
         }
     }
 
-    fun updateProfile(profile: Profile): LiveData<Profile> {
-        updatedProfile.value = profile
-        return updatedProfile
+    fun updateProfile(profile: Profile) {
+        _updatedProfile.value = profile
     }
 }

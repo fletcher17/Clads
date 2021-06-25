@@ -13,6 +13,7 @@ import com.decagonhq.clads.databinding.EditProfilePaymentMethodAddPaymentDialogB
 import com.decagonhq.clads.databinding.EditProfilePaymentOptionsDialogBinding
 import com.decagonhq.clads.databinding.EditProfilePaymentTermsDialogBinding
 import com.decagonhq.clads.databinding.FragmentProfilePaymentMethodTabBinding
+import com.decagonhq.clads.utils.helpers.IButtonClick
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 private var selectedPaymentOption = ""
@@ -35,6 +36,8 @@ class ProfilePaymentMethodTabFragment : Fragment() {
     private lateinit var vCashCheckBox: CheckBox
     private lateinit var payoneerCheckBox: CheckBox
     private lateinit var selectedPaymentOptions: MutableSet<String>
+
+    interface ButtonClick : IButtonClick
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -146,6 +149,11 @@ class ProfilePaymentMethodTabFragment : Fragment() {
 
             paymentOptionsDialog.create()
             paymentOptionsDialog.show()
+        }
+
+        // Moving to the next tab (Security Tab)
+        saveChanges.setOnClickListener() {
+//            (parentFragment as ButtonClick).buttonClicked()
         }
 
         // setting onClick Listener to the payment terms resources_view_individual_video_design_layout_how_to_sew_text_view

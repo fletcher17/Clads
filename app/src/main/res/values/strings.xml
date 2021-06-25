@@ -285,6 +285,8 @@
     <string name="fragment_message_day_of_post">Today</string>
     <string name="fragment_message_indicator">An indicator</string>
     <string name="fragment_message_user_icon">User icon</string>
+    <string name="logout_confirmation_dialog_message">Press "YES" to continue or "NO" to cancel.</string>
+    <string name="user_authentication_token_prefix">Bearer</string>
     <string-array name="fragment_dashboard_dates_array">
         <item>2020</item>
         <item>2021</item>
@@ -333,6 +335,7 @@
     <string name="resources_home_resource_title">Resources</string>
     <string name="phone">09034572526</string>
     <string name="tailor">Tailor</string>
+    <string name="all_requesting">Requesting</string>
     <string name="resource_view_all_videos_fragment_title_text_view">Resources</string>
     <string name="resource_view_all_videos_fragment_video_text_view">Videos</string>
     <string name="exoplayer_ui_item_text_view">How to perfectly sew adire</string>

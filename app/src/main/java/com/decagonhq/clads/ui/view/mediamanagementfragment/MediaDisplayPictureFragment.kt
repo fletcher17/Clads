@@ -26,6 +26,7 @@ class MediaDisplayPictureFragment : androidx.fragment.app.Fragment() {
         setHasOptionsMenu(true)
         super.onCreate(savedInstanceState)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

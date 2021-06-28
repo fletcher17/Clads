@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ui.view.resourcemanagementfragment.ResourceHomeFragment">
+
+    <TextView
+        android:id="@+id/resources_home_resource_title"
+        style="@style/resource_home_resource_title_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resources_home_resource_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/video_text_view"
+                style="@style/resource_home_article_publication_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/resource_home_screen_video_text_view" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resource_home_video_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                tools:itemCount="5"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/resource_home_video_player_recycler_view_item"
+                tools:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/resource_home_screen_video_view_all_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_18dp"
+                android:gravity="top"
+                android:paddingTop="@dimen/padding_10"
+                android:text="@string/resource_home_screen_view_all_text_view"
+                android:textAppearance="@style/resource_home_view_all_text_style" />
+
+            <TextView
+                android:id="@+id/resource_home_screen_article_publication_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_18dp"
+                android:layout_marginTop="@dimen/margin_24dp"
+                android:gravity="top"
+                android:paddingTop="@dimen/margin_5dp"
+                android:text="@string/resource_home_article_publications_text_view"
+                android:textAppearance="@style/resource_home_article_publication_text_style" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/resource_home_article_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                tools:itemCount="5"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/resource_home_article_recycler_view_item"
+                tools:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/resource_home_screen_article_view_all_text_view"
+                style="@style/resource_home_view_all_text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:text="@string/resource_home_screen_view_all_text_view" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
+

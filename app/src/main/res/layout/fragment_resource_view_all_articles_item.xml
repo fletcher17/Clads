@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_12dp">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/resource_view_all_articles_item_fragment_article_cover_image_view"
+            android:layout_width="@dimen/article_image_cover_width"
+            android:layout_height="@dimen/article_image_cover_height"
+            android:paddingTop="@dimen/margin_2dp"
+            android:paddingBottom="@dimen/margin_2dp"
+            android:paddingStart="@dimen/margin_2dp"
+            android:paddingEnd="@dimen/margin_4dp"
+            android:scaleType="fitXY"
+            app:shapeAppearanceOverlay="@style/ResourceViewAllArticlesImageViewShapeAppearance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/resource_view_all_articles_item_fragment_article_title_text_view"
+        style="@style/ProfileSpecialtyTextView"
+        android:layout_width="@dimen/dimen_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="@string/resource_view_all_articles_fragment_title_placholder_text"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/resource_view_all_articles_item_fragment_article_cover_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/resource_view_all_articles_item_fragment_article_cover_image_view" />
+
+    <TextView
+        android:id="@+id/resource_view_all_articles_item_fragment_article_author_text_view"
+        style="@style/ProfileSpecialtyTextView"
+        android:layout_width="@dimen/dimen_0dp"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="@string/resource_view_all_articles_fragment_author_placholder_text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/resource_view_all_articles_item_fragment_article_title_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/resource_view_all_articles_item_fragment_article_title_text_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

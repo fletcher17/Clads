@@ -60,6 +60,7 @@ class SignUpOptionsFragment : Fragment() {
     }
 
     private fun googleSignIn() {
+        cladsGoogleSignInClient.signOut()
         // displays the select email options
         val signInIntent: Intent = cladsGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, GOOGLE_SIGN_IN_REQUEST_CODE)

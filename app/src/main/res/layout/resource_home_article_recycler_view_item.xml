@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/layout_width_106dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/margin_8dp"
+    android:layout_marginTop="@dimen/margin_8dp"
+    android:orientation="vertical">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/resource_home_recycler_view_item_article_shapeableImageView"
+        android:layout_width="@dimen/layout_width_106dp"
+        android:layout_height="@dimen/layout_height_140dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_article_placeholder_article_placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/resource_home_article_shape" />
+
+
+    <TextView
+        android:id="@+id/resource_home_recycler_view_item_article_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/stitching_neatly"
+        android:textAppearance="@style/stitching_n"
+        app:layout_constraintEnd_toEndOf="@+id/resource_home_recycler_view_item_article_shapeableImageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/resource_home_recycler_view_item_article_shapeableImageView"
+        app:layout_constraintTop_toBottomOf="@+id/resource_home_recycler_view_item_article_shapeableImageView" />
+
+    <TextView
+        android:id="@+id/resource_home_recycler_view_item_article_contributor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:text="@string/by_nathan_maro"
+        android:textAppearance="@style/by_nathan_m"
+        app:layout_constraintEnd_toEndOf="@+id/resource_home_recycler_view_item_article_title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/resource_home_recycler_view_item_article_title"
+        app:layout_constraintTop_toBottomOf="@+id/resource_home_recycler_view_item_article_title" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+

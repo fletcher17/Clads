@@ -32,4 +32,8 @@ class Repository @Inject constructor(
     suspend fun updateUserProfile(header: String, newUserData: UserProfileClass) = safeApiCall {
         remoteDataSourceApi.updateUserProfile(header, newUserData)
     }
+
+    suspend fun getUserProfile(header: String) = safeApiCall {
+        remoteDataSourceApi.getUserProfile(header)
+    }
 }

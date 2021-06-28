@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.fragment.app.Fragment
@@ -20,6 +21,7 @@ import com.decagonhq.clads.data.entity.mappedmodel.Address
 import com.decagonhq.clads.data.entity.mappedmodel.Union
 import com.decagonhq.clads.data.entity.mappedmodel.UserProfileClass
 import com.decagonhq.clads.databinding.FragmentProfileAccountTabBinding
+import com.decagonhq.clads.resource.Resource
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountFirstNameCustomDialogFragment
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountGenderCustomDialogFragment
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountLastNameCustomDialogFragment
@@ -35,6 +37,7 @@ import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.Ed
 import com.decagonhq.clads.ui.viewmodel.EditProfileFragmentViewModel
 import com.decagonhq.clads.ui.viewmodel.UserManagementViewModel
 import com.decagonhq.clads.utils.helpers.IButtonClick
+import com.google.android.material.snackbar.Snackbar
 import com.theartofdev.edmodo.cropper.CropImage
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -45,7 +48,7 @@ class ProfileAccountFragment : Fragment() {
         UserManagementViewModel, the main viewModel for the app, the other view models reference in this page
         are just to get data from the dialog fragment to the respective textViews 
     */
-    val mainViewModel: UserManagementViewModel by viewModels()
+    val userManagementViewModel: UserManagementViewModel by viewModels()
 
     // INITIALIZING CROP IMAGE LAUNCHER
     private val cropActivityResultContract = object : ActivityResultContract<Any?, Uri>() {
@@ -331,6 +334,29 @@ class ProfileAccountFragment : Fragment() {
             viewLifecycleOwner,
             { state ->
                 binding.fragmentProfileAccountStateEditText.text = state
+            }
+        )
+
+        userManagementViewModel.clientProfileLiveData.observe(
+            viewLifecycleOwner, Observer {
+               when(it) {
+                   is Resource.Success -> {
+                       val result = it.value.payload
+                       binding.fragmentProfileAccountFirstNameEditText.text = result.firstName
+                       binding.fragmentProfileAccountLastNameEditText.text = result.lastName
+                       binding.fragmentProfileAccountGenderEditText.text = result.gender
+                       binding.fragmentProfileAccountWorkshopAddressEditText.text = result.workshopAddress.toString()
+                       binding.fragmentProfileAccountShowroomAddressEditText.text = result.showroomAddress.toString()
+                       binding.fragmentProfileAccountNameOfUnionEditText.text = result.union.name
+                       binding.fragmentProfileAccountWardEditText.text = result.union.ward
+                       binding.fragmentProfileAccountLocalGovtAreaEditText.text = result.union.lga
+                       binding.fragmentProfileAccountStateEditText.text = result.union.state
+                   }
+
+                   is Resource.Failure -> {
+                       Toast.makeText(requireContext(), "Invalid username/password", Toast.LENGTH_LONG).show()
+                   }
+               }
             }
         )
     }

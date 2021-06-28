@@ -6,6 +6,5 @@ const val GOOGLE_SIGN_IN_REQUEST_CODE = 200
 const val USER_AUTHENTICATION_PAYLOAD = "user_payload_from_backend"
 
 object Constant {
-
     var listOfClientData = arrayListOf<ClientMeasurementData>()
 }

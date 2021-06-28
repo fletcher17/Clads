@@ -7,7 +7,9 @@ import com.decagonhq.clads.data.entity.mappedmodel.ResponseFromGetAndUpdateUserP
 import com.decagonhq.clads.data.entity.mappedmodel.User
 import com.decagonhq.clads.data.entity.mappedmodel.UserLoginCredentials
 import com.decagonhq.clads.data.entity.mappedmodel.UserProfileClass
+import com.decagonhq.clads.data.model.UserProfileModel
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.PATCH
 import retrofit2.http.POST
@@ -33,4 +35,9 @@ interface RemoteDataSourceApi {
         @Header("Authorization") header: String,
         @Body newUserData: UserProfileClass
     ): ResponseFromGetAndUpdateUserProfileRequest
+
+    @GET("me/profile")
+    suspend fun getUserProfile(
+        @Header("Authorization") header: String,
+    ): UserProfileModel
 }

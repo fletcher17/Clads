@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.decagonhq.clads.data.entity.Profile
 import com.decagonhq.clads.data.entity.Specialty
+import com.decagonhq.clads.utils.GOOGLE_SIGN_IN_REQUEST_CODE
 
 class EditProfileFragmentViewModel : ViewModel() {
 
@@ -29,6 +30,7 @@ class EditProfileFragmentViewModel : ViewModel() {
 
     init {
         getDefaultList()
+        getUserProfile()
     }
 
     private fun getDefaultList() {
@@ -45,5 +47,9 @@ class EditProfileFragmentViewModel : ViewModel() {
 
     fun updateProfile(profile: Profile) {
         _updatedProfile.value = profile
+    }
+
+    private fun getUserProfile() {
+        
     }
 }

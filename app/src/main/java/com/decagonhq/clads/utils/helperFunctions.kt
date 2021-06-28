@@ -11,24 +11,24 @@ fun Fragment.toast(message: String) {
     Toast.makeText(this.requireActivity(), message, Toast.LENGTH_SHORT).show()
 }
 
-fun View.snackbar( message: String, action: (() -> Unit)? = null){
+fun View.snackbar(message: String, action: (() -> Unit)? = null) {
     val snackbar = Snackbar.make(this, message, Snackbar.LENGTH_SHORT)
     action?.let {
-        snackbar.setAction("Retry"){
+        snackbar.setAction("Retry") {
             it()
         }
     }
-        snackbar.show()
+    snackbar.show()
 }
 
 fun Fragment.handleApiError(
     failure: Resource.Failure,
-    retry: (() -> Unit)?= null
-){
+    retry: (() -> Unit)? = null
+) {
     when {
         failure.isNetworkError -> requireView().snackbar("Please check your internet connection", retry)
         failure.errorCode == 401 -> {
-            if (this is LoginFragment){
+            if (this is LoginFragment) {
                 requireView().snackbar("You have entered incorrect email or password")
             }
         }

@@ -49,7 +49,7 @@ class EmailSignUpFragment : Fragment() {
         // SET ONCLICK LISTENER TO THE EMAIL SIGN UP FORM SCREEN
         binding.fragmentEmailSignUpScreenSignUpButton.setOnClickListener {
             if (validateFields()) {
-                    signUp()
+                signUp()
                 viewModel.userLiveData.observe(
                     viewLifecycleOwner
                 ) {
@@ -61,11 +61,10 @@ class EmailSignUpFragment : Fragment() {
                         }
                         is Resource.Failure -> {
                             handleApiError(it) { signUp() }
-
                         }
                         else -> {
-                        Toast.makeText(requireContext(), "A network error has occurred", Toast.LENGTH_LONG).show()
-                    }
+                            Toast.makeText(requireContext(), "A network error has occurred", Toast.LENGTH_LONG).show()
+                        }
                     }
                 }
             }
@@ -208,7 +207,7 @@ class EmailSignUpFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-    private  fun signUp() {
+    private fun signUp() {
 
         val category = binding.fragmentEmailSignUpScreenAccountCategoryFilledDropdown.text.toString()
         val address = ""

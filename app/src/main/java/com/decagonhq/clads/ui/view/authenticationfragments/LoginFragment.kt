@@ -111,7 +111,7 @@ class LoginFragment : Fragment() {
         // Navigate to other screens at the buttons
         loginBtn.setOnClickListener() {
             if (LoginFragmentValidation.emailValidator(email.text.toString())) {
-               // viewModel.loginThisUserViaEmail(UserLoginCredentials(email.text.toString(), password.text.toString()))
+                // viewModel.loginThisUserViaEmail(UserLoginCredentials(email.text.toString(), password.text.toString()))
                 login()
 
                 // Showing the please wait dialog fragment while the network request is being made
@@ -125,7 +125,7 @@ class LoginFragment : Fragment() {
 
                     val validationResponse = LoginFragmentValidation.userDetailsNetworkCallResponseValidation(it)
 
-                    when(it) {
+                    when (it) {
                         is Resource.Success -> {
                             val userAuthenticationToken = validationResponse.payload
 
@@ -174,7 +174,7 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
-    private fun login(){
+    private fun login() {
         viewModel.loginThisUserViaEmail(UserLoginCredentials(email.text.toString(), password.text.toString()))
     }
 

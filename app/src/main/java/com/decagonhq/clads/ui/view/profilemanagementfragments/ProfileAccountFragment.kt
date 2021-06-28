@@ -20,6 +20,7 @@ import com.decagonhq.clads.data.entity.Profile
 import com.decagonhq.clads.data.entity.mappedmodel.Address
 import com.decagonhq.clads.data.entity.mappedmodel.Union
 import com.decagonhq.clads.data.entity.mappedmodel.UserProfileClass
+import com.decagonhq.clads.data.local.AppSharedPreference
 import com.decagonhq.clads.databinding.FragmentProfileAccountTabBinding
 import com.decagonhq.clads.resource.Resource
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountFirstNameCustomDialogFragment
@@ -36,12 +37,18 @@ import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.Ed
 import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.EditProfileAccountWorkshopAddressCustomDialogFragment
 import com.decagonhq.clads.ui.viewmodel.EditProfileFragmentViewModel
 import com.decagonhq.clads.ui.viewmodel.UserManagementViewModel
+import com.decagonhq.clads.utils.USER_AUTHENTICATION_PAYLOAD
 import com.decagonhq.clads.utils.helpers.IButtonClick
 import com.theartofdev.edmodo.cropper.CropImage
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class ProfileAccountFragment : Fragment() {
+
+    @Inject
+    lateinit var sharedPref: AppSharedPreference
 
     /* 
         UserManagementViewModel, the main viewModel for the app, the other view models reference in this page
@@ -337,6 +344,12 @@ class ProfileAccountFragment : Fragment() {
         )
 
         /**
+         * Fetching the user Profile from the endPoint.
+         * */
+        val header = "${getString(R.string.user_authentication_token_prefix)} ${sharedPref.getDataFromSharedPreference(USER_AUTHENTICATION_PAYLOAD, "")}"
+        userManagementViewModel.getUserProfile(header)
+
+        /**
          * Observing the user profile data and populating the required view
          * */
         userManagementViewModel.clientProfileLiveData.observe(
@@ -348,12 +361,6 @@ class ProfileAccountFragment : Fragment() {
                         binding.fragmentProfileAccountFirstNameEditText.text = result.firstName
                         binding.fragmentProfileAccountLastNameEditText.text = result.lastName
                         binding.fragmentProfileAccountGenderEditText.text = result.gender
-                        binding.fragmentProfileAccountWorkshopAddressEditText.text = result.workshopAddress.toString()
-                        binding.fragmentProfileAccountShowroomAddressEditText.text = result.showroomAddress.toString()
-                        binding.fragmentProfileAccountNameOfUnionEditText.text = result.union.name
-                        binding.fragmentProfileAccountWardEditText.text = result.union.ward
-                        binding.fragmentProfileAccountLocalGovtAreaEditText.text = result.union.lga
-                        binding.fragmentProfileAccountStateEditText.text = result.union.state
                     }
 
                     is Resource.Failure -> {

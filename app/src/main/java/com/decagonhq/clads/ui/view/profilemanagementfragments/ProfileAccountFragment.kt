@@ -41,7 +41,6 @@ import com.decagonhq.clads.utils.USER_AUTHENTICATION_PAYLOAD
 import com.decagonhq.clads.utils.helpers.IButtonClick
 import com.theartofdev.edmodo.cropper.CropImage
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -361,6 +360,12 @@ class ProfileAccountFragment : Fragment() {
                         binding.fragmentProfileAccountFirstNameEditText.text = result.firstName
                         binding.fragmentProfileAccountLastNameEditText.text = result.lastName
                         binding.fragmentProfileAccountGenderEditText.text = result.gender
+                        binding.fragmentProfileAccountNameOfUnionEditText.text = result.union?.name
+                        binding.fragmentProfileAccountWardEditText.text = result.union?.ward
+                        binding.fragmentProfileAccountLocalGovtAreaEditText.text = result.union?.lga
+                        binding.fragmentProfileAccountStateEditText.text = result.union?.state
+                        binding.fragmentProfileAccountWorkshopAddressEditText.text = "${result.workshopAddress?.street} ${result.workshopAddress?.city} ${result.workshopAddress?.state}"
+                        binding.fragmentProfileAccountShowroomAddressEditText.text = "${result.showroomAddress?.street} ${result.showroomAddress?.city} ${result.showroomAddress?.state}"
                     }
 
                     is Resource.Failure -> {

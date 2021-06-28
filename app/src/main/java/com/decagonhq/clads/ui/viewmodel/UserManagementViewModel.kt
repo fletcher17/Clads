@@ -12,6 +12,7 @@ import com.decagonhq.clads.data.entity.mappedmodel.UploadPhotoResponse
 import com.decagonhq.clads.data.entity.mappedmodel.User
 import com.decagonhq.clads.data.entity.mappedmodel.UserLoginCredentials
 import com.decagonhq.clads.data.entity.mappedmodel.UserProfileClass
+import com.decagonhq.clads.data.model.UserProfileModel
 import com.decagonhq.clads.data.repository.Repository
 import com.decagonhq.clads.resource.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -28,6 +29,9 @@ class UserManagementViewModel
 
     private val _userProfileMutableLiveData = MutableLiveData<UserProfileClass>()
     val userProfileLiveData: LiveData<UserProfileClass> get() = _userProfileMutableLiveData
+
+    private val _clientProfileMutableLiveData = MutableLiveData<Resource<UserProfileModel>>()
+    var clientProfileLiveData: LiveData<Resource<UserProfileModel>> = _clientProfileMutableLiveData
 
     private val _responseFromGetAndUpdateUserProfileRequest = MutableLiveData<Response<ResponseFromGetAndUpdateUserProfileRequest>>()
     val responseFromGetAndUpdateUserProfileRequest: LiveData<Response<ResponseFromGetAndUpdateUserProfileRequest>> = _responseFromGetAndUpdateUserProfileRequest
@@ -59,6 +63,12 @@ class UserManagementViewModel
     fun loginThisUserViaGoogle(header: String?, role: LoginWithGoogleCredentialsModel) {
         viewModelScope.launch {
             _loginUserWithGoogleResponseMutableLiveData.value = repository.loginWithGoogle(header!!, role)
+        }
+    }
+
+    fun getUserProfile(header: String) {
+        viewModelScope.launch {
+            _clientProfileMutableLiveData.value = repository.getUserProfile(header)
         }
     }
 

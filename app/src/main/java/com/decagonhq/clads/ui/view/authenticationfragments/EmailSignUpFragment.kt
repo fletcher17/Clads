@@ -17,6 +17,7 @@ import com.decagonhq.clads.data.entity.mappedmodel.User
 import com.decagonhq.clads.databinding.FragmentEmailSignUpBinding
 import com.decagonhq.clads.resource.Resource
 import com.decagonhq.clads.ui.viewmodel.UserManagementViewModel
+import com.decagonhq.clads.utils.handleApiError
 import com.decagonhq.clads.utils.validator.SignUpFormValidation
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -48,42 +49,24 @@ class EmailSignUpFragment : Fragment() {
         // SET ONCLICK LISTENER TO THE EMAIL SIGN UP FORM SCREEN
         binding.fragmentEmailSignUpScreenSignUpButton.setOnClickListener {
             if (validateFields()) {
-
-                val category = binding.fragmentEmailSignUpScreenAccountCategoryFilledDropdown.text.toString()
-                val address = ""
-                val emailAddress = binding.fragmentEmailSignUpScreenEmailAddressEditText.text.toString().trim()
-                val firstName = binding.fragmentEmailSignUpScreenFirstNameEditText.text.toString().trim()
-                val lastName = binding.fragmentEmailSignUpScreenLastNameEditText.text.toString().trim()
-                val password = binding.fragmentEmailSignUpScreenConfirmPasswordEditText.text.toString().trim()
-                val phoneNumber = getString(R.string.phone)
-                val role = getString(R.string.tailor)
-
-                val newUser = User(
-                    firstName = firstName,
-                    lastName = lastName,
-                    email = emailAddress,
-                    phoneNumber = phoneNumber,
-                    category = category,
-                    deliveryAddress = address,
-                    role = role,
-                    password = password
-                )
-
-                viewModel.registerThisUser(newUser)
-
+                signUp()
                 viewModel.userLiveData.observe(
-                    viewLifecycleOwner,
-                    {
-                        when (it) {
-                            is Resource.Success -> {
-                                val result = it.value.payload
-                                findNavController().navigate(R.id.action_email_sign_up_fragment_to_email_confirmation_fragment)
-                            } else -> {
-                                Toast.makeText(requireContext(), "A network error has occured", Toast.LENGTH_LONG).show()
-                            }
+                    viewLifecycleOwner
+                ) {
+                    when (it) {
+                        is Resource.Success -> {
+                            val result = it.value.payload
+                            findNavController().navigate(R.id.action_email_sign_up_fragment_to_email_confirmation_fragment)
+                            Toast.makeText(requireContext(), "Successful! Activate your account.", Toast.LENGTH_LONG).show()
+                        }
+                        is Resource.Failure -> {
+                            handleApiError(it) { signUp() }
+                        }
+                        else -> {
+                            Toast.makeText(requireContext(), "A network error has occurred", Toast.LENGTH_LONG).show()
                         }
                     }
-                )
+                }
             }
         }
 
@@ -223,5 +206,28 @@ class EmailSignUpFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+    private fun signUp() {
+
+        val category = binding.fragmentEmailSignUpScreenAccountCategoryFilledDropdown.text.toString()
+        val address = ""
+        val emailAddress = binding.fragmentEmailSignUpScreenEmailAddressEditText.text.toString().trim()
+        val firstName = binding.fragmentEmailSignUpScreenFirstNameEditText.text.toString().trim()
+        val lastName = binding.fragmentEmailSignUpScreenLastNameEditText.text.toString().trim()
+        val password = binding.fragmentEmailSignUpScreenConfirmPasswordEditText.text.toString().trim()
+        val phoneNumber = getString(R.string.phone)
+        val role = getString(R.string.tailor)
+
+        val newUser = User(
+            firstName = firstName,
+            lastName = lastName,
+            email = emailAddress,
+            phoneNumber = phoneNumber,
+            category = category,
+            deliveryAddress = address,
+            role = role,
+            password = password
+        )
+        viewModel.registerThisUser(newUser)
     }
 }

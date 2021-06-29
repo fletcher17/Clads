@@ -27,6 +27,7 @@ import com.decagonhq.clads.ui.view.profilemanagementfragments.dialogfragments.Pl
 import com.decagonhq.clads.ui.viewmodel.UserManagementViewModel
 import com.decagonhq.clads.utils.GOOGLE_SIGN_IN_REQUEST_CODE
 import com.decagonhq.clads.utils.USER_AUTHENTICATION_PAYLOAD
+import com.decagonhq.clads.utils.handleApiError
 import com.decagonhq.clads.utils.validator.LoginFragmentValidation
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -110,7 +111,8 @@ class LoginFragment : Fragment() {
         // Navigate to other screens at the buttons
         loginBtn.setOnClickListener() {
             if (LoginFragmentValidation.emailValidator(email.text.toString())) {
-                viewModel.loginThisUserViaEmail(UserLoginCredentials(email.text.toString(), password.text.toString()))
+                // viewModel.loginThisUserViaEmail(UserLoginCredentials(email.text.toString(), password.text.toString()))
+                login()
 
                 // Showing the please wait dialog fragment while the network request is being made
                 progressRequestingDialog.show(requireActivity().supportFragmentManager, "PleaseWaitDialog")
@@ -123,19 +125,30 @@ class LoginFragment : Fragment() {
 
                     val validationResponse = LoginFragmentValidation.userDetailsNetworkCallResponseValidation(it)
 
-                    if (validationResponse.is_Successful == true) {
-                        val userAuthenticationToken = validationResponse.payload
+                    when (it) {
+                        is Resource.Success -> {
+                            val userAuthenticationToken = validationResponse.payload
 
-                        // Saving the token into the shared preference
-                        sharedPref.saveDataToTheSharedPreference(USER_AUTHENTICATION_PAYLOAD, userAuthenticationToken!!)
+                            // Saving the token into the shared preference
+                            sharedPref.saveDataToTheSharedPreference(
+                                USER_AUTHENTICATION_PAYLOAD,
+                                userAuthenticationToken!!
+                            )
 
-                        Toast.makeText(requireContext(), "Logged in successfully", Toast.LENGTH_LONG).show()
-                        // navigate to the dashboard
-                        val intent = Intent(requireContext(), ProfileDashboardActivity::class.java)
-                        startActivity(intent)
-                        requireActivity().finish()
-                    } else {
-                        Toast.makeText(requireContext(), "Invalid email and password combination", Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                requireContext(),
+                                "Logged in successfully",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            // navigate to the dashboard
+                            val intent =
+                                Intent(requireContext(), ProfileDashboardActivity::class.java)
+                            startActivity(intent)
+                            requireActivity().finish()
+                        }
+                        is Resource.Failure ->
+                            // Toast.makeText(requireContext(), "Invalid email and password combination", Toast.LENGTH_LONG).show()
+                            handleApiError(it) { login() }
                     }
                 }
             } else {
@@ -159,6 +172,10 @@ class LoginFragment : Fragment() {
 
         // Inflate the layout for this fragment
         return binding.root
+    }
+
+    private fun login() {
+        viewModel.loginThisUserViaEmail(UserLoginCredentials(email.text.toString(), password.text.toString()))
     }
 
     private fun googleSignIn() {

@@ -28,6 +28,7 @@ import com.decagonhq.clads.ui.viewmodel.UserManagementViewModel
 import com.decagonhq.clads.utils.GOOGLE_SIGN_IN_REQUEST_CODE
 import com.decagonhq.clads.utils.USER_AUTHENTICATION_PAYLOAD
 import com.decagonhq.clads.utils.handleApiError
+import com.decagonhq.clads.utils.showLoadingDialog
 import com.decagonhq.clads.utils.validator.LoginFragmentValidation
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -179,6 +180,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun googleSignIn() {
+        showLoadingDialog().show()
         // displays the select email option
         val signInIntent: Intent = cladsGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent, GOOGLE_SIGN_IN_REQUEST_CODE)
